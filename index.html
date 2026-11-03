@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d4f">
+  <meta name="description" content="ദൈനംദിന ജീവിതത്തിൽ ഇൻഷുറൻസിന്റെ ആവശ്യകത ലളിതമായി മനസ്സിലാക്കാനുള്ള മലയാളം ബോധവത്കരണ വെബ്സൈറ്റ്.">
+  <title>ഇൻഷുറൻസ് — ഇന്ന് സംരക്ഷിക്കാം, നാളെയെ സുരക്ഷിതമാക്കാം</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#102d4f;--blue:#1d5b91;--sky:#eaf4fc;--ink:#182536;--muted:#64748b;--line:#dce5ee;--paper:#fff;--bg:#f5f8fc;--green:#147d64;--gold:#f2b84b;--shadow:0 16px 45px rgba(16,45,79,.09);--radius:22px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manjari',system-ui,sans-serif;line-height:1.7}button,input{font:inherit}a{color:inherit}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:68px}.brand{font-family:Inter,sans-serif;font-weight:800;letter-spacing:-.5px;color:var(--navy);text-decoration:none;font-size:1.15rem}.brand span{color:var(--green)}.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{text-decoration:none;color:#526277;font-size:.9rem}.navlinks a:hover{color:var(--blue)}.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:7px 12px;color:var(--navy)}
+    .hero{padding:72px 0 54px;background:radial-gradient(circle at 85% 20%,rgba(96,165,250,.26),transparent 30%),linear-gradient(135deg,#102d4f,#174b77 68%,#1c6680);color:white;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);border-radius:999px;padding:5px 13px;font-size:.82rem;color:#e1efff}.hero h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.2;margin:20px 0 14px;letter-spacing:-1px}.hero h1 span{color:#aee4d6}.hero p{max-width:620px;color:#d9e8f6;font-size:1.08rem;margin:0 0 25px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:13px;padding:12px 19px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:#fff;color:var(--navy)}.btn-outline{border:1px solid rgba(255,255,255,.45);color:white;background:transparent}.hero-art{position:relative;min-height:270px;display:grid;place-items:center}.shield{width:220px;height:240px;clip-path:polygon(50% 0,94% 16%,88% 66%,50% 100%,12% 66%,6% 16%);background:linear-gradient(145deg,#d5f5e9,#65c6aa);display:grid;place-items:center;color:#104c48;font-size:6rem;filter:drop-shadow(0 22px 25px rgba(0,0,0,.2));position:relative}.shield:after{content:'✓';position:absolute;font-family:Inter,sans-serif;font-weight:800;font-size:5rem}.float-card{position:absolute;background:white;color:var(--navy);padding:10px 15px;border-radius:14px;box-shadow:var(--shadow);font-size:.9rem;font-weight:700}.fc1{top:15px;left:0}.fc2{bottom:18px;right:0}
+    section{padding:64px 0}.section-head{text-align:center;max-width:720px;margin:0 auto 32px}.kicker{font-family:Inter,sans-serif;color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.section-head h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.3;color:var(--navy);margin:8px 0}.section-head p{color:var(--muted);margin:0}.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card,.risk-card,.type-card,.tool-card,.quiz-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:0 5px 20px rgba(16,45,79,.035)}.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:var(--sky);font-size:1.55rem;margin-bottom:13px}.info-card h3,.risk-card h3,.type-card h3{margin:0 0 7px;color:var(--navy);font-size:1.12rem}.info-card p,.risk-card p,.type-card p{margin:0;color:var(--muted);font-size:.94rem}.soft{background:#edf4fa}.risk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.risk-card{padding:19px}.risk-card .icon{width:42px;height:42px;font-size:1.35rem}.risk-card h3{font-size:1rem}.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.type-card{cursor:pointer;transition:.2s;position:relative}.type-card:hover,.type-card.active{border-color:#5ba6d6;box-shadow:0 12px 30px rgba(29,91,145,.12);transform:translateY(-3px)}.type-card.active:after{content:'തിരഞ്ഞെടുത്തു';position:absolute;top:14px;right:14px;font-size:.7rem;color:var(--green);background:#e5f6ef;padding:3px 8px;border-radius:999px}.type-detail{margin-top:18px;background:var(--navy);color:white;border-radius:var(--radius);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px}.type-detail h3{margin:0 0 7px;font-size:1.3rem}.type-detail p{margin:0;color:#d5e5f4}.type-detail ul{margin:0;padding-left:20px;color:#e3eef8}.note{font-size:.83rem;color:#64748b;margin-top:12px}
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.compare-panel{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:24px}.compare-panel h3{margin:0 0 5px;color:var(--navy)}.amount{font-family:Inter,sans-serif;font-weight:800;font-size:2rem;color:var(--navy);margin:10px 0}.bar{height:12px;border-radius:99px;background:#e8eef4;overflow:hidden;margin:12px 0}.bar span{display:block;height:100%;border-radius:99px}.bar.red span{background:#e58a79;width:100%}.bar.green span{background:#36a88a;width:25%}.compare-panel p{color:var(--muted);font-size:.9rem;margin:0}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tool-card h3{margin:0 0 5px;color:var(--navy)}.tool-card>p{color:var(--muted);margin:0 0 18px;font-size:.9rem}.field{margin:17px 0}.field label{display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:.93rem}.field output{font-family:Inter,sans-serif;color:var(--blue);font-weight:800}.field input[type=range]{width:100%;accent-color:var(--green);margin-top:10px}.result{background:#edf7f3;border:1px solid #cce9dd;border-radius:16px;padding:17px;margin-top:18px}.result strong{font-family:Inter,sans-serif;font-size:1.6rem;color:#116b55}.result p{margin:2px 0 0;color:#4b6b62;font-size:.85rem}.quiz-card{max-width:760px;margin:auto}.quiz-top{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem}.quiz-card h3{color:var(--navy);font-size:1.25rem;margin:15px 0}.answers{display:grid;gap:10px}.answer{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:12px 15px;text-align:left;cursor:pointer;color:var(--ink)}.answer:hover{border-color:#6da9d0;background:#eff7fd}.answer.correct{border-color:#4aa88a;background:#e9f7f1}.answer.wrong{border-color:#dc8b7d;background:#fff1ee}.feedback{min-height:28px;margin:12px 0;color:var(--green);font-weight:600}.quiz-actions{display:flex;justify-content:space-between;gap:10px}.btn-dark{background:var(--navy);color:white}.btn-light{background:#edf3f8;color:var(--navy)}
+    .checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.check{display:flex;gap:12px;background:white;border:1px solid var(--line);padding:15px;border-radius:14px}.check b{color:var(--green)}.disclaimer{background:#fff8e9;border:1px solid #f0dfb9;border-radius:16px;padding:18px;color:#735b2d;font-size:.9rem}.closing{background:linear-gradient(135deg,#102d4f,#174b77);color:white;text-align:center;padding:60px 18px}.closing h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.35;margin:0 0 12px}.closing p{color:#d9e8f6;margin:0}.footer{background:#0b2038;color:#c4d3e2;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.signature{font-family:Inter,sans-serif;font-weight:800;font-size:1.4rem;color:white;letter-spacing:.2px}.signature small{display:block;font-size:.6rem;letter-spacing:2px;color:#a9c1d7;font-weight:600}.footer p{margin:0;font-size:.82rem;color:#a9bdcf}.share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.share-row .btn{font-size:.88rem;padding:10px 14px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#102d4f;color:white;padding:10px 16px;border-radius:12px;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:210px}.shield{width:160px;height:180px;font-size:4rem}.shield:after{font-size:4rem}.intro-grid,.types-grid{grid-template-columns:repeat(2,1fr)}.risk-grid{grid-template-columns:repeat(2,1fr)}.type-detail{grid-template-columns:1fr}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:16px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu-btn{display:block}}
+    @media(max-width:560px){.wrap{width:min(100% - 26px,1100px)}.hero{padding:48px 0 35px}.hero h1{font-size:2.35rem}.hero-art{min-height:175px}.shield{width:135px;height:150px}.fc1{left:4px}.fc2{right:4px}.intro-grid,.types-grid,.risk-grid,.comparison,.tool-grid,.checklist{grid-template-columns:1fr}.type-detail{padding:19px}.compare-panel,.tool-card,.info-card{padding:19px}section{padding:48px 0}.footer-inner{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home">midhun<span>.</span>vr</a>
+      <button class="menu-btn" id="menuBtn" aria-label="മെനു തുറക്കുക">☰</button>
+      <nav class="navlinks" id="navlinks">
+        <a href="#why">ആവശ്യകത</a><a href="#types">ഇൻഷുറൻസ് തരങ്ങൾ</a><a href="#calculator">കാൽക്കുലേറ്റർ</a><a href="#quiz">ക്വിസ്</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">● സാമ്പത്തിക സുരക്ഷയെക്കുറിച്ചുള്ള ബോധവത്കരണം</span>
+          <h1>ഇന്ന് സംരക്ഷിക്കാം...<br><span>നാളെയെ സുരക്ഷിതമാക്കാം!</span></h1>
+          <p>ജീവിതത്തിൽ അപ്രതീക്ഷിത സംഭവങ്ങൾ ഉണ്ടാകാം. അവയുടെ സാമ്പത്തിക ആഘാതം കുറയ്ക്കാൻ ഇൻഷുറൻസ് എങ്ങനെ സഹായിക്കുമെന്ന് ലളിതമായി മനസ്സിലാക്കാം.</p>
+          <div class="actions"><a class="btn btn-primary" href="#why">തുടങ്ങാം <span>→</span></a><a class="btn btn-outline" href="#types">ഇൻഷുറൻസ് തരങ്ങൾ അറിയാം</a></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="shield"></div><div class="float-card fc1">🛡️ സാമ്പത്തിക കരുതൽ</div><div class="float-card fc2">✓ മുൻകരുതൽ • സുരക്ഷ</div></div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">WHY INSURANCE?</div><h2>എന്തിനാണ് ഇൻഷുറൻസ്?</h2><p>ഇൻഷുറൻസ് ഒരു നിക്ഷേപത്തിന് പകരമല്ല. നിശ്ചിത അപകടസാധ്യതകളിൽ നിന്ന് സാമ്പത്തിക സംരക്ഷണം നൽകുന്ന ഒരു സംവിധാനമാണ്.</p></div>
+        <div class="intro-grid">
+          <article class="info-card"><div class="icon">🛡️</div><h3>സാമ്പത്തിക സംരക്ഷണം</h3><p>അപ്രതീക്ഷിത ചെലവുകൾ വന്നാൽ സമ്പാദ്യത്തിന് ഉണ്ടാകാവുന്ന ആഘാതം കുറയ്ക്കാൻ സഹായിക്കുന്നു.</p></article>
+          <article class="info-card"><div class="icon">👨‍👩‍👧‍👦</div><h3>കുടുംബത്തിന് കരുതൽ</h3><p>വരുമാനം നൽകുന്ന വ്യക്തിക്ക് എന്തെങ്കിലും സംഭവിച്ചാൽ കുടുംബത്തിന്റെ സാമ്പത്തിക ആവശ്യങ്ങൾക്കായി സഹായകമാകാം.</p></article>
+          <article class="info-card"><div class="icon">🤝</div><h3>ആസൂത്രണത്തിന് പിന്തുണ</h3><p>ആരോഗ്യം, വാഹനം, വീട് തുടങ്ങിയ മേഖലകളിലെ ചില സാമ്പത്തിക അപകടങ്ങൾ മുൻകൂട്ടി കൈകാര്യം ചെയ്യാൻ സഹായിക്കുന്നു.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">EVERYDAY RISKS</div><h2>ദൈനംദിന ജീവിതത്തിലെ ചില അപകടസാധ്യതകൾ</h2><p>ഇവ സംഭവിക്കുമെന്ന് ഉറപ്പില്ല. എന്നാൽ സംഭവിച്ചാൽ സാമ്പത്തിക ബാധ്യത ഉണ്ടാകാം.</p></div>
+        <div class="risk-grid">
+          <article class="risk-card"><div class="icon">🏥</div><h3>ആരോഗ്യപ്രശ്നങ്ങൾ</h3><p>ചികിത്സയും ആശുപത്രി ചെലവുകളും കുടുംബബജറ്റിനെ ബാധിക്കാം.</p></article>
+          <article class="risk-card"><div class="icon">🚗</div><h3>വാഹനാപകടം</h3><p>വാഹനനാശം, മൂന്നാം കക്ഷിക്കുണ്ടാകുന്ന ബാധ്യത തുടങ്ങിയവ വരാം.</p></article>
+          <article class="risk-card"><div class="icon">🏠</div><h3>വീട് / സ്വത്ത് നാശം</h3><p>പോളിസി വ്യവസ്ഥകൾക്ക് വിധേയമായി ചില നാശനഷ്ടങ്ങൾക്ക് പരിരക്ഷ ലഭിക്കാം.</p></article>
+          <article class="risk-card"><div class="icon">💼</div><h3>വരുമാനനഷ്ടം</h3><p>കുടുംബത്തിന്റെ വരുമാനത്തെ ആശ്രയിക്കുന്നവർക്ക് സാമ്പത്തിക ബുദ്ധിമുട്ട് ഉണ്ടാകാം.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="types">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">TYPES OF INSURANCE</div><h2>പ്രധാന ഇൻഷുറൻസ് വിഭാഗങ്ങൾ</h2><p>താഴെയുള്ള കാർഡുകളിൽ അമർത്തി ഓരോ വിഭാഗത്തെക്കുറിച്ചും കൂടുതൽ അറിയാം.</p></div>
+        <div class="types-grid" id="typeCards">
+          <article class="type-card active" data-type="health"><div class="icon">❤️‍🩹</div><h3>ആരോഗ്യ ഇൻഷുറൻസ്</h3><p>ആശുപത്രി ചികിത്സയുമായി ബന്ധപ്പെട്ട ചില ചെലവുകൾക്ക് പരിരക്ഷ.</p></article>
+          <article class="type-card" data-type="life"><div class="icon">👨‍👩‍👧</div><h3>ജീവൻ ഇൻഷുറൻസ്</h3><p>ഇൻഷ്വർ ചെയ്ത വ്യക്തിയുടെ മരണത്തിൽ നോമിനിക്ക് സാമ്പത്തിക സഹായം.</p></article>
+          <article class="type-card" data-type="motor"><div class="icon">🚘</div><h3>മോട്ടോർ ഇൻഷുറൻസ്</h3><p>വാഹനത്തിനും മൂന്നാം കക്ഷി ബാധ്യതകൾക്കും പോളിസി അനുസരിച്ചുള്ള പരിരക്ഷ.</p></article>
+          <article class="type-card" data-type="home"><div class="icon">🏡</div><h3>വീട് / സ്വത്ത് ഇൻഷുറൻസ്</h3><p>തിരഞ്ഞെടുത്ത അപകടങ്ങളിൽ നിന്ന് വീടിനും വസ്തുക്കൾക്കും പരിരക്ഷ.</p></article>
+          <article class="type-card" data-type="accident"><div class="icon">🦺</div><h3>വ്യക്തിഗത അപകട ഇൻഷുറൻസ്</h3><p>അപകടത്തെ തുടർന്നുള്ള നിശ്ചിത പരിരക്ഷകൾ, പോളിസി വ്യവസ്ഥകൾക്ക് വിധേയമായി.</p></article>
+          <article class="type-card" data-type="travel"><div class="icon">✈️</div><h3>യാത്രാ ഇൻഷുറൻസ്</h3><p>യാത്രയ്ക്കിടെ ഉണ്ടാകാവുന്ന ചില അടിയന്തര സാഹചര്യങ്ങൾക്ക് പരിരക്ഷ.</p></article>
+        </div>
+        <div class="type-detail" aria-live="polite"><div><h3 id="detailTitle">ആരോഗ്യ ഇൻഷുറൻസ്</h3><p id="detailText">ആശുപത്രിയിൽ പ്രവേശനം ആവശ്യമായ ചികിത്സകൾക്കും പോളിസിയിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ള മറ്റു ആരോഗ്യ ചെലവുകൾക്കും സാമ്പത്തിക പരിരക്ഷ നൽകാൻ ഇത് സഹായിക്കുന്നു.</p></div><ul id="detailList"><li>കവറേജ്, പരിധി, കാത്തിരിപ്പ് കാലയളവ് എന്നിവ പരിശോധിക്കുക.</li><li>നെറ്റ്‌വർക്ക് ആശുപത്രികളും ക്ലെയിം നടപടികളും മനസ്സിലാക്കുക.</li><li>ഒഴിവാക്കലുകളും സ്വന്തം വിഹിതവും ശ്രദ്ധിക്കുക.</li></ul></div>
+        <p class="note">ഓരോ ഇൻഷുറൻസ് പോളിസിയുടെയും പരിരക്ഷ, ഒഴിവാക്കലുകൾ, പരിധികൾ, കാത്തിരിപ്പ് കാലയളവ് എന്നിവ വ്യത്യസ്തമായിരിക്കും. പോളിസി രേഖകൾ വായിച്ചശേഷം മാത്രം തീരുമാനിക്കുക.</p>
+      </div>
+    </section>
+
+    <section class="soft" id="example">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">A SIMPLE EXAMPLE</div><h2>ഒരു ആശുപത്രി ബിൽ: ഒരു ലളിതമായ ഉദാഹരണം</h2><p>ഇൻഷുറൻസ് എങ്ങനെ സാമ്പത്തിക ബാധ്യത കുറയ്ക്കാൻ സഹായിക്കാമെന്ന് മനസ്സിലാക്കാനുള്ള സാങ്കൽപ്പിക കണക്ക്.</p></div>
+        <div class="comparison">
+          <div class="compare-panel"><h3>ഇൻഷുറൻസ് പരിരക്ഷ ഇല്ലെങ്കിൽ</h3><div class="amount">₹2,00,000</div><div class="bar red"><span></span></div><p>ഈ ഉദാഹരണത്തിൽ മുഴുവൻ അംഗീകരിക്കപ്പെട്ട ചികിത്സാചെലവും വ്യക്തി തന്നെ വഹിക്കുന്നു.</p></div>
+          <div class="compare-panel"><h3>ഇൻഷുറൻസ് പരിരക്ഷ ഉണ്ടെങ്കിൽ</h3><div class="amount">₹50,000</div><div class="bar green"><span></span></div><p>₹1,50,000 പോളിസിയിൽ നിന്ന് ലഭിച്ചുവെന്ന് കരുതുന്ന സാങ്കൽപ്പിക ഉദാഹരണം. യഥാർത്ഥ ക്ലെയിം വ്യവസ്ഥകൾക്കനുസരിച്ചായിരിക്കും.</p></div>
+        </div>
+        <p class="note">ഈ കണക്ക് ഒരു ഉദാഹരണം മാത്രമാണ്; യഥാർത്ഥ പോളിസി ആനുകൂല്യമോ ക്ലെയിം ഉറപ്പോ അല്ല.</p>
+      </div>
+    </section>
+
+    <section id="calculator">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">TRY IT YOURSELF</div><h2>ലളിതമായ ചെലവ് കണക്കുകൂട്ടൽ</h2><p>ആകെ ബിൽ, പോളിസി അംഗീകരിക്കുന്ന തുക, നിങ്ങളുടെ വിഹിതം എന്നിവ മാറ്റി നോക്കൂ.</p></div>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <h3>കണക്കുകൾ തിരഞ്ഞെടുക്കുക</h3><p>താഴെയുള്ള സ്ലൈഡറുകൾ മാറ്റുമ്പോൾ കണക്ക് സ്വയം പുതുക്കും.</p>
+            <div class="field"><label for="bill">ആകെ ആശുപത്രി ബിൽ <output id="billOut">₹2,00,000</output></label><input id="bill" type="range" min="10000" max="1000000" step="5000" value="200000"></div>
+            <div class="field"><label for="cover">പോളിസി പ്രകാരം അംഗീകരിക്കുന്ന തുക <output id="coverOut">₹1,50,000</output></label><input id="cover" type="range" min="0" max="1000000" step="5000" value="150000"></div>
+            <div class="field"><label for="deduct">നിങ്ങൾ വഹിക്കേണ്ട അധിക വിഹിതം <output id="deductOut">₹10,000</output></label><input id="deduct" type="range" min="0" max="300000" step="5000" value="10000"></div>
+          </div>
+          <div class="tool-card">
+            <h3>സാമ്പത്തിക ഫലം</h3><p>ഇത് ഒരു ലളിതമായ പഠന മാതൃകയാണ്; യഥാർത്ഥ ക്ലെയിം കണക്കാക്കുന്നില്ല.</p>
+            <div class="result"><strong id="payable">₹60,000</strong><p>ഈ മാതൃകയിൽ നിങ്ങൾ വഹിക്കുന്നതായി കണക്കാക്കുന്ന തുക</p></div>
+            <div class="result" style="background:#eef5fc;border-color:#d3e3f2"><strong id="insurer">₹1,40,000</strong><p>ഈ മാതൃകയിൽ ഇൻഷുറൻസ് വഴി ലഭിക്കുന്നതായി കണക്കാക്കുന്ന തുക</p></div>
+            <p class="note">യഥാർത്ഥ ക്ലെയിം തുക പോളിസി പരിധി, ഒഴിവാക്കലുകൾ, കോ-പേ, ഡിഡക്റ്റിബിൾ, സബ്-ലിമിറ്റ്, നെറ്റ്‌വർക്ക് വ്യവസ്ഥകൾ എന്നിവയെ ആശ്രയിച്ചിരിക്കും.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="quiz">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">QUICK KNOWLEDGE CHECK</div><h2>നിങ്ങൾക്ക് എത്ര അറിയാം?</h2><p>മൂന്ന് ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകി നിങ്ങളുടെ അറിവ് പരിശോധിക്കൂ.</p></div>
+        <div class="quiz-card">
+          <div class="quiz-top"><span id="qCount">ചോദ്യം 1 / 3</span><span id="score">സ്കോർ: 0</span></div>
+          <h3 id="question">ഇൻഷുറൻസിന്റെ പ്രധാന ലക്ഷ്യം എന്താണ്?</h3>
+          <div class="answers" id="answers"></div>
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+          <div class="quiz-actions"><button class="btn btn-light" id="restartQuiz">വീണ്ടും തുടങ്ങുക</button><button class="btn btn-dark" id="nextQuestion" disabled>അടുത്ത ചോദ്യം →</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">BEFORE YOU BUY</div><h2>പോളിസി എടുക്കുന്നതിന് മുമ്പ് ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ</h2><p>വില മാത്രം നോക്കാതെ ആവശ്യവും നിബന്ധനകളും താരതമ്യം ചെയ്യുക.</p></div>
+        <div class="checklist">
+          <div class="check"><b>✓</b><div><strong>നിങ്ങളുടെ ആവശ്യം തിരിച്ചറിയുക</strong><br><span class="note">കുടുംബം, വരുമാനം, ബാധ്യതകൾ, നിലവിലുള്ള പരിരക്ഷ എന്നിവ പരിഗണിക്കുക.</span></div></div>
+          <div class="check"><b>✓</b><div><strong>പരിരക്ഷയും പരിധികളും പരിശോധിക്കുക</strong><br><span class="note">സമ്മ ഇൻഷ്വേർഡ്, സബ്-ലിമിറ്റ്, കോ-പേ, ഡിഡക്റ്റിബിൾ എന്നിവ മനസ്സിലാക്കുക.</span></div></div>
+          <div class="check"><b>✓</b><div><strong>ഒഴിവാക്കലുകൾ വായിക്കുക</strong><br><span class="note">ഏത് സാഹചര്യങ്ങളിലാണ് ക്ലെയിം ലഭിക്കാത്തതെന്ന് മനസ്സിലാക്കുക.</span></div></div>
+          <div class="check"><b>✓</b><div><strong>വിവരങ്ങൾ കൃത്യമായി നൽകുക</strong><br><span class="note">പ്രധാന വിവരങ്ങൾ മറച്ചുവയ്ക്കാതെ സത്യസന്ധമായി അപേക്ഷ പൂരിപ്പിക്കുക.</span></div></div>
+          <div class="check"><b>✓</b><div><strong>ക്ലെയിം നടപടികൾ അറിയുക</strong><br><span class="note">ആവശ്യമായ രേഖകൾ, സമയപരിധി, ബന്ധപ്പെടേണ്ട മാർഗങ്ങൾ എന്നിവ പരിശോധിക്കുക.</span></div></div>
+          <div class="check"><b>✓</b><div><strong>താരതമ്യം ചെയ്ത് തീരുമാനിക്കുക</strong><br><span class="note">പ്രീമിയം മാത്രം നോക്കാതെ സേവനം, നിബന്ധനകൾ, പരിരക്ഷ എന്നിവ കൂടി വിലയിരുത്തുക.</span></div></div>
+        </div>
+        <div class="disclaimer" style="margin-top:24px"><strong>പ്രധാന അറിയിപ്പ്:</strong> ഈ വെബ്സൈറ്റ് പൊതുവായ സാമ്പത്തിക ബോധവത്കരണത്തിനായി തയ്യാറാക്കിയതാണ്. ഇത് വ്യക്തിഗത സാമ്പത്തിക ഉപദേശം, ഇൻഷുറൻസ് ശുപാർശ, പോളിസി വാഗ്ദാനം, ക്ലെയിം ഉറപ്പ് എന്നിവയല്ല. ഇൻഷുറൻസ് വാങ്ങുന്നതിന് മുമ്പ് ഔദ്യോഗിക പോളിസി രേഖകളും നിബന്ധനകളും വായിക്കുകയും ആവശ്യമായാൽ അംഗീകൃത വിദഗ്ധന്റെ ഉപദേശം തേടുകയും ചെയ്യുക.</div>
+        <div class="share-row"><button class="btn btn-dark" id="shareBtn">↗ WhatsApp വഴി പങ്കിടുക</button><button class="btn btn-light" id="copyBtn">🔗 ലിങ്ക് പകർത്തുക</button></div>
+      </div>
+    </section>
+
+    <section class="closing"><h2>അപ്രതീക്ഷിത സംഭവങ്ങൾ തടയാൻ<br>ഇൻഷുറൻസിന് കഴിയില്ല.</h2><p>എന്നാൽ അവയുടെ സാമ്പത്തിക ആഘാതം കുറയ്ക്കാൻ ഇൻഷുറൻസ് സഹായിക്കാം.</p><h2 style="color:#aee4d6;margin-top:25px">ഇന്ന് സംരക്ഷിക്കാം...<br>നാളെയെ സുരക്ഷിതമാക്കാം!</h2></section>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-inner"><div><div class="signature">midhun.vr<small>PREPARED BY</small></div><p>ഇൻഷുറൻസ് ബോധവത്കരണത്തിനായുള്ള ഒരു ലളിതമായ മലയാളം അവതരണം.</p></div><p>© <span id="year"></span> midhun.vr · വിദ്യാഭ്യാസ ആവശ്യത്തിനായി</p></div></footer>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const typeInfo={
+      health:{title:'ആരോഗ്യ ഇൻഷുറൻസ്',text:'ആശുപത്രിയിൽ പ്രവേശനം ആവശ്യമായ ചികിത്സകൾക്കും പോളിസിയിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ള മറ്റു ആരോഗ്യ ചെലവുകൾക്കും സാമ്പത്തിക പരിരക്ഷ നൽകാൻ ഇത് സഹായിക്കുന്നു.',items:['കവറേജ്, പരിധി, കാത്തിരിപ്പ് കാലയളവ് എന്നിവ പരിശോധിക്കുക.','നെറ്റ്‌വർക്ക് ആശുപത്രികളും ക്ലെയിം നടപടികളും മനസ്സിലാക്കുക.','ഒഴിവാക്കലുകളും സ്വന്തം വിഹിതവും ശ്രദ്ധിക്കുക.']},
+      life:{title:'ജീവൻ ഇൻഷുറൻസ്',text:'ഇൻഷ്വർ ചെയ്ത വ്യക്തിയുടെ മരണത്തിൽ പോളിസി വ്യവസ്ഥകൾ പ്രകാരം നോമിനിക്കോ ഗുണഭോക്താവിനോ സാമ്പത്തിക സഹായം നൽകാൻ രൂപകൽപ്പന ചെയ്തതാണ്.',items:['കുടുംബത്തിന്റെ സാമ്പത്തിക ആശ്രിതത്വവും ബാധ്യതകളും വിലയിരുത്തുക.','പരിരക്ഷാ തുകയും പോളിസി കാലാവധിയും മനസ്സിലാക്കുക.','ടേം ഇൻഷുറൻസും നിക്ഷേപ ഘടകമുള്ള പദ്ധതികളും തമ്മിലുള്ള വ്യത്യാസം പഠിക്കുക.']},
+      motor:{title:'മോട്ടോർ ഇൻഷുറൻസ്',text:'വാഹനവുമായി ബന്ധപ്പെട്ട അപകടസാധ്യതകൾക്കും മൂന്നാം കക്ഷിക്കുണ്ടാകുന്ന ബാധ്യതകൾക്കും നിയമവും പോളിസിയും നിർദേശിക്കുന്ന പരിരക്ഷ നൽകുന്നു.',items:['നിയമപ്രകാരം ആവശ്യമായ തേർഡ് പാർട്ടി പരിരക്ഷ ഉറപ്പാക്കുക.','ഓൺ-ഡാമേജ് പരിരക്ഷ, ആഡ്-ഓണുകൾ, ഡിഡക്റ്റിബിൾ എന്നിവ പരിശോധിക്കുക.','ക്ലെയിം അറിയിക്കേണ്ട സമയപരിധിയും നടപടികളും മനസ്സിലാക്കുക.']},
+      home:{title:'വീട് / സ്വത്ത് ഇൻഷുറൻസ്',text:'തീ, പ്രകൃതിദുരന്തം തുടങ്ങിയ പോളിസിയിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ള അപകടങ്ങളിൽ നിന്ന് കെട്ടിടത്തിനോ വീട്ടുപകരണങ്ങൾക്കോ പരിരക്ഷ നൽകാം.',items:['കെട്ടിടത്തിന്റെയും ഉള്ളിലുള്ള വസ്തുക്കളുടെയും പരിരക്ഷ വേർതിരിച്ച് പരിശോധിക്കുക.','പ്രദേശത്തിന് അനുയോജ്യമായ അപകടപരിരക്ഷ ഉണ്ടോ എന്ന് നോക്കുക.','ഒഴിവാക്കലുകളും നഷ്ടപരിഹാര കണക്കാക്കുന്ന രീതിയും വായിക്കുക.']},
+      accident:{title:'വ്യക്തിഗത അപകട ഇൻഷുറൻസ്',text:'അപകടത്തെ തുടർന്നുള്ള മരണം, സ്ഥിരമായ വൈകല്യം, അല്ലെങ്കിൽ മറ്റു നിർവചിച്ച സാഹചര്യങ്ങൾക്കായി പോളിസി അനുസരിച്ചുള്ള ആനുകൂല്യങ്ങൾ നൽകാം.',items:['ഏത് അപകടങ്ങളും ഫലങ്ങളുമാണ് ഉൾപ്പെടുന്നതെന്ന് പരിശോധിക്കുക.','താൽക്കാലികവും സ്ഥിരവുമായ വൈകല്യ ആനുകൂല്യങ്ങൾ മനസ്സിലാക്കുക.','തൊഴിൽ, പ്രവർത്തനങ്ങൾ, ഒഴിവാക്കലുകൾ എന്നിവയുടെ വ്യവസ്ഥകൾ വായിക്കുക.']},
+      travel:{title:'യാത്രാ ഇൻഷുറൻസ്',text:'യാത്രയ്ക്കിടെ ഉണ്ടാകാവുന്ന ചില ആരോഗ്യ അടിയന്തരാവസ്ഥകൾ, യാത്രാ തടസ്സങ്ങൾ, ബാഗേജ് സംബന്ധമായ നഷ്ടങ്ങൾ തുടങ്ങിയവയ്ക്ക് പരിരക്ഷ നൽകാം.',items:['യാത്രയുടെ രാജ്യം, കാലയളവ്, ആവശ്യങ്ങൾ എന്നിവയ്ക്ക് യോജിച്ച പദ്ധതി തിരഞ്ഞെടുക്കുക.','മെഡിക്കൽ എമർജൻസി സഹായവും മുൻകൂട്ടിയുള്ള രോഗങ്ങളുടെ വ്യവസ്ഥകളും പരിശോധിക്കുക.','യാത്ര റദ്ദാക്കൽ, ബാഗേജ്, ഒഴിവാക്കലുകൾ എന്നിവ മനസ്സിലാക്കുക.']}
+    };
+    document.querySelectorAll('.type-card').forEach(card=>card.addEventListener('click',()=>{document.querySelectorAll('.type-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');const d=typeInfo[card.dataset.type];document.getElementById('detailTitle').textContent=d.title;document.getElementById('detailText').textContent=d.text;document.getElementById('detailList').innerHTML=d.items.map(x=>`<li>${x}</li>`).join('')}));
+
+    const money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+    const bill=document.getElementById('bill'),cover=document.getElementById('cover'),deduct=document.getElementById('deduct');
+    function calc(){const b=+bill.value,c=Math.min(+cover.value,b),d=Math.min(+deduct.value,b-c),insurer=Math.max(0,c-d),payable=b-insurer;document.getElementById('billOut').textContent=money(b);document.getElementById('coverOut').textContent=money(+cover.value);document.getElementById('deductOut').textContent=money(+deduct.value);document.getElementById('payable').textContent=money(payable);document.getElementById('insurer').textContent=money(insurer)}
+    [bill,cover,deduct].forEach(el=>el.addEventListener('input',calc));calc();
+
+    const questions=[
+      {q:'ഇൻഷുറൻസിന്റെ പ്രധാന ലക്ഷ്യം എന്താണ്?',a:['എല്ലാ അപകടങ്ങളും തടയുക','നിശ്ചിത അപകടസാധ്യതകളുടെ സാമ്പത്തിക ആഘാതം കുറയ്ക്കുക','എല്ലാവർക്കും ലാഭം ഉറപ്പാക്കുക'],correct:1,why:'ശരി! ഇൻഷുറൻസ് അപകടം തടയുന്നില്ല; കരാറിലെ വ്യവസ്ഥകൾക്ക് വിധേയമായി സാമ്പത്തിക പരിരക്ഷ നൽകുന്നു.'},
+      {q:'പോളിസി വാങ്ങുന്നതിന് മുമ്പ് എന്താണ് ചെയ്യേണ്ടത്?',a:['പ്രീമിയം മാത്രം നോക്കുക','നിബന്ധനകളും ഒഴിവാക്കലുകളും വായിക്കുക','മറ്റുള്ളവർ എടുത്തത് അതേപടി എടുക്കുക'],correct:1,why:'ശരി! പരിരക്ഷ, പരിധി, ഒഴിവാക്കലുകൾ, ക്ലെയിം നടപടികൾ എന്നിവ മനസ്സിലാക്കണം.'},
+      {q:'ഇൻഷുറൻസ് ക്ലെയിം തുക എപ്പോഴും മുഴുവൻ ബില്ലിന് തുല്യമാകുമോ?',a:['അതെ, എല്ലായ്പ്പോഴും','ഇല്ല; പോളിസി വ്യവസ്ഥകൾ അനുസരിച്ചാണ്','പ്രീമിയം അടച്ചാൽ ഉറപ്പാണ്'],correct:1,why:'ശരി! പരിധികൾ, ഒഴിവാക്കലുകൾ, ഡിഡക്റ്റിബിൾ, കോ-പേ തുടങ്ങിയ വ്യവസ്ഥകൾ ബാധകമാകാം.'}
+    ];let qi=0,score=0,answered=false;
+    function renderQ(){const q=questions[qi];answered=false;document.getElementById('qCount').textContent=`ചോദ്യം ${qi+1} / ${questions.length}`;document.getElementById('score').textContent=`സ്കോർ: ${score}`;document.getElementById('question').textContent=q.q;document.getElementById('feedback').textContent='';document.getElementById('nextQuestion').disabled=true;document.getElementById('nextQuestion').textContent=qi===questions.length-1?'ഫലം കാണുക':'അടുത്ത ചോദ്യം →';document.getElementById('answers').innerHTML=q.a.map((a,i)=>`<button class="answer" data-i="${i}">${a}</button>`).join('');document.querySelectorAll('.answer').forEach(btn=>btn.addEventListener('click',()=>choose(+btn.dataset.i)))}
+    function choose(i){if(answered)return;answered=true;const q=questions[qi];const buttons=[...document.querySelectorAll('.answer')];buttons.forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add('correct');else if(j===i)b.classList.add('wrong')});if(i===q.correct)score++;document.getElementById('score').textContent=`സ്കോർ: ${score}`;document.getElementById('feedback').textContent=q.why;document.getElementById('nextQuestion').disabled=false}
+    document.getElementById('nextQuestion').addEventListener('click',()=>{if(!answered)return;if(qi<questions.length-1){qi++;renderQ()}else{document.getElementById('question').textContent=`നിങ്ങളുടെ സ്കോർ: ${score} / ${questions.length}`;document.getElementById('answers').innerHTML='<p>ഇൻഷുറൻസ് സംബന്ധിച്ച അടിസ്ഥാന കാര്യങ്ങൾ മനസ്സിലാക്കാൻ ശ്രമിച്ചതിന് നന്ദി!</p>';document.getElementById('feedback').textContent='കൂടുതൽ അറിയാൻ പോളിസി രേഖകൾ ശ്രദ്ധയോടെ വായിക്കുക.';document.getElementById('nextQuestion').disabled=true;document.getElementById('qCount').textContent='ക്വിസ് പൂർത്തിയായി'}});
+    document.getElementById('restartQuiz').addEventListener('click',()=>{qi=0;score=0;renderQ()});renderQ();
+
+    const toast=document.getElementById('toast');function showToast(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2300)}
+    document.getElementById('shareBtn').addEventListener('click',()=>{const text='ഇൻഷുറൻസിന്റെ ആവശ്യകതയെക്കുറിച്ചുള്ള ഈ മലയാളം ബോധവത്കരണ പേജ് കാണൂ: '+location.href;if(navigator.share){navigator.share({title:document.title,text,url:location.href}).catch(()=>{})}else{location.href='https://wa.me/?text='+encodeURIComponent(text)}});
+    document.getElementById('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);showToast('ലിങ്ക് പകർത്തി!')}catch(e){showToast('ബ്രൗസറിലെ അഡ്രസ് ബാറിൽ നിന്ന് ലിങ്ക് പകർത്താം.')}});
+    document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
