@@ -1,7 +1,8 @@
-
+None selected
 
 Skip to content
 Using Gmail with screen readers
+in:sent 
 Conversations
 0% of 5,120 GB used
 Terms · Privacy · Program Policies
@@ -44,6 +45,7 @@ index.html
       <nav class="navlinks" id="navlinks">
         <a class="nav-special" href="#knowledge">നാൽവഴി</a>
         <a href="#why">ആവശ്യകത</a>
+        <a href="#tools">കാൽക്കുലേറ്റർ & ക്വിസ്</a>
         <a href="#reimbursement">റീഇംബേഴ്സ്മെന്റ്</a>
         <a href="#sbi-group">SBI ഗ്രൂപ്പ് മെഡിക്ലെയിം</a>
       </nav>
@@ -140,6 +142,40 @@ index.html
       </div>
     </section>
 
+    <section class="section-anchor" id="tools">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">INTERACTIVE LEARNING</div><h2>കാൽക്കുലേറ്ററും ക്വിസും</h2><p>ചികിത്സാചെലവിന്റെ സാമ്പത്തിക ആഘാതം ഒരു ഉദാഹരണത്തിലൂടെ മനസ്സിലാക്കാം. തുടർന്ന് ചെറിയൊരു ക്വിസ് പരീക്ഷിക്കാം.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card">
+            <h3>🧮 ചികിത്സാചെലവ് കാൽക്കുലേറ്റർ</h3>
+            <p>ചികിത്സയ്ക്കായി കണക്കാക്കുന്ന തുക, ലഭ്യമായ സമ്പാദ്യം, ഇൻഷുറൻസ് പരിരക്ഷ എന്നിവ നൽകി സാമ്പത്തിക കുറവ് മനസ്സിലാക്കാം. ഇത് ഒരു ലളിതമായ കണക്കുകൂട്ടൽ മാത്രമാണ്; യഥാർത്ഥ ക്ലെയിം തുകയല്ല.</p>
+            <div class="field"><label for="hospitalCost">കണക്കാക്കുന്ന ചികിത്സാചെലവ് <output id="hospitalCostOut">₹3,00,000</output></label><input id="hospitalCost" type="range" min="25000" max="2000000" step="25000" value="300000"></div>
+            <div class="field"><label for="savings">സ്വന്തം സമ്പാദ്യം <output id="savingsOut">₹1,00,000</output></label><input id="savings" type="range" min="0" max="1000000" step="10000" value="100000"></div>
+            <div class="field"><label for="cover">ലഭ്യമായ ഇൻഷുറൻസ് പരിരക്ഷ <output id="coverOut">₹2,00,000</output></label><input id="cover" type="range" min="0" max="2000000" step="25000" value="200000"></div>
+            <div class="result" aria-live="polite"><div>ആകെ കണക്കാക്കിയ വിഭവങ്ങൾ</div><strong id="resources">₹3,00,000</strong><p id="gapText">ഈ ഉദാഹരണത്തിൽ ചെലവിനും ലഭ്യമായ വിഭവങ്ങൾക്കും ഇടയിൽ കുറവില്ല.</p></div>
+            <p class="note">ശ്രദ്ധിക്കുക: പോളിസി പരിധി, deductible, co-pay, waiting period, exclusions, admissible expenses എന്നിവ കാരണം യഥാർത്ഥത്തിൽ ലഭിക്കുന്ന തുക വ്യത്യാസപ്പെടാം.</p>
+          </article>
+          <article class="tool-card">
+            <h3>📊 ഇൻഷുറൻസ് സുരക്ഷാ കണക്കുകൂട്ടൽ</h3>
+            <p>നിങ്ങൾ പ്രതീക്ഷിക്കുന്ന ആശുപത്രി ചെലവിൽ എത്ര ഭാഗം സ്വന്തം പണത്തിൽ നിന്ന് കണ്ടെത്തേണ്ടിവരുമെന്ന് കാണുക.</p>
+            <div class="field"><label for="expected">പ്രതീക്ഷിക്കുന്ന ചെലവ് <output id="expectedOut">₹5,00,000</output></label><input id="expected" type="range" min="50000" max="3000000" step="50000" value="500000"></div>
+            <div class="field"><label for="available">ക്ലെയിമിന് ശേഷം ലഭിക്കുമെന്ന് കരുതുന്ന തുക <output id="availableOut">₹3,00,000</output></label><input id="available" type="range" min="0" max="3000000" step="50000" value="300000"></div>
+            <div class="result" aria-live="polite"><div>സ്വന്തം പണത്തിൽ നിന്ന് കണ്ടെത്തേണ്ട തുക</div><strong id="outOfPocket">₹2,00,000</strong><p id="coveredPercent">ഉദാഹരണത്തിൽ ചെലവിന്റെ 60% പരിരക്ഷിക്കപ്പെടുന്നു.</p></div>
+            <p class="note">ഇവിടെ “ലഭിക്കുമെന്ന് കരുതുന്ന തുക” നിങ്ങൾ സ്വയം നൽകുന്ന അനുമാനമാണ്; ഇൻഷുറൻസ് കമ്പനിയുടെ ഉറപ്പായ അംഗീകാരമല്ല.</p>
+          </article>
+        </div>
+        <div style="height:28px"></div>
+        <article class="quiz-card tool-card" id="insuranceQuiz">
+          <div class="quiz-top"><span>📝 അറിവ് പരിശോധിക്കാം</span><span id="quizProgress">ചോദ്യം 1 / 6</span></div>
+          <h3 id="quizQuestion">ആരോഗ്യ ഇൻഷുറൻസിന്റെ പ്രധാന ഉദ്ദേശ്യം എന്താണ്?</h3>
+          <div class="answers" id="quizAnswers"></div>
+          <div class="feedback" id="quizFeedback" aria-live="polite"></div>
+          <div class="quiz-actions"><button class="btn btn-light" id="quizRestart" type="button">വീണ്ടും തുടങ്ങുക</button><button class="btn btn-dark" id="quizNext" type="button" disabled>അടുത്ത ചോദ്യം</button></div>
+          <p class="note">ക്വിസ് പൊതുവായ ബോധവത്കരണത്തിനാണ്. പോളിസിയുടെ യഥാർത്ഥ വ്യവസ്ഥകൾക്കായി ഔദ്യോഗിക രേഖ പരിശോധിക്കുക.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="soft section-anchor" id="reimbursement">
       <div class="wrap">
         <div class="section-head"><div class="kicker">KSRTC MEDICAL BENEFIT</div><h2>KSRTC മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ്</h2><p>ചികിത്സയ്ക്കായി ആദ്യം ചെലവഴിച്ച തുക, നിലവിലുള്ള ചട്ടങ്ങളും അംഗീകാരവും അനുസരിച്ച് പിന്നീട് തിരികെ ലഭിക്കുന്ന സംവിധാനം.</p></div>
@@ -207,7 +243,27 @@ index.html
     const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');
     menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
     nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+    const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+    function bindCalc(id,outId,fn){const el=document.getElementById(id),out=document.getElementById(outId);const update=()=>{out.textContent=inr(+el.value);fn()};el.addEventListener('input',update);update();}
+    function updateFirst(){const cost=+document.getElementById('hospitalCost').value,sav=+document.getElementById('savings').value,cover=+document.getElementById('cover').value,total=sav+cover,gap=Math.max(0,cost-total),surplus=Math.max(0,total-cost);document.getElementById('resources').textContent=inr(total);document.getElementById('gapText').textContent=gap?`ചികിത്സാചെലവിനായി ഇനിയും കണ്ടെത്തേണ്ടിവരാവുന്ന തുക: ${inr(gap)}.`:`ഈ ഉദാഹരണത്തിൽ ചെലവിനും ലഭ്യമായ വിഭവങ്ങൾക്കും ഇടയിൽ കുറവില്ല${surplus?`. ശേഷിക്കുന്ന തുക: ${inr(surplus)}.`:'.'}`;}
+    bindCalc('hospitalCost','hospitalCostOut',updateFirst);bindCalc('savings','savingsOut',updateFirst);bindCalc('cover','coverOut',updateFirst);
+    function updateSecond(){const cost=+document.getElementById('expected').value,paid=+document.getElementById('available').value,short=Math.max(0,cost-paid),pct=cost?Math.min(100,paid/cost*100):0;document.getElementById('outOfPocket').textContent=inr(short);document.getElementById('coveredPercent').textContent=`ഉദാഹരണത്തിൽ ചെലവിന്റെ ${pct.toFixed(1)}% പരിരക്ഷിക്കപ്പെടുന്നു എന്ന് കണക്കാക്കുന്നു.`;}
+    bindCalc('expected','expectedOut',updateSecond);bindCalc('available','availableOut',updateSecond);
+    const quiz=[
+      {q:'ആരോഗ്യ ഇൻഷുറൻസിന്റെ പ്രധാന ഉദ്ദേശ്യം എന്താണ്?',a:['ചികിത്സാ ചെലവിന്റെ സാമ്പത്തിക ആഘാതം കുറയ്ക്കുക','എല്ലാ ചികിത്സയും സൗജന്യമാക്കുക','സമ്പാദ്യം ഇരട്ടിയാക്കുക'],c:0,e:'ശരി. പോളിസി വ്യവസ്ഥകൾക്ക് വിധേയമായി ചികിത്സാചെലവിന്റെ സാമ്പത്തിക ഭാരം കുറയ്ക്കുകയാണ് ലക്ഷ്യം.'},
+      {q:'Waiting Period എന്നത് എന്താണ്?',a:['പ്രീമിയം അടയ്ക്കുന്ന തീയതി','ചില പരിരക്ഷകൾ ലഭിക്കാൻ കാത്തിരിക്കേണ്ട കാലയളവ്','ആശുപത്രിയിൽ കഴിയേണ്ട ദിവസങ്ങൾ'],c:1,e:'ശരി. ചില രോഗങ്ങൾക്കും ചികിത്സകൾക്കും പോളിസിയിൽ കാത്തിരിപ്പ് കാലയളവ് ഉണ്ടാകാം.'},
+      {q:'Pre-existing Disease (PED) എന്നതിന്റെ അർത്ഥം?',a:['പോളിസി എടുത്തതിന് ശേഷം ഉണ്ടായ രോഗം','മുൻകൂട്ടി ഉണ്ടായിരുന്ന രോഗാവസ്ഥ','അപകടം മൂലമുള്ള പരിക്ക് മാത്രം'],c:1,e:'ശരി. പോളിസി ആരംഭിക്കുന്നതിന് മുമ്പ് ഉണ്ടായിരുന്ന രോഗാവസ്ഥകളെയാണ് പൊതുവെ PED എന്നു പറയുന്നത്.'},
+      {q:'Cashless ചികിത്സ എവിടെയാണ് സാധാരണ ലഭിക്കുക?',a:['ഏത് ആശുപത്രിയിലും ഉറപ്പായി','ഇൻഷുററുടെ നെറ്റ്‌വർക്ക് ആശുപത്രികളിൽ, അനുമതിക്ക് വിധേയമായി','വീട്ടിൽ മാത്രം'],c:1,e:'ശരി. നെറ്റ്‌വർക്ക് ആശുപത്രിയും ഇൻഷുററുടെ മുൻകൂർ അംഗീകാരവും ഉൾപ്പെടെയുള്ള വ്യവസ്ഥകൾ ബാധകമാണ്.'},
+      {q:'Super Top-up പദ്ധതിയിൽ Deductible എന്താണ് സൂചിപ്പിക്കുന്നത്?',a:['പോളിസിയുടെ പരമാവധി പ്രായം','കമ്പനി നൽകൽ ആരംഭിക്കുന്നതിന് മുമ്പ് കണക്കിലെടുക്കുന്ന നിശ്ചിത ചെലവ് പരിധി','ആശുപത്രിയുടെ രജിസ്ട്രേഷൻ ഫീസ്'],c:1,e:'ശരി. കൃത്യമായ കണക്കുകൂട്ടൽ claim-wise ആണോ aggregate ആണോ എന്ന് policy wording പരിശോധിക്കണം.'},
+      {q:'ഇൻഷുറൻസ് എടുക്കുമ്പോൾ മുൻകൂട്ടിയുള്ള രോഗങ്ങൾ എന്ത് ചെയ്യണം?',a:['മറച്ചുവയ്ക്കണം','പറയേണ്ടതില്ല','സത്യസന്ധമായി വെളിപ്പെടുത്തണം'],c:2,e:'ശരി. എല്ലാ ആരോഗ്യവിവരങ്ങളും സത്യസന്ധമായി വെളിപ്പെടുത്തുകയും എഴുത്തുപരമായ രേഖ സൂക്ഷിക്കുകയും വേണം.'}
+    ];
+    let qi=0,score=0,answered=false;
+    const qEl=document.getElementById('quizQuestion'),aEl=document.getElementById('quizAnswers'),fEl=document.getElementById('quizFeedback'),pEl=document.getElementById('quizProgress'),next=document.getElementById('quizNext');
+    function renderQuiz(){answered=false;const q=quiz[qi];pEl.textContent=`ചോദ്യം ${qi+1} / ${quiz.length}`;qEl.textContent=q.q;fEl.textContent='';aEl.innerHTML='';next.disabled=true;next.textContent=qi===quiz.length-1?'ഫലം കാണുക':'അടുത്ത ചോദ്യം';q.a.forEach((v,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.textContent=v;b.addEventListener('click',()=>{if(answered)return;answered=true;const ok=i===q.c;if(ok)score++;[...aEl.children].forEach((x,j)=>{x.disabled=true;if(j===q.c)x.classList.add('correct');else if(j===i)x.classList.add('wrong')});fEl.textContent=(ok?'ശരിയുത്തരം! ':'ശരിയുത്തരം അല്ല. ')+q.e;next.disabled=false;});aEl.appendChild(b)});}
+    next.addEventListener('click',()=>{if(!answered)return;if(qi<quiz.length-1){qi++;renderQuiz()}else{pEl.textContent='ക്വിസ് പൂർത്തിയായി';qEl.textContent=`നിങ്ങളുടെ സ്കോർ: ${score} / ${quiz.length}`;aEl.innerHTML='';fEl.textContent=score===quiz.length?'മികച്ചത്! എല്ലാ ഉത്തരങ്ങളും ശരിയാണ്.':'നന്നായി ശ്രമിച്ചു. വീണ്ടും പരിശീലിച്ച് അറിവ് മെച്ചപ്പെടുത്താം.';next.disabled=true;next.textContent='പൂർത്തിയായി';}});
+    document.getElementById('quizRestart').addEventListener('click',()=>{qi=0;score=0;renderQuiz()});renderQuiz();
   </script>
 </body>
 </html>
-Displaying index.html.
+Displaying index.html. 
