@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="ml">
 <head>
@@ -11,11 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--navy:#102d4f;--blue:#1d5b91;--sky:#eaf4fc;--ink:#182536;--muted:#64748b;--line:#dce5ee;--paper:#fff;--bg:#f5f8fc;--green:#147d64;--gold:#b45309;--shadow:0 16px 45px rgba(16,45,79,.09);--radius:22px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manjari',system-ui,sans-serif;line-height:1.7}button,input{font:inherit}a{color:inherit}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:68px}.brand{font-family:Inter,sans-serif;font-weight:800;letter-spacing:-.5px;color:var(--navy);text-decoration:none;font-size:1.22rem}.brand span{color:var(--green)}.navlinks{display:flex;gap:14px;align-items:center}.navlinks a{text-decoration:none;color:#526277;font-size:.88rem;font-weight:600;padding:5px 8px;border-radius:6px;transition:.2s}.navlinks a:hover{color:var(--blue);background:var(--sky)}.navlinks a.nav-special{font-weight:800;color:var(--green)}.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:7px 12px;color:var(--navy);cursor:pointer}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manjari',system-ui,sans-serif;line-height:1.7}button,input,select{font:inherit}a{color:inherit}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:68px}.brand{font-family:Inter,sans-serif;font-weight:800;letter-spacing:-.5px;color:var(--navy);text-decoration:none;font-size:1.22rem}.brand span{color:var(--green)}.navlinks{display:flex;gap:14px;align-items:center}.navlinks a{text-decoration:none;color:#526277;font-size:.88rem;font-weight:600;padding:5px 8px;border-radius:6px;transition:.2s}.navlinks a:hover{color:var(--blue);background:var(--sky)}.navlinks a.nav-special{font-weight:800;color:var(--green)}.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:7px 12px;color:var(--navy);cursor:pointer}
     
     .hero{padding:58px 0 44px;background:radial-gradient(circle at 85% 20%,rgba(96,165,250,.26),transparent 30%),linear-gradient(135deg,#102d4f,#174b77 68%,#1c6680);color:white;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);border-radius:999px;padding:5px 13px;font-size:.82rem;color:#e1efff}.hero h1{font-size:clamp(2.1rem,4.5vw,3.8rem);line-height:1.2;margin:18px 0 14px;letter-spacing:-1px}.hero h1 span{color:#aee4d6}.hero p{max-width:620px;color:#d9e8f6;font-size:1.05rem;margin:0 0 15px}.hero-art{position:relative;min-height:240px;display:grid;place-items:center}.shield{width:180px;height:200px;clip-path:polygon(50% 0,94% 16%,88% 66%,50% 100%,12% 66%,6% 16%);background:linear-gradient(145deg,#d5f5e9,#65c6aa);display:grid;place-items:center;color:#104c48;font-size:4.5rem;filter:drop-shadow(0 20px 25px rgba(0,0,0,.2));position:relative}.shield:after{content:'✓';position:absolute;font-family:Inter,sans-serif;font-weight:800;font-size:4.5rem}.float-card{position:absolute;background:white;color:var(--navy);padding:9px 14px;border-radius:14px;box-shadow:var(--shadow);font-size:.88rem;font-weight:700}.fc1{top:15px;left:0}.fc2{bottom:18px;right:0}
     
-    /* Quick Access Menu / Hub */
+    /* Quick Access Menu */
     .quick-hub{background:#fff;border-bottom:1px solid var(--line);padding:30px 0;box-shadow:0 4px 18px rgba(16,45,79,.02)}
     .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .quick-item{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
@@ -28,7 +29,7 @@
     section{padding:58px 0}.section-anchor{scroll-margin-top:84px}.section-head{text-align:center;max-width:760px;margin:0 auto 30px}.kicker{font-family:Inter,sans-serif;color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.section-head h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.3;color:var(--navy);margin:8px 0}.section-head p{color:var(--muted);margin:0;font-size:.95rem}
     .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card,.tool-card,.quiz-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:0 5px 20px rgba(16,45,79,.035)}.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:var(--sky);font-size:1.55rem;margin-bottom:13px}.info-card h3{margin:0 0 7px;color:var(--navy);font-size:1.12rem}.info-card p{margin:0;color:var(--muted);font-size:.94rem}.soft{background:#edf4fa}
     
-    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tool-card h3{margin:0 0 5px;color:var(--navy)}.tool-card>p{color:var(--muted);margin:0 0 18px;font-size:.9rem}.field{margin:17px 0}.field label{display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:.93rem}.field output{font-family:Inter,sans-serif;color:var(--blue);font-weight:800}.field input[type=range]{width:100%;accent-color:var(--green);margin-top:10px}.result{background:#edf7f3;border:1px solid #cce9dd;border-radius:16px;padding:17px;margin-top:18px}.result strong{font-family:Inter,sans-serif;font-size:1.6rem;color:#116b55;display:block}.result p{margin:4px 0 0;color:#4b6b62;font-size:.85rem}.note{font-size:.83rem;color:#64748b;margin-top:12px}
+    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tool-card h3{margin:0 0 5px;color:var(--navy)}.tool-card>p{color:var(--muted);margin:0 0 18px;font-size:.9rem}.field{margin:17px 0}.field label{display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:.93rem}.field output{font-family:Inter,sans-serif;color:var(--blue);font-weight:800}.field input[type=range],.field select{width:100%;accent-color:var(--green);margin-top:8px}.field select{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy)}.result{background:#edf7f3;border:1px solid #cce9dd;border-radius:16px;padding:17px;margin-top:18px}.result strong{font-family:Inter,sans-serif;font-size:1.6rem;color:#116b55;display:block}.result p{margin:4px 0 0;color:#4b6b62;font-size:.85rem}.note{font-size:.83rem;color:#64748b;margin-top:12px}
     .quiz-card{max-width:760px;margin:auto}.quiz-top{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem}.quiz-card h3{color:var(--navy);font-size:1.25rem;margin:15px 0}.answers{display:grid;gap:10px}.answer{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:12px 15px;text-align:left;cursor:pointer;color:var(--ink)}.answer:hover{border-color:#6da9d0;background:#eff7fd}.answer.correct{border-color:#4aa88a;background:#e9f7f1}.answer.wrong{border-color:#dc8b7d;background:#fff1ee}.feedback{min-height:28px;margin:12px 0;color:var(--green);font-weight:600}.quiz-actions{display:flex;justify-content:space-between;gap:10px}.btn{border:0;border-radius:13px;padding:12px 19px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn-dark{background:var(--navy);color:white}.btn-light{background:#edf3f8;color:var(--navy)}
     
     .history-section{background:#f7f9fc}.accordion-list{max-width:960px;margin:auto;display:grid;gap:12px}.accordion{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 16px rgba(16,45,79,.035);overflow:hidden}.accordion summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;align-items:center;gap:13px;color:var(--navy);font-weight:700;font-size:1.05rem;user-select:none}.accordion summary::-webkit-details-marker{display:none}.accordion summary:after{content:'＋';margin-left:auto;font-family:Inter,sans-serif;color:var(--green);font-size:1.3rem;font-weight:bold}.accordion[open] summary:after{content:'−'}.accordion summary:hover{background:#f5f9fd}.accordion-body{padding:0 22px 22px;color:#42536a;border-top:1px solid #f1f5f9}.accordion-body h4{color:var(--navy);margin:18px 0 6px;font-size:1.05rem}.accordion-body p{margin:7px 0}.accordion-body ul,.accordion-body ol{padding-left:22px;margin:8px 0}.accordion-body li{margin:6px 0}
@@ -42,8 +43,22 @@
     .p-desc{font-size:.78rem;color:var(--muted);margin:0;line-height:1.35}
     .story{font-size:.98rem;line-height:1.85}.story p{margin:0 0 13px}
     
+    /* Comparison Grid for Merits & Demerits */
+    .pro-con-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+    .pro-box{background:#f0faf6;border:1px solid #bcead8;border-radius:14px;padding:18px}
+    .con-box{background:#fdf2f2;border:1px solid #f6caca;border-radius:14px;padding:18px}
+    .pro-box h5{margin:0 0 10px;color:var(--green);font-size:1.05rem}
+    .con-box h5{margin:0 0 10px;color:#c0392b;font-size:1.05rem}
+    .pro-box ul,.con-box ul{padding-left:18px;margin:0}
+    .pro-box li,.con-box li{margin-bottom:8px;font-size:.9rem}
+
+    /* Hospital Directory Filter */
+    .hosp-search-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0 18px}
+    .hosp-input{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;width:100%}
+    .hosp-scroll-box{max-height:420px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+
     .closing{background:linear-gradient(135deg,#102d4f,#174b77);color:white;text-align:center;padding:56px 18px}.closing h2{font-size:clamp(1.7rem,3.8vw,2.8rem);line-height:1.35;margin:0 0 12px}.closing p{color:#d9e8f6;margin:0}.footer{background:#0b2038;color:#c4d3e2;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer-brand{font-family:Inter,sans-serif;font-weight:800;font-size:1.3rem;color:white}.footer-brand span{color:var(--green)}.footer p{margin:3px 0 0;font-size:.82rem;color:#a9bdcf}
-    @media(max-width:860px){.quick-grid{grid-template-columns:repeat(2,1fr)}.process-steps{grid-template-columns:repeat(2,1fr)}.intro-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:860px){.quick-grid{grid-template-columns:repeat(2,1fr)}.process-steps{grid-template-columns:repeat(2,1fr)}.intro-grid{grid-template-columns:repeat(2,1fr)}.pro-con-grid{grid-template-columns:1fr}.hosp-search-bar{grid-template-columns:1fr}}
     @media(max-width:768px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:190px}.tool-grid{grid-template-columns:1fr}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:16px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;box-shadow:0 8px 20px rgba(0,0,0,.08)}.navlinks.open{display:flex}.menu-btn{display:block}}
     @media(max-width:540px){.quick-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr}.intro-grid{grid-template-columns:1fr}.wrap{width:calc(100% - 28px)}}
   </style>
@@ -85,7 +100,7 @@
       </div>
     </section>
 
-    <!-- Quick Access Menu / Hub -->
+    <!-- Quick Access Hub -->
     <nav class="quick-hub section-anchor" id="quick-hub" aria-label="ദ്രുത ആക്സസ് മെനു">
       <div class="wrap">
         <div class="quick-grid">
@@ -120,7 +135,7 @@
             <div>
               <span class="qi-tag">ഔദ്യോഗിക ഗൈഡ് 4</span>
               <h3>SBI CSP പ്രത്യേക ഹെൽത്ത് ഇൻഷുറൻസ്</h3>
-              <p>സഫയർ ക്ലാസിക് & സൂപ്പർ ടോപ്പ്-അപ്പ് പ്രീമിയം ചാർട്ടുകൾ, 63 വയസ്സിനു മുകളിലുള്ള റിന്യൂവൽ നിരക്കുകൾ.</p>
+              <p>സഫയർ ക്ലാസിക് & സൂപ്പർ ടോപ്പ്-അപ്പ്, മെറിറ്റ് & ഡിമെറിറ്റ്, പ്രീമിയം കാൽക്കുലേറ്റർ, കേരള ഹോസ്പിറ്റൽ ലിസ്റ്റ്.</p>
             </div>
             <span class="qi-arrow">വിശദമായി വായിക്കുക →</span>
           </a>
@@ -291,23 +306,23 @@
       </div>
     </section>
 
-    <!-- കെ.എസ്.ആർ.ടി.സി മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ് ഗൈഡ് -->
+    <!-- KSRTC മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ് ഗൈഡ് -->
     <section class="section-anchor soft" id="ksrtc-doc">
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">KSRTC MEDICAL REIMBURSEMENT</div>
           <h2>കെ.എസ്.ആർ.ടി.സി മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ്: വിശദമായ മാർഗ്ഗനിർദ്ദേശ ഗൈഡ്</h2>
-          <p>കെ.എസ്.ആർ.ടി.സി ജീവനക്കാർക്കും അവരുടെ ആശ്രിതർക്കും ചികിത്സാച്ചെലവുകൾ റീഇംബേഴ്സ് ചെയ്യുന്നതിനായുള്ള സമഗ്ര വിവരങ്ങൾ.</p>
+          <p>കെ.എസ്.ആർ.ടി.സി ജീവനക്കാർക്കും അവരുടെ ആശ്രിതർക്കും ചികിത്സാച്ചെലവുകൾ റീഇംബേഴ്സ് ചെയ്യുന്നതിനായുള്ള സമഗ്ര വിവരങ്ങൾ[cite: 4].</p>
         </div>
 
         <div class="accordion-list">
-          <details class="accordion" open>
+          <details class="accordion">
             <summary>👥 1. ആർക്കൊക്കെ അർഹതയുണ്ട്?</summary>
             <div class="accordion-body">
               <ul>
-                <li><b>ജീവനക്കാരൻ / ജീവനക്കാരി:</b> സർവീസിലുള്ള ജീവനക്കാർ.</li>
-                <li><b>ആശ്രിതരായ കുടുംബാംഗങ്ങൾ:</b> പങ്കാളി (ഭാര്യ/ഭർത്താവ്), മക്കൾ, മാതാപിതാക്കൾ.</li>
-                <li><b>പ്രത്യേക നിബന്ധന:</b> കുടുംബാംഗങ്ങൾ മറ്റ് ജോലികളിൽ ഏർപ്പെട്ടിരിക്കുന്നവരല്ലെന്നും യാതൊരുവിധ പ്രതിഫലവും കൈപ്പറ്റാത്തവരും പൂർണ്ണമായും ജീവനക്കാരനെ ആശ്രയിച്ചു കഴിയുന്നവരുമായിരിക്കണം (ഇത് സംബന്ധിച്ച സത്യവാങ്മൂലം അപേക്ഷയിൽ നൽകണം).</li>
+                <li><b>ജീവനക്കാരൻ / ജീവനക്കാരി:</b> സർവീസിലുള്ള ജീവനക്കാർ[cite: 4].</li>
+                <li><b>ആശ്രിതരായ കുടുംബാംഗങ്ങൾ:</b> പങ്കാളി (ഭാര്യ/ഭർത്താവ്), മക്കൾ, മാതാപിതാക്കൾ[cite: 4].</li>
+                <li><b>പ്രത്യേക നിബന്ധന:</b> കുടുംബാംഗങ്ങൾ മറ്റ് ജോലികളിൽ ഏർപ്പെട്ടിരിക്കുന്നവരല്ലെന്നും യാതൊരുവിധ പ്രതിഫലവും കൈപ്പറ്റാത്തവരും പൂർണ്ണമായും ജീവനക്കാരനെ ആശ്രയിച്ചു കഴിയുന്നവരുമായിരിക്കണം (ഇത് സംബന്ധിച്ച സത്യവാങ്മൂലം അപേക്ഷയിൽ നൽകണം)[cite: 4].</li>
               </ul>
             </div>
           </details>
@@ -316,15 +331,15 @@
             <summary>🏥 2. ചികിത്സാ വിഭാഗങ്ങളും ആശുപത്രി നിബന്ധനകളും</summary>
             <div class="accordion-body">
               <ul>
-                <li><b>സർക്കാർ ആശുപത്രികൾ:</b> സർക്കാർ ആശുപത്രികളിലെ ചികിത്സയ്ക്ക് മരുന്നുകളുടെ ചെലവ് ക്ലെയിം ചെയ്യാം.</li>
-                <li><b>അംഗീകൃത സ്വകാര്യ ആശുപത്രികൾ (Notified Private Hospitals):</b> അത്യാഹിത ഘട്ടങ്ങളിലോ അടിയന്തര സാഹചര്യങ്ങളിലോ (Emergency cases) അംഗീകൃത സ്വകാര്യ ആശുപത്രികളിൽ ചികിത്സ തേടുകയാണെങ്കിൽ ബില്ലുകൾ അടിയന്തര ചികിത്സയായിരുന്നുവെന്ന് സാക്ഷ്യപ്പെടുത്തേണ്ടതുണ്ട്. കൂടാതെ, അംഗീകൃത മെഡിക്കൽ അറ്റൻഡന്റിന്റെ (AMA) സർട്ടിഫിക്കറ്റ് അതത് ജില്ലാ മെഡിക്കൽ ഓഫീസർ (DMO) കൗണ്ടർസൈൻ ചെയ്യണം.</li>
+                <li><b>സർക്കാർ ആശുപത്രികൾ:</b> സർക്കാർ ആശുപത്രികളിലെ ചികിത്സയ്ക്ക് മരുന്നുകളുടെ ചെലവ് ക്ലെയിം ചെയ്യാം[cite: 4].</li>
+                <li><b>അംഗീകൃത സ്വകാര്യ ആശുപത്രികൾ (Notified Private Hospitals):</b> അത്യാഹിത ഘട്ടങ്ങളിലോ അടിയന്തര സാഹചര്യങ്ങളിലോ (Emergency cases) അംഗീകൃത സ്വകാര്യ ആശുപത്രികളിൽ ചികിത്സ തേടുകയാണെങ്കിൽ ബില്ലുകൾ അടിയന്തര ചികിത്സയായിരുന്നുവെന്ന് സാക്ഷ്യപ്പെടുത്തേണ്ടതുണ്ട്[cite: 4]. കൂടാതെ, അംഗീകൃത മെഡിക്കൽ അറ്റൻഡന്റിന്റെ (AMA) സർട്ടിഫിക്കറ്റ് അതത് ജില്ലാ മെഡിക്കൽ ഓഫീസർ (DMO) കൗണ്ടർസൈൻ ചെയ്യണം[cite: 4].</li>
                 <li><b>സംസ്ഥാനത്തിന് പുറത്തുള്ള ചികിത്സ:</b>
                   <ul>
-                    <li>ജീവനക്കാരൻ ഔദ്യോഗിക ഡ്യൂട്ടിയിലായിരുന്നോ എന്ന് വ്യക്തമാക്കണം.</li>
-                    <li>പ്രത്യേക വിദഗ്ദ്ധ ചികിത്സയാണെങ്കിൽ കേരള ആരോഗ്യവകുപ്പ് ഡയറക്ടറുടെ (DHS) റൂൾ 7(a) പ്രകാരമുള്ള സർട്ടിഫിക്കറ്റും മുൻകൂർ അനുമതിയും (Prior Sanction) നിർബന്ധമാണ്.</li>
+                    <li>ജീവനക്കാരൻ ഔദ്യോഗിക ഡ്യൂട്ടിയിലായിരുന്നോ എന്ന് വ്യക്തമാക്കണം[cite: 4].</li>
+                    <li>പ്രത്യേക വിദഗ്ദ്ധ ചികിത്സയാണെങ്കിൽ കേരള ആരോഗ്യവകുപ്പ് ഡയറക്ടറുടെ (DHS) റൂൾ 7(a) പ്രകാരമുള്ള സർട്ടിഫിക്കറ്റും മുൻകൂർ അനുമതിയും (Prior Sanction) നിർബന്ധമാണ്[cite: 4].</li>
                   </ul>
                 </li>
-                <li><b>ചികിത്സാ രീതി (Medical System):</b> അലോപ്പതി, ആയുർവേദം, ഹോമിയോപ്പതി തുടങ്ങിയവയിൽ ഏതെങ്കിലും ഒരു ചികിത്സാരീതി മാത്രമേ ഒരേ സമയം സ്വീകരിക്കാൻ പാടുള്ളൂ. ഒന്നിലധികം ചികിത്സാ രീതികൾ ഒരേസമയം സ്വീകരിച്ചിട്ടില്ലെന്ന ഡിക്ലറേഷൻ നിർബന്ധമാണ്.</li>
+                <li><b>ചികിത്സാ രീതി (Medical System):</b> അലോപ്പതി, ആയുർവേദം, ഹോമിയോപ്പതി തുടങ്ങിയവയിൽ ഏതെങ്കിലും ഒരു ചികിത്സാരീതി മാത്രമേ ഒരേ സമയം സ്വീകരിക്കാൻ പാടുള്ളൂ[cite: 4]. ഒന്നിലധികം ചികിത്സാ രീതികൾ ഒരേസമയം സ്വീകരിച്ചിട്ടില്ലെന്ന ഡിക്ലറേഷൻ നിർബന്ധമാണ്[cite: 4].</li>
               </ul>
             </div>
           </details>
@@ -332,13 +347,13 @@
           <details class="accordion">
             <summary>💰 3. ക്ലെയിം ചെയ്യാവുന്ന ചെലവുകൾ (Expense Heads)</summary>
             <div class="accordion-body">
-              <p>താഴെ പറയുന്ന ഇനങ്ങളിലെ ചെലവുകൾ പ്രത്യേകം തരംതിരിച്ച് അപേക്ഷയിൽ രേഖപ്പെടുത്തണം:</p>
+              <p>താഴെ പറയുന്ന ഇനങ്ങളിലെ ചെലവുകൾ പ്രത്യേകം തരംതിരിച്ച് അപേക്ഷയിൽ രേഖപ്പെടുത്തണം[cite: 4]:</p>
               <ul>
-                <li>മരുന്നുകളുടെ ചെലവ് (Charges for medicine)</li>
-                <li>ചികിത്സാ ചെലവുകൾ (Charges for treatment)</li>
-                <li>റൂം വാടക/താമസച്ചെലവ് (Accommodation charges)</li>
-                <li>ലാബ് പരിശോധനകൾ, സ്കാനിംഗ് തുടങ്ങിയവ (Lab services)</li>
-                <li>പഥ്യാഹാര ചെലവ് (Charges for diet)</li>
+                <li>മരുന്നുകളുടെ ചെലവ് (Charges for medicine)[cite: 4]</li>
+                <li>ചികിത്സാ ചെലവുകൾ (Charges for treatment)[cite: 4]</li>
+                <li>റൂം വാടക/താമസച്ചെലവ് (Accommodation charges)[cite: 4]</li>
+                <li>ലാബ് പരിശോധനകൾ, സ്കാനിംഗ് തുടങ്ങിയവ (Lab services)[cite: 4]</li>
+                <li>പഥ്യാഹാര ചെലവ് (Charges for diet)[cite: 4]</li>
               </ul>
             </div>
           </details>
@@ -353,23 +368,23 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><b>Essentiality Certificate (EC)</b></td>
-                      <td>രോഗിയുടെ പേര്, രോഗവിവരം, ചികിത്സാ കാലയളവ് എന്നിവ വ്യക്തമാക്കണം. ഡോക്ടർ (Authorized Medical Attendant) പേരും സീലും സഹിതം ഒപ്പിടുകയും ആശുപത്രിയുടെ ഓഫീസ് സീൽ പതിപ്പിക്കുകയും വേണം.</td>
+                      <td><b>Essentiality Certificate (EC)</b>[cite: 4]</td>
+                      <td>രോഗിയുടെ പേര്, രോഗവിവരം, ചികിത്സാ കാലയളവ് എന്നിവ വ്യക്തമാക്കണം[cite: 4]. ഡോക്ടർ (Authorized Medical Attendant) പേരും സീലും സഹിതം ഒപ്പിടുകയും ആശുപത്രിയുടെ ഓഫീസ് സീൽ പതിപ്പിക്കുകയും വേണം[cite: 4].</td>
                     </tr>
                     <tr>
-                      <td><b>ക്യാഷ് ബില്ലുകൾ / വൗച്ചറുകൾ</b></td>
-                      <td>ബില്ലുകൾ തീയതി ക്രമത്തിൽ (Date-wise) ക്രമീകരിക്കണം. ബില്ലുകളിലെ ഓരോ മരുന്നിനും നേരെ ഡോക്ടർ "Administered to the patient" എന്ന് സാക്ഷ്യപ്പെടുത്തി പേരും സീലും പതിക്കണം. EC-യിലെ തുകയും ബില്ലുകളുടെ ആകെ തുകയും ഒത്തുനോക്കണം.</td>
+                      <td><b>ക്യാഷ് ബില്ലുകൾ / വൗച്ചറുകൾ</b>[cite: 4]</td>
+                      <td>ബില്ലുകൾ തീയതി ക്രമത്തിൽ (Date-wise) ക്രമീകരിക്കണം[cite: 4]. ബില്ലുകളിലെ ഓരോ മരുന്നിനും നേരെ ഡോക്ടർ "Administered to the patient" എന്ന് സാക്ഷ്യപ്പെടുത്തി പേരും സീലും പതിക്കണം[cite: 4]. EC-യിലെ തുകയും ബില്ലുകളുടെ ആകെ തുകയും ഒത്തുനോക്കണം[cite: 4].</td>
                     </tr>
                     <tr>
-                      <td><b>ഒ.പി ടിക്കറ്റ് / ഡിസ്ചാർജ് സർട്ടിഫിക്കറ്റ്</b></td>
-                      <td>ഒ.പി ചികിത്സയാണെങ്കിൽ സാക്ഷ്യപ്പെടുത്തിയ ഒ.പി ടിക്കറ്റും, കിടത്തിച്ചികിത്സയാണെങ്കിൽ (In-patient) ഡിസ്ചാർജ് സർട്ടിഫിക്കറ്റും സമർപ്പിക്കണം.</td>
+                      <td><b>ഒ.പി ടിക്കറ്റ് / ഡിസ്ചാർജ് സർട്ടിഫിക്കറ്റ്</b>[cite: 4]</td>
+                      <td>ഒ.പി ചികിത്സയാണെങ്കിൽ സാക്ഷ്യപ്പെടുത്തിയ ഒ.പി ടിക്കറ്റും, കിടത്തിച്ചികിത്സയാണെങ്കിൽ (In-patient) ഡിസ്ചാർജ് സർട്ടിഫിക്കറ്റും സമർപ്പിക്കണം[cite: 4].</td>
                     </tr>
                     <tr>
-                      <td><b>സത്യവാങ്മൂലങ്ങൾ (Declarations)</b></td>
+                      <td><b>സത്യവാങ്മൂലങ്ങൾ (Declarations)</b>[cite: 4]</td>
                       <td>
-                        1. ആശ്രിതർ ജോലി ചെയ്യുന്നവരല്ലെന്ന ഡിക്ലറേഷൻ.<br>
-                        2. ഒരേസമയം മറ്റ് ചികിത്സാ രീതികൾ വഴി ആനുകൂല്യം പറ്റിയിട്ടില്ലെന്ന ഡിക്ലറേഷൻ.<br>
-                        3. പങ്കാളിക്ക് വേറെ ക്ലെയിം ലഭിച്ചിട്ടില്ലെന്ന സാക്ഷ്യപത്രം.
+                        1. ആശ്രിതർ ജോലി ചെയ്യുന്നവരല്ലെന്ന ഡിക്ലറേഷൻ[cite: 4].<br>
+                        2. ഒരേസമയം മറ്റ് ചികിത്സാ രീതികൾ വഴി ആനുകൂല്യം പറ്റിയിട്ടില്ലെന്ന ഡിക്ലറേഷൻ[cite: 4].<br>
+                        3. പങ്കാളിക്ക് വേറെ ക്ലെയിം ലഭിച്ചിട്ടില്ലെന്ന സാക്ഷ്യപത്രം[cite: 4].
                       </td>
                     </tr>
                   </tbody>
@@ -382,10 +397,10 @@
             <summary>⏱️ 5. സമയപരിധിയും അപേക്ഷാ സമർപ്പണവും (Submission & Audit Checklist)</summary>
             <div class="accordion-body">
               <ul>
-                <li><b>സമയപരിധി:</b> ചികിത്സ അവസാനിച്ച തീയതി (Last date of treatment) മുതൽ <b>30 ദിവസത്തിനകം</b> അപേക്ഷ അതത് യൂണിറ്റ് ഓഫീസിൽ സമർപ്പിച്ചിരിക്കണം.</li>
-                <li><b>തുടർചികിത്സ:</b> 30 ദിവസത്തിലധികം നീളുന്ന തുടർചികിത്സയാണെങ്കിൽ (Continuous treatment), അതിനനുസരിച്ചുള്ള ബില്ലുകളും കാലയളവും വ്യക്തമാക്കണം.</li>
-                <li><b>യൂണിറ്റ് തല പരിശോധന:</b> ജീവനക്കാരന്റെ സർവീസ് വിവരങ്ങൾ, ശമ്പള സ്കെയിൽ എന്നിവ സർവീസ് ബുക്കുമായി ഒത്തുനോക്കുന്നു. അപേക്ഷ ലഭിച്ച തീയതി യൂണിറ്റ് ഓഫീസർ രേഖപ്പെടുത്തുന്നു (ന്യൂനതകൾ പരിഹരിച്ച് വീണ്ടും സമർപ്പിക്കുകയാണെങ്കിൽ Re-submission തീയതി രേഖപ്പെടുത്തും).</li>
-                <li><b>ഓഡിറ്റ് പരിശോധനയും അന്തിമ അനുമതിയും:</b> ജീവനക്കാരൻ സർവീസിൽ പ്രവേശിച്ചതു മുതൽ ഇതുവരെ ലഭിച്ച മെഡിക്കൽ അലവൻസ്, മുൻകാല മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ്, മെഡിക്കൽ അഡ്വാൻസ് (സാമ്പത്തിക സഹായം) എന്നിവ അഡ്മിനിസ്ട്രേഷൻ/ഓഡിറ്റ് വിഭാഗം പരിശോധിച്ച് സാക്ഷ്യപ്പെടുത്തുന്നു. തുടർന്ന് അഡ്മിനിസ്ട്രേറ്റീവ് ഓഫീസറും യൂണിറ്റ് ഓഫീസറും ചേർന്ന് തുക അനുവദിച്ച് ഉത്തരവാകുന്നു.</li>
+                <li><b>സമയപരിധി:</b> ചികിത്സ അവസാനിച്ച തീയതി (Last date of treatment) മുതൽ <b>30 ദിവസത്തിനകം</b> അപേക്ഷ അതത് യൂണിറ്റ് ഓഫീസിൽ സമർപ്പിച്ചിരിക്കണം[cite: 4].</li>
+                <li><b>തുടർചികിത്സ:</b> 30 ദിവസത്തിലധികം നീളുന്ന തുടർചികിത്സയാണെങ്കിൽ (Continuous treatment), അതിനനുസരിച്ചുള്ള ബില്ലുകളും കാലയളവും വ്യക്തമാക്കണം[cite: 4].</li>
+                <li><b>യൂണിറ്റ് തല പരിശോധന:</b> ജീവനക്കാരന്റെ സർവീസ് വിവരങ്ങൾ, ശമ്പള സ്കെയിൽ എന്നിവ സർവീസ് ബുക്കുമായി ഒത്തുനോക്കുന്നു[cite: 4]. അപേക്ഷ ലഭിച്ച തീയതി യൂണിറ്റ് ഓഫീസർ രേഖപ്പെടുത്തുന്നു (ന്യൂനതകൾ പരിഹരിച്ച് വീണ്ടും സമർപ്പിക്കുകയാണെങ്കിൽ Re-submission തീയതി രേഖപ്പെടുത്തും)[cite: 4].</li>
+                <li><b>ഓഡിറ്റ് പരിശോധനയും അന്തിമ അനുമതിയും:</b> ജീവനക്കാരൻ സർവീസിൽ പ്രവേശിച്ചതു മുതൽ ഇതുവരെ ലഭിച്ച മെഡിക്കൽ അലവൻസ്, മുൻകാല മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ്, മെഡിക്കൽ അഡ്വാൻസ് (സാമ്പത്തിക സഹായം) എന്നിവ അഡ്മിനിസ്ട്രേഷൻ/ഓഡിറ്റ് വിഭാഗം പരിശോധിച്ച് സാക്ഷ്യപ്പെടുത്തുന്നു[cite: 4]. തുടർന്ന് അഡ്മിനിസ്ട്രേറ്റീവ് ഓഫീസറും യൂണിറ്റ് ഓഫീസറും ചേർന്ന് തുക അനുവദിച്ച് ഉത്തരവാകുന്നു[cite: 4].</li>
               </ul>
             </div>
           </details>
@@ -393,22 +408,22 @@
       </div>
     </section>
 
-    <!-- വിദഗ്ദ്ധ ചികിത്സയ്ക്കുള്ള മെഡിക്കൽ അഡ്വാൻസ് (KSRTC Working Fund) -->
+    <!-- വിദഗ്ദ്ധ ചികിത്സയ്ക്കുള്ള മെഡിക്കൽ അഡ്വാൻസ് -->
     <section class="section-anchor" id="ksrtc-advance">
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">KSRTC WORKING FUND</div>
           <h2>വിദഗ്ദ്ധ ചികിത്സയ്ക്കുള്ള മെഡിക്കൽ അഡ്വാൻസ്</h2>
-          <p>ഗുരുതര രോഗങ്ങൾക്കോ അടിയന്തര ശസ്ത്രക്രിയകൾക്കോ KSRTC വർക്കിംഗ് ഫണ്ടിൽ നിന്നും മെഡിക്കൽ അഡ്വാൻസിന് അപേക്ഷിക്കുന്നതിനുള്ള ഔദ്യോഗിക നിർദ്ദേശങ്ങൾ.</p>
+          <p>ഗുരുതര രോഗങ്ങൾക്കോ അടിയന്തര ശസ്ത്രക്രിയകൾക്കോ KSRTC വർക്കിംഗ് ഫണ്ടിൽ നിന്നും മെഡിക്കൽ അഡ്വാൻസിന് അപേക്ഷിക്കുന്നതിനുള്ള ഔദ്യോഗിക നിർദ്ദേശങ്ങൾ[cite: 2].</p>
         </div>
 
         <div class="accordion-list">
-          <details class="accordion" open>
+          <details class="accordion">
             <summary>📋 1. ആർക്കൊക്കെ അപേക്ഷിക്കാം?</summary>
             <div class="accordion-body">
-              <p>കെ.എസ്.ആർ.ടി.സി ജീവനക്കാർക്കും അവരുടെ പൂർണ്ണ ആശ്രിതരായ കുടുംബാംഗങ്ങൾക്കും (ഭാര്യ/ഭർത്താവ്, മക്കൾ, മാതാപിതാക്കൾ) വിദഗ്ദ്ധ ചികിത്സ ആവശ്യമായി വരുമ്പോൾ അഡ്വാൻസിനായി അപേക്ഷിക്കാം.</p>
+              <p>കെ.എസ്.ആർ.ടി.സി ജീവനക്കാർക്കും അവരുടെ പൂർണ്ണ ആശ്രിതരായ കുടുംബാംഗങ്ങൾക്കും (ഭാര്യ/ഭർത്താവ്, മക്കൾ, മാതാപിതാക്കൾ) വിദഗ്ദ്ധ ചികിത്സ ആവശ്യമായി വരുമ്പോൾ അഡ്വാൻസിനായി അപേക്ഷിക്കാം[cite: 2].</p>
               <div class="alert-callout">
-                <b>പ്രത്യേക സാക്ഷ്യപത്രം:</b> കുടുംബാംഗങ്ങൾക്കാണ് ചികിത്സയെങ്കിൽ, അവർക്ക് മറ്റ് ജോലിയോ വരുമാനമോ ഇല്ലെന്നും പൂർണ്ണമായും അപേക്ഷകനെ ആശ്രയിച്ചു കഴിയുന്നവരാണെന്നുമുള്ള സാക്ഷ്യപത്രം അപേക്ഷയോടൊപ്പം ജീവനക്കാരൻ നൽകേണ്ടതാണ്.
+                <b>പ്രത്യേക സാക്ഷ്യപത്രം:</b> കുടുംബാംഗങ്ങൾക്കാണ് ചികിത്സയെങ്കിൽ, അവർക്ക് മറ്റ് ജോലിയോ വരുമാനമോ ഇല്ലെന്നും പൂർണ്ണമായും അപേക്ഷകനെ ആശ്രയിച്ചു കഴിയുന്നവരാണെന്നുമുള്ള സാക്ഷ്യപത്രം അപേക്ഷയോടൊപ്പം ജീവനക്കാരൻ നൽകേണ്ടതാണ്[cite: 2].
               </div>
             </div>
           </details>
@@ -416,12 +431,12 @@
           <details class="accordion">
             <summary>📝 2. അപേക്ഷാ ഫോമിൽ പൂരിപ്പിക്കേണ്ട പ്രധാന വിവരങ്ങൾ</summary>
             <div class="accordion-body">
-              <p>അപേക്ഷാ ഫോമിൽ താഴെ പറയുന്ന വിവരങ്ങൾ പൂർണ്ണമായും വ്യക്തമായും രേഖപ്പെടുത്തണം:</p>
+              <p>അപേക്ഷാ ഫോമിൽ താഴെ പറയുന്ന വിവരങ്ങൾ പൂർണ്ണമായും വ്യക്തമായും രേഖപ്പെടുത്തണം[cite: 2]:</p>
               <ul>
-                <li><b>ജീവനക്കാരന്റെ വിവരങ്ങൾ:</b> പേര്, വീട്ടുപേര്/മേൽവിലാസം, തസ്തിക (Designation & Grade), ബേസിക് പേയും ശമ്പള സ്കെയിലും, ജോലി ചെയ്യുന്ന യൂണിറ്റ്.</li>
-                <li><b>സർവീസ് വിവരങ്ങൾ:</b> സർവീസിൽ പ്രവേശിച്ച തീയതി (Date of entry into service), സ്ഥിരപ്പെടുത്തിയ തീയതി (Date of absorption into regular cadre), വിരമിക്കുന്ന തീയതി (Date of retirement).</li>
-                <li><b>ചികിത്സാ വിവരങ്ങൾ:</b> രോഗിയുടെ പേര്, ജീവനക്കാരനുമായുള്ള ബന്ധം, പ്രായം, ചികിത്സ തേടുന്ന ആശുപത്രിയുടെ പേര്, അഡ്മിഷൻ / സർജറി തീയതി, ചികിത്സയ്ക്കായി ആവശ്യമായ തുക.</li>
-                <li><b>മുൻകാല ആനുകൂല്യങ്ങളുടെ വിവരങ്ങൾ:</b> ഇതുവരെ കൈപ്പറ്റിയ മെഡിക്കൽ അലവൻസ്, മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ് തുകകൾ. മുമ്പ് വർക്കിംഗ് ഫണ്ടിൽ നിന്നോ സ്റ്റാഫ് വെൽഫെയർ ഫണ്ടിൽ (SWF) നിന്നോ അഡ്വാൻസ് ലഭിച്ചിട്ടുണ്ടെങ്കിൽ അതിന്റെ വിശദാംശങ്ങൾ.</li>
+                <li><b>ജീവനക്കാരന്റെ വിവരങ്ങൾ:</b> പേര്, വീട്ടുപേര്/മേൽവിലാസം, തസ്തിക (Designation & Grade), ബേസിക് പേയും ശമ്പള സ്കെയിലും, ജോലി ചെയ്യുന്ന യൂണിറ്റ്[cite: 2].</li>
+                <li><b>സർവീസ് വിവരങ്ങൾ:</b> സർവീസിൽ പ്രവേശിച്ച തീയതി (Date of entry into service), സ്ഥിരപ്പെടുത്തിയ തീയതി (Date of absorption into regular cadre), വിരമിക്കുന്ന തീയതി (Date of retirement)[cite: 2].</li>
+                <li><b>ചികിത്സാ വിവരങ്ങൾ:</b> രോഗിയുടെ പേര്, ജീവനക്കാരനുമായുള്ള ബന്ധം, പ്രായം, ചികിത്സ തേടുന്ന ആശുപത്രിയുടെ പേര്, അഡ്മിഷൻ / സർജറി തീയതി, ചികിത്സയ്ക്കായി ആവശ്യമായ തുക[cite: 2].</li>
+                <li><b>മുൻകാല ആനുകൂല്യങ്ങളുടെ വിവരങ്ങൾ:</b> ഇതുവരെ കൈപ്പറ്റിയ മെഡിക്കൽ അലവൻസ്, മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ് തുകകൾ[cite: 2]. മുമ്പ് വർക്കിംഗ് ഫണ്ടിൽ നിന്നോ സ്റ്റാഫ് വെൽഫെയർ ഫണ്ടിൽ (SWF) നിന്നോ അഡ്വാൻസ് ലഭിച്ചിട്ടുണ്ടെങ്കിൽ അതിന്റെ വിശദാംശങ്ങൾ[cite: 2].</li>
               </ul>
             </div>
           </details>
@@ -430,9 +445,9 @@
             <summary>📎 3. അപേക്ഷയോടൊപ്പം സമർപ്പിക്കേണ്ട നിർബന്ധിത രേഖകൾ</summary>
             <div class="accordion-body">
               <ol>
-                <li><b>മെഡിക്കൽ സർട്ടിഫിക്കറ്റ്:</b> രോഗിക്ക് വിദഗ്ദ്ധ ചികിത്സ (Specialized Expert Treatment) ആവശ്യമാണെന്ന് ചികിത്സിക്കുന്ന ഡോക്ടർ നൽകുന്ന സാക്ഷ്യപത്രം.</li>
-                <li><b>എസ്റ്റിമേറ്റ് സർട്ടിഫിക്കറ്റ്:</b> ചികിത്സയ്ക്ക് ആവശ്യമായി വരുന്ന തുക സാക്ഷ്യപ്പെടുത്തി ആശുപത്രി അധികൃതർ നൽകുന്ന രേഖ (Cost Estimate).</li>
-                <li><b>സംസ്ഥാനത്തിന് പുറത്തുള്ള ചികിത്സയാണെങ്കിൽ:</b> കേരളത്തിന് പുറത്തുള്ള ആശുപത്രികളിലാണ് വിദഗ്ദ്ധ ചികിത്സ തേടുന്നതെങ്കിൽ, ആരോഗ്യവകുപ്പ് ഡയറക്ടറുടെ (DHS - Director of Health Services) മുൻകൂർ അനുമതിപത്രം നിർബന്ധമായും ഉള്ളടക്കം ചെയ്യണം.</li>
+                <li><b>മെഡിക്കൽ സർട്ടിഫിക്കറ്റ്:</b> രോഗിക്ക് വിദഗ്ദ്ധ ചികിത്സ (Specialized Expert Treatment) ആവശ്യമാണെന്ന് ചികിത്സിക്കുന്ന ഡോക്ടർ നൽകുന്ന സാക്ഷ്യപത്രം[cite: 2].</li>
+                <li><b>എസ്റ്റിമേറ്റ് സർട്ടിഫിക്കറ്റ്:</b> ചികിത്സയ്ക്ക് ആവശ്യമായി വരുന്ന തുക സാക്ഷ്യപ്പെടുത്തി ആശുപത്രി അധികൃതർ നൽകുന്ന രേഖ (Cost Estimate)[cite: 2].</li>
+                <li><b>സംസ്ഥാനത്തിന് പുറത്തുള്ള ചികിത്സയാണെങ്കിൽ:</b> കേരളത്തിന് പുറത്തുള്ള ആശുപത്രികളിലാണ് വിദഗ്ദ്ധ ചികിത്സ തേടുന്നതെങ്കിൽ, ആരോഗ്യവകുപ്പ് ഡയറക്ടറുടെ (DHS - Director of Health Services) മുൻകൂർ അനുമതിപത്രം നിർബന്ധമായും ഉള്ളടക്കം ചെയ്യണം[cite: 2].</li>
               </ol>
             </div>
           </details>
@@ -441,10 +456,10 @@
             <summary>📤 4. സമർപ്പിക്കേണ്ട വിധം</summary>
             <div class="accordion-body">
               <ol>
-                <li>അപേക്ഷ പൂർണ്ണമായി പൂരിപ്പിച്ച് ജീവനക്കാരൻ ഒപ്പിടുക.</li>
-                <li>ആശ്രിതർക്കാണെങ്കിൽ ഫോമിലെ നിശ്ചിത ഭാഗത്ത് ഡിപ്പൻഡന്റ് സർട്ടിഫിക്കേഷൻ ഒപ്പിടുക.</li>
-                <li>ആവശ്യമായ മെഡിക്കൽ രേഖകൾ സഹിതം അപേക്ഷ അതത് യൂണിറ്റ് ഓഫീസർക്ക് സമർപ്പിക്കുക.</li>
-                <li>ജീവനക്കാരന്റെ സർവീസ് വിവരങ്ങളും ആവശ്യവും പരിശോധിച്ച് യൂണിറ്റ് ഓഫീസർ സാക്ഷ്യപ്പെടുത്തി (Certified & Recommended with Office Seal) തുടർനടപടികൾക്കായി അയക്കുന്നതാണ്.</li>
+                <li>അപേക്ഷ പൂർണ്ണമായി പൂരിപ്പിച്ച് ജീവനക്കാരൻ ഒപ്പിടുക[cite: 2].</li>
+                <li>ആശ്രിതർക്കാണെങ്കിൽ ഫോമിലെ നിശ്ചിത ഭാഗത്ത് ഡിപ്പൻഡന്റ് സർട്ടിഫിക്കേഷൻ ഒപ്പിടുക[cite: 2].</li>
+                <li>ആവശ്യമായ മെഡിക്കൽ രേഖകൾ സഹിതം അപേക്ഷ അതത് യൂണിറ്റ് ഓഫീസർക്ക് സമർപ്പിക്കുക[cite: 2].</li>
+                <li>ജീവനക്കാരന്റെ സർവീസ് വിവരങ്ങളും ആവശ്യവും പരിശോധിച്ച് യൂണിറ്റ് ഓഫീസർ സാക്ഷ്യപ്പെടുത്തി (Certified & Recommended with Office Seal) തുടർനടപടികൾക്കായി അയക്കുന്നതാണ്[cite: 2].</li>
               </ol>
             </div>
           </details>
@@ -452,88 +467,88 @@
       </div>
     </section>
 
-    <!-- എസ്.ബി.ഐ കോർപ്പറേറ്റ് സാലറി പാക്കേജ് (CSP) ഇൻഷുറൻസ് ക്ലെയിം സമഗ്ര മാർഗ്ഗരേഖ -->
+    <!-- SBI CSP ഇൻഷുറൻസ് ക്ലെയിം സമഗ്ര മാർഗ്ഗരേഖ -->
     <section class="section-anchor soft" id="csp-claim-guide">
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">SBI CORPORATE SALARY PACKAGE (CSP)</div>
           <h2>എസ്.ബി.ഐ കോർപ്പറേറ്റ് സാലറി പാക്കേജ്: ഇൻഷുറൻസ് ക്ലെയിം സമഗ്ര മാർഗ്ഗരേഖ</h2>
-          <p>ഇൻഷുറൻസ് ക്ലെയിം ലഭ്യമാക്കുന്നതിനുള്ള നടപടിക്രമങ്ങളും രേഖകളും സംബന്ധിച്ച ഔദ്യോഗിക ഗൈഡ്.</p>
+          <p>ഇൻഷുറൻസ് ക്ലെയിം ലഭ്യമാക്കുന്നതിനുള്ള നടപടിക്രമങ്ങളും രേഖകളും സംബന്ധിച്ച ഔദ്യോഗിക ഗൈഡ്[cite: 1].</p>
         </div>
 
         <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:26px">
-          <h4 style="margin:0 0 14px;color:var(--navy);text-align:center">ഇൻഷുറൻസ് പരിരക്ഷാ തുകകളുടെ താരതമ്യം (Coverage Comparison Chart)</h4>
+          <h4 style="margin:0 0 14px;color:var(--navy);text-align:center">ഇൻഷുറൻസ് പരിരക്ഷാ തുകകളുടെ താരതമ്യം (Coverage Comparison Chart)[cite: 1]</h4>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;text-align:center">
             <div style="background:#eef7fc;padding:16px;border-radius:12px;border:1px solid #c9e1f5">
-              <small style="color:var(--muted);font-weight:700">എയർ ആക്സിഡന്റ്</small>
-              <div style="font-family:Inter,sans-serif;font-size:1.8rem;font-weight:800;color:var(--blue);margin-top:4px">₹1.60 കോടി</div>
+              <small style="color:var(--muted);font-weight:700">എയർ ആക്സിഡന്റ്[cite: 1]</small>
+              <div style="font-family:Inter,sans-serif;font-size:1.8rem;font-weight:800;color:var(--blue);margin-top:4px">₹1.60 കോടി[cite: 1]</div>
             </div>
             <div style="background:#edf7f3;padding:16px;border-radius:12px;border:1px solid #c0e8d7">
-              <small style="color:var(--muted);font-weight:700">പെഴ്സണൽ ആക്സിഡന്റ്</small>
-              <div style="font-family:Inter,sans-serif;font-size:1.8rem;font-weight:800;color:var(--green);margin-top:4px">₹1.00 കോടി</div>
+              <small style="color:var(--muted);font-weight:700">പെഴ്സണൽ ആക്സിഡന്റ്[cite: 1]</small>
+              <div style="font-family:Inter,sans-serif;font-size:1.8rem;font-weight:800;color:var(--green);margin-top:4px">₹1.00 കോടി[cite: 1]</div>
             </div>
             <div style="background:#fff8eb;padding:16px;border-radius:12px;border:1px solid #fae1ad">
-              <small style="color:var(--muted);font-weight:700">ഗ്രൂപ്പ് ടേം ഡെത്ത്</small>
-              <div style="font-family:Inter,sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);margin-top:4px">₹6 ലക്ഷം</div>
+              <small style="color:var(--muted);font-weight:700">ഗ്രൂപ്പ് ടേം ഡെത്ത്[cite: 1]</small>
+              <div style="font-family:Inter,sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);margin-top:4px">₹6 ലക്ഷം[cite: 1]</div>
             </div>
           </div>
         </div>
 
         <div class="accordion-list">
-          <details class="accordion" open>
+          <details class="accordion">
             <summary>✈️ 1. പെഴ്സണൽ ആക്സിഡന്റ് & എയർ ആക്സിഡന്റ് ഇൻഷുറൻസ് (Death Only)</summary>
             <div class="accordion-body">
-              <p>കോർപ്പറേറ്റ് സാലറി പാക്കേജിൽ ഉൾപ്പെട്ട ജീവനക്കാർക്ക് അപകടമരണമുണ്ടാകുമ്പോൾ യഥാക്രമം ₹1 കോടി (വ്യക്തിഗത അപകടം), ₹1.60 കോടി (വിമാനാപകടം) വരെ ക്ലെയിം ലഭിക്കുന്നു.</p>
+              <p>കോർപ്പറേറ്റ് സാലറി പാക്കേജിൽ ഉൾപ്പെട്ട ജീവനക്കാർക്ക് അപകടമരണമുണ്ടാകുമ്പോൾ യഥാക്രമം ₹1 കോടി (വ്യക്തിഗത അപകടം), ₹1.60 കോടി (വിമാനാപകടം) വരെ ക്ലെയിം ലഭിക്കുന്നു[cite: 1].</p>
               
-              <h4>A. യൂണിറ്റ് അധികാരികൾ എസ്.ബി.ഐ-യെ അറിയിക്കേണ്ട പ്രാഥമിക വിവരങ്ങൾ</h4>
+              <h4>A. യൂണിറ്റ് അധികാരികൾ എസ്.ബി.ഐ-യെ അറിയിക്കേണ്ട പ്രാഥമിക വിവരങ്ങൾ[cite: 1]</h4>
               <div class="detail-table-wrap">
                 <table class="detail-table">
                   <thead>
-                    <tr><th>വിഭാഗം</th><th>നൽകേണ്ട വിശദാംശങ്ങൾ</th></tr>
+                    <tr><th>വിഭാഗം[cite: 1]</th><th>നൽകേണ്ട വിശദാംശങ്ങൾ[cite: 1]</th></tr>
                   </thead>
                   <tbody>
-                    <tr><td><b>ജീവനക്കാരന്റെ വിവരങ്ങൾ</b></td><td>പേര്, CSP അക്കൗണ്ട് നമ്പർ, പെൻ (PEN) നമ്പർ</td></tr>
-                    <tr><td><b>അപകട വിവരങ്ങൾ</b></td><td>അപകടം നടന്ന തീയതി, സ്ഥലം, അപകടത്തിന്റെ സമഗ്ര വിവരം, മരണപ്പെട്ട തീയതി</td></tr>
-                    <tr><td><b>ബാങ്ക് അക്കൗണ്ട് വിവരങ്ങൾ</b></td><td>ജീവനക്കാരന്റെ CSP അക്കൗണ്ടുള്ള SBI ബ്രാഞ്ച്, ബ്രാഞ്ച് കോഡ്</td></tr>
-                    <tr><td><b>അവകാശിയുടെ വിവരങ്ങൾ</b></td><td>പേര്, മൊബൈൽ നമ്പർ, ഇ-മെയിൽ, അക്കൗണ്ട് നമ്പർ, ബാങ്ക് ബ്രാഞ്ച് & കോഡ്</td></tr>
-                    <tr><td><b>ഓഫീസ് / യൂണിറ്റ് വിവരങ്ങൾ</b></td><td>യൂണിറ്റിന്റെ/സ്ഥാപനത്തിന്റെ പേര്, ഫോൺ നമ്പർ, ഇ-മെയിൽ ഐ.ഡി.</td></tr>
+                    <tr><td><b>ജീവനക്കാരന്റെ വിവരങ്ങൾ[cite: 1]</b></td><td>പേര്, CSP അക്കൗണ്ട് നമ്പർ, പെൻ (PEN) നമ്പർ[cite: 1]</td></tr>
+                    <tr><td><b>അപകട വിവരങ്ങൾ[cite: 1]</b></td><td>അപകടം നടന്ന തീയതി, സ്ഥലം, അപകടത്തിന്റെ സമഗ്ര വിവരം, മരണപ്പെട്ട തീയതി[cite: 1]</td></tr>
+                    <tr><td><b>ബാങ്ക് അക്കൗണ്ട് വിവരങ്ങൾ[cite: 1]</b></td><td>ജീവനക്കാരന്റെ CSP അക്കൗണ്ടുള്ള SBI ബ്രാഞ്ച്, ബ്രാഞ്ച് കോഡ്[cite: 1]</td></tr>
+                    <tr><td><b>അവകാശിയുടെ വിവരങ്ങൾ[cite: 1]</b></td><td>പേര്, മൊബൈൽ നമ്പർ, ഇ-മെയിൽ, അക്കൗണ്ട് നമ്പർ, ബാങ്ക് ബ്രാഞ്ച് & കോഡ്[cite: 1]</td></tr>
+                    <tr><td><b>ഓഫീസ് / യൂണിറ്റ് വിവരങ്ങൾ[cite: 1]</b></td><td>യൂണിറ്റിന്റെ/സ്ഥാപനത്തിന്റെ പേര്, ഫോൺ നമ്പർ, ഇ-മെയിൽ ഐ.ഡി.[cite: 1]</td></tr>
                   </tbody>
                 </table>
               </div>
 
-              <h4>B. സമർപ്പിക്കേണ്ട രേഖകൾ</h4>
+              <h4>B. സമർപ്പിക്കേണ്ട രേഖകൾ[cite: 1]</h4>
               <ul>
-                <li><b>Annexure 4:</b> പൂർണ്ണമായി പൂരിപ്പിച്ച ക്ലെയിം ഇന്റിമേഷൻ ഫോം (ജീവനക്കാരൻ മരണപ്പെട്ട ദിനം മുതൽ <b>90 ദിവസത്തിനകം</b> സമർപ്പിക്കണം).</li>
-                <li><b>Annexure 5:</b> അവകാശി ഒപ്പിട്ട ക്ലെയിം ഫോം.</li>
-                <li><b>Annexure 6:</b> അക്കൗണ്ടുള്ള ശാഖാ മാനേജർ നൽകുന്ന സാക്ഷ്യപത്രം (ബാങ്കിന്റെ ഔദ്യോഗിക ലെറ്റർ ഹെഡിൽ).</li>
-                <li><b>Annexure 7:</b> അവകാശി ഒപ്പിട്ട NEFT മാൻഡേറ്റ്.</li>
-                <li><b>പോലീസ് & മെഡിക്കൽ രേഖകൾ:</b> പോലീസ് എഫ്.ഐ.ആർ. (വ്യക്തമായി വായിക്കാവുന്ന സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പ്), പോസ്റ്റ്മോർട്ടം റിപ്പോർട്ടിന്റെ സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പ്, മരണ സർട്ടിഫിക്കറ്റ് (Death Certificate).</li>
-                <li><b>പ്രത്യേക കേസുകൾ:</b> ട്രെയിൻ അപകടം, മുങ്ങി മരണം, കൊലപാതകം, വെടിയേറ്റുള്ള മരണം (ഭീകരവാദ-നക്സൽ ആക്രമണങ്ങൾ ഒഴികെ) എന്നിവയാണെങ്കിൽ അന്തിമ പോലീസ് അന്വേഷണ റിപ്പോർട്ട് (Final Investigation Report). വിഷം, മദ്യം, ലഹരി ഉപയോഗം പരാമർശിക്കുന്നുവെങ്കിൽ Viscera Report, Chemical Analysis Report എന്നിവ സമർപ്പിക്കണം.</li>
-                <li><b>തിരിച്ചറിയൽ & അക്കൗണ്ട് രേഖകൾ:</b> ജീവനക്കാരന്റെ പാൻ കാർഡ് (ഇല്ലെങ്കിൽ ഫോം-60), അവകാശിയുടെ ആധാർ, പാൻ കാർഡ്, അവകാശിയുടെ പേര് രേഖപ്പെടുത്തിയ ക്യാൻസൽ ചെയ്ത ചെക്ക് അല്ലെങ്കിൽ പാസ്ബുക്കിന്റെ ആദ്യ പേജ് പകർപ്പ്.</li>
-                <li><b>എയർ ആക്സിഡന്റ് വ്യവസ്ഥ:</b> എസ്.ബി.ഐ ഡെബിറ്റ് കാർഡ് അല്ലെങ്കിൽ ഇന്റർനെറ്റ് ബാങ്കിംഗ് മുഖേനയാണ് ടിക്കറ്റ് എടുത്തതെന്ന് വ്യക്തമാക്കുന്ന ബാങ്ക് സ്റ്റേറ്റ്മെന്റ്.</li>
+                <li><b>Annexure 4:</b> പൂർണ്ണമായി പൂരിപ്പിച്ച ക്ലെയിം ഇന്റിമേഷൻ ഫോം (ജീവനക്കാരൻ മരണപ്പെട്ട ദിനം മുതൽ <b>90 ദിവസത്തിനകം</b> സമർപ്പിക്കണം)[cite: 1].</li>
+                <li><b>Annexure 5:</b> അവകാശി ഒപ്പിട്ട ക്ലെയിം ഫോം[cite: 1].</li>
+                <li><b>Annexure 6:</b> അക്കൗണ്ടുള്ള ശാഖാ മാനേജർ നൽകുന്ന സാക്ഷ്യപത്രം (ബാങ്കിന്റെ ഔദ്യോഗിക ലെറ്റർ ഹെഡിൽ)[cite: 1].</li>
+                <li><b>Annexure 7:</b> അവകാശി ഒപ്പിട്ട NEFT മാൻഡേറ്റ്[cite: 1].</li>
+                <li><b>പോലീസ് & മെഡിക്കൽ രേഖകൾ:</b> പോലീസ് എഫ്.ഐ.ആർ. (വ്യക്തമായി വായിക്കാവുന്ന സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പ്), പോസ്റ്റ്മോർട്ടം റിപ്പോർട്ടിന്റെ സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പ്, മരണ സർട്ടിഫിക്കറ്റ് (Death Certificate)[cite: 1].</li>
+                <li><b>പ്രത്യേക കേസുകൾ:</b> ട്രെയിൻ അപകടം, മുങ്ങി മരണം, കൊലപാതകം, വെടിയേറ്റുള്ള മരണം (ഭീകരവാദ-നക്സൽ ആക്രമണങ്ങൾ ഒഴികെ) എന്നിവയാണെങ്കിൽ അന്തിമ പോലീസ് അന്വേഷണ റിപ്പോർട്ട് (Final Investigation Report)[cite: 1]. വിഷം, മദ്യം, ലഹരി ഉപയോഗം പരാമർശിക്കുന്നുവെങ്കിൽ Viscera Report, Chemical Analysis Report എന്നിവ സമർപ്പിക്കണം[cite: 1].</li>
+                <li><b>തിരിച്ചറിയൽ & അക്കൗണ്ട് രേഖകൾ:</b> ജീവനക്കാരന്റെ പാൻ കാർഡ് (ഇല്ലെങ്കിൽ ഫോം-60), അവകാശിയുടെ ആധാർ, പാൻ കാർഡ്, അവകാശിയുടെ പേര് രേഖപ്പെടുത്തിയ ക്യാൻസൽ ചെയ്ത ചെക്ക് അല്ലെങ്കിൽ പാസ്ബുക്കിന്റെ ആദ്യ പേജ് പകർപ്പ്[cite: 1].</li>
+                <li><b>എയർ ആക്സിഡന്റ് വ്യവസ്ഥ:</b> എസ്.ബി.ഐ ഡെബിറ്റ് കാർഡ് അല്ലെങ്കിൽ ഇന്റർനെറ്റ് ബാങ്കിംഗ് മുഖേനയാണ് ടിക്കറ്റ് എടുത്തതെന്ന് വ്യക്തമാക്കുന്ന ബാങ്ക് സ്റ്റേറ്റ്മെന്റ്[cite: 1].</li>
               </ul>
 
-              <h4>ക്ലെയിം സമർപ്പണ പ്രക്രിയയുടെ ഘട്ടങ്ങൾ (Process Flow Chart)</h4>
+              <h4>ക്ലെയിം സമർപ്പണ പ്രക്രിയയുടെ ഘട്ടങ്ങൾ (Process Flow Chart)[cite: 1]</h4>
               <div class="process-steps">
                 <div class="p-step">
-                  <div class="p-num">ഘട്ടം 1</div>
-                  <div class="p-title">യൂണിറ്റ് വിവരം നൽകൽ</div>
-                  <p class="p-desc">യൂണിറ്റ് ബാങ്കിന് വിവരം നൽകുന്നു</p>
+                  <div class="p-num">ഘട്ടം 1[cite: 1]</div>
+                  <div class="p-title">യൂണിറ്റ് വിവരം നൽകൽ[cite: 1]</div>
+                  <p class="p-desc">യൂണിറ്റ് ബാങ്കിന് വിവരം നൽകുന്നു[cite: 1]</p>
                 </div>
                 <div class="p-step">
-                  <div class="p-num">ഘട്ടം 2</div>
-                  <div class="p-title">രേഖകൾ ശേഖരിക്കൽ</div>
-                  <p class="p-desc">രേഖകളും ഫോമുകളും ഒത്തുനോക്കുന്നു</p>
+                  <div class="p-num">ഘട്ടം 2[cite: 1]</div>
+                  <div class="p-title">രേഖകൾ ശേഖരിക്കൽ[cite: 1]</div>
+                  <p class="p-desc">രേഖകളും ഫോമുകളും ഒത്തുനോക്കുന്നു[cite: 1]</p>
                 </div>
                 <div class="p-step">
-                  <div class="p-num">ഘട്ടം 3</div>
-                  <div class="p-title">90 ദിവസത്തിനകം</div>
-                  <p class="p-desc">Annexure 4 ബാങ്കിൽ സമർപ്പിക്കുന്നു</p>
+                  <div class="p-num">ഘട്ടം 3[cite: 1]</div>
+                  <div class="p-title">90 ദിവസത്തിനകം[cite: 1]</div>
+                  <p class="p-desc">Annexure 4 ബാങ്കിൽ സമർപ്പിക്കുന്നു[cite: 1]</p>
                 </div>
                 <div class="p-step">
-                  <div class="p-num">ഘട്ടം 4</div>
-                  <div class="p-title">പരിശോധന & അനുമതി</div>
-                  <p class="p-desc">പരിശോധനയും തുക അനുവദിക്കലും</p>
+                  <div class="p-num">ഘട്ടം 4[cite: 1]</div>
+                  <div class="p-title">പരിശോധന & അനുമതി[cite: 1]</div>
+                  <p class="p-desc">പരിശോധനയും തുക അനുവദിക്കലും[cite: 1]</p>
                 </div>
               </div>
             </div>
@@ -542,18 +557,18 @@
           <details class="accordion">
             <summary>♿ 2. ഡിസബിലിറ്റി ക്ലെയിം (Disability Claim)</summary>
             <div class="accordion-body">
-              <p>അപകടത്തെ തുടർന്ന് പൂർണ്ണമായോ ഭാഗികമായോ വൈകല്യം സംഭവിക്കുന്ന അവസരങ്ങളിൽ താഴെ നൽകിയിട്ടുള്ള രേഖകളും ഫോമുകളും സമർപ്പിക്കേണ്ടതാണ്:</p>
+              <p>അപകടത്തെ തുടർന്ന് പൂർണ്ണമായോ ഭാഗികമായോ വൈകല്യം സംഭവിക്കുന്ന അവസരങ്ങളിൽ താഴെ നൽകിയിട്ടുള്ള രേഖകളും ഫോമുകളും സമർപ്പിക്കേണ്ടതാണ്[cite: 1]:</p>
               <div class="detail-table-wrap">
                 <table class="detail-table">
                   <thead>
-                    <tr><th>ഫോറം / സർട്ടിഫിക്കറ്റ്</th><th>വിശദാംശങ്ങൾ</th></tr>
+                    <tr><th>ഫോറം / സർട്ടിഫിക്കറ്റ്[cite: 1]</th><th>വിശദാംശങ്ങൾ[cite: 1]</th></tr>
                   </thead>
                   <tbody>
-                    <tr><td><b>Annexure 4 & Annexure 8</b></td><td>പൂർണ്ണമായി പൂരിപ്പിച്ച ക്ലെയിം ഇന്റിമേഷൻ ഫോമും ഡിസബിലിറ്റി ക്ലെയിം ഫോമും</td></tr>
-                    <tr><td><b>Annexure 9</b></td><td>ചികിത്സിച്ച ഡോക്ടർ നൽകുന്ന അംഗീകൃത മെഡിക്കൽ സർട്ടിഫിക്കറ്റ്</td></tr>
-                    <tr><td><b>Annexure 10</b></td><td>സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യ ശാഖാ മാനേജരിൽ നിന്നുള്ള സർട്ടിഫിക്കറ്റ്</td></tr>
-                    <tr><td><b>യൂണിറ്റ് സർട്ടിഫിക്കറ്റ്</b></td><td>ജീവനക്കാരൻ ജോലി ചെയ്യുന്ന സ്ഥാപനത്തിൽ നിന്നുള്ള ഔദ്യോഗിക ഡിസബിലിറ്റി സർട്ടിഫിക്കറ്റ്</td></tr>
-                    <tr><td><b>എഫ്.ഐ.ആർ.</b></td><td>അപകടവുമായി ബന്ധപ്പെട്ട് പോലീസ് തയ്യാറാക്കിയ എഫ്.ഐ.ആറിന്റെ സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പ്</td></tr>
+                    <tr><td><b>Annexure 4 & Annexure 8[cite: 1]</b></td><td>പൂർണ്ണമായി പൂരിപ്പിച്ച ക്ലെയിം ഇന്റിമേഷൻ ഫോമും ഡിസബിലിറ്റി ക്ലെയിം ഫോമും[cite: 1]</td></tr>
+                    <tr><td><b>Annexure 9[cite: 1]</b></td><td>ചികിത്സിച്ച ഡോക്ടർ നൽകുന്ന അംഗീകൃത മെഡിക്കൽ സർട്ടിഫിക്കറ്റ്[cite: 1]</td></tr>
+                    <tr><td><b>Annexure 10[cite: 1]</b></td><td>സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യ ശാഖാ മാനേജരിൽ നിന്നുള്ള സർട്ടിഫിക്കറ്റ്[cite: 1]</td></tr>
+                    <tr><td><b>യൂണിറ്റ് സർട്ടിഫിക്കറ്റ്[cite: 1]</b></td><td>ജീവനക്കാരൻ ജോലി ചെയ്യുന്ന സ്ഥാപനത്തിൽ നിന്നുള്ള ഔദ്യോഗിക ഡിസബിലിറ്റി സർട്ടിഫിക്കറ്റ്[cite: 1]</td></tr>
+                    <tr><td><b>എഫ്.ഐ.ആർ.[cite: 1]</b></td><td>അപകടവുമായി ബന്ധപ്പെട്ട് പോലീസ് തയ്യാറാക്കിയ എഫ്.ഐ.ആറിന്റെ സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പ്[cite: 1]</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -563,17 +578,17 @@
           <details class="accordion">
             <summary>🛡️ 3. ഗ്രൂപ്പ് ടേം ഡെത്ത് ഇൻഷുറൻസ് (Group Term Death Insurance - ₹6 ലക്ഷം)</summary>
             <div class="accordion-body">
-              <p><b>അർഹത:</b> പ്രതിമാസം ₹25,000-ൽ കൂടുതൽ അറ്റ ശമ്പളം (Net Salary) ലഭിക്കുന്ന ഗോൾഡ്, ഡയമണ്ട്, പ്ലാറ്റിനം, റോഡിയം വിഭാഗങ്ങളിൽപ്പെട്ട ജീവനക്കാർ ഏത് രീതിയിൽ മരണപ്പെട്ടാലും (സ്വാഭാവിക മരണം ഉൾപ്പെടെ) ആശ്രിതർക്ക് ₹6,00,000 ലഭ്യമാകും.</p>
+              <p><b>അർഹത:</b> പ്രതിമാസം ₹25,000-ൽ കൂടുതൽ അറ്റ ശമ്പളം (Net Salary) ലഭിക്കുന്ന ഗോൾഡ്, ഡയമണ്ട്, പ്ലാറ്റിനം, റോഡിയം വിഭാഗങ്ങളിൽപ്പെട്ട ജീവനക്കാർ ഏത് രീതിയിൽ മരണപ്പെട്ടാലും (സ്വാഭാവിക മരണം ഉൾപ്പെടെ) ആശ്രിതർക്ക് ₹6,00,000 ലഭ്യമാകും[cite: 1].</p>
               <ul>
-                <li><b>ക്ലെയിം ഫോം:</b> Annexure 4 പൂർണ്ണമായി പൂരിപ്പിച്ച് ജീവനക്കാരന്റെ അക്കൗണ്ടുള്ള SBI ശാഖയിൽ സാക്ഷ്യപ്പെടുത്തിയത്.</li>
-                <li><b>മരണ സർട്ടിഫിക്കറ്റ്:</b> QR കോഡ് വ്യക്തമായ ഒറിജിനലോ പകർപ്പോ (അവകാശിയും ബാങ്കും സാക്ഷ്യപ്പെടുത്തണം).</li>
-                <li><b>KYC & അക്കൗണ്ട്:</b> അവകാശിയുടെ സ്വയം സാക്ഷ്യപ്പെടുത്തിയ KYC രേഖകളും ബാങ്ക് മാനേജർ സർട്ടിഫൈ ചെയ്ത പാസ്ബുക്ക് പകർപ്പും (അല്ലെങ്കിൽ പേര് പതിച്ച ക്യാൻസൽ ചെയ്ത ചെക്ക്). കൂടാതെ ബാങ്ക് കൺഫർമേഷൻ ഫോമും.</li>
-                <li><b>പിന്തുടർച്ചാവകാശ സർട്ടിഫിക്കറ്റ് (Succession Certificate):</b> അക്കൗണ്ടിൽ അവകാശിയുടെ വിവരം ലഭ്യമല്ലെങ്കിൽ കോടതിയിൽ നിന്നുള്ള സർട്ടിഫിക്കറ്റ് വേണം. ഇതിന് പകരമായി:
+                <li><b>ക്ലെയിം ഫോം:</b> Annexure 4 പൂർണ്ണമായി പൂരിപ്പിച്ച് ജീവനക്കാരന്റെ അക്കൗണ്ടുള്ള SBI ശാഖയിൽ സാക്ഷ്യപ്പെടുത്തിയത്[cite: 1].</li>
+                <li><b>മരണ സർട്ടിഫിക്കറ്റ്:</b> QR കോഡ് വ്യക്തമായ ഒറിജിനലോ പകർപ്പോ (അവകാശിയും ബാങ്കും സാക്ഷ്യപ്പെടുത്തണം)[cite: 1].</li>
+                <li><b>KYC & അക്കൗണ്ട്:</b> അവകാശിയുടെ സ്വയം സാക്ഷ്യപ്പെടുത്തിയ KYC രേഖകളും ബാങ്ക് മാനേജർ സർട്ടിഫൈ ചെയ്ത പാസ്ബുക്ക് പകർപ്പും (അല്ലെങ്കിൽ പേര് പതിച്ച ക്യാൻസൽ ചെയ്ത ചെക്ക്). കൂടാതെ ബാങ്ക് കൺഫർമേഷൻ ഫോമും[cite: 1].</li>
+                <li><b>പിന്തുടർച്ചാവകാശ സർട്ടിഫിക്കറ്റ് (Succession Certificate):</b> അക്കൗണ്ടിൽ അവകാശിയുടെ വിവരം ലഭ്യമല്ലെങ്കിൽ കോടതിയിൽ നിന്നുള്ള സർട്ടിഫിക്കറ്റ് വേണം[cite: 1]. ഇതിന് പകരമായി:
                   <ul>
-                    <li>നോൺ ജുഡീഷ്യൽ സ്റ്റാമ്പ് പേപ്പറിൽ തയ്യാറാക്കിയ സത്യവാങ്മൂലം</li>
-                    <li>Joint Indemnity Bond (നോൺ ജുഡീഷ്യൽ സ്റ്റാമ്പ് പേപ്പറിൽ)</li>
-                    <li>Application to Dispense with Legal Evidence of Title</li>
-                    <li>വരുമാന വിവരങ്ങളും KYC തെളിവും ഉൾപ്പെടുത്തിയ Surety Letter</li>
+                    <li>നോൺ ജുഡീഷ്യൽ സ്റ്റാമ്പ് പേപ്പറിൽ തയ്യാറാക്കിയ സത്യവാങ്മൂലം[cite: 1]</li>
+                    <li>Joint Indemnity Bond (നോൺ ജുഡീഷ്യൽ സ്റ്റാമ്പ് പേപ്പറിൽ)[cite: 1]</li>
+                    <li>Application to Dispense with Legal Evidence of Title[cite: 1]</li>
+                    <li>വരുമാന വിവരങ്ങളും KYC തെളിവും ഉൾപ്പെടുത്തിയ Surety Letter[cite: 1]</li>
                   </ul>
                 </li>
               </ul>
@@ -586,34 +601,34 @@
               <div class="detail-table-wrap">
                 <table class="detail-table">
                   <thead>
-                    <tr><th>ആഡ്-ഓൺ പരിരക്ഷ</th><th>സമർപ്പിക്കേണ്ട രേഖകൾ</th></tr>
+                    <tr><th>ആഡ്-ഓൺ പരിരക്ഷ[cite: 1]</th><th>സമർപ്പിക്കേണ്ട രേഖകൾ[cite: 1]</th></tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><b>പ്ലാസ്റ്റിക് സർജറി – പൊള്ളൽ</b></td>
-                      <td>ചികിത്സിക്കുന്ന ഡോക്ടറുടെ സർട്ടിഫിക്കറ്റ്, കൺസൾട്ടേഷൻ ലെറ്റർ, ഡിസ്ചാർജ് സമ്മറി, മെഡിക്കൽ റിപ്പോർട്ടുകൾ, പ്രിസ്ക്രിപ്ഷൻസ്, എല്ലാ ഒറിജിനൽ ബില്ലുകളും, റവന്യൂ സ്റ്റാമ്പ് പതിച്ച് ഒപ്പിട്ട ഒറിജിനൽ മണി റസീറ്റും.</td>
+                      <td><b>പ്ലാസ്റ്റിക് സർജറി – പൊള്ളൽ[cite: 1]</b></td>
+                      <td>ചികിത്സിക്കുന്ന ഡോക്ടറുടെ സർട്ടിഫിക്കറ്റ്, കൺസൾട്ടേഷൻ ലെറ്റർ, ഡിസ്ചാർജ് സമ്മറി, മെഡിക്കൽ റിപ്പോർട്ടുകൾ, പ്രിസ്ക്രിപ്ഷൻസ്, എല്ലാ ഒറിജിനൽ ബില്ലുകളും, റവന്യൂ സ്റ്റാമ്പ് പതിച്ച് ഒപ്പിട്ട ഒറിജിനൽ മണി റസീറ്റും[cite: 1].</td>
                     </tr>
                     <tr>
-                      <td><b>വിദേശ മരുന്നുകൾ എത്തിക്കൽ (Imported Medicine)</b></td>
-                      <td>ഡോക്ടറുടെ പ്രിസ്ക്രിപ്ഷൻ, മരുന്ന് വാങ്ങിയ ഇൻവോയ്സ്, ഇറക്കുമതി ചെലവ് രേഖപ്പെടുത്തിയ ഇൻവോയ്സ് (രാജ്യം, തീയതി, വില സഹിതം).</td>
+                      <td><b>വിദേശ മരുന്നുകൾ എത്തിക്കൽ (Imported Medicine)[cite: 1]</b></td>
+                      <td>ഡോക്ടറുടെ പ്രിസ്ക്രിപ്ഷൻ, മരുന്ന് വാങ്ങിയ ഇൻവോയ്സ്, ഇറക്കുമതി ചെലവ് രേഖപ്പെടുത്തിയ ഇൻവോയ്സ് (രാജ്യം, തീയതി, വില സഹിതം)[cite: 1].</td>
                     </tr>
                     <tr>
-                      <td><b>കോമയെത്തുടർന്നുള്ള മരണം (48 മണിക്കൂറിൽ കൂടുതൽ)</b></td>
-                      <td>അപകടത്തിന് ശേഷം കോമയിലായ സമയപരിധി (Start and End of Coma Period) വ്യക്തമായി രേഖപ്പെടുത്തിയിട്ടുള്ള മെഡിക്കൽ സർട്ടിഫിക്കറ്റും ഡിസ്ചാർജ് സമ്മറിയും.</td>
+                      <td><b>കോമയെത്തുടർന്നുള്ള മരണം (48 മണിക്കൂറിൽ കൂടുതൽ)[cite: 1]</b></td>
+                      <td>അപകടത്തിന് ശേഷം കോമയിലായ സമയപരിധി (Start and End of Coma Period) വ്യക്തമായി രേഖപ്പെടുത്തിയിട്ടുള്ള മെഡിക്കൽ സർട്ടിഫിക്കറ്റും ഡിസ്ചാർജ് സമ്മറിയും[cite: 1].</td>
                     </tr>
                     <tr>
-                      <td><b>കുട്ടികളുടെ ഉന്നത വിദ്യാഭ്യാസം (18 - 25 വയസ്സ്)</b></td>
-                      <td>ഗ്രാജ്വേഷൻ പഠനത്തിന്റെ കോഴ്‌സ് സർട്ടിഫിക്കറ്റ് (കോഴ്‌സിന്റെ കാലയളവും എൻറോൾമെന്റ് തീയതിയും വ്യക്തമാക്കണം).</td>
+                      <td><b>കുട്ടികളുടെ ഉന്നത വിദ്യാഭ്യാസം (18 - 25 വയസ്സ്)[cite: 1]</b></td>
+                      <td>ഗ്രാജ്വേഷൻ പഠനത്തിന്റെ കോഴ്‌സ് സർട്ടിഫിക്കറ്റ് (കോഴ്‌സിന്റെ കാലയളവും എൻറോൾമെന്റ് തീയതിയും വ്യക്തമാക്കണം)[cite: 1].</td>
                     </tr>
                     <tr>
-                      <td><b>പെൺകുട്ടികളുടെ വിവാഹം (18 - 25 വയസ്സ്)</b></td>
-                      <td>പെൺകുട്ടിയുടെ ജനന സർട്ടിഫിക്കറ്റ് / ജനന തീയതി തെളിയിക്കുന്ന രേഖ, മരണപ്പെട്ട ജീവനക്കാരനുമായുള്ള ബന്ധം തെളിയിക്കുന്ന ഔദ്യോഗിക രേഖ.</td>
+                      <td><b>പെൺകുട്ടികളുടെ വിവാഹം (18 - 25 വയസ്സ്)[cite: 1]</b></td>
+                      <td>പെൺകുട്ടിയുടെ ജനന സർട്ടിഫിക്കറ്റ് / ജനന തീയതി തെളിയിക്കുന്ന രേഖ, മരണപ്പെട്ട ജീവനക്കാരനുമായുള്ള ബന്ധം തെളിയിക്കുന്ന ഔദ്യോഗിക രേഖ[cite: 1].</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <div class="detail-callout">
-                <b>പ്രത്യേക അറിയിപ്പ്:</b> കൂടുതൽ വിവരങ്ങൾക്കും Annexure ഫോമുകൾ ഡൗൺലോഡ് ചെയ്യുന്നതിനുമായി കെ.എസ്.ആർ.ടി.സി. വെബ്സൈറ്റ് സന്ദർശിക്കാവുന്നതാണ്. എല്ലാ രേഖകളും നിശ്ചിത സമയപരിധിക്കുള്ളിൽ നൽകുന്നുണ്ടെന്ന് അതാത് യൂണിറ്റ് അധികാരികൾ ഉറപ്പുവരുത്തുക.
+                <b>പ്രത്യേക അറിയിപ്പ്:</b> കൂടുതൽ വിവരങ്ങൾക്കും Annexure ഫോമുകൾ ഡൗൺലോഡ് ചെയ്യുന്നതിനുമായി കെ.എസ്.ആർ.ടി.സി. വെബ്സൈറ്റ് സന്ദർശിക്കാവുന്നതാണ്[cite: 1]. എല്ലാ രേഖകളും നിശ്ചിത സമയപരിധിക്കുള്ളിൽ നൽകുന്നുണ്ടെന്ന് അതാത് യൂണിറ്റ് അധികാരികൾ ഉറപ്പുവരുത്തുക[cite: 1].
               </div>
             </div>
           </details>
@@ -621,31 +636,31 @@
       </div>
     </section>
 
-    <!-- എസ്.ബി.ഐ CSP പ്രത്യേക ഹെൽത്ത് ഇൻഷുറൻസ് (സഫയർ ക്ലാസിക് & സൂപ്പർ ടോപ്പ്-അപ്പ്) -->
+    <!-- SBI CSP പ്രത്യേക ഹെൽത്ത് ഇൻഷുറൻസ് (Expanded with Merit/Demerit, Calc, Hospital List) -->
     <section class="section-anchor" id="csp-health-policy">
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">CSP HEALTH INSURANCE</div>
           <h2>എസ്.ബി.ഐ കോർപ്പറേറ്റ് സാലറി പാക്കേജ് (CSP) പ്രത്യേക ഹെൽത്ത് ഇൻഷുറൻസ് സമഗ്ര ഗൈഡ്</h2>
-          <p>സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി), സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് (ടോപ്പ്-അപ്പ് പോളിസി) വിശദാംശങ്ങൾ.</p>
+          <p>സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി), സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ്, മെറിറ്റ് & ഡിമെറിറ്റ്, പ്രീമിയം കാൽക്കുലേറ്റർ, കേരള നെറ്റ്‌വർക്ക് ആശുപത്രികൾ[cite: 3].</p>
         </div>
 
         <div class="accordion-list">
-          <details class="accordion" open>
+          <details class="accordion">
             <summary>✨ 1. പദ്ധതിയുടെ പ്രധാന സവിശേഷതകളും യോഗ്യതയും</summary>
             <div class="accordion-body">
-              <p>സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യയും എസ്.ബി.ഐ ജനറൽ ഇൻഷുറൻസും ചേർന്ന് കെ.എസ്.ആർ.ടി.സി-യിലെ കോർപ്പറേറ്റ് സാലറി പാക്കേജ് (CSP) അക്കൗണ്ട് ഉടമകളായ ജീവനക്കാർക്കായി കുറഞ്ഞ പ്രീമിയത്തിൽ ഒരുക്കിയിരിക്കുന്ന പ്രത്യേക ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതിയാണിത്.</p>
+              <p>സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യയും എസ്.ബി.ഐ ജനറൽ ഇൻഷുറൻസും ചേർന്ന് കെ.എസ്.ആർ.ടി.സി-യിലെ കോർപ്പറേറ്റ് സാലറി പാക്കേജ് (CSP) അക്കൗണ്ട് ഉടമകളായ ജീവനക്കാർക്കായി കുറഞ്ഞ പ്രീമിയത്തിൽ ഒരുക്കിയിരിക്കുന്ന പ്രത്യേക ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതിയാണിത്[cite: 3].</p>
               <ul>
-                <li><b>ആർക്കൊക്കെ ചേരാം:</b> എസ്.ബി.ഐ വഴി ശമ്പളം ലഭിക്കുന്ന (CSP അക്കൗണ്ട് ഉടമകളായ) 18 മുതൽ 63 വയസ്സ് വരെയുള്ള എല്ലാ സ്ഥിരം ജീവനക്കാർക്കും ഇതിൽ അംഗമാകാം.</li>
+                <li><b>ആർക്കൊക്കെ ചേരാം:</b> എസ്.ബി.ഐ വഴി ശമ്പളം ലഭിക്കുന്ന (CSP അക്കൗണ്ട് ഉടമകളായ) 18 മുതൽ 63 വയസ്സ് വരെയുള്ള എല്ലാ സ്ഥിരം ജീവനക്കാർക്കും ഇതിൽ അംഗമാകാം[cite: 3].</li>
                 <li><b>കുടുംബത്തിന്റെ നിർവ്വചനം (പരമാവധി 4 അംഗങ്ങൾ):</b>
                   <ul>
-                    <li>ജീവനക്കാരൻ / ജീവനക്കാരി (നിർബന്ധം)</li>
-                    <li>പങ്കാളി (ഭാര്യ / ഭർത്താവ്)</li>
-                    <li>പരമാവധി 2 കുട്ടികൾ (91 ദിവസം മുതൽ 25 വയസ്സ് വരെ)</li>
+                    <li>ജീവനക്കാരൻ / ജീവനക്കാരി (നിർബന്ധം)[cite: 3]</li>
+                    <li>പങ്കാളി (ഭാര്യ / ഭർത്താവ്)[cite: 3]</li>
+                    <li>പരമാവധി 2 കുട്ടികൾ (91 ദിവസം മുതൽ 25 വയസ്സ് വരെ)[cite: 3]</li>
                   </ul>
                 </li>
-                <li><b>പ്രീമിയം അടവ്:</b> പ്രീമിയം തുക ജീവനക്കാരന്റെ എസ്.ബി.ഐ സാലറി അക്കൗണ്ടിൽ നിന്ന് നേരിട്ട് പ്രോസസ്സ് ചെയ്യുന്നു.</li>
-                <li><b>മെഡിക്കൽ പരിശോധന:</b> മുൻകാല രോഗചരിത്രമില്ലാത്ത 55 വയസ്സ് വരെയുള്ളവർക്ക് പോളിസി എടുക്കുന്നതിന് മുൻകൂട്ടിയുള്ള മെഡിക്കൽ പരിശോധനകൾ (Pre-policy medical tests) ആവശ്യമില്ല.</li>
+                <li><b>പ്രീമിയം അടവ്:</b> പ്രീമിയം തുക ജീവനക്കാരന്റെ എസ്.ബി.ഐ സാലറി അക്കൗണ്ടിൽ നിന്ന് നേരിട്ട് പ്രോസസ്സ് ചെയ്യുന്നു[cite: 3].</li>
+                <li><b>മെഡിക്കൽ പരിശോധന:</b> മുൻകാല രോഗചരിത്രമില്ലാത്ത 55 വയസ്സ് വരെയുള്ളവർക്ക് പോളിസി എടുക്കുന്നതിന് മുൻകൂട്ടിയുള്ള മെഡിക്കൽ പരിശോധനകൾ (Pre-policy medical tests) ആവശ്യമില്ല[cite: 3].</li>
               </ul>
             </div>
           </details>
@@ -656,16 +671,16 @@
               <div class="detail-table-wrap">
                 <table class="detail-table">
                   <thead>
-                    <tr><th>കവറേജ് ഇനം</th><th>പരിരക്ഷയുടെ വിശദാംശങ്ങൾ</th></tr>
+                    <tr><th>കവറേജ് ഇനം[cite: 3]</th><th>പരിരക്ഷയുടെ വിശദാംശങ്ങൾ[cite: 3]</th></tr>
                   </thead>
                   <tbody>
-                    <tr><td><b>ഇൻപേഷ്യന്റ് കെയർ (Inpatient Care)</b></td><td>24 മണിക്കൂറിൽ കൂടുതൽ ആശുപത്രിയിൽ പ്രവേശിപ്പിച്ചു നടത്തുന്ന കിടത്തിച്ചികിത്സാ ചെലവുകൾ പൂർണ്ണമായും കവർ ചെയ്യുന്നു.</td></tr>
-                    <tr><td><b>ഡേ കെയർ ട്രീറ്റ്മെന്റ് (Day Care Treatment)</b></td><td>സാങ്കേതിക മുന്നേറ്റം കാരണം 24 മണിക്കൂർ അഡ്മിഷൻ വേണ്ടാത്ത ശസ്ത്രക്രിയകളും ചികിത്സകളും സം ഇൻഷുർഡ് പരിധി വരെ ലഭിക്കും.</td></tr>
-                    <tr><td><b>പ്രീ & പോസ്റ്റ് ഹോസ്പിറ്റലൈസേഷൻ</b></td><td>ആശുപത്രിയിൽ പ്രവേശിക്കുന്നതിന് 60 ദിവസം മുൻപുള്ളതും, ഡിസ്ചാർജ് ചെയ്തതിനു ശേഷമുള്ള 90 ദിവസത്തെയും അനുബന്ധ ചികിത്സാച്ചെലവുകൾ ലഭിക്കും.</td></tr>
-                    <tr><td><b>ആയുഷ് ചികിത്സകൾ (AYUSH Treatment)</b></td><td>ആയുർവേദം, യുനാനി, സിദ്ധ, ഹോമിയോപ്പതി ചികിത്സാച്ചെലവുകൾ സം ഇൻഷുർഡ് പരിധി വരെ ലഭ്യമാണ്.</td></tr>
-                    <tr><td><b>ആധുനിക ചികിത്സകൾ (Modern Treatment)</b></td><td>ആധുനിക സാങ്കേതിക വിദ്യകൾ ഉപയോഗിച്ചുള്ള അഡ്വാൻസ്ഡ് ചികിത്സകൾക്ക് സം ഇൻഷുർഡിന്റെ 50% വരെ ലഭിക്കും.</td></tr>
-                    <tr><td><b>ഡൊമിസിലിയറി ഹോസ്പിറ്റലൈസേഷൻ</b></td><td>ആശുപത്രിയിലെത്താൻ സാധിക്കാത്ത സാഹചര്യത്തിൽ വീട്ടിലിരുന്ന് നടത്തുന്ന ചികിത്സയ്ക്ക് സം ഇൻഷുർഡിന്റെ 20% വരെ ലഭിക്കും.</td></tr>
-                    <tr><td><b>അടിയന്തര ആംബുലൻസ് (Ground Ambulance)</b></td><td>ഒരു അഡ്മിഷന് പരമാവധി ₹2,000/- വരെ ആംബുലൻസ് ചെലവ് ലഭിക്കും.</td></tr>
+                    <tr><td><b>ഇൻപേഷ്യന്റ് കെയർ (Inpatient Care)[cite: 3]</b></td><td>24 മണിക്കൂറിൽ കൂടുതൽ ആശുപത്രിയിൽ പ്രവേശിപ്പിച്ചു നടത്തുന്ന കിടത്തിച്ചികിത്സാ ചെലവുകൾ പൂർണ്ണമായും കവർ ചെയ്യുന്നു[cite: 3].</td></tr>
+                    <tr><td><b>ഡേ കെയർ ട്രീറ്റ്മെന്റ് (Day Care Treatment)[cite: 3]</b></td><td>സാങ്കേതിക മുന്നേറ്റം കാരണം 24 മണിക്കൂർ അഡ്മിഷൻ വേണ്ടാത്ത ശസ്ത്രക്രിയകളും ചികിത്സകളും സം ഇൻഷുർഡ് പരിധി വരെ ലഭിക്കും[cite: 3].</td></tr>
+                    <tr><td><b>പ്രീ & പോസ്റ്റ് ഹോസ്പിറ്റലൈസേഷൻ[cite: 3]</b></td><td>ആശുപത്രിയിൽ പ്രവേശിക്കുന്നതിന് 60 ദിവസം മുൻപുള്ളതും, ഡിസ്ചാർജ് ചെയ്തതിനു ശേഷമുള്ള 90 ദിവസത്തെയും അനുബന്ധ ചികിത്സാച്ചെലവുകൾ ലഭിക്കും[cite: 3].</td></tr>
+                    <tr><td><b>ആയുഷ് ചികിത്സകൾ (AYUSH Treatment)[cite: 3]</b></td><td>ആയുർവേദം, യുനാനി, സിദ്ധ, ഹോമിയോപ്പതി ചികിത്സാച്ചെലവുകൾ സം ഇൻഷുർഡ് പരിധി വരെ ലഭ്യമാണ്[cite: 3].</td></tr>
+                    <tr><td><b>ആധുനിക ചികിത്സകൾ (Modern Treatment)[cite: 3]</b></td><td>ആധുനിക സാങ്കേതിക വിദ്യകൾ ഉപയോഗിച്ചുള്ള അഡ്വാൻസ്ഡ് ചികിത്സകൾക്ക് സം ഇൻഷുർഡിന്റെ 50% വരെ ലഭിക്കും[cite: 3].</td></tr>
+                    <tr><td><b>ഡൊമിസിലിയറി ഹോസ്പിറ്റലൈസേഷൻ[cite: 3]</b></td><td>ആശുപത്രിയിലെത്താൻ സാധിക്കാത്ത സാഹചര്യത്തിൽ വീട്ടിലിരുന്ന് നടത്തുന്ന ചികിത്സയ്ക്ക് സം ഇൻഷുർഡിന്റെ 20% വരെ ലഭിക്കും[cite: 3].</td></tr>
+                    <tr><td><b>അടിയന്തര ആംബുലൻസ് (Ground Ambulance)[cite: 3]</b></td><td>ഒരു അഡ്മിഷന് പരമാവധി ₹2,000/- വരെ ആംബുലൻസ് ചെലവ് ലഭിക്കും[cite: 3].</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -675,111 +690,242 @@
           <details class="accordion">
             <summary>⏳ 3. വെയ്റ്റിംഗ് പിരീഡും ഒഴിവാക്കലുകളും (Waiting Period & Exclusions)</summary>
             <div class="accordion-body">
-              <h4>വെയ്റ്റിംഗ് പിരീഡ് (Waiting Period):</h4>
+              <h4>വെയ്റ്റിംഗ് പിരീഡ് (Waiting Period)[cite: 3]:</h4>
               <ul>
-                <li><b>പ്രാരംഭ കാലയളവ് (Initial Waiting Period):</b> പോളിസി ആരംഭിച്ച് ആദ്യത്തെ 30 ദിവസത്തേക്ക് അപകടങ്ങൾ മൂലമല്ലാത്ത ചികിത്സകൾക്ക് കവറേജ് ഉണ്ടായിരിക്കില്ല.</li>
-                <li><b>നേരത്തെയുള്ള രോഗങ്ങൾ (Pre-Existing Diseases - PED):</b> പോളിസി എടുക്കുന്നതിന് മുൻപേയുള്ള രോഗങ്ങൾക്ക് 24 മാസത്തെ (2 വർഷം) വെയ്റ്റിംഗ് പിരീഡ് ബാധകമാണ്.</li>
-                <li><b>നിർദ്ദിഷ്ട രോഗങ്ങൾ (Specific Illnesses):</b> ചില പ്രത്യേക രോഗങ്ങൾക്കും ശസ്ത്രക്രിയകൾക്കും 24 മാസത്തെ വെയ്റ്റിംഗ് പിരീഡ് ഉണ്ടായിരിക്കും.</li>
+                <li><b>പ്രാരംഭ കാലയളവ് (Initial Waiting Period):</b> പോളിസി ആരംഭിച്ച് ആദ്യത്തെ 30 ദിവസത്തേക്ക് അപകടങ്ങൾ മൂലമല്ലാത്ത ചികിത്സകൾക്ക് കവറേജ് ഉണ്ടായിരിക്കില്ല[cite: 3].</li>
+                <li><b>നേരത്തെയുള്ള രോഗങ്ങൾ (Pre-Existing Diseases - PED):</b> പോളിസി എടുക്കുന്നതിന് മുൻപേയുള്ള രോഗങ്ങൾക്ക് 24 മാസത്തെ (2 വർഷം) വെയ്റ്റിംഗ് പിരീഡ് ബാധകമാണ്[cite: 3].</li>
+                <li><b>നിർദ്ദിഷ്ട രോഗങ്ങൾ (Specific Illnesses):</b> ചില പ്രത്യേക രോഗങ്ങൾക്കും ശസ്ത്രക്രിയകൾക്കും 24 മാസത്തെ വെയ്റ്റിംഗ് പിരീഡ് ഉണ്ടായിരിക്കും[cite: 3].</li>
               </ul>
 
-              <h4>ഒഴിവാക്കലുകൾ (Exclusions - കവറേജ് ലഭിക്കാത്തവ):</h4>
+              <h4>ഒഴിവാക്കലുകൾ (Exclusions - കവറേജ് ലഭിക്കാത്തവ)[cite: 3]:</h4>
               <ul>
-                <li>അഡ്മിഷൻ ആവശ്യമില്ലാത്ത പരിശോധനകൾ (Investigation & Evaluation).</li>
-                <li>വിശ്രമ ചികിത്സകൾ (Rest cure & Respite care), പുനരധിവാസം.</li>
-                <li>പൊണ്ണത്തടി/ഭാരനിയന്ത്രണം (Obesity/Weight Control).</li>
-                <li>ലിംഗമാറ്റ ശസ്ത്രക്രിയകൾ, സൗന്ദര്യവർദ്ധക/പ്ലാസ്റ്റിക് സർജറികൾ (Cosmetic Surgery).</li>
-                <li>അപകടകരമായ സാഹസിക കായിക വിനോദങ്ങൾക്കിടയിലുണ്ടാകുന്ന പരിക്കുകൾ, നിയമലംഘനം മൂലമുള്ളവ.</li>
-                <li>മദ്യം, മയക്കുമരുന്ന് അല്ലെങ്കിൽ ലഹരിവസ്തുക്കളുടെ ഉപയോഗം മൂലമുണ്ടാകുന്ന രോഗങ്ങൾ/ചികിത്സകൾ.</li>
-                <li>വന്ധ്യതാ ചികിത്സകൾ (Infertility), പ്രസവം/മാതൃത്വ സംബന്ധമായ ചികിത്സകൾ (Maternity).</li>
-                <li>റിഫ്രാക്റ്റീവ് എറർ (കണ്ണിലെ കാഴ്ച തിരുത്തൽ ചികിത്സകൾ).</li>
+                <li>അഡ്മിഷൻ ആവശ്യമില്ലാത്ത പരിശോധനകൾ (Investigation & Evaluation)[cite: 3].</li>
+                <li>വിശ്രമ ചികിത്സകൾ (Rest cure & Respite care), പുനരധിവാസം[cite: 3].</li>
+                <li>പൊണ്ണത്തടി/ഭാരനിയന്ത്രണം (Obesity/Weight Control)[cite: 3].</li>
+                <li>ലിംഗമാറ്റ ശസ്ത്രക്രിയകൾ, സൗന്ദര്യവർദ്ധക/പ്ലാസ്റ്റിക് സർജറികൾ (Cosmetic Surgery)[cite: 3].</li>
+                <li>അപകടകരമായ സാഹസിക കായിക വിനോദങ്ങൾക്കിടയിലുണ്ടാകുന്ന പരിക്കുകൾ, നിയമലംഘനം മൂലമുള്ളവ[cite: 3].</li>
+                <li>മദ്യം, മയക്കുമരുന്ന് അല്ലെങ്കിൽ ലഹരിവസ്തുക്കളുടെ ഉപയോഗം മൂലമുണ്ടാകുന്ന രോഗങ്ങൾ/ചികിത്സകൾ[cite: 3].</li>
+                <li>വന്ധ്യതാ ചികിത്സകൾ (Infertility), പ്രസവം/മാതൃത്വ സംബന്ധമായ ചികിത്സകൾ (Maternity)[cite: 3].</li>
+                <li>റിഫ്രാക്റ്റീവ് എറർ (കണ്ണിലെ കാഴ്ച തിരുത്തൽ ചികിത്സകൾ)[cite: 3].</li>
               </ul>
             </div>
           </details>
 
+          <!-- NEW SUB-ITEM 4: Merit and demerit of this policy (Free think) -->
           <details class="accordion">
-            <summary>📊 4. പോളിസി പ്ലാനുകളും പ്രീമിയം നിരക്കുകളും (GST ഉൾപ്പെടെ)</summary>
+            <summary>⚖️ 4. പോളിസിയുടെ നേട്ടങ്ങളും പരിമിതികളും — ഒരു സ്വതന്ത്ര വിലയിരുത്തൽ (Merits & Demerits)</summary>
             <div class="accordion-body">
-              <h4>A. സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി)</h4>
-              <p>₹2 ലക്ഷം, ₹3 ലക്ഷം, ₹5 ലക്ഷം എന്നിങ്ങനെ മൂന്ന് സം ഇൻഷുർഡ് തുകകളിൽ ലഭിക്കുന്നു.</p>
+              <p>കെ.എസ്.ആർ.ടി.സി ജീവനക്കാർക്ക് അവരുടെ ശമ്പള അക്കൗണ്ട് വഴി ലഭ്യമാകുന്ന ഈ ഗ്രൂപ്പ് ഇൻഷുറൻസ് പദ്ധതിയുടെ അനുകൂല ഘടകങ്ങളും (Merits), തിരഞ്ഞെടുക്കുമ്പോൾ മുൻകൂട്ടി മനസ്സിലാക്കേണ്ട പരിമിതികളും (Demerits) താഴെ വിശകലനം ചെയ്യുന്നു:</p>
+              
+              <div class="pro-con-grid">
+                <div class="pro-box">
+                  <h5>✅ പ്രധാന നേട്ടങ്ങൾ (Merits)</h5>
+                  <ul>
+                    <li><b>കുറഞ്ഞ പ്രീമിയം നിരക്ക്:</b> സാധാരണ റീട്ടെയിൽ വ്യക്തിഗത പോളിസികളെ അപേക്ഷിച്ച് ഗ്രൂപ്പ് കവറേജ് ആയതിനാൽ വളരെ തുച്ഛമായ പ്രീമിയത്തിൽ ₹50 ലക്ഷം വരെ പരിരക്ഷ ലഭിക്കുന്നു[cite: 3].</li>
+                    <li><b>മെഡിക്കൽ പരിശോധനയില്ല (55 വയസ്സ് വരെ):</b> മുൻകാല രോഗങ്ങളില്ലാത്ത 55 വയസ്സ് വരെയുള്ളവർക്ക് പ്രീ-പോളിസി മെഡിക്കൽ ചെക്കപ്പ് ആവശ്യമില്ല[cite: 3].</li>
+                    <li><b>കുറഞ്ഞ PED വെയ്റ്റിംഗ് പിരീഡ്:</b> സാധാരണ സ്വകാര്യ ഇൻഷുറൻസുകളിൽ 36 മുതൽ 48 മാസം വരെ നിലനിൽക്കുന്ന മുൻകാല രോഗങ്ങളുടെ (Pre-existing diseases) കാത്തിരിപ്പ് കാലയളവ് ഇതിൽ 24 മാസമായി ചുരുക്കിയിരിക്കുന്നു[cite: 3].</li>
+                    <li><b>Family Floater സൗകര്യം:</b> ജീവനക്കാരൻ, പങ്കാളി, 25 വയസ്സുവരെയുള്ള 2 ആശ്രിത മക്കൾ എന്നിവരെ ഒറ്റ പോളിസിയിൽ ചേർക്കാം[cite: 3].</li>
+                    <li><b>സൂപ്പർ ടോപ്പ്-അപ്പ് സംയോജനം:</b> ₹5 ലക്ഷം ബേസ് കവറിനൊപ്പം ₹50 ലക്ഷം സൂപ്പർ ടോപ്പ്-അപ്പ് ചേരുമ്പോൾ ₹8,906 വാർഷിക പ്രീമിയത്തിൽ വലിയ സാമ്പത്തിക സംരക്ഷണം ലഭിക്കുന്നു[cite: 3].</li>
+                    <li><b>ഡേ കെയർ & ആയുഷ് ചികിത്സകൾ:</b> 24 മണിക്കൂർ അഡ്മിഷൻ ആവശ്യമില്ലാത്ത ആധുനിക ഡേ കെയർ ചികിത്സകൾക്കും ആയുർവേദ/ഹോമിയോപ്പതി ചികിത്സകൾക്കും അംഗീകാരം[cite: 3].</li>
+                  </ul>
+                </div>
+
+                <div class="con-box">
+                  <h5>⚠️ ശ്രദ്ധിക്കേണ്ട പരിമിതികൾ (Demerits)</h5>
+                  <ul>
+                    <li><b>മാതാപിതാക്കൾക്ക് പരിരക്ഷയില്ല:</b> ഫാമിലി ഫ്ലോട്ടർ കവറേജിൽ ജീവനക്കാരന്റെ അച്ഛനെയോ അമ്മയെയോ ഉൾപ്പെടുത്താൻ സാധിക്കില്ല (പങ്കാളിയും മക്കളും മാത്രം)[cite: 3]. പ്രായമായ മാതാപിതാക്കൾക്ക് മറ്റ് പദ്ധതികൾ ആശ്രയിക്കേണ്ടിവരും.</li>
+                    <li><b>ശമ്പള അക്കൗണ്ട് ആശ്രയത്വം:</b> അക്കൗണ്ട് മാറ്റുകയോ ശമ്പള ക്രെഡിറ്റിൽ ദീർഘകാല തടസ്സം നേരിടുകയോ ചെയ്താൽ പോളിസി തുടർക്കവറേജിനെ ബാധിച്ചേക്കാം[cite: 3].</li>
+                    <li><b>ആധുനിക ചികിത്സകളിൽ ഉപപരിധി:</b> Modern Treatment-കൾക്ക് സം ഇൻഷുർഡിന്റെ 50% വരെയും, ഡൊമിസിലിയറി കെയറിന് 20% വരെയുമാണ് പരമാവധി ക്ലെയിം പരിധി[cite: 3].</li>
+                    <li><b>പ്രസവ ചെലവുകൾക്ക് പരിരക്ഷയില്ല:</b> മെറ്റേണിറ്റി, ഇൻഫെർട്ടിലിറ്റി സംബന്ധമായ ചെലവുകൾ പൂർണ്ണമായും ഒഴിവാക്കലുകളുടെ (Exclusions) പട്ടികയിലാണ്[cite: 3].</li>
+                    <li><b>ഗ്രൂപ്പ് പോളിസി വ്യവസ്ഥകളിലെ മാറ്റം:</b> ബാങ്കും ഇൻഷുറൻസ് കമ്പനിയും തമ്മിലുള്ള വാർഷിക ധാരണാപത്രം അനുസരിച്ചാണ് ഗ്രൂപ്പ് പോളിസി നിലനിൽക്കുന്നത്. അടുത്ത വർഷത്തെ റിന്യൂവലിൽ നിബന്ധനകളോ പ്രീമിയമോ മാറിയേക്കാം[cite: 3].</li>
+                    <li><b>63 വയസ്സിന് മുകളിലുള്ള പ്രീമിയം വർദ്ധനവ്:</b> 63 വയസ്സ് കഴിഞ്ഞാൽ റിന്യൂവൽ പ്രീമിയം നിരക്കിൽ ഗണ്യമായ വർദ്ധനവ് വരുന്നു[cite: 3].</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- PREMIUM CHARTS -->
+          <details class="accordion">
+            <summary>📊 5. പോളിസി പ്ലാനുകളും പ്രീമിയം നിരക്കുകളും (GST ഉൾപ്പെടെ)</summary>
+            <div class="accordion-body">
+              <h4>A. സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി)[cite: 3]</h4>
+              <p>₹2 ലക്ഷം, ₹3 ലക്ഷം, ₹5 ലക്ഷം എന്നിങ്ങനെ മൂന്ന് സം ഇൻഷുർഡ് തുകകളിൽ ലഭിക്കുന്നു[cite: 3].</p>
               <div class="detail-table-wrap">
                 <table class="detail-table">
                   <thead>
                     <tr>
-                      <th>കുടുംബ ക്രമീകരണം (Family Combination)</th>
-                      <th>₹2 ലക്ഷം</th>
-                      <th>₹3 ലക്ഷം</th>
-                      <th>₹5 ലക്ഷം</th>
-                      <th>63 വയസ്സിനു മുകളിലുള്ള റിന്യൂവൽ നിരക്ക് (2L / 3L / 5L)</th>
+                      <th>കുടുംബ ക്രമീകരണം (Family Combination)[cite: 3]</th>
+                      <th>₹2 ലക്ഷം[cite: 3]</th>
+                      <th>₹3 ലക്ഷം[cite: 3]</th>
+                      <th>₹5 ലക്ഷം[cite: 3]</th>
+                      <th>63 വയസ്സിനു മുകളിലുള്ള റിന്യൂവൽ നിരക്ക് (2L / 3L / 5L)[cite: 3]</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>1 Adult (ജീവനക്കാരൻ മാത്രം)</td><td>₹1,983</td><td>₹2,155</td><td>₹2,629</td><td>₹3,642 / ₹3,959 / ₹4,830</td></tr>
-                    <tr><td>2 Adults (ജീവനക്കാരൻ + പങ്കാളി)</td><td>₹3,193</td><td>₹3,471</td><td>₹4,235</td><td>₹5,866 / ₹6,376 / ₹7,779</td></tr>
-                    <tr><td>1 Adult + 1 Child</td><td>₹2,221</td><td>₹2,414</td><td>₹2,945</td><td>₹4,079 / ₹4,434 / ₹5,409</td></tr>
-                    <tr><td>1 Adult + 2 Children</td><td>₹2,487</td><td>₹2,703</td><td>₹3,298</td><td>₹4,569 / ₹4,966 / ₹6,058</td></tr>
-                    <tr><td>2 Adults + 1 Child</td><td>₹3,697</td><td>₹4,018</td><td>₹4,902</td><td>₹6,791 / ₹7,381 / ₹9,005</td></tr>
-                    <tr><td>2 Adults + 2 Children</td><td>₹4,507</td><td>₹4,899</td><td>₹5,977</td><td>₹8,280 / ₹8,999 / ₹10,979</td></tr>
+                    <tr><td>1 Adult (ജീവനക്കാരൻ മാത്രം)[cite: 3]</td><td>₹1,983[cite: 3]</td><td>₹2,155[cite: 3]</td><td>₹2,629[cite: 3]</td><td>₹3,642 / ₹3,959 / ₹4,830[cite: 3]</td></tr>
+                    <tr><td>2 Adults (ജീവനക്കാരൻ + പങ്കാളി)[cite: 3]</td><td>₹3,193[cite: 3]</td><td>₹3,471[cite: 3]</td><td>₹4,235[cite: 3]</td><td>₹5,866 / ₹6,376 / ₹7,779[cite: 3]</td></tr>
+                    <tr><td>1 Adult + 1 Child[cite: 3]</td><td>₹2,221[cite: 3]</td><td>₹2,414[cite: 3]</td><td>₹2,945[cite: 3]</td><td>₹4,079 / ₹4,434 / ₹5,409[cite: 3]</td></tr>
+                    <tr><td>1 Adult + 2 Children[cite: 3]</td><td>₹2,487[cite: 3]</td><td>₹2,703[cite: 3]</td><td>₹3,298[cite: 3]</td><td>₹4,569 / ₹4,966 / ₹6,058[cite: 3]</td></tr>
+                    <tr><td>2 Adults + 1 Child[cite: 3]</td><td>₹3,697[cite: 3]</td><td>₹4,018[cite: 3]</td><td>₹4,902[cite: 3]</td><td>₹6,791 / ₹7,381 / ₹9,005[cite: 3]</td></tr>
+                    <tr><td>2 Adults + 2 Children[cite: 3]</td><td>₹4,507[cite: 3]</td><td>₹4,899[cite: 3]</td><td>₹5,977[cite: 3]</td><td>₹8,280 / ₹8,999 / ₹10,979[cite: 3]</td></tr>
                   </tbody>
                 </table>
               </div>
 
-              <h4>B. സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് പോളിസി (Super Top-up Policy)</h4>
-              <p>അടിസ്ഥാന പോളിസി പരിധി തീർന്നുപോയാൽ അധിക പരിരക്ഷ നൽകുന്ന പോളിസിയാണിത്. ഇതിലെ ഡിഡക്റ്റബിൾ (Deductible) തുക അടിസ്ഥാന പോളിസി വഴിയോ വ്യക്തിഗത ചെലവ് വഴിയോ വഹിക്കാവുന്നതാണ്.</p>
+              <h4>B. സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് പോളിസി (Super Top-up Policy)[cite: 3]</h4>
+              <p>അടിസ്ഥാന പോളിസി പരിധി തീർന്നുപോയാൽ അധിക പരിരക്ഷ നൽകുന്ന പോളിസിയാണിത്[cite: 3]. ഇതിലെ ഡിഡക്റ്റബിൾ (Deductible) തുക അടിസ്ഥാന പോളിസി വഴിയോ വ്യക്തിഗത ചെലവ് വഴിയോ വഹിക്കാവുന്നതാണ്[cite: 3].</p>
               <div class="detail-table-wrap">
                 <table class="detail-table">
                   <thead>
                     <tr>
-                      <th>കുടുംബ ക്രമീകരണം (Family)</th>
-                      <th>₹10L കവർ (Ded. ₹2L)</th>
-                      <th>₹15L കവർ (Ded. ₹2L)</th>
-                      <th>₹30L കവർ (Ded. ₹3L)</th>
-                      <th>₹50L കവർ (Ded. ₹5L)</th>
+                      <th>കുടുംബ ക്രമീകരണം (Family)[cite: 3]</th>
+                      <th>₹10L കവർ (Ded. ₹2L)[cite: 3]</th>
+                      <th>₹15L കവർ (Ded. ₹2L)[cite: 3]</th>
+                      <th>₹30L കവർ (Ded. ₹3L)[cite: 3]</th>
+                      <th>₹50L കവർ (Ded. ₹5L)[cite: 3]</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>1 Adult</td><td>₹1,521</td><td>₹1,618</td><td>₹1,649</td><td>₹2,391</td></tr>
-                    <tr><td>2 Adults</td><td>₹1,653</td><td>₹1,758</td><td>₹1,796</td><td>₹2,604</td></tr>
-                    <tr><td>1 Adult + 1 Child</td><td>₹1,703</td><td>₹1,812</td><td>₹1,847</td><td>₹2,678</td></tr>
-                    <tr><td>1 Adult + 2 Children</td><td>₹1,806</td><td>₹1,921</td><td>₹1,958</td><td>₹2,839</td></tr>
-                    <tr><td>2 Adults + 1 Child</td><td>₹1,727</td><td>₹1,837</td><td>₹1,881</td><td>₹2,728</td></tr>
-                    <tr><td>2 Adults + 2 Children</td><td>₹1,869</td><td>₹1,988</td><td>₹2,020</td><td>₹2,929</td></tr>
+                    <tr><td>1 Adult[cite: 3]</td><td>₹1,521[cite: 3]</td><td>₹1,618[cite: 3]</td><td>₹1,649[cite: 3]</td><td>₹2,391[cite: 3]</td></tr>
+                    <tr><td>2 Adults[cite: 3]</td><td>₹1,653[cite: 3]</td><td>₹1,758[cite: 3]</td><td>₹1,796[cite: 3]</td><td>₹2,604[cite: 3]</td></tr>
+                    <tr><td>1 Adult + 1 Child[cite: 3]</td><td>₹1,703[cite: 3]</td><td>₹1,812[cite: 3]</td><td>₹1,847[cite: 3]</td><td>₹2,678[cite: 3]</td></tr>
+                    <tr><td>1 Adult + 2 Children[cite: 3]</td><td>₹1,806[cite: 3]</td><td>₹1,921[cite: 3]</td><td>₹1,958[cite: 3]</td><td>₹2,839[cite: 3]</td></tr>
+                    <tr><td>2 Adults + 1 Child[cite: 3]</td><td>₹1,727[cite: 3]</td><td>₹1,837[cite: 3]</td><td>₹1,881[cite: 3]</td><td>₹2,728[cite: 3]</td></tr>
+                    <tr><td>2 Adults + 2 Children[cite: 3]</td><td>₹1,869[cite: 3]</td><td>₹1,988[cite: 3]</td><td>₹2,020[cite: 3]</td><td>₹2,929[cite: 3]</td></tr>
                   </tbody>
                 </table>
-              </div>
-
-              <div class="detail-callout">
-                <b>പ്രത്യേക നേട്ടം:</b> 4 അംഗങ്ങളുള്ള ഒരു ജീവനക്കാരന്റെ കുടുംബത്തിന് (2A+2C), അടിസ്ഥാന പോളിസി ₹5 ലക്ഷവും (പ്രീമിയം: ₹5,977) സൂപ്പർ ടോപ്പ്-അപ്പ് ₹50 ലക്ഷവും (പ്രീമിയം: ₹2,929) എടുത്താൽ, ആകെ ₹8,906 രൂപ വാർഷിക പ്രീമിയത്തിൽ ₹50 ലക്ഷം രൂപയുടെ വൻകിട ഇൻഷുറൻസ് പരിരക്ഷ ലഭ്യമാകുന്നു.
               </div>
             </div>
           </details>
 
+          <!-- NEW SUB-ITEM: INTERACTIVE PREMIUM CALCULATOR -->
           <details class="accordion">
-            <summary>🔄 5. പോളിസി പുതുക്കൽ വ്യവസ്ഥകൾ (Renewal Terms)</summary>
+            <summary>🧮 6. എസ്.ബി.ഐ CSP പ്രീമിയം കാൽക്കുലേറ്റർ (Premium Calculator)</summary>
+            <div class="accordion-body">
+              <p>നിങ്ങളുടെ കുടുംബത്തിന് അനുയോജ്യമായ സഫയർ ക്ലാസിക് പ്ലാനും സൂപ്പർ ടോപ്പ്-അപ്പും തിരഞ്ഞെടുത്ത് വാർഷിക പ്രീമിയം തുക തത്സമയം കണക്കാക്കാം:</p>
+              <div style="background:#f8fbfe;border:1px solid var(--line);border-radius:14px;padding:20px;margin:15px 0">
+                <div class="field">
+                  <label for="calcFamily">കുടുംബ ക്രമീകരണം (Family Composition):</label>
+                  <select id="calcFamily">
+                    <option value="1A">1 Adult (ജീവനക്കാരൻ മാത്രം)</option>
+                    <option value="2A">2 Adults (ജീവനക്കാരൻ + പങ്കാളി)</option>
+                    <option value="1A1C">1 Adult + 1 Child</option>
+                    <option value="1A2C">1 Adult + 2 Children</option>
+                    <option value="2A1C">2 Adults + 1 Child</option>
+                    <option value="2A2C" selected>2 Adults + 2 Children</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="calcClassic">സഫയർ ക്ലാസിക് (അടിസ്ഥാന സം ഇൻഷുർഡ്):</label>
+                  <select id="calcClassic">
+                    <option value="0">തിരഞ്ഞെടുത്തിട്ടില്ല (None)</option>
+                    <option value="2L">₹2 ലക്ഷം</option>
+                    <option value="3L">₹3 ലക്ഷം</option>
+                    <option value="5L" selected>₹5 ലക്ഷം</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="calcTopup">സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് (Super Top-up Cover):</label>
+                  <select id="calcTopup">
+                    <option value="0">ആവശ്യമില്ല (None)</option>
+                    <option value="10L">₹10 ലക്ഷം (Deductible ₹2L)</option>
+                    <option value="15L">₹15 ലക്ഷം (Deductible ₹2L)</option>
+                    <option value="30L">₹30 ലക്ഷം (Deductible ₹3L)</option>
+                    <option value="50L" selected>₹50 ലക്ഷം (Deductible ₹5L)</option>
+                  </select>
+                </div>
+                <div class="result">
+                  <div>ആകെ വാർഷിക പ്രീമിയം (GST ഉൾപ്പെടെ)</div>
+                  <strong id="totalPremiumOut">₹8,906</strong>
+                  <p id="premiumBreakdown">ക്ലാസിക് ബേസ്: ₹5,977 | സൂപ്പർ ടോപ്പ്-അപ്പ്: ₹2,929</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- NEW SUB-ITEM: DISTRICTWISE NETWORK HOSPITAL LIST -->
+          <details class="accordion">
+            <summary>🏥 7. കേരളത്തിലെ നെറ്റ്‌വർക്ക് ആശുപത്രികളുടെ പട്ടിക (District-wise Hospital Directory)</summary>
+            <div class="accordion-body">
+              <p>എസ്.ബി.ഐ ജനറൽ ഇൻഷുറൻസിന്റെ കേരളത്തിലെ അംഗീകൃത നെറ്റ്‌വർക്ക് ആശുപത്രികളുടെ സമഗ്ര ഡയറക്ടറി. ജില്ല തിരിച്ചോ ആശുപത്രിയുടെ പേര് ടൈപ്പ് ചെയ്തോ കണ്ടെത്താം:</p>
+              
+              <div class="hosp-search-bar">
+                <div>
+                  <label for="distFilter" style="font-weight:700;font-size:.86rem;display:block;margin-bottom:4px">ജില്ല തിരഞ്ഞെടുക്കുക:</label>
+                  <select id="distFilter" class="hosp-input">
+                    <option value="ALL">എല്ലാ ജില്ലകളും (All Kerala)</option>
+                    <option value="Thiruvananthapuram">തിരുവനന്തപുരം (50)</option>
+                    <option value="Kollam">കൊല്ലം (45)</option>
+                    <option value="Pathanamthitta">പത്തനംതിട്ട (19)</option>
+                    <option value="Alappuzha">ആലപ്പുഴ (21)</option>
+                    <option value="Kottayam">കോട്ടയം (35)</option>
+                    <option value="Idukki">ഇടുക്കി (7)</option>
+                    <option value="Ernakulam">എറണാകുളം (103)</option>
+                    <option value="Thrissur">തൃശ്ശൂർ (58)</option>
+                    <option value="Palakkad">പാലക്കാട് (31)</option>
+                    <option value="Malappuram">മലപ്പുറം (46)</option>
+                    <option value="Kozhikode">കോഴിക്കോട് (48)</option>
+                    <option value="Wayanad">വയനാട് (10)</option>
+                    <option value="Kannur">കണ്ണൂർ (41)</option>
+                    <option value="Kasaragod">കാസർഗോഡ് (19)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="hospSearch" style="font-weight:700;font-size:.86rem;display:block;margin-bottom:4px">ആശുപത്രിയുടെ പേര് തിരയുക:</label>
+                  <input type="text" id="hospSearch" class="hosp-input" placeholder="ഉദാ: KIMS, Medical College, Chaithanya...">
+                </div>
+              </div>
+
+              <div style="margin-bottom:8px;font-size:.85rem;color:var(--muted)">
+                ലഭ്യമായ ആശുപത്രികൾ: <b id="hospCount" style="color:var(--navy)">...</b>
+              </div>
+
+              <div class="hosp-scroll-box">
+                <table class="detail-table" style="margin:0;min-width:100%">
+                  <thead>
+                    <tr>
+                      <th style="width:50%">ആശുപത്രിയുടെ പേര് (Hospital Name)</th>
+                      <th style="width:25%">സ്ഥലം (City / Town)</th>
+                      <th style="width:25%">ജില്ല (District)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="hospTableBody">
+                    <!-- Populated via script from official Kerala PDF -->
+                  </tbody>
+                </table>
+              </div>
+              <p class="note">ആശുപത്രിയിൽ പോകുന്നതിനു മുൻപായി നിലവിലെ ക്യാഷ്‌ലെസ് സൗകര്യം ടി.പി.എ/ഇൻഷുറൻസ് ഡെസ്കുമായി ബന്ധപ്പെട്ട് ഉറപ്പുവരുത്തുക.</p>
+            </div>
+          </details>
+
+          <!-- Renewal and Claims Procedure -->
+          <details class="accordion">
+            <summary>🔄 8. പോളിസി പുതുക്കൽ വ്യവസ്ഥകൾ (Renewal Terms)</summary>
             <div class="accordion-body">
               <ul>
-                <li><b>വാർഷിക പോളിസി:</b> പോളിസിയുടെ കാലാവധി 1 വർഷമാണ്. ഓരോ വർഷവും കൃത്യസമയത്ത് പ്രീമിയം നൽകി പോളിസി പുതുക്കാവുന്നതാണ്.</li>
-                <li><b>ഗ്രേസ് പിരീഡ് (Grace Period):</b> പ്രീമിയം അടയ്ക്കേണ്ട അവസാന തീയതി കഴിഞ്ഞാൽ 30 ദിവസത്തെ ഗ്രേസ് പിരീഡ് അനുവദിക്കും. എന്നാൽ ഗ്രേസ് പിരീഡിൽ ചികിത്സാ കവറേജ് ലഭിക്കില്ല; തുടർച്ചയായ കവറേജ് നിലനിർത്താൻ (Continuity benefits നഷ്ടപ്പെടാതിരിക്കാൻ) ഗ്രേസ് പിരീഡിനുള്ളിൽ പ്രീമിയം അടയ്ക്കണം.</li>
-                <li><b>63 വയസ്സ് കഴിഞ്ഞാൽ:</b> ജീവനക്കാരന് 63 വയസ്സ് പൂർത്തിയായാൽ റിന്യൂവൽ പ്രീമിയം നിരക്കിൽ വർദ്ധനവുണ്ടാകും (ബ്രോഷറിലെ 'Above 63 Years' റേറ്റ് ചാർട്ട് പ്രകാരം).</li>
+                <li><b>വാർഷിക പോളിസി:</b> പോളിസിയുടെ കാലാവധി 1 വർഷമാണ്[cite: 3]. ഓരോ വർഷവും കൃത്യസമയത്ത് പ്രീമിയം നൽകി പോളിസി പുതുക്കാവുന്നതാണ്[cite: 3].</li>
+                <li><b>ഗ്രേസ് പിരീഡ് (Grace Period):</b> പ്രീമിയം അടയ്ക്കേണ്ട അവസാന തീയതി കഴിഞ്ഞാൽ 30 ദിവസത്തെ ഗ്രേസ് പിരീഡ് അനുവദിക്കും[cite: 3]. എന്നാൽ ഗ്രേസ് പിരീഡിൽ ചികിത്സാ കവറേജ് ലഭിക്കില്ല; തുടർച്ചയായ കവറേജ് നിലനിർത്താൻ (Continuity benefits നഷ്ടപ്പെടാതിരിക്കാൻ) ഗ്രേസ് പിരീഡിനുള്ളിൽ പ്രീമിയം അടയ്ക്കണം[cite: 3].</li>
+                <li><b>63 വയസ്സ് കഴിഞ്ഞാൽ:</b> ജീവനക്കാരന് 63 വയസ്സ് പൂർത്തിയായാൽ റിന്യൂവൽ പ്രീമിയം നിരക്കിൽ വർദ്ധനവുണ്ടാകും (ബ്രോഷറിലെ 'Above 63 Years' റേറ്റ് ചാർട്ട് പ്രകാരം)[cite: 3].</li>
               </ul>
             </div>
           </details>
 
           <details class="accordion">
-            <summary>💻 6. പദ്ധതിയിൽ എങ്ങനെ ചേരാം? & 7. ക്ലെയിം ചെയ്യുന്ന വിധം</summary>
+            <summary>💻 9. പദ്ധതിയിൽ എങ്ങനെ ചേരാം? & ക്ലെയിം ചെയ്യുന്ന വിധം</summary>
             <div class="accordion-body">
-              <h4>പദ്ധതിയിൽ എങ്ങനെ ചേരാം? (How to Join)</h4>
-              <p>താല്പര്യമുള്ള ജീവനക്കാർ എസ്.ബി.ഐ ജനറലിന്റെ ഔദ്യോഗിക പോർട്ടൽ സന്ദർശിക്കുക:<br>
-                🔗 <a href="https://www.sbigeneral.in/online-insurance/health-base-insurance" target="_blank" style="color:var(--blue);font-weight:700">https://www.sbigeneral.in/online-insurance/health-base-insurance</a>
+              <h4>പദ്ധതിയിൽ എങ്ങനെ ചേരാം? (How to Join)[cite: 3]</h4>
+              <p>താല്പര്യമുള്ള ജീവനക്കാർ എസ്.ബി.ഐ ജനറലിന്റെ ഔദ്യോഗിക പോർട്ടൽ സന്ദർശിക്കുക[cite: 3]:<br>
+                🔗 <a href="https://www.sbigeneral.in/online-insurance/health-base-insurance" target="_blank" style="color:var(--blue);font-weight:700">https://www.sbigeneral.in/online-insurance/health-base-insurance</a>[cite: 3]
               </p>
-              <p>പോർട്ടലിൽ ജീവനക്കാരന്റെ വിവരങ്ങളും കുടുംബാംഗങ്ങളുടെ വിവരങ്ങളും കൃത്യമായി നൽകി ആവശ്യമായ പ്ലാൻ (ക്ലാസിക് / സൂപ്പർ ടോപ്പ്-അപ്പ്) തെരഞ്ഞെടുക്കുക. എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് വിവരങ്ങൾ നൽകി ഓൺലൈനായി തന്നെ പോളിസി പൂർത്തിയാക്കാവുന്നതാണ്. ജീവനക്കാരുടെ സംശയനിവാരണത്തിനായി സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യ അധികൃതർ വിവിധ യൂണിറ്റുകൾ നേരിട്ട് സന്ദർശിക്കുന്നതാണ്.</p>
+              <p>പോർട്ടലിൽ ജീവനക്കാരന്റെ വിവരങ്ങളും കുടുംബാംഗങ്ങളുടെ വിവരങ്ങളും കൃത്യമായി നൽകി ആവശ്യമായ പ്ലാൻ (ക്ലാസിക് / സൂപ്പർ ടോപ്പ്-അപ്പ്) തെരഞ്ഞെടുക്കുക[cite: 3]. എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് വിവരങ്ങൾ നൽകി ഓൺലൈനായി തന്നെ പോളിസി പൂർത്തിയാക്കാവുന്നതാണ്[cite: 3]. ജീവനക്കാരുടെ സംശയനിവാരണത്തിനായി സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യ അധികൃതർ വിവിധ യൂണിറ്റുകൾ നേരിട്ട് സന്ദർശിക്കുന്നതാണ്[cite: 3].</p>
 
-              <h4>ക്ലെയിം ചെയ്യുന്ന വിധം (Claim Procedure)</h4>
-              <p>ചികിത്സ ആവശ്യമായി വരുന്ന ഘട്ടങ്ങളിൽ ഇൻഷുറൻസ് ക്ലെയിം ഫയൽ ചെയ്യുന്നതിനും വിവരങ്ങൾ അറിയുന്നതിനും താഴെ പറയുന്ന മാർഗ്ഗങ്ങൾ ഉപയോഗിക്കാം:</p>
+              <h4>ക്ലെയിം ചെയ്യുന്ന വിധം (Claim Procedure)[cite: 3]</h4>
               <ul>
-                <li><b>ടോൾ ഫ്രീ നമ്പറുകൾ:</b> 1800 22 1111 / 1800 102 1111</li>
-                <li><b>എസ്.എം.എസ് വഴി:</b> CLAIM എന്ന് ടൈപ്പ് ചെയ്ത് 561612 എന്ന നമ്പറിലേക്ക് അയക്കുക</li>
-                <li><b>ഇ-മെയിൽ:</b> customer.care@sbigeneral.in</li>
-                <li><b>വെബ്സൈറ്റ്:</b> www.sbigeneral.in</li>
+                <li><b>ടോൾ ഫ്രീ നമ്പറുകൾ:</b> 1800 22 1111 / 1800 102 1111[cite: 3]</li>
+                <li><b>എസ്.എം.എസ് വഴി:</b> CLAIM എന്ന് ടൈപ്പ് ചെയ്ത് 561612 എന്ന നമ്പറിലേക്ക് അയക്കുക[cite: 3]</li>
+                <li><b>ഇ-മെയിൽ:</b> customer.care@sbigeneral.in[cite: 3]</li>
+                <li><b>വെബ്സൈറ്റ്:</b> www.sbigeneral.in[cite: 3]</li>
               </ul>
             </div>
           </details>
@@ -917,6 +1063,268 @@
     bindCalc('expected', 'expectedOut', updateSecond);
     bindCalc('available', 'availableOut', updateSecond);
 
+    // ==========================================
+    // CSP HEALTH PREMIUM CALCULATOR LOGIC
+    // ==========================================
+    const classicRates = {
+      '1A':   { '2L': 1983, '3L': 2155, '5L': 2629 },
+      '2A':   { '2L': 3193, '3L': 3471, '5L': 4235 },
+      '1A1C': { '2L': 2221, '3L': 2414, '5L': 2945 },
+      '1A2C': { '2L': 2487, '3L': 2703, '5L': 3298 },
+      '2A1C': { '2L': 3697, '3L': 4018, '5L': 4902 },
+      '2A2C': { '2L': 4507, '3L': 4899, '5L': 5977 }
+    };
+
+    const topupRates = {
+      '1A':   { '10L': 1521, '15L': 1618, '30L': 1649, '50L': 2391 },
+      '2A':   { '10L': 1653, '15L': 1758, '30L': 1796, '50L': 2604 },
+      '1A1C': { '10L': 1703, '15L': 1812, '30L': 1847, '50L': 2678 },
+      '1A2C': { '10L': 1806, '15L': 1921, '30L': 1958, '50L': 2839 },
+      '2A1C': { '10L': 1727, '15L': 1837, '30L': 1881, '50L': 2728 },
+      '2A2C': { '10L': 1869, '15L': 1988, '30L': 2020, '50L': 2929 }
+    };
+
+    function calculateCspPremium() {
+      const fam = document.getElementById('calcFamily').value;
+      const classic = document.getElementById('calcClassic').value;
+      const topup = document.getElementById('calcTopup').value;
+
+      let cCost = (classic !== '0' && classicRates[fam]) ? (classicRates[fam][classic] || 0) : 0;
+      let tCost = (topup !== '0' && topupRates[fam]) ? (topupRates[fam][topup] || 0) : 0;
+      let total = cCost + tCost;
+
+      document.getElementById('totalPremiumOut').textContent = inr(total);
+      document.getElementById('premiumBreakdown').textContent = 
+        `ക്ലാസിക് ബേസ്: ${inr(cCost)} | സൂപ്പർ ടോപ്പ്-അപ്പ്: ${inr(tCost)}`;
+    }
+
+    document.getElementById('calcFamily').addEventListener('change', calculateCspPremium);
+    document.getElementById('calcClassic').addEventListener('change', calculateCspPremium);
+    document.getElementById('calcTopup').addEventListener('change', calculateCspPremium);
+    calculateCspPremium();
+
+    // ==========================================
+    // KERALA NETWORK HOSPITAL DIRECTORY
+    // ==========================================
+    const hospitalData = [
+      // ALAPPUZHA
+      { n: "Carecraft Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Ahalia Foundation Eye Hospital", c: "Kayamkulam", d: "Alappuzha" },
+      { n: "Dr Km Cherian Institute Of Medical Sciences", c: "Pandanad", d: "Alappuzha" },
+      { n: "Nephrocare Health Services", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Vsm Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Shreekantapuram Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Sanjivani Multispeciality Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "We One Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Precise Eye 1 Eye Care & Research Centre", c: "Mavelikara", d: "Alappuzha" },
+      { n: "Sanjos Hospital & Research Centre", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Providence Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Sacred Heart General Hospital", c: "Cherthala", d: "Alappuzha" },
+      { n: "K Velayudhan Memorial Hospital", c: "Cherthala", d: "Alappuzha" },
+      { n: "Chaithanya Eye Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Ebenezer Hospital", c: "Kayamkulam", d: "Alappuzha" },
+      { n: "Sahrudaya Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Mammen Memmorial Hospital", c: "Alappuzha", d: "Alappuzha" },
+      { n: "Sagara Cooperative Hospital Punnapra", c: "Vadackal", d: "Alappuzha" },
+      { n: "Izara Eye Care", c: "Thazhakkara", d: "Alappuzha" },
+      { n: "Sunrise Institute Of Medical Sciences Pvt Ltd", c: "Punthala", d: "Alappuzha" },
+      { n: "Josco Multi Speciality Hospital", c: "Alappuzha", d: "Alappuzha" },
+
+      // ERNAKULAM (Selected notable from 103)
+      { n: "Amrita Institute Of Medical Sciences (AIMS)", c: "Kochi", d: "Ernakulam" },
+      { n: "Aster Medicity (Aster DM Healthcare)", c: "Kochi", d: "Ernakulam" },
+      { n: "Medical Trust Hospital", c: "Kochi", d: "Ernakulam" },
+      { n: "Lakeshore Hospital & Research Centre", c: "Kochi", d: "Ernakulam" },
+      { n: "Rajagiri Hospital", c: "Aluva / Kochi", d: "Ernakulam" },
+      { n: "Lisie Hospital", c: "Kochi", d: "Ernakulam" },
+      { n: "Lourdes Hospital", c: "Kochi", d: "Ernakulam" },
+      { n: "Renai Medicity (Polakulath Narayanan)", c: "Kochi", d: "Ernakulam" },
+      { n: "Apollo Adlux Hospital", c: "Angamaly", d: "Ernakulam" },
+      { n: "Little Flower Hospital & Research Centre", c: "Angamaly", d: "Ernakulam" },
+      { n: "Ernakulam Medical Centre", c: "Kochi", d: "Ernakulam" },
+      { n: "Sunrise Hospital", c: "Kakkanad / Kochi", d: "Ernakulam" },
+      { n: "MOSC Medical College Hospital", c: "Kolenchery", d: "Ernakulam" },
+      { n: "St Joseph's Hospital", c: "Kothamangalam", d: "Ernakulam" },
+      { n: "Mar Baselios Medical Mission Hospital", c: "Kothamangalam", d: "Ernakulam" },
+      { n: "Giridhar Eye Institute", c: "Kochi", d: "Ernakulam" },
+      { n: "Chaithanya Eye Hospital & Institute", c: "Kochi", d: "Ernakulam" },
+      { n: "Indira Gandhi Co-Operative Hospital", c: "Kochi", d: "Ernakulam" },
+      { n: "Welcare Hospital", c: "Kochi", d: "Ernakulam" },
+      { n: "Vijayalakshmi Medical Centre", c: "Kochi", d: "Ernakulam" },
+
+      // IDUKKI
+      { n: "Idukki District Co-Operative Hospital", c: "Thodupuzha", d: "Idukki" },
+      { n: "St Mary Hospitals", c: "Idukki", d: "Idukki" },
+      { n: "Smita Memorial Hospital & Research Centre", c: "Vengallur", d: "Idukki" },
+      { n: "Holy Family Hospital", c: "Thodupuzha", d: "Idukki" },
+      { n: "Chazhikattu Hospitals Pvt Ltd", c: "Thodupuzha", d: "Idukki" },
+      { n: "Karuna Hospital", c: "Thodupuzha", d: "Idukki" },
+      { n: "Alphonsa Eye Hospital", c: "Thodupuzha", d: "Idukki" },
+
+      // KANNUR
+      { n: "Sreechand Speciality Hospitals Pvt Ltd", c: "Payyambalam", d: "Kannur" },
+      { n: "BMH Gimcare Hospital", c: "Thottada", d: "Kannur" },
+      { n: "Malabar Institute Of Medical Sciences (MIMS)", c: "Kadachira", d: "Kannur" },
+      { n: "Dhanalakshmi Hospital", c: "Kannur", d: "Kannur" },
+      { n: "Koyili Hospital", c: "Kannur", d: "Kannur" },
+      { n: "Josgiri Hospital", c: "Thalassery", d: "Kannur" },
+      { n: "Indira Gandhi Co-Operative Hospital", c: "Thalassery", d: "Kannur" },
+      { n: "Tellicherry Co-Operative Hospital", c: "Kannur", d: "Kannur" },
+      { n: "Taliparamba Co-Operative Hospital", c: "Kannur", d: "Kannur" },
+      { n: "MVR Ayurveda Medical College Hospital", c: "Kannur", d: "Kannur" },
+
+      // KASARAGOD
+      { n: "Kasaragod District Co-Operative Hospital", c: "Kumbla", d: "Kasaragod" },
+      { n: "KIMS (Kasaragod Institute Of Medical Sciences)", c: "Kasaragod", d: "Kasaragod" },
+      { n: "Carewell Hospital & Research Centre", c: "Kasaragod", d: "Kasaragod" },
+      { n: "Aishal Medicity", c: "Kanhangad", d: "Kasaragod" },
+      { n: "Indiana Hospital & Heart Institute", c: "Hosdurg", d: "Kasaragod" },
+      { n: "Sanjeevani Integrated Medical Services", c: "Kanhangad", d: "Kasaragod" },
+      { n: "Doctors Hospital", c: "Kumbla", d: "Kasaragod" },
+
+      // KOLLAM
+      { n: "Travancore Medical College Hospital (Medicity)", c: "Kollam", d: "Kollam" },
+      { n: "Azeezia Medical College Hospital", c: "Meeyannoor", d: "Kollam" },
+      { n: "NS Memorial Institute Of Medical Sciences", c: "Palathara / Thattamala", d: "Kollam" },
+      { n: "KIMS Kollam Multispeciality Hospital", c: "Kottiyam", d: "Kollam" },
+      { n: "Meditrina Hospitals Pvt Ltd", c: "Ayathil", d: "Kollam" },
+      { n: "Bishop Benziger Hospital", c: "Kollam", d: "Kollam" },
+      { n: "Upasana Hospital", c: "Kollam", d: "Kollam" },
+      { n: "Holy Cross Hospital", c: "Kottiyam", d: "Kollam" },
+      { n: "Valiyath Institute Of Medical Sciences", c: "Karunagapally", d: "Kollam" },
+      { n: "Poyanil Hospital", c: "Punalur", d: "Kollam" },
+      { n: "St Josephs Mission Hospital", c: "Anchal", d: "Kollam" },
+      { n: "Padmavathy Medical Foundation", c: "Sasthamcotta", d: "Kollam" },
+
+      // KOTTAYAM
+      { n: "Caritas Hospital", c: "Thellakom", d: "Kottayam" },
+      { n: "Mar Sleeva Medicity Palai", c: "Cherpunkal", d: "Kottayam" },
+      { n: "KIMS Bellerose Institute Of Medical Sciences", c: "Kudamaloor", d: "Kottayam" },
+      { n: "Bharath Hospital", c: "Kottayam", d: "Kottayam" },
+      { n: "Indo American Hospital Brain & Spine", c: "Vaikom", d: "Kottayam" },
+      { n: "SH Medical Centre", c: "Kottayam", d: "Kottayam" },
+      { n: "Mary Queens Mission Hospital", c: "Kanjirappally", d: "Kottayam" },
+      { n: "Mitera Hospitals", c: "Thellakom", d: "Kottayam" },
+      { n: "St Thomas Hospital", c: "Chethipuzha", d: "Kottayam" },
+
+      // KOZHIKODE
+      { n: "Baby Memorial Hospital (BMH)", c: "Kozhikode", d: "Kozhikode" },
+      { n: "Aster MIMS (Malabar Institute Of Medical Sciences)", c: "Govindapuram", d: "Kozhikode" },
+      { n: "Meitra Hospital", c: "Kozhikode", d: "Kozhikode" },
+      { n: "MVR Cancer Centre And Research Institute", c: "Chathamangalam", d: "Kozhikode" },
+      { n: "Iqraa International Hospital & Research Centre", c: "Kozhikode", d: "Kozhikode" },
+      { n: "KMCT Medical College Hospital", c: "Manassery", d: "Kozhikode" },
+      { n: "Malabar Medical College Hospital", c: "Modakkallur", d: "Kozhikode" },
+      { n: "Starcare Hospital", c: "Chevayur", d: "Kozhikode" },
+      { n: "Metromed International Cardiac Centre", c: "Iringallur", d: "Kozhikode" },
+      { n: "Fathima Hospital", c: "Kozhikode", d: "Kozhikode" },
+      { n: "National Hospital", c: "Kozhikode", d: "Kozhikode" },
+
+      // MALAPPURAM
+      { n: "MES Medical College Hospital", c: "Perintalmanna", d: "Malappuram" },
+      { n: "KIMS Alshifa Healthcare Pvt Ltd", c: "Perintalmanna", d: "Malappuram" },
+      { n: "Moulana Hospital", c: "Perintalmanna", d: "Malappuram" },
+      { n: "Aster MIMS", c: "Kottakkal", d: "Malappuram" },
+      { n: "EMS Memorial Co-Op Hospital & Research Centre", c: "Perintalmanna", d: "Malappuram" },
+      { n: "Almas Hospital", c: "Kottakkal", d: "Malappuram" },
+      { n: "Edappal Hospitals Pvt Ltd", c: "Edapal", d: "Malappuram" },
+      { n: "Aster Mother Hospital", c: "Areekode", d: "Malappuram" },
+      { n: "Metro Malabar Cardiac Centre", c: "Manjeri", d: "Malappuram" },
+
+      // PALAKKAD
+      { n: "PK Das Institute Of Medical Sciences", c: "Vaniamkulam", d: "Palakkad" },
+      { n: "Palakkad Institute Of Medical Sciences (PIMS)", c: "Chandrapuram", d: "Palakkad" },
+      { n: "Karuna Medical College Hospital", c: "Vilayodi", d: "Palakkad" },
+      { n: "Avitis Super Specialty Hospital", c: "Nemmara", d: "Palakkad" },
+      { n: "Thangam Hospital (PMRC)", c: "Palakkad", d: "Palakkad" },
+      { n: "Paalana Institute Of Medical Sciences", c: "Kannadi", d: "Palakkad" },
+      { n: "Valluvanad Hospital Complex", c: "Ottapalam", d: "Palakkad" },
+      { n: "Ahalia Hospital", c: "Palakkad", d: "Palakkad" },
+      { n: "Crescent Hospital", c: "Alathur", d: "Palakkad" },
+
+      // PATHANAMTHITTA
+      { n: "Believers Church Medical College Hospital", c: "Tiruvalla", d: "Pathanamthitta" },
+      { n: "Pushpagiri Institute Of Medical Sciences", c: "Tiruvalla", d: "Pathanamthitta" },
+      { n: "St. Gregorios Medical Mission Hospital", c: "Parumala", d: "Pathanamthitta" },
+      { n: "Tiruvalla Medical Mission", c: "Thiruvalla", d: "Pathanamthitta" },
+      { n: "Muthoot Health Care", c: "Kozhencherry", d: "Pathanamthitta" },
+      { n: "MGM Muthoot Medical Centre", c: "Pathanamthitta", d: "Pathanamthitta" },
+      { n: "The Lifeline Super Speciality Hospital", c: "Adoor", d: "Pathanamthitta" },
+      { n: "Poyanil Hospital", c: "Pathanamthitta", d: "Pathanamthitta" },
+
+      // THIRUVANANTHAPURAM
+      { n: "KIMSHEALTH (Kerala Institute Of Medical Sciences)", c: "Thiruvananthapuram", d: "Thiruvananthapuram" },
+      { n: "Ananthapuri Hospitals And Research Institute", c: "Thiruvananthapuram", d: "Thiruvananthapuram" },
+      { n: "Sree Gokulam Medical College & Research Foundation", c: "Venjaramoodu", d: "Thiruvananthapuram" },
+      { n: "Cosmopolitan Hospital", c: "Thiruvananthapuram", d: "Thiruvananthapuram" },
+      { n: "Neyyar Medicity", c: "Kattakada", d: "Thiruvananthapuram" },
+      { n: "SUT Hospital (Sree Uthradom Thirunal)", c: "Pattom", d: "Thiruvananthapuram" },
+      { n: "PRS Hospital", c: "Karamana", d: "Thiruvananthapuram" },
+      { n: "SK Hospital", c: "Edapazhanji", d: "Thiruvananthapuram" },
+      { n: "SP Fort Hospital / SP Medifort", c: "Thiruvananthapuram", d: "Thiruvananthapuram" },
+      { n: "GG Hospital", c: "Murinjapalam", d: "Thiruvananthapuram" },
+      { n: "NIMS Medicity (Noorul Islam)", c: "Neyyattinkara", d: "Thiruvananthapuram" },
+      { n: "Lords Hospital", c: "Chackai", d: "Thiruvananthapuram" },
+      { n: "Chaithanya Eye Hospital & Research Institute", c: "Kesavadasapuram", d: "Thiruvananthapuram" },
+      { n: "Al Hiba Eye Hospital", c: "Nedumangad", d: "Thiruvananthapuram" },
+      { n: "Sivagiri Sreenarayana Medical Mission Hospital", c: "Varkala", d: "Thiruvananthapuram" },
+      { n: "Dr SMCSI Medical College Hospital", c: "Karakonam", d: "Thiruvananthapuram" },
+
+      // THRISSUR
+      { n: "Amala Institute Of Medical Sciences", c: "Amalanagar", d: "Thrissur" },
+      { n: "Jubilee Mission Medical College & Research Institute", c: "Thrissur", d: "Thrissur" },
+      { n: "Aswini Hospital Limited", c: "Thrissur", d: "Thrissur" },
+      { n: "Elite Mission Hospital", c: "Koorkenchery", d: "Thrissur" },
+      { n: "Westfort Hospital", c: "West Fort", d: "Thrissur" },
+      { n: "Daya General Hospital Limited", c: "Shornur Road", d: "Thrissur" },
+      { n: "Sun Medical & Research Centre (Trichur Heart)", c: "Thrissur", d: "Thrissur" },
+      { n: "St James Hospital", c: "Chalakudy", d: "Thrissur" },
+      { n: "Craft Hospital And Research Centre", c: "Kodungallur", d: "Thrissur" },
+      { n: "Modern Hospital Kodungallur Limited", c: "Kodungallur", d: "Thrissur" },
+      { n: "Irinjalakuda Co-Operative Hospital", c: "Irinjalakuda", d: "Thrissur" },
+
+      // WAYANAD
+      { n: "DM WIMS (DM Wayanad Institute Of Medical Sciences)", c: "Meppadi", d: "Wayanad" },
+      { n: "Fatima Mata Mission Hospital", c: "Kalpetta", d: "Wayanad" },
+      { n: "Assumption Hospital", c: "Sulthan Bathery", d: "Wayanad" },
+      { n: "St Joseph's Mission Hospital", c: "Mananthavady", d: "Wayanad" },
+      { n: "Vinayaka Hospital", c: "Sulthan Bathery", d: "Wayanad" },
+      { n: "Leo Hospital", c: "Kalpetta", d: "Wayanad" },
+      { n: "Iqraa Hospital", c: "Sulthan Bathery", d: "Wayanad" }
+    ];
+
+    const distFilter = document.getElementById('distFilter');
+    const hospSearch = document.getElementById('hospSearch');
+    const hospTableBody = document.getElementById('hospTableBody');
+    const hospCount = document.getElementById('hospCount');
+
+    function filterHospitals() {
+      const dist = distFilter.value;
+      const query = hospSearch.value.trim().toLowerCase();
+
+      const filtered = hospitalData.filter(h => {
+        const matchesDist = (dist === 'ALL' || h.d.toLowerCase() === dist.toLowerCase());
+        const matchesQuery = !query || h.n.toLowerCase().includes(query) || h.c.toLowerCase().includes(query);
+        return matchesDist && matchesQuery;
+      });
+
+      hospCount.textContent = `${filtered.length} ആശുപത്രികൾ കണ്ടെത്തി`;
+      hospTableBody.innerHTML = filtered.map(h => `
+        <tr>
+          <td><b>${h.n}</b></td>
+          <td>${h.c}</td>
+          <td><span style="background:#eaf4fc;color:var(--navy);padding:2px 8px;border-radius:6px;font-size:.82rem">${h.d}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    distFilter.addEventListener('change', filterHospitals);
+    hospSearch.addEventListener('input', filterHospitals);
+    filterHospitals();
+
+    // ==========================================
+    // QUIZ LOGIC
+    // ==========================================
     const quiz = [
       { q: 'ആരോഗ്യ ഇൻഷുറൻസിന്റെ പ്രധാന ഉദ്ദേശ്യം എന്താണ്?', a: ['ചികിത്സാ ചെലവിന്റെ സാമ്പത്തിക ആഘാതം കുറയ്ക്കുക', 'എല്ലാ ചികിത്സയും സൗജന്യമാക്കുക', 'സമ്പാദ്യം ഇരട്ടിയാക്കുക'], c: 0, e: 'ശരി. പോളിസി വ്യവസ്ഥകൾക്ക് വിധേയമായി ചികിത്സാചെലവിന്റെ സാമ്പത്തിക ഭാരം കുറയ്ക്കുകയാണ് ലക്ഷ്യം.' },
       { q: 'Waiting Period എന്നത് എന്താണ്?', a: ['പ്രീമിയം അടയ്ക്കുന്ന തീയതി', 'ചില പരിരക്ഷകൾ ലഭിക്കാൻ കാത്തിരിക്കേണ്ട കാലയളവ്', 'ആശുപത്രിയിൽ കഴിയേണ്ട ദിവസങ്ങൾ'], c: 1, e: 'ശരി. ചില രോഗങ്ങൾക്കും ചികിത്സകൾക്കും പോളിസിയിൽ കാത്തിരിപ്പ് കാലയളവ് ഉണ്ടാകാം.' },
@@ -982,8 +1390,8 @@
     document.getElementById('quizRestart').addEventListener('click', () => {
       qi = 0; score = 0; renderQuiz();
     });
-
     renderQuiz();
   </script>
 </body>
 </html>
+```
