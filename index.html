@@ -1309,55 +1309,1240 @@
             </div>
           </details>
 
-          <!-- 11. CERTIFICATE & ID CARD GENERATOR -->
-          <details class="accordion" id="acc-certgen" data-csp-cat="claims">
-            <summary>🪪 11. റഫറൻസ് സർട്ടിഫിക്കറ്റ് &amp; ഹെൽത്ത് ID കാർഡ് ജനറേറ്റർ</summary>
-            <div class="accordion-body">
-              <div class="tool-grid">
-                <div>
-                  <div class="field"><label for="cgPlan">പ്ലാൻ:</label>
-                    <select id="cgPlan"><option value="Sapphire Classic">Sapphire Classic</option><option value="Sapphire Super Top-Up">Sapphire Super Top-Up</option></select>
-                  </div>
-                  <div class="field"><label for="cgName">പേര് (Self):</label><input type="text" id="cgName" value="Rajesh Kumar"></div>
-                  <div class="field"><label for="cgPolNo">പോളിസി / COI നമ്പർ:</label><input type="text" id="cgPolNo" value="SBIG-SAP-2026-004821"></div>
-                  <div class="field"><label for="cgAccNo">SBI സാലറി അക്കൗണ്ട്:</label><input type="text" id="cgAccNo" value="XXXXXX48291"></div>
-                  <div class="field"><label for="cgSi">സം ഇൻഷ്വേർഡ്:</label><input type="text" id="cgSi" value="₹3,00,000"></div>
-                  <div class="field"><label for="cgExp">കാലാവധി തീരുന്ന തീയതി:</label><input type="date" id="cgExp" value="2027-11-07"></div>
-                  <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-                    <button type="button" class="csp-btn" id="cgPrintBtn">Print / Save PDF</button>
-                  </div>
+
+
+
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - Certificate &amp; ID Card Generator</title>
+  <style>
+    :root {
+      --primary: #3e1f68;
+      --primary-dark: #2a1349;
+      --accent: #008b9a;
+      --bg: #f4f3f8;
+      --card-bg: #ffffff;
+      --surface: #f7f5fa;
+      --border: #dfd8ea;
+      --text: #1e2430;
+      --muted: #555e70;
+      --success: #0f766e;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", "Noto Sans Malayalam", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .app-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    .app-header {
+      background: linear-gradient(135deg, var(--primary), #542c8a);
+      color: #ffffff;
+      padding: 22px 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .app-header .kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 4px 0;
+    }
+
+    .app-header h1 {
+      font-size: 1.45rem;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+    }
+
+    .app-header p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #e8e2f3;
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 420px) 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .panel h2 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin: 0 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--surface);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: #ffffff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--accent);
+      border-color: var(--accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 62px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: opacity 0.15s ease, transform 0.1s ease;
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background: var(--surface);
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .preview-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-group {
+      display: inline-flex;
+      background: var(--surface);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      gap: 4px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      color: var(--muted);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.86rem;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .action-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Certificate Preview */
+    .cert-sheet {
+      background: #ffffff;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .cert-banner {
+      background: linear-gradient(135deg, var(--primary), #542c8a);
+      color: #ffffff;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cert-banner h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.25rem;
+    }
+
+    .cert-banner p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: #e4ddf2;
+    }
+
+    .cert-uin {
+      background: rgba(255, 255, 255, 0.14);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .cert-body {
+      padding: 20px 24px;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px 18px;
+      margin-bottom: 18px;
+    }
+
+    .cert-field {
+      border-bottom: 1px solid var(--surface);
+      padding-bottom: 6px;
+    }
+
+    .cert-field-label {
+      display: block;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+    }
+
+    .cert-field-value {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .cert-section-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 16px 0 8px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .cert-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    .cert-table th,
+    .cert-table td {
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .cert-table th {
+      background: var(--surface);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .cert-footer {
+      background: var(--surface);
+      padding: 14px 24px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Insurance ID Card Preview */
+    .id-cards-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    .id-card {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(62, 31, 104, 0.12);
+    }
+
+    .id-card-top {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .id-card-top .brand {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .id-card-top .tag {
+      font-size: 0.74rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .id-card-body {
+      padding: 16px 18px;
+    }
+
+    .id-card-holder {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 10px 0;
+    }
+
+    .id-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 14px;
+      font-size: 0.84rem;
+    }
+
+    .id-card-label {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .id-card-val {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .id-card-back-bar {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 10px 18px;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .id-card-back-body {
+      padding: 14px 18px;
+      font-size: 0.83rem;
+      color: var(--text);
+    }
+
+    .id-card-back-body p {
+      margin: 0 0 8px 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 100;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .cert-banner,
+      .cert-body,
+      .cert-footer {
+        padding: 16px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .app-header,
+      .input-panel,
+      .preview-toolbar,
+      .toast {
+        display: none !important;
+      }
+      .workspace-grid {
+        display: block;
+      }
+      .panel {
+        border: none;
+        padding: 0;
+      }
+      .cert-sheet,
+      .id-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <p class="kicker">CSP Health Insurance &bull; Document Generator</p>
+      <h1>Insurance Certificate &amp; ID Card Generator</h1>
+      <p>Enter policyholder details to generate, preview, print, or save a reference Insurance Certificate and Health ID Card.</p>
+    </header>
+
+    <div class="workspace-grid">
+      <!-- Input Form Panel -->
+      <section class="panel input-panel" aria-label="Policyholder Input Form">
+        <h2>Policyholder &amp; Plan Details</h2>
+        <form id="policyForm">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="planType">Insurance Plan</label>
+              <select id="planType">
+                <option value="classic">Sapphire Classic (Base Policy)</option>
+                <option value="super_topup">Sapphire Super Top-Up</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="holderName">Primary Insured Name (Self)</label>
+              <input type="text" id="holderName" value="Rajesh Kumar" placeholder="Enter full name">
+            </div>
+
+            <div class="form-group">
+              <label for="policyNumber">Policy / COI Number</label>
+              <input type="text" id="policyNumber" value="SBIG-SAP-2026-004821" placeholder="Policy or COI No.">
+            </div>
+
+            <div class="form-group">
+              <label for="accountNumber">SBI Salary Account No.</label>
+              <input type="text" id="accountNumber" value="XXXXXX48291" placeholder="Account number">
+            </div>
+
+            <div class="form-group">
+              <label for="sumInsured">Sum Insured &amp; Deductible</label>
+              <select id="sumInsured"></select>
+            </div>
+
+            <div class="form-group">
+              <label for="familyCombo">Family Combination</label>
+              <select id="familyCombo">
+                <option value="1A">1 Adult</option>
+                <option value="1A1C">1 Adult + 1 Child</option>
+                <option value="1A2C">1 Adult + 2 Children</option>
+                <option value="2A">2 Adults</option>
+                <option value="2A1C">2 Adults + 1 Child</option>
+                <option value="2A2C" selected>2 Adults + 2 Children</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ageBracket">Age Bracket</label>
+              <select id="ageBracket">
+                <option value="standard" selected>18 &ndash; 63 Years (Standard)</option>
+                <option value="above63">Above 63 Years (Renewal)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="premiumPaid">Annual Premium (Incl. GST)</label>
+              <input type="text" id="premiumPaid" value="₹5,977">
+            </div>
+
+            <div class="form-group">
+              <label for="startDate">Policy Start Date</label>
+              <input type="date" id="startDate" value="2026-11-08">
+            </div>
+
+            <div class="form-group">
+              <label for="endDate">Policy Expiry Date</label>
+              <input type="date" id="endDate" value="2027-11-07">
+            </div>
+
+            <div class="form-group full">
+              <label for="membersList">Covered Family Members (One per line)</label>
+              <textarea id="membersList">Rajesh Kumar (Self, 38 yrs)
+Anitha Rajesh (Spouse, 34 yrs)
+Aarav R (Child, 9 yrs)
+Diya R (Child, 5 yrs)</textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="cspBranch">CSP / SBI Branch Name (Optional)</label>
+              <input type="text" id="cspBranch" value="SBI Thiruvananthapuram Main Branch" placeholder="Branch or CSP name">
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn-outline" id="saveDraftBtn">Save Draft</button>
+            <button type="button" class="btn-outline" id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Preview & Export Panel -->
+      <section class="panel" aria-label="Document Preview and Export">
+        <div class="preview-toolbar">
+          <div class="tab-group" role="tablist">
+            <button type="button" class="tab-btn active" id="tabCert" role="tab" aria-selected="true">Insurance Certificate</button>
+            <button type="button" class="tab-btn" id="tabCard" role="tab" aria-selected="false">Insurance ID Card</button>
+          </div>
+          <div class="action-group">
+            <button type="button" class="btn-accent" id="downloadPngBtn">Save as PNG</button>
+            <button type="button" class="btn-primary" id="printPdfBtn">Print / Save PDF</button>
+          </div>
+        </div>
+
+        <!-- Certificate View -->
+        <div id="certView">
+          <div class="cert-sheet" id="certSheet">
+            <div class="cert-banner">
+              <div>
+                <h3 id="cPlanTitle">SBI General Sapphire Classic</h3>
+                <p>Group Mediclaim Policy &bull; Certificate of Insurance (Reference Copy)</p>
+              </div>
+              <div class="cert-uin">UIN: SBIHLGP24031V012324</div>
+            </div>
+
+            <div class="cert-body">
+              <div class="cert-grid">
+                <div class="cert-field">
+                  <span class="cert-field-label">Primary Insured (Self)</span>
+                  <span class="cert-field-value" id="cHolderName"></span>
                 </div>
-                <div>
-                  <div class="cert-sheet">
-                    <div class="cert-banner">
-                      <div><strong id="cgOutPlan">Sapphire Classic</strong><div style="font-size:.78rem">UIN: SBIHLGP24031V012324</div></div>
-                      <span style="font-size:.78rem;background:rgba(255,255,255,.2);padding:3px 8px;border-radius:4px">REFERENCE COPY</span>
-                    </div>
-                    <div class="cert-grid">
-                      <div class="cert-field"><span>Primary Insured</span><strong id="cgOutName">Rajesh Kumar</strong></div>
-                      <div class="cert-field"><span>Policy / COI No.</span><strong id="cgOutPol">SBIG-SAP-2026-004821</strong></div>
-                      <div class="cert-field"><span>SBI Salary A/C</span><strong id="cgOutAcc">XXXXXX48291</strong></div>
-                      <div class="cert-field"><span>Sum Insured</span><strong id="cgOutSi">₹3,00,000</strong></div>
-                      <div class="cert-field"><span>Valid Until</span><strong id="cgOutExp">07/11/2027</strong></div>
-                      <div class="cert-field"><span>Claims Helpline</span><strong>1800 22 1111 / 1800 102 1111</strong></div>
-                    </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">Policy / COI Number</span>
+                  <span class="cert-field-value" id="cPolicyNumber"></span>
+                </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">SBI Salary Account</span>
+                  <span class="cert-field-value" id="cAccountNumber"></span>
+                </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">Sum Insured</span>
+                  <span class="cert-field-value" id="cSumInsured"></span>
+                </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">Deductible</span>
+                  <span class="cert-field-value" id="cDeductible"></span>
+                </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">Annual Premium (Incl. GST)</span>
+                  <span class="cert-field-value" id="cPremium"></span>
+                </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">Policy Period</span>
+                  <span class="cert-field-value" id="cPeriod"></span>
+                </div>
+                <div class="cert-field">
+                  <span class="cert-field-label">Family Combination</span>
+                  <span class="cert-field-value" id="cCombo"></span>
+                </div>
+              </div>
+
+              <div class="cert-section-title">Insured Members</div>
+              <table class="cert-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Member Details</th>
+                  </tr>
+                </thead>
+                <tbody id="cMembersBody"></tbody>
+              </table>
+
+              <div class="cert-section-title">Key Coverage &amp; Claims</div>
+              <table class="cert-table">
+                <tbody>
+                  <tr>
+                    <th>Core Benefits</th>
+                    <td>Inpatient Care (&gt;24 hrs), Day Care, Pre-Hospitalization (60 days), Post-Hospitalization (90 days), Modern Treatment (50% SI), AYUSH (100% SI), Domiciliary (20% SI), Ambulance (up to ₹2,000)</td>
+                  </tr>
+                  <tr>
+                    <th>Waiting Periods</th>
+                    <td>Initial: 30 days | Pre-Existing Disease: 24 months | Specific Illness: 24 months</td>
+                  </tr>
+                  <tr>
+                    <th>24x7 Claims Helpline</th>
+                    <td>Toll-Free: 1800 22 1111 / 1800 102 1111 | SMS &ldquo;CLAIM&rdquo; to 561612 | customer.care@sbigeneral.in | www.sbigeneral.in</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="cert-footer">
+              <strong>Sourcing Branch / CSP:</strong> <span id="cBranch"></span> &bull;
+              <strong>Note:</strong> Customer-entered reference summary based on SBI General Sapphire brochure terms (IRDAI Reg. No. 144). Official policy copy can be downloaded at www.sbigeneral.in.
+            </div>
+          </div>
+        </div>
+
+        <!-- ID Card View -->
+        <div id="cardView" class="hidden">
+          <div class="id-cards-wrap">
+            <!-- Front -->
+            <div class="id-card">
+              <div class="id-card-top">
+                <span class="brand" id="cardPlanBrand">SBI General &bull; Sapphire Classic</span>
+                <span class="tag">HEALTH ID CARD</span>
+              </div>
+              <div class="id-card-body">
+                <p class="id-card-holder" id="cardHolderName"></p>
+                <div class="id-card-grid">
+                  <div>
+                    <span class="id-card-label">Policy / COI No.</span>
+                    <span class="id-card-val" id="cardPolicyNo"></span>
                   </div>
-                  <div class="id-card">
-                    <div class="id-card-top"><span id="cgCardPlan">SBI General • Sapphire Classic</span><span>HEALTH CARD</span></div>
-                    <div style="padding:12px 16px;font-size:.86rem">
-                      <strong style="color:var(--purple);font-size:1rem" id="cgCardName">Rajesh Kumar</strong>
-                      <div style="margin-top:6px">Policy: <b id="cgCardPol"></b> | SI: <b id="cgCardSi"></b></div>
-                      <div style="color:var(--muted);font-size:.78rem;margin-top:4px">Helpline: 1800 102 1111 | SMS "CLAIM" to 561612</div>
-                    </div>
+                  <div>
+                    <span class="id-card-label">SBI Salary A/C</span>
+                    <span class="id-card-val" id="cardAccountNo"></span>
+                  </div>
+                  <div>
+                    <span class="id-card-label">Sum Insured</span>
+                    <span class="id-card-val" id="cardSumInsured"></span>
+                  </div>
+                  <div>
+                    <span class="id-card-label">Valid Until</span>
+                    <span class="id-card-val" id="cardExpiry"></span>
+                  </div>
+                  <div>
+                    <span class="id-card-label">Deductible</span>
+                    <span class="id-card-val" id="cardDeductible"></span>
+                  </div>
+                  <div>
+                    <span class="id-card-label">UIN</span>
+                    <span class="id-card-val">SBIHLGP24031V012324</span>
                   </div>
                 </div>
               </div>
             </div>
-          </details>
 
-          <!-- 12. CLAIM JOURNEY TRACKER -->
-          <details class="accordion" id="acc-claimjourney" data-csp-cat="claims">
-            <summary>🗺️ 12. ക്ലെയിം യാത്രാ ട്രാക്കർ (5-Step Claim Journey)</summary>
+            <!-- Back -->
+            <div class="id-card">
+              <div class="id-card-back-bar">Covered Members &amp; Emergency Claims</div>
+              <div class="id-card-back-body">
+                <p><strong>Insured Members:</strong> <span id="cardMembersInline"></span></p>
+                <p><strong>Claims Toll-Free:</strong> 1800 22 1111 / 1800 102 1111</p>
+                <p><strong>SMS Claim:</strong> Send &ldquo;CLAIM&rdquo; to 561612</p>
+                <p><strong>Email / Web:</strong> customer.care@sbigeneral.in | www.sbigeneral.in</p>
+                <p style="margin-bottom:0; color: var(--muted); font-size:0.76rem;">Reference card generated from user input. Present official insurer COI at network hospitals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = "csp_sapphire_cert_draft_v1";
+
+      const PLAN_CONFIG = {
+        classic: {
+          title: "SBI General Sapphire Classic",
+          short: "SBI General • Sapphire Classic",
+          options: [
+            { value: "2L", label: "₹2 Lakhs (No Deductible)", si: "₹2,00,000", ded: "Nil (₹0)" },
+            { value: "3L", label: "₹3 Lakhs (No Deductible)", si: "₹3,00,000", ded: "Nil (₹0)" },
+            { value: "5L", label: "₹5 Lakhs (No Deductible)", si: "₹5,00,000", ded: "Nil (₹0)" }
+          ],
+          rates: {
+            standard: {
+              "1A":   { "2L": "₹1,983", "3L": "₹2,155", "5L": "₹2,629" },
+              "1A1C": { "2L": "₹2,221", "3L": "₹2,414", "5L": "₹2,945" },
+              "1A2C": { "2L": "₹2,487", "3L": "₹2,703", "5L": "₹3,298" },
+              "2A":   { "2L": "₹3,193", "3L": "₹3,471", "5L": "₹4,235" },
+              "2A1C": { "2L": "₹3,697", "3L": "₹4,018", "5L": "₹4,902" },
+              "2A2C": { "2L": "₹4,507", "3L": "₹4,899", "5L": "₹5,977" }
+            },
+            above63: {
+              "1A":   { "2L": "₹3,642", "3L": "₹3,959", "5L": "₹4,830" },
+              "1A1C": { "2L": "₹4,079", "3L": "₹4,434", "5L": "₹5,409" },
+              "1A2C": { "2L": "₹4,569", "3L": "₹4,966", "5L": "₹6,058" },
+              "2A":   { "2L": "₹5,866", "3L": "₹6,376", "5L": "₹7,779" },
+              "2A1C": { "2L": "₹6,791", "3L": "₹7,381", "5L": "₹9,005" },
+              "2A2C": { "2L": "₹8,280", "3L": "₹8,999", "5L": "₹10,979" }
+            }
+          }
+        },
+        super_topup: {
+          title: "SBI General Sapphire Super Top-Up",
+          short: "SBI General • Super Top-Up",
+          options: [
+            { value: "10L", label: "₹10 Lakhs (₹2L Deductible)", si: "₹10,00,000", ded: "₹2,00,000 (Aggregate)" },
+            { value: "15L", label: "₹15 Lakhs (₹2L Deductible)", si: "₹15,00,000", ded: "₹2,00,000 (Aggregate)" },
+            { value: "30L", label: "₹30 Lakhs (₹3L Deductible)", si: "₹30,00,000", ded: "₹3,00,000 (Aggregate)" },
+            { value: "50L", label: "₹50 Lakhs (₹5L Deductible)", si: "₹50,00,000", ded: "₹5,00,000 (Aggregate)" }
+          ],
+          rates: {
+            standard: {
+              "1A":   { "10L": "₹1,521", "15L": "₹1,618", "30L": "₹1,649", "50L": "₹2,391" },
+              "1A1C": { "10L": "₹1,703", "15L": "₹1,812", "30L": "₹1,847", "50L": "₹2,678" },
+              "1A2C": { "10L": "₹1,806", "15L": "₹1,921", "30L": "₹1,958", "50L": "₹2,839" },
+              "2A":   { "10L": "₹1,653", "15L": "₹1,758", "30L": "₹1,796", "50L": "₹2,604" },
+              "2A1C": { "10L": "₹1,727", "15L": "₹1,837", "30L": "₹1,881", "50L": "₹2,728" },
+              "2A2C": { "10L": "₹1,869", "15L": "₹1,988", "30L": "₹2,020", "50L": "₹2,929" }
+            },
+            above63: {
+              "1A":   { "10L": "₹2,961", "15L": "₹3,150", "30L": "₹3,211", "50L": "₹4,656" },
+              "1A1C": { "10L": "₹3,317", "15L": "₹3,528", "30L": "₹3,596", "50L": "₹5,215" },
+              "1A2C": { "10L": "₹3,516", "15L": "₹3,740", "30L": "₹3,812", "50L": "₹5,527" },
+              "2A":   { "10L": "₹3,217", "15L": "₹3,423", "30L": "₹3,496", "50L": "₹5,070" },
+              "2A1C": { "10L": "₹3,362", "15L": "₹3,577", "30L": "₹3,663", "50L": "₹5,311" },
+              "2A2C": { "10L": "₹3,638", "15L": "₹3,871", "30L": "₹3,934", "50L": "₹5,704" }
+            }
+          }
+        }
+      };
+
+      const COMBO_LABELS = {
+        "1A": "1 Adult",
+        "1A1C": "1 Adult + 1 Child",
+        "1A2C": "1 Adult + 2 Children",
+        "2A": "2 Adults",
+        "2A1C": "2 Adults + 1 Child",
+        "2A2C": "2 Adults + 2 Children"
+      };
+
+      const els = {
+        planType: document.getElementById("planType"),
+        holderName: document.getElementById("holderName"),
+        policyNumber: document.getElementById("policyNumber"),
+        accountNumber: document.getElementById("accountNumber"),
+        sumInsured: document.getElementById("sumInsured"),
+        familyCombo: document.getElementById("familyCombo"),
+        ageBracket: document.getElementById("ageBracket"),
+        premiumPaid: document.getElementById("premiumPaid"),
+        startDate: document.getElementById("startDate"),
+        endDate: document.getElementById("endDate"),
+        membersList: document.getElementById("membersList"),
+        cspBranch: document.getElementById("cspBranch"),
+        tabCert: document.getElementById("tabCert"),
+        tabCard: document.getElementById("tabCard"),
+        certView: document.getElementById("certView"),
+        cardView: document.getElementById("cardView"),
+        saveDraftBtn: document.getElementById("saveDraftBtn"),
+        resetBtn: document.getElementById("resetBtn"),
+        downloadPngBtn: document.getElementById("downloadPngBtn"),
+        printPdfBtn: document.getElementById("printPdfBtn"),
+        toast: document.getElementById("toast")
+      };
+
+      let activeTab = "cert";
+
+      function showToast(msg) {
+        els.toast.textContent = msg;
+        els.toast.classList.add("show");
+        setTimeout(() => els.toast.classList.remove("show"), 2400);
+      }
+
+      function populateSumInsured(preferredVal) {
+        const plan = PLAN_CONFIG[els.planType.value];
+        els.sumInsured.innerHTML = "";
+        plan.options.forEach((opt) => {
+          const o = document.createElement("option");
+          o.value = opt.value;
+          o.textContent = opt.label;
+          els.sumInsured.appendChild(o);
+        });
+        if (preferredVal && plan.options.some((o) => o.value === preferredVal)) {
+          els.sumInsured.value = preferredVal;
+        } else {
+          els.sumInsured.value = plan.options[plan.options.length - 1].value;
+        }
+      }
+
+      function updateAutoPremium() {
+        const plan = PLAN_CONFIG[els.planType.value];
+        const bracket = els.ageBracket.value;
+        const combo = els.familyCombo.value;
+        const si = els.sumInsured.value;
+        const rate = plan.rates[bracket]?.[combo]?.[si];
+        if (rate) {
+          els.premiumPaid.value = rate;
+        }
+      }
+
+      function formatDate(iso) {
+        if (!iso) return "-";
+        const parts = iso.split("-");
+        if (parts.length !== 3) return iso;
+        return parts[2] + "/" + parts[1] + "/" + parts[0];
+      }
+
+      function getMembers() {
+        return els.membersList.value
+          .split("\n")
+          .map((s) => s.trim())
+          .filter(Boolean);
+      }
+
+      function renderPreview() {
+        const plan = PLAN_CONFIG[els.planType.value];
+        const siObj = plan.options.find((o) => o.value === els.sumInsured.value) || plan.options[0];
+        const holder = els.holderName.value.trim() || "Policyholder Name";
+        const polNo = els.policyNumber.value.trim() || "-";
+        const accNo = els.accountNumber.value.trim() || "-";
+        const prem = els.premiumPaid.value.trim() || "-";
+        const start = formatDate(els.startDate.value);
+        const end = formatDate(els.endDate.value);
+        const combo = COMBO_LABELS[els.familyCombo.value] || els.familyCombo.value;
+        const branch = els.cspBranch.value.trim() || "SBI CSP / Branch";
+        const members = getMembers();
+
+        // Update Certificate
+        document.getElementById("cPlanTitle").textContent = plan.title;
+        document.getElementById("cHolderName").textContent = holder;
+        document.getElementById("cPolicyNumber").textContent = polNo;
+        document.getElementById("cAccountNumber").textContent = accNo;
+        document.getElementById("cSumInsured").textContent = siObj.si;
+        document.getElementById("cDeductible").textContent = siObj.ded;
+        document.getElementById("cPremium").textContent = prem;
+        document.getElementById("cPeriod").textContent = start + " to " + end;
+        document.getElementById("cCombo").textContent = combo;
+        document.getElementById("cBranch").textContent = branch;
+
+        const tbody = document.getElementById("cMembersBody");
+        tbody.innerHTML = "";
+        if (members.length === 0) {
+          const tr = document.createElement("tr");
+          tr.innerHTML = "<td>1</td><td>" + holder + " (Self)</td>";
+          tbody.appendChild(tr);
+        } else {
+          members.forEach((m, idx) => {
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("td");
+            const td2 = document.createElement("td");
+            td1.textContent = String(idx + 1);
+            td2.textContent = m;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+          });
+        }
+
+        // Update ID Card
+        document.getElementById("cardPlanBrand").textContent = plan.short;
+        document.getElementById("cardHolderName").textContent = holder;
+        document.getElementById("cardPolicyNo").textContent = polNo;
+        document.getElementById("cardAccountNo").textContent = accNo;
+        document.getElementById("cardSumInsured").textContent = siObj.si;
+        document.getElementById("cardExpiry").textContent = end;
+        document.getElementById("cardDeductible").textContent = siObj.ded;
+        document.getElementById("cardMembersInline").textContent = members.length ? members.join(" | ") : holder + " (Self)";
+      }
+
+      function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+        const words = text.split(" ");
+        let line = "";
+        let currY = y;
+        for (let i = 0; i < words.length; i++) {
+          const testLine = line + words[i] + " ";
+          if (ctx.measureText(testLine).width > maxWidth && i > 0) {
+            ctx.fillText(line.trim(), x, currY);
+            line = words[i] + " ";
+            currY += lineHeight;
+          } else {
+            line = testLine;
+          }
+        }
+        if (line.trim()) {
+          ctx.fillText(line.trim(), x, currY);
+          currY += lineHeight;
+        }
+        return currY;
+      }
+
+      function downloadCanvasPng() {
+        const plan = PLAN_CONFIG[els.planType.value];
+        const siObj = plan.options.find((o) => o.value === els.sumInsured.value) || plan.options[0];
+        const holder = els.holderName.value.trim() || "Policyholder";
+        const polNo = els.policyNumber.value.trim() || "-";
+        const accNo = els.accountNumber.value.trim() || "-";
+        const prem = els.premiumPaid.value.trim() || "-";
+        const period = formatDate(els.startDate.value) + " to " + formatDate(els.endDate.value);
+        const combo = COMBO_LABELS[els.familyCombo.value] || "-";
+        const branch = els.cspBranch.value.trim() || "SBI CSP / Branch";
+        const members = getMembers();
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        if (activeTab === "card") {
+          canvas.width = 960;
+          canvas.height = 600;
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // Card border
+          ctx.strokeStyle = "#3e1f68";
+          ctx.lineWidth = 6;
+          ctx.strokeRect(16, 16, 928, 568);
+
+          // Top gradient bar
+          const grad = ctx.createLinearGradient(16, 16, 944, 120);
+          grad.addColorStop(0, "#3e1f68");
+          grad.addColorStop(1, "#008b9a");
+          ctx.fillStyle = grad;
+          ctx.fillRect(16, 16, 928, 108);
+
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "bold 28px Inter, sans-serif";
+          ctx.fillText(plan.short, 44, 72);
+          ctx.font = "bold 18px Inter, sans-serif";
+          ctx.fillText("HEALTH ID CARD  |  UIN: SBIHLGP24031V012324", 44, 104);
+
+          ctx.fillStyle = "#3e1f68";
+          ctx.font = "bold 32px Inter, sans-serif";
+          ctx.fillText(holder, 44, 182);
+
+          const fields = [
+            ["POLICY / COI NO.", polNo, 44, 240],
+            ["SBI SALARY A/C", accNo, 500, 240],
+            ["SUM INSURED", siObj.si, 44, 320],
+            ["DEDUCTIBLE", siObj.ded, 500, 320],
+            ["VALIDITY", period, 44, 400],
+            ["MEMBERS", String(members.length || 1) + " (" + combo + ")", 500, 400]
+          ];
+          fields.forEach(([lbl, val, x, y]) => {
+            ctx.fillStyle = "#555e70";
+            ctx.font = "bold 15px Inter, sans-serif";
+            ctx.fillText(lbl, x, y);
+            ctx.fillStyle = "#1e2430";
+            ctx.font = "bold 22px Inter, sans-serif";
+            ctx.fillText(val, x, y + 30);
+          });
+
+          ctx.fillStyle = "#f7f5fa";
+          ctx.fillRect(19, 476, 922, 105);
+          ctx.fillStyle = "#3e1f68";
+          ctx.font = "bold 17px Inter, sans-serif";
+          ctx.fillText("24x7 Claims Helpline: 1800 22 1111 / 1800 102 1111  |  SMS 'CLAIM' to 561612", 44, 518);
+          ctx.fillStyle = "#555e70";
+          ctx.font = "16px Inter, sans-serif";
+          ctx.fillText("Email: customer.care@sbigeneral.in  |  Web: www.sbigeneral.in", 44, 550);
+        } else {
+          canvas.width = 1100;
+          canvas.height = 1360;
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          ctx.strokeStyle = "#3e1f68";
+          ctx.lineWidth = 6;
+          ctx.strokeRect(20, 20, 1060, 1320);
+
+          const grad = ctx.createLinearGradient(20, 20, 1080, 160);
+          grad.addColorStop(0, "#3e1f68");
+          grad.addColorStop(1, "#542c8a");
+          ctx.fillStyle = grad;
+          ctx.fillRect(20, 20, 1060, 140);
+
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "bold 34px Inter, sans-serif";
+          ctx.fillText(plan.title, 54, 82);
+          ctx.fillStyle = "#e4ddf2";
+          ctx.font = "20px Inter, sans-serif";
+          ctx.fillText("Group Mediclaim Policy  |  Certificate of Insurance (Reference Copy)", 54, 122);
+          ctx.fillStyle = "#b7e4ea";
+          ctx.font = "bold 18px Inter, sans-serif";
+          ctx.fillText("UIN: SBIHLGP24031V012324", 790, 82);
+
+          const rows = [
+            ["Primary Insured (Self)", holder, "Policy / COI Number", polNo],
+            ["SBI Salary Account", accNo, "Sum Insured", siObj.si],
+            ["Deductible", siObj.ded, "Annual Premium (Incl. GST)", prem],
+            ["Policy Period", period, "Family Combination", combo]
+          ];
+          let y = 215;
+          rows.forEach(([l1, v1, l2, v2]) => {
+            ctx.fillStyle = "#555e70";
+            ctx.font = "bold 16px Inter, sans-serif";
+            ctx.fillText(l1.toUpperCase(), 54, y);
+            ctx.fillText(l2.toUpperCase(), 560, y);
+            ctx.fillStyle = "#1e2430";
+            ctx.font = "bold 22px Inter, sans-serif";
+            ctx.fillText(v1, 54, y + 30);
+            ctx.fillText(v2, 560, y + 30);
+            ctx.strokeStyle = "#e2dce9";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(54, y + 48);
+            ctx.lineTo(1046, y + 48);
+            ctx.stroke();
+            y += 82;
+          });
+
+          ctx.fillStyle = "#3e1f68";
+          ctx.font = "bold 22px Inter, sans-serif";
+          ctx.fillText("INSURED MEMBERS", 54, y + 20);
+          y += 52;
+          const memList = members.length ? members : [holder + " (Self)"];
+          memList.forEach((m, i) => {
+            ctx.fillStyle = "#f7f5fa";
+            ctx.fillRect(54, y - 24, 992, 40);
+            ctx.fillStyle = "#1e2430";
+            ctx.font = "20px Inter, sans-serif";
+            ctx.fillText(String(i + 1) + ". " + m, 70, y + 3);
+            y += 48;
+          });
+
+          y += 30;
+          ctx.fillStyle = "#3e1f68";
+          ctx.font = "bold 22px Inter, sans-serif";
+          ctx.fillText("COVERAGE & CLAIMS SUMMARY", 54, y);
+          y += 34;
+          ctx.fillStyle = "#1e2430";
+          ctx.font = "18px Inter, sans-serif";
+          y = wrapText(ctx, "Core Benefits: Inpatient Care (>24 hrs), Day Care, Pre-Hospitalization (60 days), Post-Hospitalization (90 days), Modern Treatment (50% SI), AYUSH (100% SI), Domiciliary (20% SI), Ambulance (up to ₹2,000).", 54, y, 992, 28);
+          y += 12;
+          y = wrapText(ctx, "Waiting Periods: Initial 30 days | Pre-Existing Disease 24 months | Specific Illness 24 months.", 54, y, 992, 28);
+          y += 12;
+          y = wrapText(ctx, "Claims Helpline: 1800 22 1111 / 1800 102 1111 | SMS 'CLAIM' to 561612 | customer.care@sbigeneral.in | www.sbigeneral.in", 54, y, 992, 28);
+
+          ctx.fillStyle = "#f7f5fa";
+          ctx.fillRect(23, 1230, 1054, 107);
+          ctx.fillStyle = "#555e70";
+          ctx.font = "17px Inter, sans-serif";
+          ctx.fillText("Sourcing Branch / CSP: " + branch, 54, 1272);
+          ctx.fillText("Reference document generated from user input. Official policy copy available at www.sbigeneral.in.", 54, 1304);
+        }
+
+        const link = document.createElement("a");
+        const safeName = holder.toLowerCase().replace(/[^a-z0-9]+/g, "_") || "policy";
+        link.download = safeName + "_" + activeTab + ".png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+        showToast("Saved PNG image!");
+      }
+
+      function saveDraft() {
+        const data = {
+          planType: els.planType.value,
+          holderName: els.holderName.value,
+          policyNumber: els.policyNumber.value,
+          accountNumber: els.accountNumber.value,
+          sumInsured: els.sumInsured.value,
+          familyCombo: els.familyCombo.value,
+          ageBracket: els.ageBracket.value,
+          premiumPaid: els.premiumPaid.value,
+          startDate: els.startDate.value,
+          endDate: els.endDate.value,
+          membersList: els.membersList.value,
+          cspBranch: els.cspBranch.value
+        };
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          showToast("Draft saved in browser.");
+        } catch (e) {
+          showToast("Could not access browser storage.");
+        }
+      }
+
+      function loadDraft() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return false;
+          const d = JSON.parse(raw);
+          if (d.planType && PLAN_CONFIG[d.planType]) els.planType.value = d.planType;
+          populateSumInsured(d.sumInsured);
+          if (d.holderName !== undefined) els.holderName.value = d.holderName;
+          if (d.policyNumber !== undefined) els.policyNumber.value = d.policyNumber;
+          if (d.accountNumber !== undefined) els.accountNumber.value = d.accountNumber;
+          if (d.familyCombo) els.familyCombo.value = d.familyCombo;
+          if (d.ageBracket) els.ageBracket.value = d.ageBracket;
+          if (d.premiumPaid !== undefined) els.premiumPaid.value = d.premiumPaid;
+          if (d.startDate) els.startDate.value = d.startDate;
+          if (d.endDate) els.endDate.value = d.endDate;
+          if (d.membersList !== undefined) els.membersList.value = d.membersList;
+          if (d.cspBranch !== undefined) els.cspBranch.value = d.cspBranch;
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function switchTab(tab) {
+        activeTab = tab;
+        const isCert = tab === "cert";
+        els.tabCert.classList.toggle("active", isCert);
+        els.tabCard.classList.toggle("active", !isCert);
+        els.tabCert.setAttribute("aria-selected", String(isCert));
+        els.tabCard.setAttribute("aria-selected", String(!isCert));
+        els.certView.classList.toggle("hidden", !isCert);
+        els.cardView.classList.toggle("hidden", isCert);
+      }
+
+      // Event listeners
+      els.planType.addEventListener("change", () => {
+        populateSumInsured();
+        updateAutoPremium();
+        renderPreview();
+      });
+
+      [els.sumInsured, els.familyCombo, els.ageBracket].forEach((el) => {
+        el.addEventListener("change", () => {
+          updateAutoPremium();
+          renderPreview();
+        });
+      });
+
+      els.startDate.addEventListener("change", () => {
+        if (els.startDate.value) {
+          const d = new Date(els.startDate.value + "T00:00:00");
+          d.setFullYear(d.getFullYear() + 1);
+          d.setDate(d.getDate() - 1);
+          els.endDate.value = d.toISOString().slice(0, 10);
+        }
+        renderPreview();
+      });
+
+      [els.holderName, els.policyNumber, els.accountNumber, els.premiumPaid, els.endDate, els.membersList, els.cspBranch].forEach((el) => {
+        el.addEventListener("input", renderPreview);
+      });
+
+      els.tabCert.addEventListener("click", () => switchTab("cert"));
+      els.tabCard.addEventListener("click", () => switchTab("card"));
+      els.saveDraftBtn.addEventListener("click", saveDraft);
+      els.downloadPngBtn.addEventListener("click", downloadCanvasPng);
+      els.printPdfBtn.addEventListener("click", () => window.print());
+
+      els.resetBtn.addEventListener("click", () => {
+        document.getElementById("policyForm").reset();
+        populateSumInsured();
+        updateAutoPremium();
+        renderPreview();
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+        } catch (e) {}
+        showToast("Form reset to defaults.");
+      });
+
+      // Init
+      populateSumInsured();
+      if (!loadDraft()) {
+        updateAutoPremium();
+      }
+      renderPreview();
+    })();
+  </script>
+</body>
+</html>
+
+         
+
+          
+
+
+
+
+
+
+            
+            <summary>🗺️ 12. ക്ലെയിം ട്രാക്കർ (5-Step Claim Journey)</summary>
             <div class="accordion-body">
               <div style="display:flex;justify-content:space-between;font-weight:700;color:var(--purple);font-size:.9rem">
                 <span>ക്ലെയിം പുരോഗതി</span><span id="cjtPctText">0 / 5 (0%)</span>
