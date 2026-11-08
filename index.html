@@ -5322,7 +5322,404 @@ Diya R (Child, 5 yrs)</textarea>
 </body>
 </html>
          
-     
+     <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - കാത്തിരിപ്പ് കാലാവധി ട്രാക്കർ &amp; ഗൈഡ് (Malayalam)</title>
+  <style>
+    /* Scoped styles for Waiting Period Tracker (.csp-wpt-section) */
+    .csp-wpt-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-ok-bg: #ecfdf5;
+      --csp-ok-text: #065f46;
+      --csp-wait-bg: #fff7ed;
+      --csp-wait-text: #9a3412;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-wpt-section *,
+    .csp-wpt-section *::before,
+    .csp-wpt-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-wpt-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-wpt-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-wpt-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-wpt-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-wpt-controls {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      align-items: end;
+    }
+
+    .csp-wpt-field label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--csp-muted);
+      margin-bottom: 5px;
+    }
+
+    .csp-wpt-field input {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      background: #ffffff;
+      color: var(--csp-text);
+    }
+
+    .csp-wpt-field input:focus {
+      outline: 2px solid var(--csp-accent);
+      border-color: var(--csp-accent);
+    }
+
+    .csp-wpt-btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--csp-primary);
+      color: #ffffff;
+      width: 100%;
+    }
+
+    .csp-wpt-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .csp-wpt-card {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-top: 4px solid var(--csp-primary);
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .csp-wpt-card.accent {
+      border-top-color: var(--csp-accent);
+    }
+
+    .csp-wpt-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.05rem;
+      color: var(--csp-primary);
+    }
+
+    .csp-wpt-duration {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      margin: 0 0 10px 0;
+    }
+
+    .csp-wpt-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .csp-wpt-badge.ok {
+      background: var(--csp-ok-bg);
+      color: var(--csp-ok-text);
+    }
+
+    .csp-wpt-badge.wait {
+      background: var(--csp-wait-bg);
+      color: var(--csp-wait-text);
+    }
+
+    .csp-wpt-bar-track {
+      width: 100%;
+      height: 8px;
+      background: var(--csp-surface);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .csp-wpt-bar-fill {
+      height: 100%;
+      background: var(--csp-accent);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .csp-wpt-meta {
+      font-size: 0.86rem;
+      margin: 0;
+      color: var(--csp-text);
+    }
+
+    .csp-wpt-guide {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .csp-wpt-guide h3 {
+      color: var(--csp-primary);
+      font-size: 1.12rem;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-wpt-guide ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.93rem;
+    }
+
+    .csp-wpt-guide li {
+      margin-bottom: 8px;
+    }
+
+    .csp-wpt-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .csp-wpt-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .csp-wpt-section {
+        padding: 14px 10px;
+      }
+      .csp-wpt-header,
+      .csp-wpt-controls,
+      .csp-wpt-card,
+      .csp-wpt-guide {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-waiting-period-tracker" class="csp-wpt-section" lang="ml">
+  <header class="csp-wpt-header">
+    <p class="csp-wpt-kicker">CSP Health Insurance &bull; കാത്തിരിപ്പ് കാലാവധി ട്രാക്കർ</p>
+    <h2>കാത്തിരിപ്പ് കാലാവധി ട്രാക്കറും ഗൈഡും</h2>
+    <p class="csp-wpt-subtitle">നിങ്ങളുടെ പോളിസി ആരംഭിച്ച തീയതി നൽകി 30 ദിവസത്തെയും 24 മാസത്തെയും കാത്തിരിപ്പ് കാലാവധി എപ്പോൾ പൂർത്തിയാകുമെന്ന് പരിശോധിക്കുക</p>
+  </header>
+
+  <div class="csp-wpt-controls">
+    <div class="csp-wpt-field">
+      <label for="wptStartDate">പോളിസി ആരംഭിച്ച തീയതി (Policy Start Date)</label>
+      <input type="date" id="wptStartDate" value="2026-01-01">
+    </div>
+    <div class="csp-wpt-field">
+      <label for="wptCheckDate">പരിശോധിക്കുന്ന തീയതി (Check Date)</label>
+      <input type="date" id="wptCheckDate" value="2026-11-08">
+    </div>
+    <div class="csp-wpt-field">
+      <button type="button" class="csp-wpt-btn" id="wptTodayBtn">ഇന്നത്തെ തീയതി വയ്ക്കുക</button>
+    </div>
+  </div>
+
+  <div class="csp-wpt-cards">
+    <!-- 30 Days Initial -->
+    <div class="csp-wpt-card">
+      <h3>1. പ്രാരംഭ കാത്തിരിപ്പ് കാലാവധി</h3>
+      <p class="csp-wpt-duration">കാലാവധി: 30 ദിവസം (Initial Waiting Period)</p>
+      <span class="csp-wpt-badge wait" id="wptBadge30">-</span>
+      <div class="csp-wpt-bar-track">
+        <div class="csp-wpt-bar-fill" id="wptBar30" style="width: 0%;"></div>
+      </div>
+      <p class="csp-wpt-meta" id="wptMeta30"></p>
+    </div>
+
+    <!-- 24 Months Pre-Existing -->
+    <div class="csp-wpt-card accent">
+      <h3>2. മുൻകാല രോഗങ്ങൾ (PED)</h3>
+      <p class="csp-wpt-duration">കാലാവധി: 24 മാസം (Pre-Existing Disease)</p>
+      <span class="csp-wpt-badge wait" id="wptBadgePed">-</span>
+      <div class="csp-wpt-bar-track">
+        <div class="csp-wpt-bar-fill" id="wptBarPed" style="width: 0%;"></div>
+      </div>
+      <p class="csp-wpt-meta" id="wptMetaPed"></p>
+    </div>
+
+    <!-- 24 Months Specific Illness -->
+    <div class="csp-wpt-card">
+      <h3>3. പ്രത്യേക രോഗങ്ങൾ</h3>
+      <p class="csp-wpt-duration">കാലാവധി: 24 മാസം (Specific Illness / Disease)</p>
+      <span class="csp-wpt-badge wait" id="wptBadgeSpec">-</span>
+      <div class="csp-wpt-bar-track">
+        <div class="csp-wpt-bar-fill" id="wptBarSpec" style="width: 0%;"></div>
+      </div>
+      <p class="csp-wpt-meta" id="wptMetaSpec"></p>
+    </div>
+  </div>
+
+  <div class="csp-wpt-guide">
+    <h3>കാത്തിരിപ്പ് കാലാവധി &mdash; അറിയേണ്ട പ്രധാന കാര്യങ്ങൾ</h3>
+    <ul>
+      <li><strong>പ്രാരംഭ കാത്തിരിപ്പ് കാലാവധി (30 ദിവസം):</strong> പോളിസി ആരംഭിച്ച തീയതി മുതൽ ആദ്യ 30 ദിവസത്തിന് ശേഷമേ സാധാരണ രോഗങ്ങൾക്കുള്ള ക്ലെയിമുകൾക്ക് അർഹത ഉണ്ടായിരിക്കുകയുള്ളൂ.</li>
+      <li><strong>മുൻകാല രോഗങ്ങൾ (24 മാസം):</strong> പോളിസി എടുക്കുന്നതിന് മുമ്പ് നിലവിലുണ്ടായിരുന്ന രോഗങ്ങൾക്ക് 24 മാസത്തെ തുടർച്ചയായ പോളിസി കാലാവധിക്ക് ശേഷമാണ് പരിരക്ഷ ലഭിക്കുക.</li>
+      <li><strong>പ്രത്യേക രോഗങ്ങൾ (24 മാസം):</strong> പോളിസി നിബന്ധനകളിൽ വ്യക്തമാക്കിയിട്ടുള്ള പ്രത്യേക രോഗങ്ങൾക്കും ശസ്ത്രക്രിയകൾക്കും 24 മാസത്തെ കാത്തിരിപ്പ് കാലാവധി ബാധകമാണ്.</li>
+      <li><strong>തുടർച്ചാ നിയമം (Continuity Rule):</strong> എല്ലാ വർഷവും കൃത്യസമയത്തോ <strong>30 ദിവസത്തെ ഗ്രേസ് പിരീഡിനുള്ളിലോ</strong> എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് വഴി പ്രീമിയം അടച്ച് പോളിസി പുതുക്കിയാൽ മാത്രമേ കാത്തിരിപ്പ് കാലാവധി ക്രെഡിറ്റുകൾ നിലനിൽക്കുകയുള്ളൂ.</li>
+    </ul>
+  </div>
+
+  <div class="csp-wpt-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> ഈ ട്രാക്കർ എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക്, സൂപ്പർ ടോപ്പ്-അപ്പ് ബ്രോഷറുകളിലെ (UIN: SBIHLGP24031V012324) കാത്തിരിപ്പ് കാലാവധി പ്രകാരം കണക്കാക്കിയതാണ്. പൂർണ്ണമായ നിബന്ധനകൾക്ക് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> സന്ദർശിക്കുക.</p>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const startEl = document.getElementById("wptStartDate");
+    const checkEl = document.getElementById("wptCheckDate");
+    const todayBtn = document.getElementById("wptTodayBtn");
+
+    function parseIso(iso) {
+      if (!iso) return null;
+      const [y, m, d] = iso.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+
+    function fmtDate(dt) {
+      const dd = String(dt.getDate()).padStart(2, "0");
+      const mm = String(dt.getMonth() + 1).padStart(2, "0");
+      const yyyy = dt.getFullYear();
+      return dd + "/" + mm + "/" + yyyy;
+    }
+
+    function addDays(dt, days) {
+      const res = new Date(dt.getTime());
+      res.setDate(res.getDate() + days);
+      return res;
+    }
+
+    function addMonths(dt, months) {
+      const res = new Date(dt.getTime());
+      res.setMonth(res.getMonth() + months);
+      return res;
+    }
+
+    function diffDays(a, b) {
+      return Math.round((b.getTime() - a.getTime()) / 86400000);
+    }
+
+    function updateItem(badgeId, barId, metaId, startDt, checkDt, endDt) {
+      const badge = document.getElementById(badgeId);
+      const bar = document.getElementById(barId);
+      const meta = document.getElementById(metaId);
+
+      const totalDays = Math.max(1, diffDays(startDt, endDt));
+      const elapsedDays = Math.max(0, diffDays(startDt, checkDt));
+      const remaining = Math.max(0, diffDays(checkDt, endDt));
+      const pct = Math.min(100, Math.max(0, Math.round((elapsedDays / totalDays) * 100)));
+
+      bar.style.width = pct + "%";
+
+      if (remaining === 0) {
+        badge.textContent = "പൂർത്തിയായി • പരിരക്ഷ ലഭ്യം";
+        badge.className = "csp-wpt-badge ok";
+        meta.textContent = "പൂർത്തിയായ തീയതി: " + fmtDate(endDt) + " (" + pct + "%)";
+      } else {
+        badge.textContent = remaining + " ദിവസം ബാക്കി";
+        badge.className = "csp-wpt-badge wait";
+        meta.textContent = "പരിരക്ഷ ആരംഭിക്കുന്നത്: " + fmtDate(endDt) + " (" + pct + "% പൂർത്തിയായി)";
+      }
+    }
+
+    function render() {
+      const startDt = parseIso(startEl.value);
+      const checkDt = parseIso(checkEl.value);
+      if (!startDt || !checkDt) return;
+
+      const end30 = addDays(startDt, 30);
+      const end24m = addMonths(startDt, 24);
+
+      updateItem("wptBadge30", "wptBar30", "wptMeta30", startDt, checkDt, end30);
+      updateItem("wptBadgePed", "wptBarPed", "wptMetaPed", startDt, checkDt, end24m);
+      updateItem("wptBadgeSpec", "wptBarSpec", "wptMetaSpec", startDt, checkDt, end24m);
+    }
+
+    todayBtn.addEventListener("click", () => {
+      const now = new Date();
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, "0");
+      const dd = String(now.getDate()).padStart(2, "0");
+      checkEl.value = yyyy + "-" + mm + "-" + dd;
+      render();
+    });
+
+    startEl.addEventListener("change", render);
+    checkEl.addEventListener("change", render);
+    render();
+  })();
+</script>
+</body>
+</html>
       
 
      
