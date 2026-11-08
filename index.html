@@ -6169,3 +6169,478 @@ Diya R (Child, 5 yrs)</textarea>
 </body>
 </html>
 ```
+
+
+
+
+        <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - ഫാമിലി ഇൻഷുറൻസ് പ്ലാനർ &amp; ഗൈഡ് (Malayalam)</title>
+  <style>
+    /* Scoped styles for Family Insurance Planner (.csp-fip-section) */
+    .csp-fip-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-ok-bg: #ecfdf5;
+      --csp-ok-text: #065f46;
+      --csp-warn-bg: #fff7ed;
+      --csp-warn-text: #9a3412;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-fip-section *,
+    .csp-fip-section *::before,
+    .csp-fip-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-fip-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-fip-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-fip-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-fip-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-fip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+
+    .csp-fip-card {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .csp-fip-card h3 {
+      color: var(--csp-primary);
+      font-size: 1.12rem;
+      margin: 0 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-fip-field {
+      margin-bottom: 13px;
+    }
+
+    .csp-fip-field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--csp-muted);
+      margin-bottom: 5px;
+    }
+
+    .csp-fip-field select {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.93rem;
+      color: var(--csp-text);
+      background: #ffffff;
+    }
+
+    .csp-fip-field select:focus {
+      outline: 2px solid var(--csp-accent);
+      border-color: var(--csp-accent);
+    }
+
+    .csp-fip-kpis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .csp-fip-kpi {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .csp-fip-kpi.accent {
+      background: #eef8f9;
+      border-color: var(--csp-accent);
+    }
+
+    .csp-fip-kpi-label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--csp-muted);
+      margin-bottom: 4px;
+    }
+
+    .csp-fip-kpi-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--csp-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .csp-fip-kpi.accent .csp-fip-kpi-val {
+      color: var(--csp-accent);
+    }
+
+    .csp-fip-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .csp-fip-badge.ok {
+      background: var(--csp-ok-bg);
+      color: var(--csp-ok-text);
+    }
+
+    .csp-fip-badge.warn {
+      background: var(--csp-warn-bg);
+      color: var(--csp-warn-text);
+    }
+
+    .csp-fip-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .csp-fip-table th,
+    .csp-fip-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--csp-border);
+      text-align: left;
+    }
+
+    .csp-fip-table th {
+      color: var(--csp-muted);
+      font-weight: 600;
+    }
+
+    .csp-fip-table td.num {
+      text-align: right;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .csp-fip-guide {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .csp-fip-guide h3 {
+      color: var(--csp-primary);
+      font-size: 1.12rem;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-fip-guide ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.93rem;
+    }
+
+    .csp-fip-guide li {
+      margin-bottom: 8px;
+    }
+
+    .csp-fip-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .csp-fip-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      .csp-fip-grid,
+      .csp-fip-kpis {
+        grid-template-columns: 1fr;
+      }
+      .csp-fip-section {
+        padding: 14px 10px;
+      }
+      .csp-fip-header,
+      .csp-fip-card,
+      .csp-fip-guide {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-family-planner" class="csp-fip-section" lang="ml">
+  <header class="csp-fip-header">
+    <p class="csp-fip-kicker">CSP Health Insurance &bull; ഫാമിലി ഇൻഷുറൻസ് പ്ലാനർ</p>
+    <h2>കുടുംബ ഇൻഷുറൻസ് പ്ലാനറും ഗൈഡും</h2>
+    <p class="csp-fip-subtitle">നിങ്ങളുടെ കുടുംബാംഗങ്ങളുടെ എണ്ണത്തിനനുസരിച്ച് അനുയോജ്യമായ സഫയർ ക്ലാസിക്, സൂപ്പർ ടോപ്പ്-അപ്പ് കോമ്പിനേഷനും വാർഷിക പ്രീമിയവും പ്ലാൻ ചെയ്യുക</p>
+  </header>
+
+  <div class="csp-fip-grid">
+    <!-- Planner Controls -->
+    <div class="csp-fip-card">
+      <h3>കുടുംബ വിവരങ്ങളും പ്ലാൻ തിരഞ്ഞെടുപ്പും</h3>
+
+      <div class="csp-fip-field">
+        <label for="fipCombo">കുടുംബാംഗങ്ങളുടെ എണ്ണം (Family Combination)</label>
+        <select id="fipCombo">
+          <option value="1A">1 മുതിർന്നയാൾ (Self)</option>
+          <option value="1A1C">1 മുതിർന്നയാൾ + 1 കുട്ടി</option>
+          <option value="1A2C">1 മുതിർന്നയാൾ + 2 കുട്ടികൾ</option>
+          <option value="2A">2 മുതിർന്നവർ (Self + Spouse)</option>
+          <option value="2A1C">2 മുതിർന്നവർ + 1 കുട്ടി</option>
+          <option value="2A2C" selected>2 മുതിർന്നവർ + 2 കുട്ടികൾ</option>
+        </select>
+      </div>
+
+      <div class="csp-fip-field">
+        <label for="fipAge">പ്രായപരിധി</label>
+        <select id="fipAge">
+          <option value="standard" selected>18 മുതൽ 63 വയസ്സ് വരെ (സാധാരണ നിരക്ക്)</option>
+          <option value="above63">63 വയസ്സിന് മുകളിൽ (പുതുക്കൽ നിരക്ക് മാത്രം)</option>
+        </select>
+      </div>
+
+      <div class="csp-fip-field">
+        <label for="fipClassic">സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി)</label>
+        <select id="fipClassic">
+          <option value="none">വേണ്ട (None)</option>
+          <option value="2L">₹2 ലക്ഷം സം ഇൻഷ്വേർഡ്</option>
+          <option value="3L" selected>₹3 ലക്ഷം സം ഇൻഷ്വേർഡ്</option>
+          <option value="5L">₹5 ലക്ഷം സം ഇൻഷ്വേർഡ്</option>
+        </select>
+      </div>
+
+      <div class="csp-fip-field">
+        <label for="fipSuper">സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് (അധിക പരിരക്ഷ)</label>
+        <select id="fipSuper">
+          <option value="none">വേണ്ട (None)</option>
+          <option value="10L">₹10 ലക്ഷം (₹2 ലക്ഷം ഡിഡക്റ്റബിൾ)</option>
+          <option value="15L">₹15 ലക്ഷം (₹2 ലക്ഷം ഡിഡക്റ്റബിൾ)</option>
+          <option value="30L" selected>₹30 ലക്ഷം (₹3 ലക്ഷം ഡിഡക്റ്റബിൾ)</option>
+          <option value="50L">₹50 ലക്ഷം (₹5 ലക്ഷം ഡിഡക്റ്റബിൾ)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Planner Output -->
+    <div class="csp-fip-card">
+      <h3>നിങ്ങളുടെ കുടുംബ പ്ലാൻ സംഗ്രഹം</h3>
+
+      <div class="csp-fip-kpis">
+        <div class="csp-fip-kpi accent">
+          <span class="csp-fip-kpi-label">ആകെ വാർഷിക പ്രീമിയം (GST ഉൾപ്പെടെ)</span>
+          <span class="csp-fip-kpi-val" id="fipTotalPrem">₹0</span>
+        </div>
+        <div class="csp-fip-kpi">
+          <span class="csp-fip-kpi-label">ആകെ ലഭിക്കുന്ന പരിരക്ഷ</span>
+          <span class="csp-fip-kpi-val" id="fipTotalCover">₹0</span>
+        </div>
+      </div>
+
+      <span class="csp-fip-badge ok" id="fipAlignmentBadge">-</span>
+
+      <table class="csp-fip-table">
+        <tbody>
+          <tr>
+            <th>സഫയർ ക്ലാസിക് പ്രീമിയം</th>
+            <td class="num" id="fipClassicPrem">₹0</td>
+          </tr>
+          <tr>
+            <th>സൂപ്പർ ടോപ്പ്-അപ്പ് പ്രീമിയം</th>
+            <td class="num" id="fipSuperPrem">₹0</td>
+          </tr>
+          <tr>
+            <th>മാസച്ചെലവ് (ഏകദേശം)</th>
+            <td class="num" id="fipMonthlyPrem">₹0 / മാസം</td>
+          </tr>
+          <tr>
+            <th>പരിരക്ഷാ വിടവ് (Deductible Gap)</th>
+            <td class="num" id="fipGap">₹0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="csp-fip-guide">
+    <h3>കുടുംബ ഇൻഷുറൻസ് പ്ലാനിംഗ് ഗൈഡ്</h3>
+    <ul>
+      <li><strong>കുടുംബാംഗങ്ങളുടെ യോഗ്യത:</strong> സ്വയം (നിർബന്ധം), പങ്കാളി, കൂടാതെ പരമാവധി 2 കുട്ടികൾ എന്നിവരെ ഒരുമിച്ച് ഫ്ലാറ്റ് ഫാമിലി പ്രീമിയത്തിൽ ഉൾപ്പെടുത്താം. മുതിർന്നവർക്ക് 18–63 വയസ്സും കുട്ടികൾക്ക് 91 ദിവസം മുതൽ 25 വയസ്സുമാണ് പ്രവേശന പ്രായപരിധി.</li>
+      <li><strong>വിടവില്ലാത്ത പരിരക്ഷയ്ക്ക് (Seamless Cover):</strong> സഫയർ ക്ലാസിക്കിന്റെ സം ഇൻഷ്വേർഡും സൂപ്പർ ടോപ്പ്-അപ്പിന്റെ ഡിഡക്റ്റബിളും ഒരേ തുകയായി തിരഞ്ഞെടുക്കുക (ഉദാ: ക്ലാസിക് ₹3 ലക്ഷം + സൂപ്പർ ടോപ്പ്-അപ്പ് ₹30 ലക്ഷം / ₹3 ലക്ഷം ഡിഡക്റ്റബിൾ).</li>
+      <li><strong>മെഡിക്കൽ പരിശോധന ഇളവ്:</strong> മുൻകാല രോഗചരിത്രമില്ലാത്ത 55 വയസ്സ് വരെയുള്ളവർക്ക് സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പിന് പ്രീ-പോളിസി മെഡിക്കൽ പരിശോധന ആവശ്യമില്ല.</li>
+      <li><strong>പ്രീമിയം അടയ്ക്കൽ:</strong> എസ്.ബി.ഐ സാലറി പാക്കേജ് അക്കൗണ്ടിൽ ശമ്പളം ക്രെഡിറ്റ് ആവുകയും പ്രീമിയം ആ അക്കൗണ്ട് വഴി പ്രോസസ്സ് ചെയ്യുകയും വേണം.</li>
+    </ul>
+  </div>
+
+  <div class="csp-fip-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> മുകളിലുള്ള പ്രീമിയം നിരക്കുകൾ എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക് (ADBRO/AUG/2025-26/0272), സൂപ്പർ ടോപ്പ്-അപ്പ് (ADBRO/SEP/2025-26/0293) ബ്രോഷറുകളിലെ GST ഉൾപ്പെടെയുള്ള നിരക്കുകളാണ്. പൂർണ്ണ നിബന്ധനകൾക്ക് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> സന്ദർശിക്കുക.</p>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const CLASSIC_RATES = {
+      standard: {
+        "1A":   { "2L": 1983, "3L": 2155, "5L": 2629 },
+        "1A1C": { "2L": 2221, "3L": 2414, "5L": 2945 },
+        "1A2C": { "2L": 2487, "3L": 2703, "5L": 3298 },
+        "2A":   { "2L": 3193, "3L": 3471, "5L": 4235 },
+        "2A1C": { "2L": 3697, "3L": 4018, "5L": 4902 },
+        "2A2C": { "2L": 4507, "3L": 4899, "5L": 5977 }
+      },
+      above63: {
+        "1A":   { "2L": 3642, "3L": 3959, "5L": 4830 },
+        "1A1C": { "2L": 4079, "3L": 4434, "5L": 5409 },
+        "1A2C": { "2L": 4569, "3L": 4966, "5L": 6058 },
+        "2A":   { "2L": 5866, "3L": 6376, "5L": 7779 },
+        "2A1C": { "2L": 6791, "3L": 7381, "5L": 9005 },
+        "2A2C": { "2L": 8280, "3L": 8999, "5L": 10979 }
+      }
+    };
+
+    const SUPER_RATES = {
+      standard: {
+        "1A":   { "10L": 1521, "15L": 1618, "30L": 1649, "50L": 2391 },
+        "1A1C": { "10L": 1703, "15L": 1812, "30L": 1847, "50L": 2678 },
+        "1A2C": { "10L": 1806, "15L": 1921, "30L": 1958, "50L": 2839 },
+        "2A":   { "10L": 1653, "15L": 1758, "30L": 1796, "50L": 2604 },
+        "2A1C": { "10L": 1727, "15L": 1837, "30L": 1881, "50L": 2728 },
+        "2A2C": { "10L": 1869, "15L": 1988, "30L": 2020, "50L": 2929 }
+      },
+      above63: {
+        "1A":   { "10L": 2961, "15L": 3150, "30L": 3211, "50L": 4656 },
+        "1A1C": { "10L": 3317, "15L": 3528, "30L": 3596, "50L": 5215 },
+        "1A2C": { "10L": 3516, "15L": 3740, "30L": 3812, "50L": 5527 },
+        "2A":   { "10L": 3217, "15L": 3423, "30L": 3496, "50L": 5070 },
+        "2A1C": { "10L": 3362, "15L": 3577, "30L": 3663, "50L": 5311 },
+        "2A2C": { "10L": 3638, "15L": 3871, "30L": 3934, "50L": 5704 }
+      }
+    };
+
+    const SI_VALUES = {
+      "none": 0, "2L": 200000, "3L": 300000, "5L": 500000,
+      "10L": 1000000, "15L": 1500000, "30L": 3000000, "50L": 5000000
+    };
+
+    const SUPER_DEDUCTIBLE = {
+      "none": 0, "10L": 200000, "15L": 200000, "30L": 300000, "50L": 500000
+    };
+
+    const comboEl = document.getElementById("fipCombo");
+    const ageEl = document.getElementById("fipAge");
+    const classicEl = document.getElementById("fipClassic");
+    const superEl = document.getElementById("fipSuper");
+
+    function fmtINR(num) {
+      return "₹" + Math.round(num).toLocaleString("en-IN");
+    }
+
+    function fmtLakhs(num) {
+      if (num === 0) return "₹0";
+      return "₹" + (num / 100000) + " ലക്ഷം";
+    }
+
+    function update() {
+      const combo = comboEl.value;
+      const age = ageEl.value;
+      const cKey = classicEl.value;
+      const sKey = superEl.value;
+
+      const cPrem = cKey === "none" ? 0 : (CLASSIC_RATES[age]?.[combo]?.[cKey] || 0);
+      const sPrem = sKey === "none" ? 0 : (SUPER_RATES[age]?.[combo]?.[sKey] || 0);
+      const totalPrem = cPrem + sPrem;
+
+      const cSi = SI_VALUES[cKey] || 0;
+      const sSi = SI_VALUES[sKey] || 0;
+      const sDed = SUPER_DEDUCTIBLE[sKey] || 0;
+      const totalCover = cSi + sSi;
+      const gap = sKey === "none" ? 0 : Math.max(0, sDed - cSi);
+
+      const badge = document.getElementById("fipAlignmentBadge");
+      if (cKey === "none" && sKey === "none") {
+        badge.textContent = "ദയവായി കുറഞ്ഞത് ഒരു പ്ലാൻ തിരഞ്ഞെടുക്കുക";
+        badge.className = "csp-fip-badge warn";
+      } else if (sKey !== "none" && gap > 0) {
+        badge.textContent = "ശ്രദ്ധിക്കുക: " + fmtLakhs(gap) + " ഡിഡക്റ്റബിൾ വിടവ് (സ്വയം/മറ്റു പോളിസി വഴി വഹിക്കണം)";
+        badge.className = "csp-fip-badge warn";
+      } else {
+        badge.textContent = "വിടവില്ലാത്ത മികച്ച കുടുംബ പരിരക്ഷ (Seamless Cover)";
+        badge.className = "csp-fip-badge ok";
+      }
+
+      document.getElementById("fipTotalPrem").textContent = fmtINR(totalPrem);
+      document.getElementById("fipTotalCover").textContent = fmtLakhs(totalCover);
+      document.getElementById("fipClassicPrem").textContent = fmtINR(cPrem);
+      document.getElementById("fipSuperPrem").textContent = fmtINR(sPrem);
+      document.getElementById("fipMonthlyPrem").textContent = fmtINR(totalPrem / 12) + " / മാസം";
+      document.getElementById("fipGap").textContent = fmtINR(gap);
+    }
+
+    [comboEl, ageEl, classicEl, superEl].forEach((el) => {
+      el.addEventListener("change", update);
+    });
+
+    update();
+  })();
+</script>
+</body>
+</html>
