@@ -1,5 +1,167 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - Top Navbar with GoatCounter Eye Visitor Counter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: #f4f3f8;
+      color: #1e2430;
+    }
 
+    /* Scoped Top Navbar (.csp-navbar) + Eye Counter (.csp-eye-counter) */
+    .csp-navbar {
+      background: #3e1f68;
+      color: #ffffff;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-sizing: border-box;
+    }
+
+    .csp-navbar *,
+    .csp-navbar *::before,
+    .csp-navbar *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-navbar-brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .csp-navbar-right {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .csp-navbar-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .csp-navbar-links a {
+      color: #e8e2f3;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .csp-navbar-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .csp-eye-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .csp-eye-counter svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      stroke: #b7e4ea;
+    }
+
+    .csp-demo-content {
+      max-width: 960px;
+      margin: 28px auto;
+      padding: 0 16px;
+      color: #555e70;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header / Navbar with Eye Visitor Counter on the right -->
+  <header class="csp-navbar">
+    <a class="csp-navbar-brand" href="#csp-health-insurance">CSP Health Insurance</a>
+
+    <div class="csp-navbar-right">
+      <nav class="csp-navbar-links" aria-label="Main navigation">
+        <a href="#csp-health-insurance">Sapphire Classic</a>
+        <a href="#csp-super-topup">Super Top-Up</a>
+        <a href="#csp-sapphire-comparison">Comparison</a>
+        <a href="#csp-policy-certificate">Policy Copy</a>
+      </nav>
+
+      <span class="csp-eye-counter" id="cspEyeCounter" aria-label="Total website visitors">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span id="cspEyeCount">...</span>
+      </span>
+    </div>
+  </header>
+
+  <main class="csp-demo-content" id="csp-health-insurance">
+    <p id="csp-super-topup">Your website sections (Sapphire Classic, Super Top-Up, Comparison, Policy Copy) go below this top navbar.</p>
+    <p id="csp-sapphire-comparison"></p>
+    <p id="csp-policy-certificate"></p>
+  </main>
+
+  <!-- 1. GoatCounter tracking script -->
+  <script data-goatcounter="https://midhun.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+
+  <!-- 2. Fetch global total visitor count from GoatCounter -->
+  <script>
+    (function () {
+      const GOATCOUNTER_TOTAL_URL = "https://midhun.goatcounter.com/counter/TOTAL.json";
+      const countEl = document.getElementById("cspEyeCount");
+
+      async function loadGoatCounterTotal() {
+        try {
+          const res = await fetch(GOATCOUNTER_TOTAL_URL);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.count !== undefined) {
+              countEl.textContent = String(data.count);
+              return;
+            }
+          }
+        } catch (e) {}
+
+        // Fallback if offline or if "Allow adding visitor counts" is not yet enabled in GoatCounter Settings
+        countEl.textContent = "1";
+      }
+
+      // Wait briefly after load so GoatCounter records the current visit first
+      window.addEventListener("load", () => {
+        setTimeout(loadGoatCounterTotal, 600);
+      });
+    })();
+  </script>
+</body>
+</html>
 ```html
 <!DOCTYPE html>
 <html lang="en">
