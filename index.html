@@ -5720,7 +5720,446 @@ Diya R (Child, 5 yrs)</textarea>
 </script>
 </body>
 </html>
-      
+
+
+
+        <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - റൂം റെന്റ് ഇംപാക്ട് ട്രാക്കർ &amp; ഗൈഡ് (Malayalam)</title>
+  <style>
+    /* Scoped styles for Room Rent Impact Tracker (.csp-rrt-section) */
+    .csp-rrt-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-ok-bg: #ecfdf5;
+      --csp-ok-text: #065f46;
+      --csp-warn-bg: #fff7ed;
+      --csp-warn-text: #9a3412;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-rrt-section *,
+    .csp-rrt-section *::before,
+    .csp-rrt-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-rrt-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-rrt-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-rrt-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-rrt-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-rrt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+
+    .csp-rrt-card {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .csp-rrt-card h3 {
+      color: var(--csp-primary);
+      font-size: 1.12rem;
+      margin: 0 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-rrt-field {
+      margin-bottom: 13px;
+    }
+
+    .csp-rrt-field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--csp-muted);
+      margin-bottom: 5px;
+    }
+
+    .csp-rrt-field input,
+    .csp-rrt-field select {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.93rem;
+      color: var(--csp-text);
+      background: #ffffff;
+    }
+
+    .csp-rrt-field input:focus,
+    .csp-rrt-field select:focus {
+      outline: 2px solid var(--csp-accent);
+      border-color: var(--csp-accent);
+    }
+
+    .csp-rrt-status {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .csp-rrt-status.ok {
+      background: var(--csp-ok-bg);
+      color: var(--csp-ok-text);
+    }
+
+    .csp-rrt-status.warn {
+      background: var(--csp-warn-bg);
+      color: var(--csp-warn-text);
+    }
+
+    .csp-rrt-kpis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .csp-rrt-kpi {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .csp-rrt-kpi-label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--csp-muted);
+      margin-bottom: 4px;
+    }
+
+    .csp-rrt-kpi-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--csp-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .csp-rrt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .csp-rrt-table th,
+    .csp-rrt-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--csp-border);
+      text-align: left;
+    }
+
+    .csp-rrt-table th {
+      color: var(--csp-muted);
+      font-weight: 600;
+    }
+
+    .csp-rrt-table td.num {
+      text-align: right;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .csp-rrt-guide {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .csp-rrt-guide h3 {
+      color: var(--csp-primary);
+      font-size: 1.12rem;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-rrt-guide ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.93rem;
+    }
+
+    .csp-rrt-guide li {
+      margin-bottom: 8px;
+    }
+
+    .csp-rrt-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .csp-rrt-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 760px) {
+      .csp-rrt-grid,
+      .csp-rrt-kpis {
+        grid-template-columns: 1fr;
+      }
+      .csp-rrt-section {
+        padding: 14px 10px;
+      }
+      .csp-rrt-header,
+      .csp-rrt-card,
+      .csp-rrt-guide {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-room-rent-tracker" class="csp-rrt-section" lang="ml">
+  <header class="csp-rrt-header">
+    <p class="csp-rrt-kicker">CSP Health Insurance &bull; റൂം റെന്റ് ഇംപാക്ട് ട്രാക്കർ</p>
+    <h2>റൂം റെന്റ് ഇംപാക്ട് ട്രാക്കറും ഗൈഡും</h2>
+    <p class="csp-rrt-subtitle">ആശുപത്രിയിൽ ഉയർന്ന വാടകയുള്ള മുറി തിരഞ്ഞെടുത്താൽ ക്ലെയിം തുകയിൽ എന്ത് മാറ്റമുണ്ടാകുമെന്ന് പരിശോധിക്കുക</p>
+  </header>
+
+  <div class="csp-rrt-grid">
+    <!-- Input Card -->
+    <div class="csp-rrt-card">
+      <h3>പോളിസിയും മുറി വാടക വിവരങ്ങളും</h3>
+
+      <div class="csp-rrt-field">
+        <label for="rrtSi">നിങ്ങളുടെ സം ഇൻഷ്വേർഡ് (Sum Insured)</label>
+        <select id="rrtSi">
+          <option value="200000">₹2 ലക്ഷം (₹2,00,000)</option>
+          <option value="300000" selected>₹3 ലക്ഷം (₹3,00,000)</option>
+          <option value="500000">₹5 ലക്ഷം (₹5,00,000)</option>
+          <option value="1000000">₹10 ലക്ഷം (₹10,00,000)</option>
+          <option value="1500000">₹15 ലക്ഷം (₹15,00,000)</option>
+          <option value="3000000">₹30 ലക്ഷം (₹30,00,000)</option>
+          <option value="5000000">₹50 ലക്ഷം (₹50,00,000)</option>
+        </select>
+      </div>
+
+      <div class="csp-rrt-field">
+        <label for="rrtRule">പോളിസി വേർഡിംഗ്സ് പ്രകാരമുള്ള റൂം റെന്റ് നിയമം</label>
+        <select id="rrtRule">
+          <option value="1pct" selected>ദിവസേന സം ഇൻഷ്വേർഡിന്റെ 1% (ഉദാ. 3 ലക്ഷത്തിന് ₹3,000/ദിവസം)</option>
+          <option value="2pct">ദിവസേന സം ഇൻഷ്വേർഡിന്റെ 2%</option>
+          <option value="custom">ഇഷ്ടാനുസരണം ദിവസേനയുള്ള പരിധി നൽകുക (₹)</option>
+          <option value="none">റൂം റെന്റ് പരിധിയില്ല (No Room Rent Cap)</option>
+        </select>
+      </div>
+
+      <div class="csp-rrt-field hidden" id="rrtCustomWrap">
+        <label for="rrtCustomCap">അനുവദനീയമായ പരമാവധി മുറി വാടക / ദിവസം (INR ₹)</label>
+        <input type="number" id="rrtCustomCap" min="0" step="500" value="4000">
+      </div>
+
+      <div class="csp-rrt-field">
+        <label for="rrtActualRent">നിങ്ങൾ തിരഞ്ഞെടുത്ത മുറിയുടെ വാടക / ദിവസം (INR ₹)</label>
+        <input type="number" id="rrtActualRent" min="0" step="500" value="5000">
+      </div>
+
+      <div class="csp-rrt-field">
+        <label for="rrtDays">ആശുപത്രിയിൽ കഴിയുന്ന ദിവസങ്ങൾ</label>
+        <input type="number" id="rrtDays" min="1" step="1" value="5">
+      </div>
+
+      <div class="csp-rrt-field">
+        <label for="rrtOtherExp">മറ്റ് ആശുപത്രി ചെലവുകൾ (ഡോക്ടർ, സർജൻ, OT, ടെസ്റ്റുകൾ - INR ₹)</label>
+        <input type="number" id="rrtOtherExp" min="0" step="1000" value="100000">
+      </div>
+    </div>
+
+    <!-- Output Card -->
+    <div class="csp-rrt-card">
+      <h3>പ്രൊപ്പോർഷണേറ്റ് ഡിഡക്ഷൻ ഫലം</h3>
+      <span class="csp-rrt-status warn" id="rrtStatusBadge">-</span>
+
+      <div class="csp-rrt-kpis">
+        <div class="csp-rrt-kpi">
+          <span class="csp-rrt-kpi-label">ക്ലെയിമിൽ ലഭിക്കാവുന്ന തുക</span>
+          <span class="csp-rrt-kpi-val" id="rrtCoveredVal">₹0</span>
+        </div>
+        <div class="csp-rrt-kpi">
+          <span class="csp-rrt-kpi-label">റൂം റെന്റ് മൂലമുള്ള നഷ്ടം / കുറവ്</span>
+          <span class="csp-rrt-kpi-val" id="rrtLossVal">₹0</span>
+        </div>
+      </div>
+
+      <table class="csp-rrt-table">
+        <tbody>
+          <tr>
+            <th>അനുവദനീയമായ മുറി വാടക / ദിവസം</th>
+            <td class="num" id="rrtAllowedDay">-</td>
+          </tr>
+          <tr>
+            <th>ആകെ ആശുപത്രി ബിൽ (മുറി + മറ്റ് ചെലവുകൾ)</th>
+            <td class="num" id="rrtTotalBill">₹0</td>
+          </tr>
+          <tr>
+            <th>ക്ലെയിം അനുപാതം (Eligible Ratio)</th>
+            <td class="num" id="rrtRatio">100%</td>
+          </tr>
+          <tr>
+            <th>സ്വയം വഹിക്കേണ്ട ആകെ തുക</th>
+            <td class="num" id="rrtOutOfPocket">₹0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="csp-rrt-guide">
+    <h3>റൂം റെന്റും പ്രൊപ്പോർഷണേറ്റ് ഡിഡക്ഷനും &mdash; ലളിതമായി മനസ്സിലാക്കാം</h3>
+    <ul>
+      <li><strong>എന്താണ് പ്രൊപ്പോർഷണേറ്റ് ഡിഡക്ഷൻ (Proportionate Deduction)?</strong> നിങ്ങളുടെ പോളിസിയിൽ ഒരു നിശ്ചിത മുറി വാടക പരിധി ഉണ്ടായിരിക്കുകയും, നിങ്ങൾ അതിലും ഉയർന്ന വാടകയുള്ള മുറി തിരഞ്ഞെടുക്കുകയും ചെയ്താൽ, മുറി വാടകയിലെ വ്യത്യാസം മാത്രമല്ല, ഡോക്ടർ ഫീസ്, സർജറി, ഓപ്പറേഷൻ തിയേറ്റർ തുടങ്ങിയ അനുബന്ധ ചെലവുകളും അതേ അനുപാതത്തിൽ കുറയ്ക്കപ്പെടാം.</li>
+      <li><strong>ഉദാഹരണം:</strong> അനുവദനീയമായ വാടക ₹3,000-ഉം, നിങ്ങൾ എടുത്ത മുറിയുടെ വാടക ₹5,000-ഉം ആണെങ്കിൽ, അനുപാതം 60% (3,000 &divide; 5,000) ആകും; അതായത് അനുബന്ധ ബില്ലിന്റെ 40% സ്വയം വഹിക്കേണ്ടി വരാം.</li>
+      <li><strong>എങ്ങനെ ഒഴിവാക്കാം?</strong> ആശുപത്രിയിൽ അഡ്മിറ്റ് ആകുന്നതിന് മുമ്പ് നിങ്ങളുടെ പോളിസി ഷെഡ്യൂളിൽ അനുവദിച്ചിട്ടുള്ള റൂം കാറ്റഗറി / വാടക പരിധി പരിശോധിച്ച് അതിനുള്ളിൽ നിൽക്കുന്ന മുറി തിരഞ്ഞെടുക്കുക.</li>
+    </ul>
+  </div>
+
+  <div class="csp-rrt-disclaimer">
+    <p style="margin: 0;"><strong>പ്രധാന കുറിപ്പ്:</strong> എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക്, സൂപ്പർ ടോപ്പ്-അപ്പ് സെയിൽസ് ബ്രോഷറുകളിൽ പ്രത്യേക റൂം റെന്റ് പരിധി രേഖപ്പെടുത്തിയിട്ടില്ല. അതിനാൽ, നിങ്ങളുടെ പോളിസിയിൽ റൂം റെന്റ് പരിധി ഉണ്ടോ എന്ന് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a>-ലെ ഔദ്യോഗിക പോളിസി വേർഡിംഗ്സിലോ പോളിസി സർട്ടിഫിക്കറ്റിലോ പരിശോധിച്ച് മുകളിലുള്ള ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക.</p>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const siEl = document.getElementById("rrtSi");
+    const ruleEl = document.getElementById("rrtRule");
+    const customWrap = document.getElementById("rrtCustomWrap");
+    const customCapEl = document.getElementById("rrtCustomCap");
+    const actualRentEl = document.getElementById("rrtActualRent");
+    const daysEl = document.getElementById("rrtDays");
+    const otherExpEl = document.getElementById("rrtOtherExp");
+
+    function fmtINR(num) {
+      return "₹" + Math.round(num).toLocaleString("en-IN");
+    }
+
+    function calculate() {
+      const si = Number(siEl.value) || 0;
+      const rule = ruleEl.value;
+      customWrap.classList.toggle("hidden", rule !== "custom");
+
+      const actualRent = Math.max(0, Number(actualRentEl.value) || 0);
+      const days = Math.max(1, Number(daysEl.value) || 1);
+      const otherExp = Math.max(0, Number(otherExpEl.value) || 0);
+
+      const totalRoomBill = actualRent * days;
+      const totalBill = totalRoomBill + otherExp;
+
+      let allowedPerDay = Infinity;
+      if (rule === "1pct") allowedPerDay = si * 0.01;
+      else if (rule === "2pct") allowedPerDay = si * 0.02;
+      else if (rule === "custom") allowedPerDay = Math.max(0, Number(customCapEl.value) || 0);
+
+      let ratio = 1;
+      let eligibleRoom = totalRoomBill;
+      let eligibleOther = otherExp;
+
+      if (Number.isFinite(allowedPerDay) && actualRent > allowedPerDay && actualRent > 0) {
+        ratio = allowedPerDay / actualRent;
+        eligibleRoom = allowedPerDay * days;
+        eligibleOther = otherExp * ratio;
+      }
+
+      const rawCovered = eligibleRoom + eligibleOther;
+      const covered = Math.min(rawCovered, si);
+      const outOfPocket = Math.max(0, totalBill - covered);
+      const roomRentImpact = Math.max(0, Math.min(totalBill, si) - covered);
+
+      const badge = document.getElementById("rrtStatusBadge");
+      if (!Number.isFinite(allowedPerDay)) {
+        badge.textContent = "റൂം റെന്റ് പരിധിയില്ല • പ്രൊപ്പോർഷണേറ്റ് ഡിഡക്ഷൻ ബാധകമല്ല";
+        badge.className = "csp-rrt-status ok";
+      } else if (actualRent <= allowedPerDay) {
+        badge.textContent = "സുരക്ഷിതം • മുറി വാടക പരിധിക്കുള്ളിലാണ്";
+        badge.className = "csp-rrt-status ok";
+      } else {
+        badge.textContent = "മുന്നറിയിപ്പ് • പരിധി കവിഞ്ഞതിനാൽ ക്ലെയിം കുറയാൻ സാധ്യത";
+        badge.className = "csp-rrt-status warn";
+      }
+
+      document.getElementById("rrtAllowedDay").textContent = Number.isFinite(allowedPerDay) ? fmtINR(allowedPerDay) : "പരിധിയില്ല";
+      document.getElementById("rrtTotalBill").textContent = fmtINR(totalBill);
+      document.getElementById("rrtRatio").textContent = Math.round(ratio * 100) + "%";
+      document.getElementById("rrtCoveredVal").textContent = fmtINR(covered);
+      document.getElementById("rrtLossVal").textContent = fmtINR(roomRentImpact);
+      document.getElementById("rrtOutOfPocket").textContent = fmtINR(outOfPocket);
+    }
+
+    [siEl, ruleEl, customCapEl, actualRentEl, daysEl, otherExpEl].forEach((el) => {
+      el.addEventListener("input", calculate);
+      el.addEventListener("change", calculate);
+    });
+
+    calculate();
+  })();
+</script>
+</body>
+</html>
 
      
    
