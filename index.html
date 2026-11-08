@@ -2733,9 +2733,311 @@
 
 
 
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - പോളിസി സർട്ടിഫിക്കറ്റ് ഡൗൺലോഡ് ചെയ്യുന്ന വിവിധ രീതികൾ</title>
+  <style>
+    /* Scoped styles for the Policy Certificate Download section (.csp-cert-section) */
+    .csp-cert-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-border: #e2dce9;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-cert-section *,
+    .csp-cert-section *::before,
+    .csp-cert-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-cert-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .csp-cert-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-cert-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-cert-subtitle {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #ebe6f5;
+    }
+
+    .csp-cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cert-card {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-top: 4px solid var(--csp-primary);
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .csp-cert-card.accent {
+      border-top-color: var(--csp-accent);
+    }
+
+    .csp-cert-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--csp-primary);
+      background: var(--csp-surface);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .csp-cert-card.accent .csp-cert-badge {
+      color: var(--csp-accent);
+      background: #eef8f9;
+    }
+
+    .csp-cert-card h3 {
+      color: var(--csp-primary);
+      font-size: 1.08rem;
+      margin: 0 0 10px 0;
+    }
+
+    .csp-cert-card ol,
+    .csp-cert-card ul {
+      margin: 0 0 12px 0;
+      padding-left: 20px;
+      font-size: 0.93rem;
+    }
+
+    .csp-cert-card li {
+      margin-bottom: 6px;
+    }
+
+    .csp-cert-action {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 8px 14px;
+      background: var(--csp-primary);
+      color: #ffffff !important;
+      text-decoration: none !important;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .csp-cert-card.accent .csp-cert-action {
+      background: var(--csp-accent);
+    }
+
+    .csp-cert-checklist {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-left: 4px solid var(--csp-accent);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cert-checklist h3 {
+      color: var(--csp-primary);
+      font-size: 1.05rem;
+      margin: 0 0 8px 0;
+    }
+
+    .csp-cert-checklist ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.93rem;
+    }
+
+    .csp-cert-checklist li {
+      margin-bottom: 4px;
+    }
+
+    .csp-cert-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .csp-cert-disclaimer {
+      font-size: 0.85rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    @media (max-width: 600px) {
+      .csp-cert-section {
+        padding: 14px 10px;
+      }
+      .csp-cert-header,
+      .csp-cert-card {
+        padding: 16px;
+      }
+      .csp-cert-header h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Copy from <section id="csp-policy-certificate"> to </section> to embed under your CSP Health Insurance heading -->
+<section id="csp-policy-certificate" class="csp-cert-section" lang="ml">
+  <header class="csp-cert-header">
+    <p class="csp-cert-kicker">CSP Health Insurance &bull; പോളിസി സർട്ടിഫിക്കറ്റ് (COI) ഡൗൺലോഡ് ഗൈഡ്</p>
+    <h2>പോളിസി സർട്ടിഫിക്കറ്റ് ലഭിക്കുന്നതിനുള്ള വിവിധ മാർഗ്ഗങ്ങൾ</h2>
+    <p class="csp-cert-subtitle">എസ്.ബി.ഐ ജനറൽ ഇൻഷുറൻസ് (സഫയർ ക്ലാസിക് / സൂപ്പർ ടോപ്പ്-അപ്പ്) പോളിസി പകർപ്പ് ഓൺലൈനായും ഓഫ്‌ലൈനായും എളുപ്പത്തിൽ ലഭ്യമാക്കാം</p>
+  </header>
+
+  <div class="csp-cert-checklist">
+    <h3>തുടങ്ങുന്നതിന് മുമ്പ് കൈവശം കരുതേണ്ട വിവരങ്ങൾ:</h3>
+    <ul>
+      <li><strong>പോളിസി നമ്പർ / സർട്ടിഫിക്കറ്റ് ഓഫ് ഇൻഷുറൻസ് (COI) നമ്പർ</strong> അല്ലെങ്കിൽ <strong>എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് നമ്പർ</strong></li>
+      <li>പോളിസിയിൽ രജിസ്റ്റർ ചെയ്ത <strong>മൊബൈൽ നമ്പറും ഇമെയിൽ ഐഡിയും</strong></li>
+      <li>പോളിസി ഉടമയുടെ <strong>ജനനത്തീയതി (Date of Birth)</strong></li>
+    </ul>
+  </div>
+
+  <div class="csp-cert-grid">
+    <!-- Method 1: Official Website -->
+    <article class="csp-cert-card">
+      <div>
+        <span class="csp-cert-badge">രീതി 1 &bull; ഓൺലൈൻ വെബ്സൈറ്റ്</span>
+        <h3>എസ്.ബി.ഐ ജനറൽ വെബ്സൈറ്റ് വഴി</h3>
+        <ol>
+          <li>ഔദ്യോഗിക വെബ്സൈറ്റായ <strong>Quick Assist</strong> അല്ലെങ്കിൽ <strong>Download Policy</strong> പേജ് തുറക്കുക.</li>
+          <li><strong>Health Policy</strong> വിഭാഗം തിരഞ്ഞെടുക്കുക.</li>
+          <li>നിങ്ങളുടെ <strong>പോളിസി നമ്പർ</strong>, <strong>ജനനത്തീയതി</strong> (അല്ലെങ്കിൽ ഗ്രൂപ്പ് പോളിസികൾക്ക് അക്കൗണ്ട് / COI നമ്പർ) നൽകുക.</li>
+          <li>OTP / ക്യാപ്ച സ്ഥിരീകരിച്ച ശേഷം <strong>PDF പോളിസി സർട്ടിഫിക്കറ്റ്</strong> ഡൗൺലോഡ് ചെയ്യുക.</li>
+        </ol>
+      </div>
+      <a class="csp-cert-action" href="https://www.sbigeneral.in/policyprint/healthpolicyothers" target="_blank" rel="noopener noreferrer">പോളിസി ഡൗൺലോഡ് പേജ് തുറക്കുക</a>
+    </article>
+
+    <!-- Method 2: Mobile App -->
+    <article class="csp-cert-card accent">
+      <div>
+        <span class="csp-cert-badge">രീതി 2 &bull; മൊബൈൽ ആപ്പ്</span>
+        <h3>SBI General Mobile App വഴി</h3>
+        <ol>
+          <li>നിങ്ങളുടെ ഫോണിൽ <strong>SBI General Insurance</strong> മൊബൈൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്ത് ലോഗിൻ ചെയ്യുക.</li>
+          <li><strong>Link Your Policy</strong> വഴി പോളിസി നമ്പറും ജനനത്തീയതിയും നൽകി പോളിസി ലിങ്ക് ചെയ്യുക.</li>
+          <li><strong>Download Policy Documents</strong> എന്ന ഓപ്ഷനിൽ ക്ലിക്ക് ചെയ്ത് പോളിസി സർട്ടിഫിക്കറ്റ് PDF ആയി സേവ് ചെയ്യുക.</li>
+        </ol>
+      </div>
+      <a class="csp-cert-action" href="https://www.sbigeneral.in/appdownload" target="_blank" rel="noopener noreferrer">മൊബൈൽ ആപ്പ് വിവരങ്ങൾ കാണുക</a>
+    </article>
+
+    <!-- Method 3: SMS for Physical Copy -->
+    <article class="csp-cert-card">
+      <div>
+        <span class="csp-cert-badge">രീതി 3 &bull; എസ്.എം.എസ് (SMS)</span>
+        <h3>SMS വഴി ഫിസിക്കൽ കോപ്പിക്ക് അപേക്ഷിക്കാൻ</h3>
+        <ol>
+          <li>നിങ്ങളുടെ പോളിസിയിൽ രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പറിൽ നിന്ന് സന്ദേശം അയയ്ക്കുക.</li>
+          <li>മെസ്സേജ് ബോക്സിൽ <strong>PRINT &lt;നിങ്ങളുടെ പോളിസി നമ്പർ&gt;</strong> എന്ന് ടൈപ്പ് ചെയ്യുക.</li>
+          <li>ഈ സന്ദേശം <strong>561612</strong> എന്ന നമ്പറിലേക്ക് അയയ്ക്കുക.</li>
+        </ol>
+      </div>
+      <a class="csp-cert-action" href="sms:561612">561612-ലേക്ക് SMS അയയ്ക്കുക</a>
+    </article>
+
+    <!-- Method 4: Email -->
+    <article class="csp-cert-card accent">
+      <div>
+        <span class="csp-cert-badge">രീതി 4 &bull; ഇമെയിൽ</span>
+        <h3>ഇമെയിൽ വഴി സർട്ടിഫിക്കറ്റ് ലഭിക്കാൻ</h3>
+        <ol>
+          <li>രജിസ്റ്റർ ചെയ്ത ഇമെയിൽ ഐഡിയിൽ നിന്ന് <strong>customer.care@sbigeneral.in</strong> എന്ന വിലാസത്തിലേക്ക് മെയിൽ അയയ്ക്കുക.</li>
+          <li>ഇമെയിലിൽ നിങ്ങളുടെ <strong>പോളിസി / COI നമ്പർ</strong>, <strong>രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പർ</strong>, <strong>ജനനത്തീയതി</strong> എന്നിവ വ്യക്തമാക്കുക.</li>
+          <li>ഡിജിറ്റൽ പോളിസി സർട്ടിഫിക്കറ്റ് (PDF) നിങ്ങളുടെ ഇമെയിലിലേക്ക് ലഭിക്കും.</li>
+        </ol>
+      </div>
+      <a class="csp-cert-action" href="mailto:customer.care@sbigeneral.in?subject=Request%20for%20Policy%20Certificate%20Copy">ഇമെയിൽ അയയ്ക്കുക</a>
+    </article>
+
+    <!-- Method 5: Toll-Free Helpline -->
+    <article class="csp-cert-card">
+      <div>
+        <span class="csp-cert-badge">രീതി 5 &bull; ടോൾ-ഫ്രീ ഫോൺ</span>
+        <h3>കസ്റ്റമർ കെയർ ഹെൽപ്പ്‌ലൈൻ വഴി</h3>
+        <ol>
+          <li>രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പറിൽ നിന്ന് <strong>1800 22 1111</strong> അല്ലെങ്കിൽ <strong>1800 102 1111</strong> എന്ന ടോൾ-ഫ്രീ നമ്പറിലേക്ക് വിളിക്കുക.</li>
+          <li>പ്രതിനിധിയോട് പോളിസി / അക്കൗണ്ട് വിവരങ്ങൾ സ്ഥിരീകരിച്ച് പോളിസി സർട്ടിഫിക്കറ്റ് ഇമെയിലിലേക്ക് അയയ്ക്കാൻ ആവശ്യപ്പെടുക.</li>
+        </ol>
+      </div>
+      <a class="csp-cert-action" href="tel:18001021111">1800 102 1111-ൽ വിളിക്കുക</a>
+    </article>
+
+    <!-- Method 6: Quick Assist / SBI CSP -->
+    <article class="csp-cert-card accent">
+      <div>
+        <span class="csp-cert-badge">രീതി 6 &bull; ക്വിക്ക് അസിസ്റ്റ് / ബ്രാഞ്ച്</span>
+        <h3>Quick Assist &amp; എസ്.ബി.ഐ സഹായം</h3>
+        <ol>
+          <li>ഓൺലൈൻ സേവനങ്ങൾക്കും പരാതികൾക്കും എസ്.ബി.ഐ ജനറലിന്റെ <strong>Quick Assist</strong> പോർട്ടൽ ഉപയോഗിക്കാം.</li>
+          <li>ഓൺലൈനിൽ ലഭിക്കാൻ തടസ്സമുണ്ടെങ്കിൽ, അടുത്തുള്ള <strong>എസ്.ബി.ഐ (SBI) ബ്രാഞ്ച് / CSP</strong> വഴിയോ എസ്.ബി.ഐ ജനറൽ ഓഫീസ് വഴിയോ അക്കൗണ്ട് നമ്പർ നൽകി സഹായം തേടാവുന്നതാണ്.</li>
+        </ol>
+      </div>
+      <a class="csp-cert-action" href="https://www.sbigeneral.in/quick-assist" target="_blank" rel="noopener noreferrer">Quick Assist തുറക്കുക</a>
+    </article>
+  </div>
+
+  <div class="csp-cert-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> ഡിജിറ്റൽ പോളിസി കോപ്പി സാധാരണയായി നിങ്ങളുടെ രജിസ്റ്റർ ചെയ്ത ഇമെയിൽ ഐഡിയിലേക്കോ മൊബൈൽ നമ്പറിലേക്കോ PDF രൂപത്തിൽ ലഭിക്കുന്നതാണ്. കൂടുതൽ വിവരങ്ങൾക്ക് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> സന്ദർശിക്കുക.</p>
+  </div>
+</section>
+
+</body>
+</html>
+
+
+
+
+
+          
 <!-- പുതിയ ഉപവിഭാഗം: ക്ലെയിം ചെയ്യുന്ന വിധം (How to Claim) -->
           <details class="accordion">
-            <summary>📑 10. ക്ലെയിം ചെയ്യുന്നതിനുള്ള ഘട്ടങ്ങൾ (How to Claim)</summary>
+            <summary>📑 11. ക്ലെയിം ചെയ്യുന്നതിനുള്ള ഘട്ടങ്ങൾ (How to Claim)</summary>
             <div class="accordion-body">
               <p>CSP ഹെൽത്ത് ഇൻഷുറൻസ് പോളിസി വഴി തടസ്സമില്ലാതെ ക്ലെയിം ലഭ്യമാക്കുന്നതിനുള്ള ഓരോ ഘട്ടങ്ങളും മാർഗ്ഗനിർദ്ദേശങ്ങളും താഴെ നൽകുന്നു:</p>
 
