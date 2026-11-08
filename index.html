@@ -6644,3 +6644,1236 @@ Diya R (Child, 5 yrs)</textarea>
 </script>
 </body>
 </html>
+
+
+
+
+        <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - ക്ലെയിം യാത്രാ ട്രാക്കർ (Claim Journey Tracker - Malayalam)</title>
+  <style>
+    /* Scoped styles for Claim Journey Tracker (.csp-cjt-section) */
+    .csp-cjt-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-ok-bg: #ecfdf5;
+      --csp-ok-text: #065f46;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-cjt-section *,
+    .csp-cjt-section *::before,
+    .csp-cjt-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-cjt-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cjt-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-cjt-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-cjt-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-cjt-top-bar {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cjt-inputs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .csp-cjt-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--csp-muted);
+      margin-bottom: 4px;
+    }
+
+    .csp-cjt-field input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #ffffff;
+      color: var(--csp-text);
+    }
+
+    .csp-cjt-progress-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--csp-primary);
+      margin-bottom: 6px;
+    }
+
+    .csp-cjt-bar-track {
+      width: 100%;
+      height: 10px;
+      background: #e5dfef;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .csp-cjt-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--csp-primary), var(--csp-accent));
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .csp-cjt-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cjt-step {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-left: 5px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .csp-cjt-step.done {
+      border-left-color: var(--csp-accent);
+      background: #f5fbfc;
+    }
+
+    .csp-cjt-check {
+      width: 22px;
+      height: 22px;
+      margin-top: 3px;
+      accent-color: var(--csp-accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .csp-cjt-step-body h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.04rem;
+      color: var(--csp-primary);
+    }
+
+    .csp-cjt-step-body p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: var(--csp-text);
+    }
+
+    .csp-cjt-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cjt-btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: var(--csp-primary);
+      color: #ffffff;
+    }
+
+    .csp-cjt-btn.outline {
+      background: var(--csp-surface);
+      color: var(--csp-primary);
+      border: 1px solid var(--csp-border);
+    }
+
+    .csp-cjt-channels {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    .csp-cjt-channels h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.08rem;
+      color: var(--csp-primary);
+    }
+
+    .csp-cjt-channels ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.92rem;
+    }
+
+    .csp-cjt-channels li {
+      margin-bottom: 6px;
+    }
+
+    .csp-cjt-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .csp-cjt-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2a1349;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .csp-cjt-section {
+        padding: 14px 10px;
+      }
+      .csp-cjt-header,
+      .csp-cjt-top-bar,
+      .csp-cjt-step {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-claim-journey-tracker" class="csp-cjt-section" lang="ml">
+  <header class="csp-cjt-header">
+    <p class="csp-cjt-kicker">CSP Health Insurance &bull; ക്ലെയിം യാത്രാ ട്രാക്കർ</p>
+    <h2>ക്ലെയിം യാത്രാ ട്രാക്കർ (Claim Journey Tracker)</h2>
+    <p class="csp-cjt-subtitle">ആശുപത്രി പ്രവേശനം മുതൽ ക്ലെയിം തീർപ്പാക്കൽ വരെയുള്ള ഓരോ ഘട്ടവും രേഖപ്പെടുത്തി പുരോഗതി നിരീക്ഷിക്കുക</p>
+  </header>
+
+  <div class="csp-cjt-top-bar">
+    <div class="csp-cjt-inputs">
+      <div class="csp-cjt-field">
+        <label for="cjtRefNo">ക്ലെയിം / പോളിസി നമ്പർ (കുറിപ്പിനായി)</label>
+        <input type="text" id="cjtRefNo" placeholder="ഉദാ. CLM-2026-00123">
+      </div>
+      <div class="csp-cjt-field">
+        <label for="cjtAdmitDate">ആശുപത്രിയിൽ പ്രവേശിച്ച തീയതി</label>
+        <input type="date" id="cjtAdmitDate">
+      </div>
+    </div>
+
+    <div class="csp-cjt-progress-head">
+      <span>ക്ലെയിം പുരോഗതി</span>
+      <span id="cjtPctText">0 / 5 ഘട്ടങ്ങൾ (0%)</span>
+    </div>
+    <div class="csp-cjt-bar-track">
+      <div class="csp-cjt-bar-fill" id="cjtBarFill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <div class="csp-cjt-steps" id="cjtStepsList">
+    <label class="csp-cjt-step">
+      <input type="checkbox" class="csp-cjt-check" data-step="1">
+      <div class="csp-cjt-step-body">
+        <h3>ഘട്ടം 1: ക്ലെയിം അറിയിക്കൽ (Claim Intimation)</h3>
+        <p>അടിയന്തര സാഹചര്യങ്ങളിൽ ഉടൻ ടോൾ-ഫ്രീ നമ്പറായ <strong>1800 22 1111 / 1800 102 1111</strong> വഴിയോ, <strong>561612</strong>-ലേക്ക് <strong>&ldquo;CLAIM&rdquo;</strong> എന്ന് SMS അയച്ചോ, <strong>customer.care@sbigeneral.in</strong> വഴിയോ വിവരം അറിയിക്കുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-cjt-step">
+      <input type="checkbox" class="csp-cjt-check" data-step="2">
+      <div class="csp-cjt-step-body">
+        <h3>ഘട്ടം 2: ആശുപത്രി പ്രവേശനവും ചികിത്സയും</h3>
+        <p>ഇൻപേഷ്യന്റ് പരിരക്ഷയ്ക്ക് <strong>24 മണിക്കൂറിൽ കൂടുതൽ</strong> ആശുപത്രിവാസം ഉറപ്പാക്കുക (ഡേ കെയർ ചികിത്സകൾക്ക് 24 മണിക്കൂർ നിബന്ധനയില്ല). ആശുപത്രി Excluded Providers പട്ടികയിൽ ഇല്ലെന്ന് പരിശോധിക്കുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-cjt-step">
+      <input type="checkbox" class="csp-cjt-check" data-step="3">
+      <div class="csp-cjt-step-body">
+        <h3>ഘട്ടം 3: രേഖകൾ ശേഖരിക്കലും സമർപ്പിക്കലും</h3>
+        <p>ഡിസ്ചാർജ് സമ്മറി, ഒറിജിനൽ ബില്ലുകൾ, ലാബ് റിപ്പോർട്ടുകൾ, പ്രീ-ഹോസ്പിറ്റലൈസേഷൻ (60 ദിവസം), പോസ്റ്റ്-ഹോസ്പിറ്റലൈസേഷൻ (90 ദിവസം), ആംബുലൻസ് ബിൽ (പരമാവധി ₹2,000) എന്നിവ സമർപ്പിക്കുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-cjt-step">
+      <input type="checkbox" class="csp-cjt-check" data-step="4">
+      <div class="csp-cjt-step-body">
+        <h3>ഘട്ടം 4: ക്ലെയിം പരിശോധനയും പുരോഗതിയും</h3>
+        <p>എസ്.ബി.ഐ ജനറലിന്റെ ക്ലെയിംസ് ടീം രേഖകൾ പരിശോധിച്ച് നിങ്ങളെ ക്ലെയിം പുരോഗതി അറിയിക്കും. <a href="https://www.sbigeneral.in/quick-assist" target="_blank" rel="noopener noreferrer">Quick Assist</a> വഴിയും സ്റ്റാറ്റസ് പരിശോധിക്കാം.</p>
+      </div>
+    </label>
+
+    <label class="csp-cjt-step">
+      <input type="checkbox" class="csp-cjt-check" data-step="5">
+      <div class="csp-cjt-step-body">
+        <h3>ഘട്ടം 5: ക്ലെയിം തീർപ്പാക്കൽ (Claim Settlement)</h3>
+        <p>പോളിസി നിബന്ധനകൾ പ്രകാരം ക്ലെയിം തുക അനുവദിക്കപ്പെടുന്നു (സൂപ്പർ ടോപ്പ്-അപ്പ് പ്ലാനിൽ അഗ്രഗേറ്റ് ഡിഡക്റ്റബിൾ പരിധി കഴിഞ്ഞ ശേഷമുള്ള തുക ലഭിക്കും).</p>
+      </div>
+    </label>
+  </div>
+
+  <div class="csp-cjt-actions">
+    <button type="button" class="csp-cjt-btn" id="cjtSaveBtn">പ്രോഗ്രസ് സേവ് ചെയ്യുക</button>
+    <button type="button" class="csp-cjt-btn outline" id="cjtResetBtn">റീസെറ്റ് ചെയ്യുക</button>
+  </div>
+
+  <div class="csp-cjt-channels">
+    <h3>എസ്.ബി.ഐ ജനറൽ ക്ലെയിം ബന്ധപ്പെടൽ വിവരങ്ങൾ</h3>
+    <ul>
+      <li><strong>ടോൾ-ഫ്രീ ഹെൽപ്പ്‌ലൈൻ:</strong> <a href="tel:1800221111">1800 22 1111</a> / <a href="tel:18001021111">1800 102 1111</a></li>
+      <li><strong>എസ്.എം.എസ് (SMS):</strong> 561612-ലേക്ക് <strong>&ldquo;CLAIM&rdquo;</strong> എന്ന് അയയ്ക്കുക</li>
+      <li><strong>ഇമെയിൽ:</strong> <a href="mailto:customer.care@sbigeneral.in">customer.care@sbigeneral.in</a></li>
+      <li><strong>വെബ്സൈറ്റ്:</strong> <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a></li>
+    </ul>
+  </div>
+
+  <div class="csp-cjt-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> നിങ്ങളുടെ പുരോഗതി ഈ ബ്രൗസറിൽ മാത്രമായി സേവ് ചെയ്യപ്പെടും. ഔദ്യോഗിക ക്ലെയിം സ്റ്റാറ്റസിനായി <a href="https://www.sbigeneral.in/quick-assist" target="_blank" rel="noopener noreferrer">www.sbigeneral.in/quick-assist</a> അല്ലെങ്കിൽ 1800 102 1111 ഉപയോഗിക്കുക.</p>
+  </div>
+</section>
+
+<div id="cjtToast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+  (function () {
+    const STORAGE_KEY = "csp_claim_journey_ml_v1";
+    const checks = Array.from(document.querySelectorAll(".csp-cjt-check"));
+    const refInput = document.getElementById("cjtRefNo");
+    const dateInput = document.getElementById("cjtAdmitDate");
+    const pctText = document.getElementById("cjtPctText");
+    const barFill = document.getElementById("cjtBarFill");
+    const toast = document.getElementById("cjtToast");
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function updateProgress() {
+      let doneCount = 0;
+      checks.forEach((cb) => {
+        const card = cb.closest(".csp-cjt-step");
+        if (cb.checked) {
+          doneCount += 1;
+          card.classList.add("done");
+        } else {
+          card.classList.remove("done");
+        }
+      });
+      const total = checks.length;
+      const pct = Math.round((doneCount / total) * 100);
+      pctText.textContent = doneCount + " / " + total + " ഘട്ടങ്ങൾ (" + pct + "%)";
+      barFill.style.width = pct + "%";
+    }
+
+    function saveState() {
+      const state = {
+        refNo: refInput.value,
+        admitDate: dateInput.value,
+        steps: checks.map((c) => c.checked)
+      };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        showToast("ക്ലെയിം പ്രോഗ്രസ് സേവ് ചെയ്തു!");
+      } catch (e) {
+        showToast("ബ്രൗസർ സ്റ്റോറേജ് ലഭ്യമല്ല.");
+      }
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const state = JSON.parse(raw);
+        if (state.refNo !== undefined) refInput.value = state.refNo;
+        if (state.admitDate !== undefined) dateInput.value = state.admitDate;
+        if (Array.isArray(state.steps)) {
+          checks.forEach((cb, i) => {
+            cb.checked = Boolean(state.steps[i]);
+          });
+        }
+      } catch (e) {}
+    }
+
+    checks.forEach((cb) => cb.addEventListener("change", updateProgress));
+    document.getElementById("cjtSaveBtn").addEventListener("click", saveState);
+    document.getElementById("cjtResetBtn").addEventListener("click", () => {
+      refInput.value = "";
+      dateInput.value = "";
+      checks.forEach((cb) => { cb.checked = false; });
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
+      updateProgress();
+      showToast("ട്രാക്കർ റീസെറ്റ് ചെയ്തു.");
+    });
+
+    loadState();
+    updateProgress();
+  })();
+</script>
+</body>
+</html>
+
+
+
+
+
+        <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - ഇൻഷുറൻസ് മിത്ത് ബസ്റ്റർ (Malayalam)</title>
+  <style>
+    /* Scoped styles for Insurance Myth Buster (.csp-imb-section) */
+    .csp-imb-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-myth-bg: #fff5f5;
+      --csp-myth-text: #991b1b;
+      --csp-fact-bg: #ecfdf5;
+      --csp-fact-text: #065f46;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-imb-section *,
+    .csp-imb-section *::before,
+    .csp-imb-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-imb-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-imb-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-imb-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-imb-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-imb-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .csp-imb-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .csp-imb-filter-btn {
+      cursor: pointer;
+      border: 1px solid var(--csp-border);
+      background: var(--csp-surface);
+      color: var(--csp-primary);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .csp-imb-filter-btn.active {
+      background: var(--csp-primary);
+      color: #ffffff;
+      border-color: var(--csp-primary);
+    }
+
+    .csp-imb-toggle-all {
+      cursor: pointer;
+      border: 1px solid var(--csp-border);
+      background: #ffffff;
+      color: var(--csp-accent);
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .csp-imb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .csp-imb-card {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .csp-imb-myth-btn {
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: none;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: inherit;
+    }
+
+    .csp-imb-myth-btn:hover {
+      background: var(--csp-surface);
+    }
+
+    .csp-imb-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+
+    .csp-imb-tag.myth {
+      background: var(--csp-myth-bg);
+      color: var(--csp-myth-text);
+    }
+
+    .csp-imb-tag.fact {
+      background: var(--csp-fact-bg);
+      color: var(--csp-fact-text);
+    }
+
+    .csp-imb-myth-text {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--csp-primary);
+    }
+
+    .csp-imb-chevron {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--csp-accent);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .csp-imb-fact-box {
+      padding: 0 18px 16px 18px;
+      border-top: 1px solid var(--csp-surface);
+      background: #fafcfd;
+    }
+
+    .csp-imb-fact-box p {
+      margin: 6px 0 0 0;
+      font-size: 0.93rem;
+      color: var(--csp-text);
+    }
+
+    .csp-imb-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .csp-imb-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .csp-imb-section {
+        padding: 14px 10px;
+      }
+      .csp-imb-header,
+      .csp-imb-myth-btn,
+      .csp-imb-fact-box {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-myth-buster" class="csp-imb-section" lang="ml">
+  <header class="csp-imb-header">
+    <p class="csp-imb-kicker">CSP Health Insurance &bull; ഇൻഷുറൻസ് മിത്ത് ബസ്റ്റർ</p>
+    <h2>ആരോഗ്യ ഇൻഷുറൻസ്: തെറ്റിദ്ധാരണകളും സത്യങ്ങളും</h2>
+    <p class="csp-imb-subtitle">എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക് &amp; സൂപ്പർ ടോപ്പ്-അപ്പ് പ്ലാനുകളെക്കുറിച്ചുള്ള പൊതുവായ സംശയങ്ങളും യഥാർത്ഥ വസ്തുതകളും</p>
+  </header>
+
+  <div class="csp-imb-toolbar">
+    <div class="csp-imb-filters" role="tablist" aria-label="Myth categories">
+      <button type="button" class="csp-imb-filter-btn active" data-cat="all">എല്ലാം</button>
+      <button type="button" class="csp-imb-filter-btn" data-cat="coverage">കവറേജും ക്ലെയിമും</button>
+      <button type="button" class="csp-imb-filter-btn" data-cat="eligibility">യോഗ്യതയും പ്രീമിയവും</button>
+      <button type="button" class="csp-imb-filter-btn" data-cat="rules">പുതുക്കലും കാത്തിരിപ്പും</button>
+    </div>
+    <button type="button" class="csp-imb-toggle-all" id="imbToggleAll">എല്ലാം തുറക്കുക / അടയ്ക്കുക</button>
+  </div>
+
+  <div class="csp-imb-list" id="imbList">
+    <article class="csp-imb-card" data-cat="eligibility">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="true">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് ഉള്ളതിനാൽ ഈ ഇൻഷുറൻസ് നിർബന്ധമായും എടുക്കണം.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">&minus;</span>
+      </button>
+      <div class="csp-imb-fact-box">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>അല്ല. ഈ ഇൻഷുറൻസ് എടുക്കുന്നത് പൂർണ്ണമായും <strong>സ്വമേധയാ (Voluntary)</strong> ആണ്. ബാങ്കിൽ നിന്നുള്ള മറ്റേതെങ്കിലും സേവനങ്ങൾ ലഭിക്കുന്നതുമായി ഇതിന് യാതൊരു ബന്ധവുമില്ല.</p>
+      </div>
+    </article>
+
+    <article class="csp-imb-card" data-cat="rules">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="false">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;പോളിസി എടുത്ത ആദ്യ ദിവസം മുതൽ തന്നെ എല്ലാ രോഗങ്ങൾക്കും ക്ലെയിം ലഭിക്കും.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">+</span>
+      </button>
+      <div class="csp-imb-fact-box hidden">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>അല്ല. പോളിസി ആരംഭിച്ച തീയതി മുതൽ പ്രാരംഭ കാത്തിരിപ്പ് കാലാവധിയായ <strong>30 ദിവസവും</strong>, മുൻകാല രോഗങ്ങൾക്കും (Pre-Existing Disease) പ്രത്യേക രോഗങ്ങൾക്കും <strong>24 മാസവുമാണ്</strong> കാത്തിരിപ്പ് കാലാവധി.</p>
+      </div>
+    </article>
+
+    <article class="csp-imb-card" data-cat="coverage">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="false">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;ആശുപത്രിയിൽ 24 മണിക്കൂർ അഡ്മിറ്റ് ആയാൽ മാത്രമേ ക്ലെയിം ലഭിക്കൂ.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">+</span>
+      </button>
+      <div class="csp-imb-fact-box hidden">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>സാധാരണ ഇൻപേഷ്യന്റ് ചികിത്സയ്ക്ക് 24 മണിക്കൂറിൽ കൂടുതൽ അഡ്മിഷൻ ആവശ്യമാണ്; എന്നാൽ <strong>ഡേ കെയർ ചികിത്സകൾക്ക് (Day Care Treatment)</strong> 24 മണിക്കൂർ അഡ്മിഷൻ ഇല്ലാതെ തന്നെ സം ഇൻഷ്വേർഡ് വരെ പരിരക്ഷ ലഭിക്കും.</p>
+      </div>
+    </article>
+
+    <article class="csp-imb-card" data-cat="coverage">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="false">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;ആയുർവേദ (AYUSH) ചികിത്സയ്ക്കും ആധുനിക ചികിത്സയ്ക്കും ഇൻഷുറൻസ് ലഭിക്കില്ല.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">+</span>
+      </button>
+      <div class="csp-imb-fact-box hidden">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>തെറ്റാണ്. <strong>ആയുഷ് / ബദൽ ചികിത്സകൾക്ക്</strong> സം ഇൻഷ്വേർഡ് തുക വരെയും, <strong>ആധുനിക ചികിത്സകൾക്ക് (Modern Treatment)</strong> സം ഇൻഷ്വേർഡിന്റെ <strong>50% വരെയും</strong> പരിരക്ഷ ലഭിക്കും.</p>
+      </div>
+    </article>
+
+    <article class="csp-imb-card" data-cat="eligibility">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="false">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് എടുക്കാൻ എല്ലാവർക്കും മെഡിക്കൽ ടെസ്റ്റ് നിർബന്ധമാണ്.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">+</span>
+      </button>
+      <div class="csp-imb-fact-box hidden">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>അല്ല. മുൻകാല രോഗചരിത്രമില്ലാത്ത <strong>55 വയസ്സ് വരെയുള്ള വ്യക്തികൾക്ക്</strong> സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് എടുക്കാൻ പ്രീ-പോളിസി മെഡിക്കൽ പരിശോധന ആവശ്യമില്ല.</p>
+      </div>
+    </article>
+
+    <article class="csp-imb-card" data-cat="rules">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="false">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;പുതുക്കൽ തീയതി കഴിഞ്ഞാൽ ഉടൻ പോളിസി ആനുകൂല്യങ്ങൾ നഷ്ടപ്പെടും.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">+</span>
+      </button>
+      <div class="csp-imb-fact-box hidden">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>അല്ല. പ്രീമിയം അടയ്ക്കേണ്ട തീയതിക്ക് തൊട്ടടുത്ത ദിവസം മുതൽ <strong>30 ദിവസത്തെ ഗ്രേസ് പിരീഡ്</strong> ഉണ്ട്. ഈ കാലയളവിൽ തുക അടച്ചാൽ ആനുകൂല്യങ്ങൾ നഷ്ടപ്പെടാതെ പോളിസി പുതുക്കാം (എന്നാൽ പ്രീമിയം ലഭിക്കാത്ത കാലയളവിൽ പരിരക്ഷ ഉണ്ടാവില്ല).</p>
+      </div>
+    </article>
+
+    <article class="csp-imb-card" data-cat="coverage">
+      <button type="button" class="csp-imb-myth-btn" aria-expanded="false">
+        <div>
+          <span class="csp-imb-tag myth">തെറ്റിദ്ധാരണ (Myth)</span>
+          <span class="csp-imb-myth-text">&ldquo;സൂപ്പർ ടോപ്പ്-അപ്പിൽ ഓരോ ആശുപത്രിവാസത്തിനും ഡിഡക്റ്റബിൾ കുറയ്ക്കും.&rdquo;</span>
+        </div>
+        <span class="csp-imb-chevron">+</span>
+      </button>
+      <div class="csp-imb-fact-box hidden">
+        <span class="csp-imb-tag fact">സത്യം (Fact)</span>
+        <p>അല്ല. സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പിൽ ഡിഡക്റ്റബിൾ ഒരു പോളിസി വർഷത്തിൽ <strong>അഗ്രഗേറ്റ് അടിസ്ഥാനത്തിലാണ് (Aggregate basis)</strong> ബാധകമാകുന്നത്—അതായത് വർഷത്തിലെ ആകെ ആശുപത്രി ചെലവുകൾ ഡിഡക്റ്റബിൾ പരിധി കടന്നാൽ മതി.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="csp-imb-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> ഈ വിവരങ്ങൾ എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക്, സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് ബ്രോഷറുകളെ (UIN: SBIHLGP24031V012324) അടിസ്ഥാനമാക്കിയുള്ളതാണ്. പൂർണ്ണ നിബന്ധനകൾക്ക് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> സന്ദർശിക്കുക.</p>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const filterBtns = Array.from(document.querySelectorAll(".csp-imb-filter-btn"));
+    const cards = Array.from(document.querySelectorAll(".csp-imb-card"));
+    const toggleAllBtn = document.getElementById("imbToggleAll");
+    let allExpanded = false;
+
+    function setCardState(card, open) {
+      const btn = card.querySelector(".csp-imb-myth-btn");
+      const box = card.querySelector(".csp-imb-fact-box");
+      const chev = card.querySelector(".csp-imb-chevron");
+      btn.setAttribute("aria-expanded", String(open));
+      box.classList.toggle("hidden", !open);
+      chev.textContent = open ? "\u2212" : "+";
+    }
+
+    cards.forEach((card) => {
+      const btn = card.querySelector(".csp-imb-myth-btn");
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        setCardState(card, !isOpen);
+      });
+    });
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cat = btn.getAttribute("data-cat");
+        filterBtns.forEach((b) => b.classList.toggle("active", b === btn));
+        cards.forEach((card) => {
+          const match = cat === "all" || card.getAttribute("data-cat") === cat;
+          card.classList.toggle("hidden", !match);
+        });
+      });
+    });
+
+    toggleAllBtn.addEventListener("click", () => {
+      allExpanded = !allExpanded;
+      cards.forEach((card) => setCardState(card, allExpanded));
+    });
+  })();
+</script>
+</body>
+</html>
+
+
+
+        <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - വാർഷിക പോളിസി അവലോകന ഗൈഡ് (Annual Policy Review - Malayalam)</title>
+  <style>
+    /* Scoped styles for Annual Policy Review (.csp-apr-section) */
+    .csp-apr-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-apr-section *,
+    .csp-apr-section *::before,
+    .csp-apr-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-apr-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-apr-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-apr-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-apr-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-apr-progress-card {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .csp-apr-progress-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--csp-primary);
+      margin-bottom: 8px;
+    }
+
+    .csp-apr-bar-track {
+      width: 100%;
+      height: 10px;
+      background: #e5dfef;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .csp-apr-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--csp-primary), var(--csp-accent));
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .csp-apr-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-apr-item {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-left: 5px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .csp-apr-item.checked {
+      border-left-color: var(--csp-accent);
+      background: #f5fbfc;
+    }
+
+    .csp-apr-check {
+      width: 22px;
+      height: 22px;
+      margin-top: 3px;
+      accent-color: var(--csp-accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .csp-apr-item-body h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.03rem;
+      color: var(--csp-primary);
+    }
+
+    .csp-apr-item-body p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: var(--csp-text);
+    }
+
+    .csp-apr-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .csp-apr-btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: var(--csp-primary);
+      color: #ffffff;
+    }
+
+    .csp-apr-btn.outline {
+      background: var(--csp-surface);
+      color: var(--csp-primary);
+      border: 1px solid var(--csp-border);
+    }
+
+    .csp-apr-support {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    .csp-apr-support h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.08rem;
+      color: var(--csp-primary);
+    }
+
+    .csp-apr-support ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.92rem;
+    }
+
+    .csp-apr-support li {
+      margin-bottom: 6px;
+    }
+
+    .csp-apr-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .csp-apr-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2a1349;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .csp-apr-section {
+        padding: 14px 10px;
+      }
+      .csp-apr-header,
+      .csp-apr-progress-card,
+      .csp-apr-item {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-annual-policy-review" class="csp-apr-section" lang="ml">
+  <header class="csp-apr-header">
+    <p class="csp-apr-kicker">CSP Health Insurance &bull; വാർഷിക പോളിസി അവലോകനം</p>
+    <h2>വാർഷിക പോളിസി അവലോകന ഗൈഡ് (Annual Policy Review)</h2>
+    <p class="csp-apr-subtitle">പോളിസി പുതുക്കുന്നതിന് മുമ്പ് പരിശോധിക്കേണ്ട പ്രധാന കാര്യങ്ങളുടെ ചെക്ക്‌ലിസ്റ്റ്</p>
+  </header>
+
+  <div class="csp-apr-progress-card">
+    <div class="csp-apr-progress-head">
+      <span>അവലോകന പുരോഗതി</span>
+      <span id="aprStatusText">0 / 7 പരിശോധിച്ചു (0%)</span>
+    </div>
+    <div class="csp-apr-bar-track">
+      <div class="csp-apr-bar-fill" id="aprBarFill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <div class="csp-apr-list">
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>1. എസ്.ബി.ഐ സാലറി അക്കൗണ്ടും ബാലൻസും ഉറപ്പാക്കുക</h3>
+        <p>നിങ്ങളുടെ ശമ്പളം എസ്.ബി.ഐ സാലറി പാക്കേജ് അക്കൗണ്ടിൽ ക്രെഡിറ്റ് ആകുന്നുണ്ടെന്നും, പ്രീമിയം പ്രോസസ്സ് ചെയ്യാൻ ആവശ്യമായ ബാലൻസ് അക്കൗണ്ടിലുണ്ടെന്നും പരിശോധിക്കുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>2. പുതുക്കൽ തീയതിയും 30 ദിവസത്തെ ഗ്രേസ് പിരീഡും</h3>
+        <p>പോളിസി കാലാവധി അവസാനിക്കുന്ന തീയതിയിലോ അതിനുമുമ്പോ (പരമാവധി 30 ദിവസത്തെ ഗ്രേസ് പിരീഡിനുള്ളിൽ) പ്രീമിയം അടയ്ക്കുന്നുണ്ടെന്ന് ഉറപ്പാക്കുക; എങ്കിലേ പരിരക്ഷാ തുടർച്ച ലഭിക്കൂ.</p>
+      </div>
+    </label>
+
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>3. കുടുംബാംഗങ്ങളുടെ എണ്ണവും പ്രായപരിധിയും പരിശോധിക്കുക</h3>
+        <p>പങ്കാളിയെയോ പുതിയ കുട്ടികളെയോ (91 ദിവസം മുതൽ) ചേർക്കേണ്ടതുണ്ടോ, അല്ലെങ്കിൽ കുട്ടികൾക്ക് 25 വയസ്സ് തികഞ്ഞോ എന്ന് പരിശോധിക്കുക (സ്വയം, പങ്കാളി, പരമാവധി 2 കുട്ടികൾ).</p>
+      </div>
+    </label>
+
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>4. 63 വയസ്സിന് മുകളിലുള്ള പുതുക്കൽ നിരക്ക് ശ്രദ്ധിക്കുക</h3>
+        <p>അംഗങ്ങൾക്ക് 63 വയസ്സ് കഴിഞ്ഞാൽ പുതുക്കൽ നിബന്ധനകൾ പ്രകാരം <strong>63 വയസ്സിന് മുകളിലുള്ള പുതുക്കൽ പ്രീമിയം നിരക്കുകൾ</strong> ബാധകമാകും എന്ന് മനസ്സിലാക്കുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>5. സം ഇൻഷ്വേർഡും സൂപ്പർ ടോപ്പ്-അപ്പും വിലയിരുത്തുക</h3>
+        <p>കുടുംബത്തിന്റെ ആരോഗ്യ ആവശ്യങ്ങൾക്കനുസരിച്ച് സഫയർ ക്ലാസിക് (₹2L / ₹3L / ₹5L) മതിയാകുമോ, അതോ സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് (₹10L / ₹15L / ₹30L / ₹50L) ചേർക്കേണ്ടതുണ്ടോ എന്ന് വിലയിരുത്തുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>6. കാത്തിരിപ്പ് കാലാവധി പൂർത്തിയായോ എന്ന് പരിശോധിക്കുക</h3>
+        <p>30 ദിവസത്തെ പ്രാരംഭ കാത്തിരിപ്പ് കാലാവധിയും, മുൻകാല രോഗങ്ങൾക്കും പ്രത്യേക രോഗങ്ങൾക്കുമുള്ള 24 മാസത്തെ കാലാവധിയും എത്രത്തോളം പൂർത്തിയായി എന്ന് പരിശോധിക്കുക.</p>
+      </div>
+    </label>
+
+    <label class="csp-apr-item">
+      <input type="checkbox" class="csp-apr-check">
+      <div class="csp-apr-item-body">
+        <h3>7. പുതിയ പോളിസി സർട്ടിഫിക്കറ്റും കോൺടാക്ട് വിവരങ്ങളും</h3>
+        <p>പോളിസി പുതുക്കിയ ശേഷം പുതിയ പോളിസി സർട്ടിഫിക്കറ്റ് (PDF) ഡൗൺലോഡ് ചെയ്ത് സൂക്ഷിക്കുകയും, രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പറും ഇമെയിലും കൃത്യമാണെന്ന് ഉറപ്പാക്കുകയും ചെയ്യുക.</p>
+      </div>
+    </label>
+  </div>
+
+  <div class="csp-apr-actions">
+    <button type="button" class="csp-apr-btn" id="aprSaveBtn">ചെക്ക്‌ലിസ്റ്റ് സേവ് ചെയ്യുക</button>
+    <button type="button" class="csp-apr-btn outline" id="aprResetBtn">റീസെറ്റ് ചെയ്യുക</button>
+  </div>
+
+  <div class="csp-apr-support">
+    <h3>പോളിസി പുതുക്കലിനും സഹായത്തിനും</h3>
+    <ul>
+      <li><strong>ഓൺലൈൻ പുതുക്കൽ:</strong> <a href="https://www.sbigeneral.in/policy-renewal" target="_blank" rel="noopener noreferrer">www.sbigeneral.in/policy-renewal</a></li>
+      <li><strong>ടോൾ-ഫ്രീ ഹെൽപ്പ്‌ലൈൻ:</strong> <a href="tel:1800221111">1800 22 1111</a> / <a href="tel:18001021111">1800 102 1111</a></li>
+      <li><strong>ഇമെയിൽ:</strong> <a href="mailto:customer.care@sbigeneral.in">customer.care@sbigeneral.in</a></li>
+      <li><strong>വെബ്സൈറ്റ്:</strong> <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a></li>
+    </ul>
+  </div>
+
+  <div class="csp-apr-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> ഈ അവലോകന ചെക്ക്‌ലിസ്റ്റ് എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക്, സൂപ്പർ ടോപ്പ്-അപ്പ് ബ്രോഷറുകളെ (UIN: SBIHLGP24031V012324) അടിസ്ഥാനമാക്കിയുള്ളതാണ്. നിങ്ങളുടെ ചെക്ക്‌ലിസ്റ്റ് നില ഈ ബ്രൗസറിൽ മാത്രമായി സേവ് ചെയ്യപ്പെടും.</p>
+  </div>
+</section>
+
+<div id="aprToast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+  (function () {
+    const STORAGE_KEY = "csp_annual_review_ml_v1";
+    const checks = Array.from(document.querySelectorAll(".csp-apr-check"));
+    const statusText = document.getElementById("aprStatusText");
+    const barFill = document.getElementById("aprBarFill");
+    const toast = document.getElementById("aprToast");
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function updateProgress() {
+      let done = 0;
+      checks.forEach((cb) => {
+        const card = cb.closest(".csp-apr-item");
+        if (cb.checked) {
+          done += 1;
+          card.classList.add("checked");
+        } else {
+          card.classList.remove("checked");
+        }
+      });
+      const total = checks.length;
+      const pct = Math.round((done / total) * 100);
+      statusText.textContent = done + " / " + total + " പരിശോധിച്ചു (" + pct + "%)";
+      barFill.style.width = pct + "%";
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checks.map((c) => c.checked)));
+        showToast("അവലോകന ചെക്ക്‌ലിസ്റ്റ് സേവ് ചെയ്തു!");
+      } catch (e) {
+        showToast("ബ്രൗസർ സ്റ്റോറേജ് ലഭ്യമല്ല.");
+      }
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const arr = JSON.parse(raw);
+        if (Array.isArray(arr)) {
+          checks.forEach((cb, i) => { cb.checked = Boolean(arr[i]); });
+        }
+      } catch (e) {}
+    }
+
+    checks.forEach((cb) => cb.addEventListener("change", updateProgress));
+    document.getElementById("aprSaveBtn").addEventListener("click", saveState);
+    document.getElementById("aprResetBtn").addEventListener("click", () => {
+      checks.forEach((cb) => { cb.checked = false; });
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
+      updateProgress();
+      showToast("ചെക്ക്‌ലിസ്റ്റ് റീസെറ്റ് ചെയ്തു.");
+    });
+
+    loadState();
+    updateProgress();
+  })();
+</script>
+</body>
+</html>
