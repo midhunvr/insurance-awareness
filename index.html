@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#102d4f">
   <meta name="description" content="ദൈനംദിന ജീവിതത്തിൽ ഇൻഷുറൻസിന്റെ ആവശ്യകതയും KSRTC ജീവനക്കാരുടെ മെഡിക്കൽ ആനുകൂല്യങ്ങളും SBI CSP ഹെൽത്ത് ഇൻഷുറൻസ് ടൂളുകളും അടങ്ങിയ സമഗ്ര മലയാളം വെബ്സൈറ്റ്.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://midhunvr.github.io/insurance-awareness/">
+  <meta property="og:title" content="ഇൻഷുറൻസ് & KSRTC മെഡിക്കൽ ആനുകൂല്യങ്ങൾ | SBI CSP ഗൈഡ്">
+  <meta property="og:description" content="KSRTC മെഡിക്കൽ റീഇംബേഴ്സ്മെന്റ്, വർക്കിംഗ് ഫണ്ട് അഡ്വാൻസ്, SBI CSP സഫയർ ക്ലാസിക് & സൂപ്പർ ടോപ്പ്-അപ്പ് ഗൈഡുകളും കാൽക്കുലേറ്ററുകളും.">
   <title>ഇൻഷുറൻസ് &amp; KSRTC ജീവനക്കാരുടെ മെഡിക്കൽ ആനുകൂല്യങ്ങൾ | midhun.vr</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -576,6 +580,7 @@
             <ul class="submenu wide">
               <li><span class="submenu-label">അപകട &amp; ടേം കവർ</span></li>
               <li><a href="#csp-claim-guide">CSP ഇൻഷുറൻസ് ക്ലെയിം സമഗ്ര ഗൈഡ്</a></li>
+              <li><span class="submenu-label">CSP ഹെൽത്ത് (Sapphire)</span></li>
               <li><a href="#csp-health-policy" data-tab="all">എല്ലാ വിഭാഗങ്ങളും കാണുക</a></li>
               <li><a href="#acc-classic" data-open="acc-classic">സഫയർ ക്ലാസിക് യൂസർ ഗൈഡ്</a></li>
               <li><a href="#acc-super" data-open="acc-super">സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് ഗൈഡ്</a></li>
@@ -1347,7 +1352,7 @@
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
           </details>
 
           <!-- 12. CLAIM JOURNEY TRACKER -->
@@ -1556,11 +1561,21 @@
         });
       });
 
-      // GoatCounter Eye Visitor Count
+      // GoatCounter Eye Visitor Count (with no-store cache & localStorage fallback)
       async function loadGoatCounter() {
         const countEl = document.getElementById('cspEyeCount');
+        let localCount = 1;
         try {
-          const res = await fetch('https://midhun.goatcounter.com/counter/TOTAL.json');
+          localCount = parseInt(localStorage.getItem('csp_eye_fallback_v1') || '0', 10) || 0;
+          if (!sessionStorage.getItem('csp_eye_seen_v1')) {
+            localCount += 1;
+            localStorage.setItem('csp_eye_fallback_v1', String(localCount));
+            sessionStorage.setItem('csp_eye_seen_v1', '1');
+          }
+        } catch (e) {}
+
+        try {
+          const res = await fetch('https://midhun.goatcounter.com/counter/TOTAL.json', { cache: 'no-store' });
           if (res.ok) {
             const data = await res.json();
             if (data && data.count !== undefined) {
@@ -1569,9 +1584,9 @@
             }
           }
         } catch (e) {}
-        countEl.textContent = '1';
+        countEl.textContent = Number(localCount).toLocaleString('en-IN');
       }
-      window.addEventListener('load', () => setTimeout(loadGoatCounter, 600));
+      window.addEventListener('load', () => setTimeout(loadGoatCounter, 1000));
 
       // CSP Category Tabs
       document.querySelectorAll('.csp-cat-tab').forEach(tab => {
