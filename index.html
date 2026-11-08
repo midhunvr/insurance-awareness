@@ -5051,7 +5051,276 @@ Diya R (Child, 5 yrs)</textarea>
 </body>
 </html>
     // ==========================================
-   
+   <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - ക്ലെയിം നിരസിക്കൽ ഗൈഡ് (Claim Rejection Guide - Malayalam)</title>
+  <style>
+    /* Scoped styles for Claim Rejection Guide (.csp-crg-section) */
+    .csp-crg-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-warn-bg: #fff8f6;
+      --csp-warn-border: #e5a99c;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-crg-section *,
+    .csp-crg-section *::before,
+    .csp-crg-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-crg-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-crg-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-crg-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-crg-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-crg-block {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .csp-crg-block h3 {
+      color: var(--csp-primary);
+      font-size: 1.15rem;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-crg-reason-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 14px;
+    }
+
+    .csp-crg-reason {
+      background: var(--csp-warn-bg);
+      border: 1px solid var(--csp-warn-border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .csp-crg-reason strong {
+      display: block;
+      color: var(--csp-primary);
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+    }
+
+    .csp-crg-reason p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .csp-crg-block ul,
+    .csp-crg-block ol {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.94rem;
+    }
+
+    .csp-crg-block li {
+      margin-bottom: 8px;
+    }
+
+    .csp-crg-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    .csp-crg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    .csp-crg-table th,
+    .csp-crg-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--csp-border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .csp-crg-table th {
+      background: var(--csp-surface);
+      color: var(--csp-primary);
+      font-weight: 700;
+      border-bottom: 2px solid var(--csp-primary);
+    }
+
+    .csp-crg-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .csp-crg-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    @media (max-width: 600px) {
+      .csp-crg-section {
+        padding: 14px 10px;
+      }
+      .csp-crg-header,
+      .csp-crg-block {
+        padding: 16px;
+      }
+      .csp-crg-header h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Copy from <section id="csp-claim-rejection-guide"> to </section> to embed under your CSP Health Insurance heading -->
+<section id="csp-claim-rejection-guide" class="csp-crg-section" lang="ml">
+  <header class="csp-crg-header">
+    <p class="csp-crg-kicker">CSP Health Insurance &bull; ക്ലെയിം സഹായ ഗൈഡ്</p>
+    <h2>ക്ലെയിം നിരസിക്കപ്പെടാനുള്ള കാരണങ്ങളും പരിഹാര മാർഗ്ഗങ്ങളും</h2>
+    <p class="csp-crg-subtitle">എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക് &amp; സൂപ്പർ ടോപ്പ്-അപ്പ് പോളിസികളിൽ ക്ലെയിം തടസ്സപ്പെടാതിരിക്കാനും, നിരസിക്കപ്പെട്ടാൽ തുടർനടപടി സ്വീകരിക്കാനുമുള്ള പൂർണ്ണ വിവരങ്ങൾ</p>
+  </header>
+
+  <div class="csp-crg-block">
+    <h3>1. ക്ലെയിം നിരസിക്കപ്പെടാൻ കാരണമാകുന്ന പ്രധാന സാഹചര്യങ്ങൾ</h3>
+    <div class="csp-crg-reason-grid">
+      <div class="csp-crg-reason">
+        <strong>1. കാത്തിരിപ്പ് കാലാവധി (Waiting Period) പൂർത്തിയാകാത്തത്</strong>
+        <p>പ്രാരംഭ കാത്തിരിപ്പ് കാലാവധിയായ <strong>30 ദിവസം</strong>, മുൻകാല രോഗങ്ങൾക്കുള്ള <strong>24 മാസം</strong>, അല്ലെങ്കിൽ പ്രത്യേക രോഗങ്ങൾക്കുള്ള <strong>24 മാസം</strong> പൂർത്തിയാകുന്നതിന് മുമ്പുള്ള ചികിത്സകൾക്ക് ക്ലെയിം ലഭിക്കില്ല.</p>
+      </div>
+
+      <div class="csp-crg-reason">
+        <strong>2. പ്രീമിയം കുടിശ്ശിക &amp; തുടർച്ച നഷ്ടപ്പെടുന്നത്</strong>
+        <p>എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് വഴി കൃത്യസമയത്ത് (അല്ലെങ്കിൽ <strong>30 ദിവസത്തെ ഗ്രേസ് പിരീഡിനുള്ളിൽ</strong>) പ്രീമിയം അടയ്ക്കാതിരുന്നാൽ ആ കാലയളവിലെ ചികിത്സയ്ക്ക് പരിരക്ഷ ലഭിക്കില്ല.</p>
+      </div>
+
+      <div class="csp-crg-reason">
+        <strong>3. പോളിസി ഒഴിവാക്കലുകൾ (Exclusions)</strong>
+        <p>കോസ്മെറ്റിക് സർജറി, അമിതവണ്ണ ചികിത്സ, വന്ധ്യതാ ചികിത്സ, പ്രസവ ചെലവുകൾ (Maternity), കാഴ്ചവൈകല്യം (Refractive Error), ലഹരി സംബന്ധമായ ചികിത്സകൾ, പരിശോധന മാത്രം (Investigation &amp; Evaluation), സാഹസിക കായിക വിനോദങ്ങൾ, ഒഴിവാക്കപ്പെട്ട ആശുപത്രികൾ (Excluded Providers) എന്നിവയ്ക്ക് ക്ലെയിം ലഭിക്കില്ല.</p>
+      </div>
+
+      <div class="csp-crg-reason">
+        <strong>4. 24 മണിക്കൂറിൽ താഴെയുള്ള ആശുപത്രിവാസം</strong>
+        <p>ഇൻപേഷ്യന്റ് കെയർ ലഭിക്കണമെങ്കിൽ ആശുപത്രിയിൽ <strong>24 മണിക്കൂറിൽ കൂടുതൽ</strong> അഡ്മിറ്റ് ആകണം (ഡേ കെയർ ചികിത്സകൾ ഒഴികെ).</p>
+      </div>
+
+      <div class="csp-crg-reason">
+        <strong>5. സൂപ്പർ ടോപ്പ്-അപ്പ് ഡിഡക്റ്റബിൾ തികയാത്തത്</strong>
+        <p>സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് പ്ലാനിൽ, ഒരു പോളിസി വർഷത്തെ ആകെ ആശുപത്രി ചെലവുകൾ നിങ്ങളുടെ <strong>അഗ്രഗേറ്റ് ഡിഡക്റ്റബിൾ</strong> പരിധി (₹2 ലക്ഷം / ₹3 ലക്ഷം / ₹5 ലക്ഷം) കടന്നാൽ മാത്രമേ ക്ലെയിം ലഭിക്കുകയുള്ളൂ.</p>
+      </div>
+
+      <div class="csp-crg-reason">
+        <strong>6. ഉപ-പരിധികളും (Sub-limits) പ്രായപരിധിയും</strong>
+        <p>ആധുനിക ചികിത്സ (50% SI), വീട്ടിലെ ചികിത്സ (20% SI), ആംബുലൻസ് (₹2,000) എന്നിവയ്ക്ക് നിശ്ചിത പരിധിയുണ്ട്. കൂടാതെ, കുടുംബ നിർവ്വചനത്തിന് (സ്വയം, പങ്കാളി, പരമാവധി 2 കുട്ടികൾ - 25 വയസ്സ് വരെ) പുറത്തുള്ളവർക്ക് പരിരക്ഷയില്ല.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="csp-crg-block">
+    <h3>2. ക്ലെയിം നിരസിക്കപ്പെടാതിരിക്കാൻ ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ</h3>
+    <ul>
+      <li><strong>പോളിസി കൃത്യമായി പുതുക്കുക:</strong> എസ്.ബി.ഐ സാലറി അക്കൗണ്ടിൽ മതിയായ ബാലൻസ് ഉറപ്പാക്കുകയും, കാലാവധി തീരുന്നതിന് മുമ്പ് (അല്ലെങ്കിൽ 30 ദിവസത്തെ ഗ്രേസ് പിരീഡിനുള്ളിൽ) പ്രീമിയം അടയ്ക്കുകയും ചെയ്യുക.</li>
+      <li><strong>ഉടൻ വിവരം അറിയിക്കുക:</strong> അടിയന്തര ആശുപത്രിവാസമുണ്ടായാൽ ഉടൻ <strong>1800 22 1111 / 1800 102 1111</strong> എന്ന നമ്പറിലോ <strong>561612</strong>-ലേക്ക് <strong>&ldquo;CLAIM&rdquo;</strong> എന്ന് SMS അയച്ചോ അറിയിക്കുക.</li>
+      <li><strong>രേഖകൾ പൂർണ്ണമായി സൂക്ഷിക്കുക:</strong> ഡിസ്ചാർജ് സമ്മറി, ഒറിജിനൽ ബില്ലുകൾ, ലാബ് റിപ്പോർട്ടുകൾ, പ്രീ/പോസ്റ്റ്-ഹോസ്പിറ്റലൈസേഷൻ (60/90 ദിവസം) ബില്ലുകൾ എന്നിവ കൃത്യമായി സമർപ്പിക്കുക.</li>
+      <li><strong>ആശുപത്രി ലിസ്റ്റ് പരിശോധിക്കുക:</strong> ചികിത്സ തേടുന്ന ആശുപത്രി <em>Excluded Providers</em> പട്ടികയിൽ ഇല്ലെന്ന് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> വഴി ഉറപ്പാക്കുക.</li>
+    </ul>
+  </div>
+
+  <div class="csp-crg-block">
+    <h3>3. ക്ലെയിം നിരസിക്കപ്പെട്ടാൽ സ്വീകരിക്കേണ്ട നടപടികൾ</h3>
+    <ol>
+      <li><strong>നിരസിക്കാനുള്ള കാരണം രേഖാമൂലം മനസ്സിലാക്കുക:</strong> ക്ലെയിം നിരസിച്ചുകൊണ്ടുള്ള കത്തിൽ (Rejection / Repudiation Letter) പറഞ്ഞിരിക്കുന്ന കൃത്യമായ പോളിസി നിബന്ധനയോ രേഖകളുടെ കുറവോ പരിശോധിക്കുക.</li>
+      <li><strong>അധിക രേഖകളോടെ പുനഃപരിശോധനയ്ക്ക് അപേക്ഷിക്കുക:</strong> രേഖകളുടെ കുറവ് കൊണ്ടാണ് ക്ലെയിം തടഞ്ഞതെങ്കിൽ, ഡോക്ടറുടെ സർട്ടിഫിക്കറ്റും വിട്ടുപോയ ബില്ലുകളും സഹിതം <strong>customer.care@sbigeneral.in</strong>-ലേക്ക് അയയ്ക്കുക.</li>
+      <li><strong>കസ്റ്റമർ കെയറുമായി ബന്ധപ്പെടുക:</strong> നിങ്ങളുടെ പോളിസി നമ്പറും ക്ലെയിം നമ്പറും സഹിതം എസ്.ബി.ഐ ജനറൽ ക്ലെയിംസ് / ഗ്രീവൻസ് ടീമിനെ ബന്ധപ്പെടുക.</li>
+      <li><strong>ഇൻഷുറൻസ് ഓംബുഡ്‌സ്‌മാൻ / IRDAI:</strong> കമ്പനിയുടെ മറുപടിയിൽ തൃപ്തരല്ലെങ്കിൽ, IRDAI മാർഗ്ഗനിർദ്ദേശങ്ങൾ പ്രകാരം ഇൻഷുറൻസ് ഓംബുഡ്‌സ്‌മാന് പരാതി സമർപ്പിക്കാവുന്നതാണ്.</li>
+    </ol>
+
+    <div class="csp-crg-table-wrap">
+      <table class="csp-crg-table">
+        <thead>
+          <tr>
+            <th>ബന്ധപ്പെടേണ്ട മാർഗ്ഗം</th>
+            <th>വിവരങ്ങൾ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ടോൾ-ഫ്രീ ഹെൽപ്പ്‌ലൈൻ</strong></td>
+            <td><a href="tel:1800221111">1800 22 1111</a> / <a href="tel:18001021111">1800 102 1111</a></td>
+          </tr>
+          <tr>
+            <td><strong>ഇമെയിൽ</strong></td>
+            <td><a href="mailto:customer.care@sbigeneral.in">customer.care@sbigeneral.in</a></td>
+          </tr>
+          <tr>
+            <td><strong>വെബ്സൈറ്റ്</strong></td>
+            <td><a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a></td>
+          </tr>
+          <tr>
+            <td><strong>കോർപ്പറേറ്റ് ഓഫീസ്</strong></td>
+            <td>SBI General Insurance Company Limited, 9th Floor, A &amp; B Wing, Fulcrum Building, Sahar Road, Andheri (East), Mumbai 400099</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="csp-crg-disclaimer">
+    <p style="margin: 0;"><strong>കുറിപ്പ്:</strong> ഈ വിവരങ്ങൾ എസ്.ബി.ഐ ജനറൽ സഫയർ ക്ലാസിക്, സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് ബ്രോഷറുകളെ (UIN: SBIHLGP24031V012324) അടിസ്ഥാനമാക്കിയുള്ള പൊതുവായ മാർഗ്ഗനിർദ്ദേശങ്ങളാണ്. പൂർണ്ണമായ ക്ലെയിം, ഒഴിവാക്കൽ നിബന്ധനകൾക്ക് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a>-ലെ പോളിസി വേർഡിംഗ്സ് പരിശോധിക്കുക.</p>
+  </div>
+</section>
+
+</body>
+</html>
          
      
       
