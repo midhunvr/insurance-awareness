@@ -7877,3 +7877,400 @@ Diya R (Child, 5 yrs)</textarea>
 </script>
 </body>
 </html>
+
+
+
+        <!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Health Insurance - ക്ലെയിം തർക്ക പരിഹാര സഹായ ഗൈഡ് (Claim Dispute Assistance - Malayalam)</title>
+  <style>
+    /* Scoped styles for Claim Dispute Assistance (.csp-cda-section) */
+    .csp-cda-section {
+      --csp-primary: #3e1f68;
+      --csp-accent: #008b9a;
+      --csp-bg: #ffffff;
+      --csp-surface: #f7f5fa;
+      --csp-border: #dfd8ea;
+      --csp-text: #1e2430;
+      --csp-muted: #525b6c;
+      font-family: "Noto Sans Malayalam", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--csp-text);
+      line-height: 1.7;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .csp-cda-section *,
+    .csp-cda-section *::before,
+    .csp-cda-section *::after {
+      box-sizing: border-box;
+    }
+
+    .csp-cda-header {
+      background: linear-gradient(135deg, var(--csp-primary), #542c8a);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cda-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #b7e4ea;
+      margin: 0 0 6px 0;
+    }
+
+    .csp-cda-header h2 {
+      font-size: 1.45rem;
+      line-height: 1.35;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    .csp-cda-subtitle {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #ebe6f5;
+    }
+
+    .csp-cda-block {
+      background: var(--csp-bg);
+      border: 1px solid var(--csp-border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .csp-cda-block h3 {
+      color: var(--csp-primary);
+      font-size: 1.15rem;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--csp-surface);
+    }
+
+    .csp-cda-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .csp-cda-step {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-top: 4px solid var(--csp-primary);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .csp-cda-step.accent {
+      border-top-color: var(--csp-accent);
+      background: #eef8f9;
+    }
+
+    .csp-cda-step-num {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--csp-primary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .csp-cda-step.accent .csp-cda-step-num {
+      color: var(--csp-accent);
+    }
+
+    .csp-cda-step strong {
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+
+    .csp-cda-step p {
+      margin: 0;
+      font-size: 0.89rem;
+    }
+
+    .csp-cda-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .csp-cda-field {
+      margin-bottom: 12px;
+    }
+
+    .csp-cda-field label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--csp-muted);
+      margin-bottom: 4px;
+    }
+
+    .csp-cda-field input,
+    .csp-cda-field select,
+    .csp-cda-field textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.91rem;
+      color: var(--csp-text);
+      background: #ffffff;
+    }
+
+    .csp-cda-field textarea {
+      min-height: 76px;
+      resize: vertical;
+    }
+
+    .csp-cda-preview-box {
+      background: var(--csp-surface);
+      border: 1px solid var(--csp-border);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 250px;
+      margin-bottom: 12px;
+    }
+
+    .csp-cda-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .csp-cda-btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: var(--csp-primary);
+      color: #ffffff;
+      text-decoration: none !important;
+      display: inline-block;
+    }
+
+    .csp-cda-btn.accent {
+      background: var(--csp-accent);
+    }
+
+    .csp-cda-section a {
+      color: var(--csp-accent);
+      text-decoration: underline;
+    }
+
+    .csp-cda-disclaimer {
+      font-size: 0.84rem;
+      color: var(--csp-muted);
+      background: var(--csp-surface);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2a1349;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 760px) {
+      .csp-cda-grid {
+        grid-template-columns: 1fr;
+      }
+      .csp-cda-section {
+        padding: 14px 10px;
+      }
+      .csp-cda-header,
+      .csp-cda-block {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="csp-claim-dispute" class="csp-cda-section" lang="ml">
+  <header class="csp-cda-header">
+    <p class="csp-cda-kicker">CSP Health Insurance &bull; ക്ലെയിം തർക്ക പരിഹാര സഹായം</p>
+    <h2>ക്ലെയിം തർക്ക പരിഹാര സഹായ ഗൈഡ് (Claim Dispute Assistance)</h2>
+    <p class="csp-cda-subtitle">ക്ലെയിം തുക കുറയുകയോ നിരസിക്കപ്പെടുകയോ ചെയ്താൽ പുനഃപരിശോധനയ്ക്കായി അപേക്ഷിക്കേണ്ട ഘട്ടങ്ങളും കത്ത് തയ്യാറാക്കുന്ന ടൂളും</p>
+  </header>
+
+  <div class="csp-cda-block">
+    <h3>1. ക്ലെയിം തർക്ക പരിഹാര ഘട്ടങ്ങൾ</h3>
+    <div class="csp-cda-steps">
+      <div class="csp-cda-step">
+        <span class="csp-cda-step-num">ഘട്ടം 1</span>
+        <strong>രേഖകൾ പരിശോധിക്കുക</strong>
+        <p>നിരസിക്കൽ കത്തിലെ കാരണം, ഡോക്ടറുടെ വിശദീകരണ കത്ത്, ഡിസ്ചാർജ് സമ്മറി, ഒറിജിനൽ ബില്ലുകൾ എന്നിവ ശേഖരിക്കുക.</p>
+      </div>
+      <div class="csp-cda-step accent">
+        <span class="csp-cda-step-num">ഘട്ടം 2</span>
+        <strong>ക്ലെയിംസ് ടീമിനെ ബന്ധപ്പെടുക</strong>
+        <p><a href="mailto:customer.care@sbigeneral.in">customer.care@sbigeneral.in</a> അല്ലെങ്കിൽ <a href="tel:18001021111">1800 102 1111</a> / <a href="tel:1800221111">1800 22 1111</a> വഴി പുനഃപരിശോധനയ്ക്ക് അപേക്ഷിക്കുക.</p>
+      </div>
+      <div class="csp-cda-step">
+        <span class="csp-cda-step-num">ഘട്ടം 3</span>
+        <strong>ഔദ്യോഗിക ഗ്രീവൻസ്</strong>
+        <p>പരിഹാരമായില്ലെങ്കിൽ <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> വഴിയോ മുംബൈ കോർപ്പറേറ്റ് ഓഫീസിലോ പരാതി നൽകുക.</p>
+      </div>
+      <div class="csp-cda-step accent">
+        <span class="csp-cda-step-num">ഘട്ടം 4</span>
+        <strong>ഓംബുഡ്‌സ്‌മാൻ / IRDAI</strong>
+        <p>കമ്പനിയുടെ മറുപടിയിൽ തൃപ്തരല്ലെങ്കിൽ IRDAI ചട്ടങ്ങൾ പ്രകാരം ഇൻഷുറൻസ് ഓംബുഡ്‌സ്‌മാനെ സമീപിക്കാം.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="csp-cda-block">
+    <h3>2. പുനഃപരിശോധനാ അപേക്ഷാ കത്ത് തയ്യാറാക്കുക</h3>
+    <div class="csp-cda-grid">
+      <div>
+        <div class="csp-cda-field">
+          <label for="cdaName">പോളിസി ഉടമയുടെ പേര്</label>
+          <input type="text" id="cdaName" value="Rajesh Kumar">
+        </div>
+        <div class="csp-cda-field">
+          <label for="cdaPolicyNo">പോളിസി / COI നമ്പർ</label>
+          <input type="text" id="cdaPolicyNo" value="SBIG-SAP-2026-004821">
+        </div>
+        <div class="csp-cda-field">
+          <label for="cdaClaimNo">ക്ലെയിം നമ്പർ</label>
+          <input type="text" id="cdaClaimNo" value="CLM-2026-00912">
+        </div>
+        <div class="csp-cda-field">
+          <label for="cdaReason">തർക്കത്തിന്റെ കാരണം</label>
+          <select id="cdaReason">
+            <option value="ക്ലെയിം നിരസിക്കപ്പെട്ടതിനാൽ പുനഃപരിശോധന ആവശ്യപ്പെടുന്നു">ക്ലെയിം നിരസിക്കൽ (Claim Rejection)</option>
+            <option value="അനുവദിച്ച തുകയിൽ അനാവശ്യമായ കുറവ് വരുത്തിയതിനാൽ പുനഃപരിശോധന ആവശ്യപ്പെടുന്നു">അനാവശ്യമായ തുക കുറയ്ക്കൽ (Partial Deduction)</option>
+            <option value="ക്ലെയിം തീർപ്പാക്കൽ വൈകുന്നതിനാൽ അടിയന്തര നടപടി ആവശ്യപ്പെടുന്നു">തീരുമാനം വൈകൽ (Settlement Delay)</option>
+          </select>
+        </div>
+        <div class="csp-cda-field">
+          <label for="cdaDetails">ചുരുങ്ങിയ വിശദീകരണം / ആശുപത്രി വിവരങ്ങൾ</label>
+          <textarea id="cdaDetails">ആശുപത്രിവാസവുമായി ബന്ധപ്പെട്ട എല്ലാ ഒറിജിനൽ ബില്ലുകളും ഡോക്ടറുടെ സർട്ടിഫിക്കറ്റും ഇതോടൊപ്പം സമർപ്പിച്ചിട്ടുണ്ട്.</textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="csp-cda-preview-box" id="cdaDraftBox"></div>
+        <div class="csp-cda-btn-row">
+          <button type="button" class="csp-cda-btn" id="cdaCopyBtn">കത്ത് കോപ്പി ചെയ്യുക</button>
+          <a class="csp-cda-btn accent" id="cdaMailBtn" href="mailto:customer.care@sbigeneral.in">ഇമെയിൽ ആപ്പിൽ തുറക്കുക</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="csp-cda-disclaimer">
+    <p style="margin: 0;"><strong>കോർപ്പറേറ്റ് ഓഫീസ്:</strong> SBI General Insurance Company Limited, 9th Floor, A &amp; B Wing, Fulcrum Building, Sahar Road, Andheri (East), Mumbai 400099 | IRDAI Reg. No. 144 | UIN: SBIHLGP24031V012324. കൂടുതൽ വിവരങ്ങൾക്ക് <a href="https://www.sbigeneral.in" target="_blank" rel="noopener noreferrer">www.sbigeneral.in</a> സന്ദർശിക്കുക.</p>
+  </div>
+</section>
+
+<div id="cdaToast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+  (function () {
+    const nameEl = document.getElementById("cdaName");
+    const polEl = document.getElementById("cdaPolicyNo");
+    const claimEl = document.getElementById("cdaClaimNo");
+    const reasonEl = document.getElementById("cdaReason");
+    const detailsEl = document.getElementById("cdaDetails");
+    const draftBox = document.getElementById("cdaDraftBox");
+    const mailBtn = document.getElementById("cdaMailBtn");
+    const toast = document.getElementById("cdaToast");
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function buildDraft() {
+      const name = nameEl.value.trim() || "[പോളിസി ഉടമയുടെ പേര്]";
+      const pol = polEl.value.trim() || "[പോളിസി നമ്പർ]";
+      const claim = claimEl.value.trim() || "[ക്ലെയിം നമ്പർ]";
+      const reason = reasonEl.value;
+      const details = detailsEl.value.trim();
+
+      const subject = "Claim Reconsideration Request - Policy: " + pol + " | Claim: " + claim;
+      const body =
+        "To,\nClaims & Grievance Redressal Team,\nSBI General Insurance Company Limited\n(customer.care@sbigeneral.in)\n\n" +
+        "വിഷയം: ക്ലെയിം പുനഃപരിശോധനാ അപേക്ഷ (Policy: " + pol + ", Claim: " + claim + ")\n\n" +
+        "ബഹുമാനപ്പെട്ട സർ/മാഡം,\n\n" +
+        "എന്റെ പേര് " + name + ". എന്റെ സഫയർ ഹെൽത്ത് ഇൻഷുറൻസ് പോളിസി (UIN: SBIHLGP24031V012324) പ്രകാരമുള്ള ക്ലെയിം നമ്പർ " + claim + "-ൽ " + reason + ".\n\n" +
+        "വിശദാംശങ്ങൾ:\n" + details + "\n\n" +
+        "ദയവായി അനുബന്ധ രേഖകൾ വീണ്ടും പരിശോധിച്ച് അർഹമായ ക്ലെയിം തുക അനുവദിക്കണമെന്ന് അഭ്യർത്ഥിക്കുന്നു.\n\n" +
+        "നന്ദി,\n" + name + "\nപോളിസി നമ്പർ: " + pol;
+
+      draftBox.textContent = "Subject: " + subject + "\n\n" + body;
+      mailBtn.href = "mailto:customer.care@sbigeneral.in?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    [nameEl, polEl, claimEl, reasonEl, detailsEl].forEach((el) => {
+      el.addEventListener("input", buildDraft);
+      el.addEventListener("change", buildDraft);
+    });
+
+    document.getElementById("cdaCopyBtn").addEventListener("click", () => {
+      const text = draftBox.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast("അപേക്ഷാ കത്ത് കോപ്പി ചെയ്തു!")).catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    });
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToast("അപേക്ഷാ കത്ത് കോപ്പി ചെയ്തു!");
+      } catch (e) {
+        showToast("കോപ്പി ചെയ്യാനായില്ല.");
+      }
+      document.body.removeChild(ta);
+    }
+
+    buildDraft();
+  })();
+</script>
+</body>
+</html>
