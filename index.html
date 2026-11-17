@@ -13,6 +13,8 @@
   <style>
     :root{--navy:#102d4f;--blue:#1d5b91;--sky:#eaf4fc;--ink:#182536;--muted:#64748b;--line:#dce5ee;--paper:#fff;--bg:#f5f8fc;--green:#147d64;--gold:#b45309;--shadow:0 16px 45px rgba(16,45,79,.09);--radius:22px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manjari',system-ui,sans-serif;line-height:1.7}button,input,select{font:inherit}a{color:inherit}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:68px}.brand{font-family:Inter,sans-serif;font-weight:800;letter-spacing:-.5px;color:var(--navy);text-decoration:none;font-size:1.22rem}.brand span{color:var(--green)}.navlinks{display:flex;gap:14px;align-items:center}.navlinks a{text-decoration:none;color:#526277;font-size:.88rem;font-weight:600;padding:5px 8px;border-radius:6px;transition:.2s}.navlinks a:hover{color:var(--blue);background:var(--sky)}.navlinks a.nav-special{font-weight:800;color:var(--green)}.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:7px 12px;color:var(--navy);cursor:pointer}
+    .csp-eye-counter{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--navy);border-radius:999px;color:#ffffff;font-family:Inter,sans-serif;font-size:.84rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1;flex-shrink:0}
+    .csp-eye-counter svg{width:15px;height:15px;stroke:#aee4d6;flex-shrink:0}
     
     .hero{padding:58px 0 44px;background:radial-gradient(circle at 85% 20%,rgba(96,165,250,.26),transparent 30%),linear-gradient(135deg,#102d4f,#174b77 68%,#1c6680);color:white;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);border-radius:999px;padding:5px 13px;font-size:.82rem;color:#e1efff}.hero h1{font-size:clamp(2.1rem,4.5vw,3.8rem);line-height:1.2;margin:18px 0 14px;letter-spacing:-1px}.hero h1 span{color:#aee4d6}.hero p{max-width:620px;color:#d9e8f6;font-size:1.05rem;margin:0 0 15px}.hero-art{position:relative;min-height:240px;display:grid;place-items:center}.shield{width:180px;height:200px;clip-path:polygon(50% 0,94% 16%,88% 66%,50% 100%,12% 66%,6% 16%);background:linear-gradient(145deg,#d5f5e9,#65c6aa);display:grid;place-items:center;color:#104c48;font-size:4.5rem;filter:drop-shadow(0 20px 25px rgba(0,0,0,.2));position:relative}.shield:after{content:'✓';position:absolute;font-family:Inter,sans-serif;font-weight:800;font-size:4.5rem}.float-card{position:absolute;background:white;color:var(--navy);padding:9px 14px;border-radius:14px;box-shadow:var(--shadow);font-size:.88rem;font-weight:700}.fc1{top:15px;left:0}.fc2{bottom:18px;right:0}
     
@@ -69,7 +71,6 @@
   <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="#home">midhun<span>.</span>vr</a>
-      <button class="menu-btn" id="menuBtn" aria-label="മെനു തുറക്കുക">☰ മെനു</button>
       <nav class="navlinks" id="navlinks">
         <a class="nav-special" href="#quick-hub">ക്വിക്ക് ആക്സസ്</a>
         <a href="#why">ആവശ്യകത</a>
@@ -79,6 +80,17 @@
         <a href="#csp-health-policy">CSP ഹെൽത്ത് കവർ</a>
         <a href="#tools">കാൽക്കുലേറ്റർ</a>
       </nav>
+      <div style="display:inline-flex;align-items:center;gap:10px;">
+        <!-- GoatCounter Eye Visitor Counter -->
+        <span class="csp-eye-counter" id="cspEyeCounter" aria-label="Total website visitors" title="Total Website Visitors">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span id="cspEyeCount">...</span>
+        </span>
+        <button class="menu-btn" id="menuBtn" aria-label="മെനു തുറക്കുക">☰ മെനു</button>
+      </div>
     </div>
   </header>
 
@@ -1726,18 +1738,38 @@
     filterHospitals();
 
     // ==========================================
-    // QUIZ LOGIC
+    // GoatCounter Eye Visitor Count
     // ==========================================
-   
-         
-     
-      
+    async function loadGoatCounter() {
+      const countEl = document.getElementById('cspEyeCount');
+      if (!countEl) return;
+      let localCount = 1;
+      try {
+        localCount = parseInt(localStorage.getItem('csp_eye_fallback_v1') || '0', 10) || 0;
+        if (!sessionStorage.getItem('csp_eye_seen_v1')) {
+          localCount += 1;
+          localStorage.setItem('csp_eye_fallback_v1', String(localCount));
+          sessionStorage.setItem('csp_eye_seen_v1', '1');
+        }
+      } catch (e) {}
 
-     
-   
-    
-    
+      try {
+        const res = await fetch('https://midhun.goatcounter.com/counter/TOTAL.json');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.count !== undefined) {
+            countEl.textContent = String(data.count);
+            return;
+          }
+        }
+      } catch (e) {}
+      countEl.textContent = Number(localCount).toLocaleString('en-IN');
+    }
+    window.addEventListener('load', () => setTimeout(loadGoatCounter, 1000));
   </script>
+
+  <!-- GoatCounter Tracking -->
+  <script data-goatcounter="https://midhun.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
 ```
