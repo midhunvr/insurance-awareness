@@ -1033,6 +1033,60 @@
       .wrap { width: calc(100% - 28px); }
       .hero { padding: 50px 0 40px; }
     }
+  
+    /* PRINT STYLES FOR POLICY CERTIFICATE & ID CARDS */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #certPrintContainer, #certPrintContainer * {
+        visibility: visible !important;
+      }
+      #certPrintContainer {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+        height: 0 !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 10mm;
+      }
+    }
+
+    .health-id-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      break-inside: avoid;
+    }
+    .health-id-card-front {
+      padding: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px dashed #cbd5e1;
+    }
+    .health-id-card-back {
+      padding: 14px 16px;
+      background: #f8fafc;
+      font-size: 0.8rem;
+      color: #475569;
+    }
+
   </style>
 </head>
 <body>
@@ -3406,6 +3460,389 @@
               </ol>
             </div>
           </details>
+
+          <!-- SUBMENU 10: POLICY CERTIFICATE & HEALTH CARD GENERATOR & DOWNLOADER -->
+          <details class="accordion" id="cert-card-generator">
+            <summary>🪪 10. പോളിസി സർട്ടിഫിക്കറ്റ് &amp; ഹെൽത്ത് കാർഡ് ക്രിയേറ്ററും ഡൗൺലോഡറും (Policy Certificate &amp; ID Card Generator)</summary>
+            <div class="accordion-body">
+              <p>കെ.എസ്.ആർ.ടി.സി ജീവനക്കാർക്ക് അവരുടെ ശമ്പള പാക്കേജ് (SBI CSP) വഴി ലഭ്യമാകുന്ന <b>സഫയർ ക്ലാസിക്</b>, <b>സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ്</b> പോളിസികളുടെ ഔദ്യോഗിക മാതൃകയിലുള്ള <b>പോളിസി സർട്ടിഫിക്കറ്റും (Certificate of Insurance)</b>, കുടുംബാംഗങ്ങൾക്കുള്ള <b>TPA ഹെൽത്ത് കാർഡുകളും (Cashless Health ID Cards)</b> താഴെ നൽകിയിട്ടുള്ള ഫോമിൽ വിവരങ്ങൾ നൽകി തത്സമയം സ്വയം തയ്യാറാക്കി <b>PDF ആയി ഡൗൺലോഡ്</b> ചെയ്യാവുന്നതാണ്.</p>
+
+              <!-- NOTICE BADGE -->
+              <div style="background:#eff6ff; border:1px solid #bfdbfe; border-left:4px solid #2563eb; border-radius:8px; padding:12px 16px; margin:14px 0; font-size:0.88rem; color:#1e3a8a;">
+                ℹ️ <b>സൂചന:</b> ജീവനക്കാർക്ക് പോളിസി സംബന്ധിച്ച രേഖകൾ സുരക്ഷിതമായി മനസ്സിലാക്കാനും, എമർജൻസി മെഡിക്കൽ ഫയലിൽ സൂക്ഷിക്കാനും, ആശുപത്രിയിൽ സമർപ്പിക്കേണ്ട വിവരങ്ങൾ മുൻകൂട്ടി പരിശോധിക്കാനുമായാണ് ഈ ജനറേറ്റർ സജ്ജീകരിച്ചിരിക്കുന്നത്.
+              </div>
+
+              <!-- INPUT FORM CONTAINER -->
+              <div class="no-print" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:14px; padding:22px; margin:20px 0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <h4 style="color:var(--navy); margin-top:0; margin-bottom:16px; font-size:1.08rem; display:flex; align-items:center; gap:8px;">
+                  <span>📝</span> പോളിസി വിവരങ്ങൾ നൽകുക (Enter Details)
+                </h4>
+
+                <form id="policyCardForm" onsubmit="event.preventDefault(); generatePolicyDocuments();">
+                  <!-- ROW 1: EMPLOYEE BASIC DETAILS -->
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:14px;">
+                    <div>
+                      <label for="empName" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">ജീവനക്കാരന്റെ പേര് (Employee Name) *</label>
+                      <input type="text" id="empName" class="hosp-input" style="width:100%; box-sizing:border-box;" value="അനിൽകുമാർ കെ. / ANILKUMAR K" required>
+                    </div>
+
+                    <div>
+                      <label for="empPen" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">പെൻ / എംപ്ലോയി നമ്പർ (PEN / Emp ID) *</label>
+                      <input type="text" id="empPen" class="hosp-input" style="width:100%; box-sizing:border-box;" value="P548219" required>
+                    </div>
+
+                    <div>
+                      <label for="empDepot" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">ഡിപ്പോ / യൂണിറ്റ് (Depot / Unit) *</label>
+                      <input type="text" id="empDepot" class="hosp-input" style="width:100%; box-sizing:border-box;" value="തിരുവനന്തപുരം സെൻട്രൽ (TVM Central)" required>
+                    </div>
+                  </div>
+
+                  <!-- ROW 2: ACCOUNT & CONTACT -->
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:14px;">
+                    <div>
+                      <label for="empAccount" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">എസ്.ബി.ഐ സാലറി അക്കൗണ്ട് നമ്പർ (SBI Salary A/c) *</label>
+                      <input type="text" id="empAccount" class="hosp-input" style="width:100%; box-sizing:border-box;" value="XXXX XXXX 4589" required>
+                    </div>
+
+                    <div>
+                      <label for="empMobile" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">മൊബൈൽ നമ്പർ (Mobile Number) *</label>
+                      <input type="tel" id="empMobile" class="hosp-input" style="width:100%; box-sizing:border-box;" value="9447123456" required>
+                    </div>
+
+                    <div>
+                      <label for="empBlood" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">രക്തഗ്രൂപ്പ് (Blood Group)</label>
+                      <select id="empBlood" class="hosp-input" style="width:100%; box-sizing:border-box;">
+                        <option value="O+ve" selected>O +ve</option>
+                        <option value="A+ve">A +ve</option>
+                        <option value="B+ve">B +ve</option>
+                        <option value="AB+ve">AB +ve</option>
+                        <option value="O-ve">O -ve</option>
+                        <option value="A-ve">A -ve</option>
+                        <option value="B-ve">B -ve</option>
+                        <option value="AB-ve">AB -ve</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- ROW 3: POLICY PLAN SELECTION & DATES -->
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:18px;">
+                    <div style="grid-column: span 2;">
+                      <label for="empPlan" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">തിരഞ്ഞെടുത്ത പോളിസി പ്ലാൻ (Health Policy Plan) *</label>
+                      <select id="empPlan" class="hosp-input" style="width:100%; box-sizing:border-box; font-weight:600;">
+                        <option value="combo55" selected>🌟 അൾട്ടിമേറ്റ് ഷീൽഡ്: ക്ലാസിക് ₹5L + സൂപ്പർ ടോപ്പ്-അപ്പ് ₹50L (ആകെ ₹55 ലക്ഷം കവർ) — വാർഷിക പ്രീമിയം: ₹8,906</option>
+                        <option value="combo33">⚖️ ബാലൻസ്ഡ് ഷീൽഡ്: ക്ലാസിക് ₹3L + സൂപ്പർ ടോപ്പ്-അപ്പ് ₹30L (ആകെ ₹33 ലക്ഷം കവർ) — വാർഷിക പ്രീമിയം: ₹6,739</option>
+                        <option value="combo12">🛡️ എക്കണോമി ഷീൽഡ്: ക്ലാസിക് ₹2L + സൂപ്പർ ടോപ്പ്-അപ്പ് ₹10L (ആകെ ₹12 ലക്ഷം കവർ) — വാർഷിക പ്രീമിയം: ₹3,504</option>
+                        <option value="classic5">📘 സഫയർ ക്ലാസിക് ₹5 ലക്ഷം മാത്രം (ബേസ് പ്ലാൻ) — വാർഷിക പ്രീമിയം: ₹5,977</option>
+                        <option value="classic3">📘 സഫയർ ക്ലാസിക് ₹3 ലക്ഷം മാത്രം (ബേസ് പ്ലാൻ) — വാർഷിക പ്രീമിയം: ₹4,357</option>
+                        <option value="classic2">📘 സഫയർ ക്ലാസിക് ₹2 ലക്ഷം മാത്രം (ബേസ് പ്ലാൻ) — വാർഷിക പ്രീമിയം: ₹1,983</option>
+                        <option value="topup50">🚀 സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് ₹50 ലക്ഷം മാത്രം (Ded ₹5L) — വാർഷിക പ്രീമിയം: ₹2,929</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label for="empStartDate" style="display:block; font-weight:700; font-size:0.86rem; margin-bottom:4px; color:#1e293b;">പോളിസി ആരംഭ തീയതി (Policy Start Date) *</label>
+                      <input type="date" id="empStartDate" class="hosp-input" style="width:100%; box-sizing:border-box;" value="2026-11-18" required>
+                    </div>
+                  </div>
+
+                  <!-- SECTION: FAMILY MEMBERS -->
+                  <h5 style="color:#0f2b46; margin:16px 0 10px; font-size:0.95rem; border-top:1px dashed #cbd5e1; padding-top:14px;">
+                    👨‍👩‍👧‍👦 കുടുംബാംഗങ്ങളുടെ വിവരങ്ങൾ (Family Members to Include):
+                  </h5>
+
+                  <!-- MEMBER 1: SELF -->
+                  <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-bottom:10px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                      <span style="font-weight:700; font-size:0.88rem; color:#0f2b46;">1. ജീവനക്കാരൻ (Self / Primary Member)</span>
+                      <span style="background:#dcfce7; color:#15803d; font-size:0.75rem; font-weight:700; padding:2px 8px; border-radius:12px;">നിർബന്ധിതം</span>
+                    </div>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">വയസ്സ് (Age):</label>
+                        <input type="number" id="selfAge" class="hosp-input" style="width:100%; box-sizing:border-box;" value="42" min="18" max="65">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">ലിംഗഭേദം (Gender):</label>
+                        <select id="selfGender" class="hosp-input" style="width:100%; box-sizing:border-box;">
+                          <option value="Male" selected>പുരുഷൻ (Male)</option>
+                          <option value="Female">സ്ത്രീ (Female)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- MEMBER 2: SPOUSE -->
+                  <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-bottom:10px;">
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                      <input type="checkbox" id="hasSpouse" checked onchange="toggleMemberField('spouseBox', this.checked)">
+                      <label for="hasSpouse" style="font-weight:700; font-size:0.88rem; color:#0f2b46; cursor:pointer;">2. പങ്കാളി (Spouse)</label>
+                    </div>
+                    <div id="spouseBox" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">പങ്കാളിയുടെ പേര് (Name):</label>
+                        <input type="text" id="spouseName" class="hosp-input" style="width:100%; box-sizing:border-box;" value="പ്രിയ എസ്. / PRIYA S">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">വയസ്സ് (Age):</label>
+                        <input type="number" id="spouseAge" class="hosp-input" style="width:100%; box-sizing:border-box;" value="38" min="18" max="65">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">ലിംഗഭേദം (Gender):</label>
+                        <select id="spouseGender" class="hosp-input" style="width:100%; box-sizing:border-box;">
+                          <option value="Female" selected>സ്ത്രീ (Female)</option>
+                          <option value="Male">പുരുഷൻ (Male)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- MEMBER 3: CHILD 1 -->
+                  <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-bottom:10px;">
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                      <input type="checkbox" id="hasChild1" checked onchange="toggleMemberField('child1Box', this.checked)">
+                      <label for="hasChild1" style="font-weight:700; font-size:0.88rem; color:#0f2b46; cursor:pointer;">3. ആദ്യത്തെ കുട്ടി (Child 1 - 25 വയസ്സ് വരെ)</label>
+                    </div>
+                    <div id="child1Box" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">കുട്ടിയുടെ പേര് (Name):</label>
+                        <input type="text" id="child1Name" class="hosp-input" style="width:100%; box-sizing:border-box;" value="ആദിത്യൻ എ. / ADITHYAN A">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">വയസ്സ് (Age):</label>
+                        <input type="number" id="child1Age" class="hosp-input" style="width:100%; box-sizing:border-box;" value="12" min="1" max="25">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">ലിംഗഭേദം (Gender):</label>
+                        <select id="child1Gender" class="hosp-input" style="width:100%; box-sizing:border-box;">
+                          <option value="Male" selected>ആൺകുട്ടി (Male)</option>
+                          <option value="Female">പെൺകുട്ടി (Female)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- MEMBER 4: CHILD 2 -->
+                  <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-bottom:16px;">
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                      <input type="checkbox" id="hasChild2" checked onchange="toggleMemberField('child2Box', this.checked)">
+                      <label for="hasChild2" style="font-weight:700; font-size:0.88rem; color:#0f2b46; cursor:pointer;">4. രണ്ടാമത്തെ കുട്ടി (Child 2 - 25 വയസ്സ് വരെ)</label>
+                    </div>
+                    <div id="child2Box" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">കുട്ടിയുടെ പേര് (Name):</label>
+                        <input type="text" id="child2Name" class="hosp-input" style="width:100%; box-sizing:border-box;" value="അനന്യ എ. / ANANYA A">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">വയസ്സ് (Age):</label>
+                        <input type="number" id="child2Age" class="hosp-input" style="width:100%; box-sizing:border-box;" value="8" min="1" max="25">
+                      </div>
+                      <div>
+                        <label style="font-size:0.8rem; color:#64748b; display:block;">ലിംഗഭേദം (Gender):</label>
+                        <select id="child2Gender" class="hosp-input" style="width:100%; box-sizing:border-box;">
+                          <option value="Female" selected>പെൺകുട്ടി (Female)</option>
+                          <option value="Male">ആൺകുട്ടി (Male)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ACTION BUTTONS -->
+                  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+                    <button type="submit" class="btn" style="background:#0f2b46; color:#fff; font-weight:700; font-size:0.95rem; padding:12px 24px; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:8px; border:none; box-shadow:0 4px 10px rgba(15,43,70,0.2);">
+                      <span>✨</span> സർട്ടിഫിക്കറ്റും കാർഡുകളും ജനറേറ്റ് ചെയ്യുക (Generate)
+                    </button>
+                    <button type="button" onclick="resetPolicyForm()" class="btn" style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.9rem; padding:12px 20px; border-radius:8px; cursor:pointer; border:1px solid #cbd5e1;">
+                      🔄 റീസെറ്റ് (Reset)
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- PREVIEW & DOWNLOAD OUTPUT SECTION -->
+              <div id="policyOutputContainer" style="display:none; margin-top:28px;">
+                
+                <!-- STICKY ACTION BAR FOR DOWNLOADING -->
+                <div class="no-print" style="background:linear-gradient(135deg, #0f2b46 0%, #1e4976 100%); color:#fff; border-radius:12px; padding:16px 20px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 6px 18px rgba(15,43,70,0.18);">
+                  <div>
+                    <h4 style="margin:0; color:#ffd166; font-size:1.05rem; font-weight:800;">രേഖകൾ വിജയകരമായി തയ്യാറായി! 🎉</h4>
+                    <p style="margin:4px 0 0; font-size:0.86rem; color:#e2e8f0;">പോളിസി സർട്ടിഫിക്കറ്റും എല്ലാ അംഗങ്ങളുടെയും TPA ഹെൽത്ത് കാർഡുകളും താഴെ കാണാം.</p>
+                  </div>
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button onclick="printPolicyDocuments('all')" style="background:#10b981; color:#fff; border:none; padding:10px 18px; border-radius:8px; font-weight:700; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; gap:6px; box-shadow:0 3px 8px rgba(16,185,129,0.3);">
+                      <span>📥</span> PDF ആയി ഡൗൺലോഡ് ചെയ്യുക (Print / Save PDF)
+                    </button>
+                    <button onclick="printPolicyDocuments('cards')" style="background:#3b82f6; color:#fff; border:none; padding:10px 16px; border-radius:8px; font-weight:700; font-size:0.88rem; cursor:pointer; display:flex; align-items:center; gap:6px;">
+                      <span>🪪</span> കാർഡുകൾ മാത്രം പ്രിന്റ് ചെയ്യുക
+                    </button>
+                    <button onclick="saveOfflineHtmlFile()" style="background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.4); padding:10px 14px; border-radius:8px; font-weight:600; font-size:0.86rem; cursor:pointer;">
+                      <span>💾</span> ഓഫ്‌ലൈൻ ഫയലായി സേവ് ചെയ്യുക
+                    </button>
+                  </div>
+                </div>
+
+                <!-- PRINT CONTAINER (CONTAINS CERTIFICATE & ID CARDS) -->
+                <div id="certPrintContainer">
+                  
+                  <!-- 1. POLICY CERTIFICATE SECTION -->
+                  <div id="certificateWrapper" style="background:#ffffff; border:2px solid #0f2b46; border-radius:12px; padding:28px; margin-bottom:30px; box-shadow:0 4px 16px rgba(0,0,0,0.06); font-family:system-ui, -apple-system, sans-serif; color:#0f172a;">
+                    
+                    <!-- CERTIFICATE HEADER -->
+                    <div style="border-bottom:2px solid #0f2b46; padding-bottom:14px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;">
+                      <div>
+                        <div style="display:inline-block; background:#0f2b46; color:#fff; font-size:0.75rem; font-weight:800; padding:3px 10px; border-radius:4px; letter-spacing:0.05em; margin-bottom:6px;">
+                          STATE BANK OF INDIA · CORPORATE SALARY PACKAGE (CSP)
+                        </div>
+                        <h2 style="margin:2px 0 0; color:#0f2b46; font-size:1.35rem; font-weight:800; text-transform:uppercase; letter-spacing:0.02em;">
+                          CERTIFICATE OF INSURANCE / പോളിസി സർട്ടിഫിക്കറ്റ്
+                        </h2>
+                        <div style="font-size:0.86rem; color:#475569; margin-top:2px;">
+                          Group Health Insurance Policy for Kerala State Road Transport Corporation (KSRTC)
+                        </div>
+                      </div>
+                      <div style="text-align:right;">
+                        <div style="font-size:0.82rem; font-weight:700; color:#0f2b46;">SBI GENERAL INSURANCE CO. LTD.</div>
+                        <div style="font-size:0.78rem; color:#64748b;">UIN: <b style="color:#0f2b46;">SBIHLGP24031V012324</b></div>
+                        <div style="font-size:0.78rem; color:#15803d; font-weight:700; margin-top:2px;">STATUS: ACTIVE &amp; CASHLESS ELIGIBLE ✔</div>
+                      </div>
+                    </div>
+
+                    <!-- POLICY METADATA BAR -->
+                    <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px; margin-bottom:20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; font-size:0.86rem;">
+                      <div>
+                        <span style="color:#64748b; display:block; font-size:0.78rem;">പോളിസി / സർട്ടിഫിക്കറ്റ് നമ്പർ:</span>
+                        <b id="dispCertNo" style="color:#0f2b46; font-family:'Courier New', monospace; font-size:0.92rem;">SBIG/CSP/KSRTC/2026/84219</b>
+                      </div>
+                      <div>
+                        <span style="color:#64748b; display:block; font-size:0.78rem;">പോളിസി കാലാവധി (Policy Period):</span>
+                        <b id="dispValidity" style="color:#0f2b46;">18/11/2026 to 17/11/2027</b>
+                      </div>
+                      <div>
+                        <span style="color:#64748b; display:block; font-size:0.78rem;">പോളിസി ഉടമ (Primary Insured):</span>
+                        <b id="dispEmpName" style="color:#0f2b46;">അനിൽകുമാർ കെ. / ANILKUMAR K</b>
+                      </div>
+                      <div>
+                        <span style="color:#64748b; display:block; font-size:0.78rem;">PEN / എംപ്ലോയി നമ്പർ:</span>
+                        <b id="dispPen" style="color:#0f2b46;">P548219</b>
+                      </div>
+                      <div>
+                        <span style="color:#64748b; display:block; font-size:0.78rem;">ഡിപ്പോ / യൂണിറ്റ്:</span>
+                        <b id="dispDepot" style="color:#0f2b46;">തിരുവനന്തപുരം സെൻട്രൽ</b>
+                      </div>
+                      <div>
+                        <span style="color:#64748b; display:block; font-size:0.78rem;">എസ്.ബി.ഐ സാലറി അക്കൗണ്ട്:</span>
+                        <b id="dispAccount" style="color:#0f2b46;">XXXX XXXX 4589</b>
+                      </div>
+                    </div>
+
+                    <!-- PLAN & SUM INSURED BREAKDOWN -->
+                    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:14px 18px; margin-bottom:20px;">
+                      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                        <div>
+                          <div style="font-size:0.82rem; color:#166534; font-weight:700; text-transform:uppercase;">തിരഞ്ഞെടുത്ത പ്ലാനും പരിരക്ഷയും (Selected Plan &amp; Coverage)</div>
+                          <h3 id="dispPlanTitle" style="margin:2px 0 0; color:#14532d; font-size:1.15rem; font-weight:800;">
+                            🌟 അൾട്ടിമേറ്റ് ഫാമിലി ഷീൽഡ് (സഫയർ ക്ലാസിക് + സൂപ്പർ ടോപ്പ്-അപ്പ്)
+                          </h3>
+                        </div>
+                        <div style="text-align:right;">
+                          <div style="font-size:0.8rem; color:#166534;">ആകെ സം ഇൻഷുർഡ് (Total Floater Cover):</div>
+                          <span id="dispTotalSumInsured" style="font-size:1.35rem; font-weight:800; color:#15803d;">₹55,00,000</span>
+                        </div>
+                      </div>
+                      <div id="dispPlanBreakdown" style="margin-top:8px; font-size:0.86rem; color:#334155; border-top:1px dashed #bbf7d0; padding-top:8px;">
+                        • സഫയർ ക്ലാസിക് ബേസ് കവർ: <b>₹5,00,000</b> (സീറോ ഡിഡക്റ്റിബിൾ)<br>
+                        • സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് കവർ: <b>₹50,00,000</b> (അഗ്രിഗേറ്റ് ഡിഡക്റ്റിബിൾ ₹5,00,000 ക്ലാസിക് ബേസ് പോളിസിയിലൂടെ പരിഹരിക്കപ്പെടുന്നു)
+                      </div>
+                    </div>
+
+                    <!-- BENEFICIARIES TABLE -->
+                    <h5 style="color:#0f2b46; margin:0 0 8px; font-size:0.95rem;">
+                      👥 ഇൻഷുറൻസ് പരിരക്ഷയുള്ള കുടുംബാംഗങ്ങൾ (Insured Beneficiaries)
+                    </h5>
+                    <div style="overflow-x:auto; margin-bottom:20px;">
+                      <table class="detail-table" style="width:100%; border-collapse:collapse; font-size:0.86rem; margin:0;">
+                        <thead>
+                          <tr style="background:#0f2b46; color:#fff;">
+                            <th style="padding:8px 10px; text-align:center; width:6%;">ക്രമം</th>
+                            <th style="padding:8px 10px; text-align:left; width:34%;">അംഗത്തിന്റെ പേര് (Member Name)</th>
+                            <th style="padding:8px 10px; text-align:center; width:16%;">ബന്ധം (Relation)</th>
+                            <th style="padding:8px 10px; text-align:center; width:12%;">വയസ്സ് / ലിംഗം</th>
+                            <th style="padding:8px 10px; text-align:center; width:18%;">ഹെൽത്ത് ID (UHID)</th>
+                            <th style="padding:8px 10px; text-align:right; width:14%;">കവറേജ്</th>
+                          </tr>
+                        </thead>
+                        <tbody id="certMembersTableBody">
+                          <!-- Populated dynamically -->
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- POLICY TERMS & BENEFITS SUMMARY GRID -->
+                    <h5 style="color:#0f2b46; margin:0 0 8px; font-size:0.95rem;">
+                      📑 പോളിസി ആനുകൂല്യങ്ങളും വ്യവസ്ഥകളും (Summary of Terms &amp; Conditions)
+                    </h5>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px; font-size:0.82rem; margin-bottom:20px;">
+                      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+                        <b>മുറി വാടക (Room Rent):</b> സിംഗിൾ പ്രൈവറ്റ് എസി റൂം (ആനുപാതിക കിഴിവുകൾ ഇല്ല).
+                      </div>
+                      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+                        <b>ഐ.സി.യു ചാർജ്ജ്:</b> യഥാർത്ഥ ചെലവ് പൂർണ്ണമായും അനുവദിക്കുന്നു.
+                      </div>
+                      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+                        <b>പ്രീ &amp; പോസ്റ്റ് ഹോസ്പിറ്റലൈസേഷൻ:</b> 30 ദിവസം മുൻപും 60 ദിവസം ശേഷവുമുള്ള ചെലവുകൾ.
+                      </div>
+                      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+                        <b>PED കാത്തിരിപ്പ്:</b> മുൻകാല രോഗങ്ങൾക്ക് 24 മാസം മാത്രം.
+                      </div>
+                      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+                        <b>ഡേ കെയർ &amp; ആയുഷ്:</b> എല്ലാ അംഗീകൃത ഡേ കെയർ നടപടികൾക്കും ആയുഷ് ചികിത്സകൾക്കും കവറേജ്.
+                      </div>
+                      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+                        <b>കോ-പേയ്മെന്റ് (Co-pay):</b> സീറോ കോ-പേ (Zero Co-payment).
+                      </div>
+                    </div>
+
+                    <!-- FOOTER SIGNATURE & TPA HELPLINE -->
+                    <div style="border-top:1px solid #cbd5e1; padding-top:14px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+                      <div style="font-size:0.8rem; color:#475569; max-width:480px; line-height:1.5;">
+                        <b>ക്യാഷ്‌ലെസ്സ് എമർജൻസി സഹായത്തിന്:</b><br>
+                        📞 ടോൾ ഫ്രീ നമ്പറുകൾ: <b>1800 22 1111 / 1800 102 1111</b><br>
+                        📧 ഇ-മെയിൽ: customer.care@sbigeneral.in | വെബ്‌സൈറ്റ്: www.sbigeneral.in<br>
+                        ആശുപത്രിയിൽ അഡ്മിറ്റ് ആകുമ്പോൾ സർട്ടിഫിക്കറ്റും TPA ഹെൽത്ത് കാർഡും ഇൻഷുറൻസ് ഡെസ്കിൽ ഹാജരാക്കുക.
+                      </div>
+                      <div style="text-align:right;">
+                        <div style="font-family:'Courier New', monospace; font-size:0.78rem; color:#64748b; margin-bottom:4px;">DIGITALLY VERIFIED DOCUMENT</div>
+                        <div style="border-bottom:1px solid #0f2b46; width:160px; margin-bottom:4px; display:inline-block;"></div>
+                        <div style="font-weight:700; font-size:0.82rem; color:#0f2b46;">അംഗീകൃത ഒപ്പ് (Authorized Signatory)</div>
+                        <div style="font-size:0.75rem; color:#64748b;">SBI General Insurance Co. Ltd.</div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- PAGE BREAK FOR CLEAN PRINTING -->
+                  <div class="page-break" style="height:20px;"></div>
+
+                  <!-- 2. TPA HEALTH ID CARDS SECTION -->
+                  <div id="cardsSectionWrapper">
+                    <div class="no-print" style="margin-bottom:16px; border-bottom:2px solid #e2e8f0; padding-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
+                      <h4 style="color:var(--navy); margin:0; font-size:1.15rem; font-weight:800;">
+                        🪪 കുടുംബാംഗങ്ങളുടെ TPA ഹെൽത്ത് കാർഡുകൾ (Cashless ID Cards)
+                      </h4>
+                      <span style="font-size:0.82rem; color:#64748b;">ആശുപത്രി അഡ്മിഷൻ സമയത്ത് ഈ കാർഡ് ഫോണിൽ കാണിക്കുകയോ പ്രിന്റ് നൽകുകയോ ചെയ്യാം</span>
+                    </div>
+
+                    <!-- CARDS CONTAINER GRID -->
+                    <div id="cardsGridContainer" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px;">
+                      <!-- Populated dynamically via JS -->
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </details>
               </div>
             </div>
           </details>
@@ -3784,6 +4221,312 @@
   </script>
 
   <!-- GoatCounter Tracking -->
-  <script data-goatcounter="https://midhun.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://midhun.goatcounter.com/count" async src="https://gc.zgo.at/count.js">
+    // POLICY CERTIFICATE & ID CARD GENERATOR SCRIPTS
+    function toggleMemberField(boxId, isChecked) {
+      const box = document.getElementById(boxId);
+      if (box) {
+        box.style.display = isChecked ? 'grid' : 'none';
+      }
+    }
+
+    function resetPolicyForm() {
+      const form = document.getElementById('policyCardForm');
+      if (form) form.reset();
+      document.getElementById('spouseBox').style.display = 'grid';
+      document.getElementById('child1Box').style.display = 'grid';
+      document.getElementById('child2Box').style.display = 'grid';
+      document.getElementById('policyOutputContainer').style.display = 'none';
+    }
+
+    function generatePolicyDocuments() {
+      const empName = document.getElementById('empName').value.trim() || 'VIJAYAN K';
+      const empPen = document.getElementById('empPen').value.trim() || 'P123456';
+      const empDepot = document.getElementById('empDepot').value.trim() || 'KSRTC';
+      const empAccount = document.getElementById('empAccount').value.trim() || 'XXXX XXXX 1234';
+      const empMobile = document.getElementById('empMobile').value.trim() || '';
+      const empBlood = document.getElementById('empBlood').value;
+      const empPlan = document.getElementById('empPlan').value;
+      const startDateVal = document.getElementById('empStartDate').value;
+
+      // Calculate end date
+      let startStr = '18/11/2026';
+      let endStr = '17/11/2027';
+      if (startDateVal) {
+        const parts = startDateVal.split('-');
+        if (parts.length === 3) {
+          const y = parseInt(parts[0], 10);
+          const m = parseInt(parts[1], 10);
+          const d = parseInt(parts[2], 10);
+          startStr = (d < 10 ? '0' + d : d) + '/' + (m < 10 ? '0' + m : m) + '/' + y;
+          const endY = y + 1;
+          const prevD = d === 1 ? 28 : (d - 1);
+          endStr = (prevD < 10 ? '0' + prevD : prevD) + '/' + (m < 10 ? '0' + m : m) + '/' + endY;
+        }
+      }
+
+      // Generate random certificate suffix if needed
+      let certNum = 'SBIG/CSP/KSRTC/' + new Date().getFullYear() + '/' + Math.floor(10000 + Math.random() * 89999);
+
+      // Plan Specs mapping
+      const planSpecs = {
+        'combo55': {
+          title: '🌟 അൾട്ടിമേറ്റ് ഫാമിലി ഷീൽഡ് (സഫയർ ക്ലാസിക് + സൂപ്പർ ടോപ്പ്-അപ്പ്)',
+          total: '₹55,00,000',
+          breakdown: '• സഫയർ ക്ലാസിക് ബേസ് കവർ: <b>₹5,00,000</b> (സീറോ ഡിഡക്റ്റിബിൾ)<br>• സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് കവർ: <b>₹50,00,000</b> (വാർഷിക അഗ്രിഗേറ്റ് ഡിഡക്റ്റിബിൾ ₹5 ലക്ഷം ബേസ് പോളിസി നൽകുന്നു)'
+        },
+        'combo33': {
+          title: '⚖️ ബാലൻസ്ഡ് ഷീൽഡ് (സഫയർ ക്ലാസിക് + സൂപ്പർ ടോപ്പ്-അപ്പ്)',
+          total: '₹33,00,000',
+          breakdown: '• സഫയർ ക്ലാസിക് ബേസ് കവർ: <b>₹3,00,000</b> (സീറോ ഡിഡക്റ്റിബിൾ)<br>• സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് കവർ: <b>₹30,00,000</b> (വാർഷിക അഗ്രിഗേറ്റ് ഡിഡക്റ്റിബിൾ ₹3 ലക്ഷം ബേസ് പോളിസി നൽകുന്നു)'
+        },
+        'combo12': {
+          title: '🛡️ എക്കണോമി ഷീൽഡ് (സഫയർ ക്ലാസിക് + സൂപ്പർ ടോപ്പ്-അപ്പ്)',
+          total: '₹12,00,000',
+          breakdown: '• സഫയർ ക്ലാസിക് ബേസ് കവർ: <b>₹2,00,000</b> (സീറോ ഡിഡക്റ്റിബിൾ)<br>• സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് കവർ: <b>₹10,00,000</b> (വാർഷിക അഗ്രിഗേറ്റ് ഡിഡക്റ്റിബിൾ ₹2 ലക്ഷം ബേസ് പോളിസി നൽകുന്നു)'
+        },
+        'classic5': {
+          title: '📘 സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി)',
+          total: '₹5,00,000',
+          breakdown: '• സഫയർ ക്ലാസിക് ബേസ് സം ഇൻഷുർഡ്: <b>₹5,00,000</b> (ആദ്യ രൂപ മുതൽ ക്യാഷ്‌ലെസ്സ് പരിരക്ഷ, സീറോ ഡിഡക്റ്റിബിൾ)'
+        },
+        'classic3': {
+          title: '📘 സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി)',
+          total: '₹3,00,000',
+          breakdown: '• സഫയർ ക്ലാസിക് ബേസ് സം ഇൻഷുർഡ്: <b>₹3,00,000</b> (ആദ്യ രൂപ മുതൽ ക്യാഷ്‌ലെസ്സ് പരിരക്ഷ, സീറോ ഡിഡക്റ്റിബിൾ)'
+        },
+        'classic2': {
+          title: '📘 സഫയർ ക്ലാസിക് (അടിസ്ഥാന പോളിസി)',
+          total: '₹2,00,000',
+          breakdown: '• സഫയർ ക്ലാസിക് ബേസ് സം ഇൻഷുർഡ്: <b>₹2,00,000</b> (ആദ്യ രൂപ മുതൽ ക്യാഷ്‌ലെസ്സ് പരിരക്ഷ, സീറോ ഡിഡക്റ്റിബിൾ)'
+        },
+        'topup50': {
+          title: '🚀 സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ്',
+          total: '₹50,00,000',
+          breakdown: '• സഫയർ സൂപ്പർ ടോപ്പ്-അപ്പ് സം ഇൻഷുർഡ്: <b>₹50,00,000</b> (വാർഷിക അഗ്രിഗേറ്റ് ഡിഡക്റ്റിബിൾ: ₹5,00,000)'
+        }
+      };
+
+      const selectedSpec = planSpecs[empPlan] || planSpecs['combo55'];
+
+      // Populate Certificate metadata
+      document.getElementById('dispCertNo').textContent = certNum;
+      document.getElementById('dispValidity').textContent = startStr + ' to ' + endStr;
+      document.getElementById('dispEmpName').textContent = empName;
+      document.getElementById('dispPen').textContent = empPen;
+      document.getElementById('dispDepot').textContent = empDepot;
+      document.getElementById('dispAccount').textContent = empAccount;
+      document.getElementById('dispPlanTitle').innerHTML = selectedSpec.title;
+      document.getElementById('dispTotalSumInsured').textContent = selectedSpec.total;
+      document.getElementById('dispPlanBreakdown').innerHTML = selectedSpec.breakdown;
+
+      // Collect Family Members
+      const members = [];
+      const cleanPen = empPen.replace(/[^a-zA-Z0-9]/g, '');
+
+      // Self
+      const selfAge = document.getElementById('selfAge').value || '40';
+      const selfGender = document.getElementById('selfGender').value;
+      members.push({
+        name: empName,
+        relation: 'Self / ജീവനക്കാരൻ',
+        age: selfAge + ' Yrs',
+        gender: selfGender,
+        blood: empBlood,
+        uhid: 'SBIG-KSRTC-' + cleanPen + '-01'
+      });
+
+      // Spouse
+      const hasSpouse = document.getElementById('hasSpouse').checked;
+      if (hasSpouse) {
+        const spouseName = document.getElementById('spouseName').value.trim() || 'Spouse';
+        const spouseAge = document.getElementById('spouseAge').value || '35';
+        const spouseGender = document.getElementById('spouseGender').value;
+        members.push({
+          name: spouseName,
+          relation: 'Spouse / പങ്കാളി',
+          age: spouseAge + ' Yrs',
+          gender: spouseGender,
+          blood: '-',
+          uhid: 'SBIG-KSRTC-' + cleanPen + '-02'
+        });
+      }
+
+      // Child 1
+      const hasChild1 = document.getElementById('hasChild1').checked;
+      if (hasChild1) {
+        const child1Name = document.getElementById('child1Name').value.trim() || 'Child 1';
+        const child1Age = document.getElementById('child1Age').value || '10';
+        const child1Gender = document.getElementById('child1Gender').value;
+        members.push({
+          name: child1Name,
+          relation: 'Child 1 / മകൻ/മകൾ',
+          age: child1Age + ' Yrs',
+          gender: child1Gender,
+          blood: '-',
+          uhid: 'SBIG-KSRTC-' + cleanPen + '-03'
+        });
+      }
+
+      // Child 2
+      const hasChild2 = document.getElementById('hasChild2').checked;
+      if (hasChild2) {
+        const child2Name = document.getElementById('child2Name').value.trim() || 'Child 2';
+        const child2Age = document.getElementById('child2Age').value || '6';
+        const child2Gender = document.getElementById('child2Gender').value;
+        members.push({
+          name: child2Name,
+          relation: 'Child 2 / മകൻ/മകൾ',
+          age: child2Age + ' Yrs',
+          gender: child2Gender,
+          blood: '-',
+          uhid: 'SBIG-KSRTC-' + cleanPen + '-04'
+        });
+      }
+
+      // Render Certificate Table Body
+      const tbody = document.getElementById('certMembersTableBody');
+      tbody.innerHTML = '';
+      members.forEach((m, idx) => {
+        const tr = document.createElement('tr');
+        tr.style.background = idx % 2 === 0 ? '#ffffff' : '#f8fafc';
+        tr.innerHTML = `
+          <td style="padding:8px 10px; text-align:center;">${idx + 1}</td>
+          <td style="padding:8px 10px;"><b>${m.name}</b></td>
+          <td style="padding:8px 10px; text-align:center;">${m.relation}</td>
+          <td style="padding:8px 10px; text-align:center;">${m.age} / ${m.gender}</td>
+          <td style="padding:8px 10px; text-align:center; font-family:'Courier New', monospace; font-weight:700; color:#0369a1;">${m.uhid}</td>
+          <td style="padding:8px 10px; text-align:right; font-weight:700; color:#15803d;">ഫ്ലോട്ടർ കവർ</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Render TPA Health ID Cards
+      const cardsGrid = document.getElementById('cardsGridContainer');
+      cardsGrid.innerHTML = '';
+      members.forEach((m) => {
+        // Initials
+        const initials = m.name.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase() || 'ID';
+        
+        const cardEl = document.createElement('div');
+        cardEl.className = 'health-id-card';
+        cardEl.innerHTML = `
+          <!-- CARD FRONT -->
+          <div class="health-id-card-front">
+            <div style="background:#0f2b46; color:#fff; padding:8px 12px; border-radius:6px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <span style="font-size:0.65rem; color:#ffd166; font-weight:800; letter-spacing:0.04em; display:block;">SBI CSP GROUP HEALTH INSURANCE</span>
+                <span style="font-size:0.8rem; font-weight:800; letter-spacing:0.02em;">TPA CASHLESS E-CARD</span>
+              </div>
+              <span style="font-size:0.7rem; background:#10b981; color:#fff; font-weight:800; padding:2px 6px; border-radius:4px;">VALID</span>
+            </div>
+
+            <div style="display:flex; gap:12px; align-items:center; margin-bottom:12px;">
+              <div style="width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg, #1e40af, #3b82f6); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; flex-shrink:0; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+                ${initials}
+              </div>
+              <div style="flex:1; min-width:0;">
+                <h4 style="margin:0; font-size:0.96rem; font-weight:800; color:#0f2b46; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${m.name}</h4>
+                <div style="font-size:0.78rem; color:#64748b; margin-top:2px;">${m.relation} · ${m.age} (${m.gender})</div>
+                ${m.blood && m.blood !== '-' ? '<div style="font-size:0.75rem; color:#b91c1c; font-weight:700;">Blood: ' + m.blood + '</div>' : ''}
+              </div>
+            </div>
+
+            <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:8px 10px; margin-bottom:10px; font-size:0.8rem;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
+                <span style="color:#64748b;">UHID NO:</span>
+                <b style="color:#0f2b46; font-family:'Courier New', monospace;">${m.uhid}</b>
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
+                <span style="color:#64748b;">POLICY NO:</span>
+                <b style="color:#0f2b46; font-family:'Courier New', monospace; font-size:0.75rem;">${certNum}</b>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:#64748b;">VALIDITY:</span>
+                <b style="color:#0f2b46;">${startStr} to ${endStr}</b>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.75rem; color:#475569;">KSRTC UNIT: <b>${empDepot}</b></span>
+              <span style="background:#dcfce7; color:#15803d; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:12px;">${selectedSpec.total} COVER</span>
+            </div>
+          </div>
+
+          <!-- CARD BACK -->
+          <div class="health-id-card-back">
+            <div style="font-weight:700; color:#0f2b46; margin-bottom:4px; font-size:0.78rem;">ക്യാഷ്‌ലെസ്സ് ആശുപത്രി നിബന്ധനകൾ (For Hospitals &amp; TPA):</div>
+            <div style="font-size:0.75rem; line-height:1.45; color:#475569; margin-bottom:8px;">
+              ആശുപത്രി പ്രവേശന സമയത്ത് ഈ കാർഡും ഫോട്ടോ പതിച്ച തിരിച്ചറിയൽ രേഖയും TPA ഇൻഷുറൻസ് ഡെസ്കിൽ ഹാജരാക്കുക.
+            </div>
+            <div style="background:#ffffff; border:1px dashed #cbd5e1; border-radius:6px; padding:6px 8px; font-size:0.74rem; margin-bottom:6px;">
+              📞 24x7 ഹെൽപ്പ്‌ലൈൻ: <b>1800 22 1111 / 1800 102 1111</b><br>
+              📧 ക്യാഷ്‌ലെസ്സ് ഇമെയിൽ: <b>customer.care@sbigeneral.in</b>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.72rem; color:#64748b;">
+              <span>14,000+ നെറ്റ്‌വർക്ക് ആശുപത്രികൾ</span>
+              <span style="font-family:'Courier New', monospace; font-weight:700;">UIN: SBIHLGP24031V012324</span>
+            </div>
+          </div>
+        `;
+        cardsGrid.appendChild(cardEl);
+      });
+
+      // Show Output Container & Smooth Scroll
+      const outContainer = document.getElementById('policyOutputContainer');
+      outContainer.style.display = 'block';
+      setTimeout(() => {
+        outContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    function printPolicyDocuments(mode) {
+      const certWrapper = document.getElementById('certificateWrapper');
+      if (mode === 'cards' && certWrapper) {
+        certWrapper.style.display = 'none';
+        window.print();
+        certWrapper.style.display = 'block';
+      } else {
+        window.print();
+      }
+    }
+
+    function saveOfflineHtmlFile() {
+      const printContent = document.getElementById('certPrintContainer').innerHTML;
+      const htmlDoc = `<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <title>SBI CSP KSRTC Health Policy Certificate & ID Cards</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; padding: 20px; background: #f8fafc; color: #0f172a; margin: 0; }
+    .page-break { page-break-before: always; height: 20px; }
+    .health-id-card { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; margin-bottom: 20px; max-width: 420px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .health-id-card-front { padding: 16px; border-bottom: 1px dashed #cbd5e1; }
+    .health-id-card-back { padding: 14px 16px; background: #f8fafc; font-size: 0.8rem; color: #475569; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 8px 10px; font-size: 0.88rem; }
+    th { background: #0f2b46; color: #fff; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      @page { size: A4 portrait; margin: 10mm; }
+    }
+  </style>
+</head>
+<body>
+  ${printContent}
+</body>
+</html>`;
+
+      const blob = new Blob([htmlDoc], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'SBI_CSP_Health_Certificate_and_Cards.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    </script>
 </body>
 </html>
