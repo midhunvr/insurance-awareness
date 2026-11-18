@@ -1065,26 +1065,34 @@
     }
 
     .health-id-card {
+      width: 340px;
+      max-width: 100%;
+      height: 215px;
+      box-sizing: border-box;
       background: #ffffff;
-      border: 1px solid #cbd5e1;
+      border: 1.5px solid #cbd5e1;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(15, 43, 70, 0.08);
       font-family: system-ui, -apple-system, sans-serif;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      position: relative;
       break-inside: avoid;
+      page-break-inside: avoid;
     }
-    .health-id-card-front {
-      padding: 16px;
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-      border-bottom: 1px dashed #cbd5e1;
-    }
-    .health-id-card-back {
-      padding: 14px 16px;
-      background: #f8fafc;
-      font-size: 0.8rem;
-      color: #475569;
+    @media print {
+      .health-id-card {
+        width: 85.6mm !important;
+        height: 54mm !important;
+        box-shadow: none !important;
+        border: 1px solid #94a3b8 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin: 4mm !important;
+        display: inline-flex !important;
+      }
     }
 
   </style>
@@ -4400,72 +4408,60 @@
         tbody.appendChild(tr);
       });
 
-      // Render TPA Health ID Cards
+      // Render TPA Health ID Cards (Sleek ID Card Size, No Unnecessary Clutter)
       const cardsGrid = document.getElementById('cardsGridContainer');
       cardsGrid.innerHTML = '';
       members.forEach((m) => {
-        // Initials
+        // Initials for avatar
         const initials = m.name.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase() || 'ID';
         
         const cardEl = document.createElement('div');
         cardEl.className = 'health-id-card';
         cardEl.innerHTML = `
-          <!-- CARD FRONT -->
-          <div class="health-id-card-front">
-            <div style="background:#0f2b46; color:#fff; padding:8px 12px; border-radius:6px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+          <!-- TOP HEADER STRIP -->
+          <div style="background:linear-gradient(135deg, #0f2b46 0%, #1e4976 100%); color:#fff; padding:6px 12px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="font-size:0.9rem; line-height:1;">🛡️</span>
               <div>
-                <span style="font-size:0.65rem; color:#ffd166; font-weight:800; letter-spacing:0.04em; display:block;">SBI CSP GROUP HEALTH INSURANCE</span>
-                <span style="font-size:0.8rem; font-weight:800; letter-spacing:0.02em;">TPA CASHLESS E-CARD</span>
+                <div style="font-size:0.6rem; color:#ffd166; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; line-height:1.1;">SBI CSP · KSRTC GROUP HEALTH</div>
+                <div style="font-size:0.72rem; font-weight:800; letter-spacing:0.02em; line-height:1.1;">CASHLESS HEALTH CARD</div>
               </div>
-              <span style="font-size:0.7rem; background:#10b981; color:#fff; font-weight:800; padding:2px 6px; border-radius:4px;">VALID</span>
             </div>
+            <span style="background:#10b981; color:#fff; font-size:0.62rem; font-weight:800; padding:2px 6px; border-radius:10px; letter-spacing:0.03em;">CASHLESS</span>
+          </div>
 
-            <div style="display:flex; gap:12px; align-items:center; margin-bottom:12px;">
-              <div style="width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg, #1e40af, #3b82f6); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; flex-shrink:0; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <!-- CARD BODY (ESSENTIAL TPA FIELDS ONLY) -->
+          <div style="padding:8px 12px; display:flex; gap:10px; align-items:center; flex:1;">
+            <!-- AVATAR & BLOOD GROUP -->
+            <div style="text-align:center; flex-shrink:0;">
+              <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg, #1e40af, #3b82f6); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.95rem; border:2px solid #e0e7ff; margin:0 auto 4px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
                 ${initials}
               </div>
-              <div style="flex:1; min-width:0;">
-                <h4 style="margin:0; font-size:0.96rem; font-weight:800; color:#0f2b46; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${m.name}</h4>
-                <div style="font-size:0.78rem; color:#64748b; margin-top:2px;">${m.relation} · ${m.age} (${m.gender})</div>
-                ${m.blood && m.blood !== '-' ? '<div style="font-size:0.75rem; color:#b91c1c; font-weight:700;">Blood: ' + m.blood + '</div>' : ''}
-              </div>
+              ${m.blood && m.blood !== '-' ? '<span style="background:#fee2e2; color:#b91c1c; font-size:0.64rem; font-weight:800; padding:1px 5px; border-radius:4px; display:inline-block;">' + m.blood + '</span>' : '<span style="font-size:0.64rem; color:#94a3b8;">' + m.gender + '</span>'}
             </div>
 
-            <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:8px 10px; margin-bottom:10px; font-size:0.8rem;">
-              <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
-                <span style="color:#64748b;">UHID NO:</span>
-                <b style="color:#0f2b46; font-family:'Courier New', monospace;">${m.uhid}</b>
-              </div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
-                <span style="color:#64748b;">POLICY NO:</span>
-                <b style="color:#0f2b46; font-family:'Courier New', monospace; font-size:0.75rem;">${certNum}</b>
-              </div>
-              <div style="display:flex; justify-content:space-between;">
-                <span style="color:#64748b;">VALIDITY:</span>
+            <!-- RIGHT DETAILS -->
+            <div style="flex:1; min-width:0; line-height:1.35;">
+              <div style="font-size:0.86rem; font-weight:800; color:#0f2b46; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${m.name}</div>
+              <div style="font-size:0.72rem; color:#475569; margin-bottom:3px;">${m.relation} · ${m.age}</div>
+
+              <div style="display:grid; grid-template-columns:auto 1fr; gap:1px 6px; font-size:0.71rem;">
+                <span style="color:#64748b;">UHID:</span>
+                <b style="color:#0369a1; font-family:'Courier New', monospace;">${m.uhid}</b>
+
+                <span style="color:#64748b;">POLICY:</span>
+                <b style="color:#0f2b46; font-family:'Courier New', monospace; font-size:0.68rem;">${certNum}</b>
+
+                <span style="color:#64748b;">VALID:</span>
                 <b style="color:#0f2b46;">${startStr} to ${endStr}</b>
               </div>
             </div>
-
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:0.75rem; color:#475569;">KSRTC UNIT: <b>${empDepot}</b></span>
-              <span style="background:#dcfce7; color:#15803d; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:12px;">${selectedSpec.total} COVER</span>
-            </div>
           </div>
 
-          <!-- CARD BACK -->
-          <div class="health-id-card-back">
-            <div style="font-weight:700; color:#0f2b46; margin-bottom:4px; font-size:0.78rem;">ക്യാഷ്‌ലെസ്സ് ആശുപത്രി നിബന്ധനകൾ (For Hospitals &amp; TPA):</div>
-            <div style="font-size:0.75rem; line-height:1.45; color:#475569; margin-bottom:8px;">
-              ആശുപത്രി പ്രവേശന സമയത്ത് ഈ കാർഡും ഫോട്ടോ പതിച്ച തിരിച്ചറിയൽ രേഖയും TPA ഇൻഷുറൻസ് ഡെസ്കിൽ ഹാജരാക്കുക.
-            </div>
-            <div style="background:#ffffff; border:1px dashed #cbd5e1; border-radius:6px; padding:6px 8px; font-size:0.74rem; margin-bottom:6px;">
-              📞 24x7 ഹെൽപ്പ്‌ലൈൻ: <b>1800 22 1111 / 1800 102 1111</b><br>
-              📧 ക്യാഷ്‌ലെസ്സ് ഇമെയിൽ: <b>customer.care@sbigeneral.in</b>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.72rem; color:#64748b;">
-              <span>14,000+ നെറ്റ്‌വർക്ക് ആശുപത്രികൾ</span>
-              <span style="font-family:'Courier New', monospace; font-weight:700;">UIN: SBIHLGP24031V012324</span>
-            </div>
+          <!-- BOTTOM FOOTER STRIP -->
+          <div style="background:#f8fafc; border-top:1px solid #e2e8f0; padding:4px 10px; display:flex; justify-content:space-between; align-items:center; font-size:0.68rem;">
+            <span style="color:#334155; font-weight:600;">📞 24x7 TPA: <b>1800 22 1111</b></span>
+            <span style="background:#dcfce7; color:#15803d; font-size:0.68rem; font-weight:800; padding:1px 6px; border-radius:10px;">${selectedSpec.total} COVER</span>
           </div>
         `;
         cardsGrid.appendChild(cardEl);
@@ -4500,9 +4496,8 @@
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; padding: 20px; background: #f8fafc; color: #0f172a; margin: 0; }
     .page-break { page-break-before: always; height: 20px; }
-    .health-id-card { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; margin-bottom: 20px; max-width: 420px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .health-id-card-front { padding: 16px; border-bottom: 1px dashed #cbd5e1; }
-    .health-id-card-back { padding: 14px 16px; background: #f8fafc; font-size: 0.8rem; color: #475569; }
+    .health-id-card { width: 340px; max-width: 100%; height: 215px; box-sizing: border-box; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; overflow: hidden; margin-bottom: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    @media print { .health-id-card { width: 85.6mm !important; height: 54mm !important; margin: 4mm !important; display: inline-flex !important; } }
     table { width: 100%; border-collapse: collapse; margin: 15px 0; }
     th, td { border: 1px solid #cbd5e1; padding: 8px 10px; font-size: 0.88rem; }
     th { background: #0f2b46; color: #fff; }
