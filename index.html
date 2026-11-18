@@ -4698,19 +4698,81 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Main Menu Expand All / Collapse All
+    // Main Menu Expand All / Collapse All & Exclusive Accordion
     const expandAllBtn = document.getElementById('expandAllBtn');
     const collapseAllBtn = document.getElementById('collapseAllBtn');
+    let isAutoClosing = false;
+    window.__isExpandingAll = false;
+
     if (expandAllBtn) {
       expandAllBtn.addEventListener('click', () => {
+        window.__isExpandingAll = true;
         document.querySelectorAll('.main-menu-card').forEach(card => card.open = true);
+        setTimeout(() => { window.__isExpandingAll = false; }, 300);
       });
     }
     if (collapseAllBtn) {
       collapseAllBtn.addEventListener('click', () => {
+        window.__isExpandingAll = true;
         document.querySelectorAll('.main-menu-card').forEach(card => card.open = false);
+        document.querySelectorAll('details.accordion').forEach(acc => acc.open = false);
+        setTimeout(() => { window.__isExpandingAll = false; }, 300);
       });
     }
+
+    // EXCLUSIVE ACCORDION HANDLER:
+    // When any menu or submenu "+" button is clicked, all other open menus/submenus close
+    document.querySelectorAll('details').forEach(det => {
+      det.addEventListener('toggle', function() {
+        if (isAutoClosing || window.__isExpandingAll) return;
+        if (this.open) {
+          isAutoClosing = true;
+          try {
+            if (this.classList.contains('main-menu-card')) {
+              // Main menu opened -> close all other main menus and their nested accordions
+              document.querySelectorAll('.main-menu-card').forEach(other => {
+                if (other !== this && other.open) {
+                  other.open = false;
+                  other.querySelectorAll('details.accordion').forEach(sub => sub.open = false);
+                }
+              });
+            } else if (this.classList.contains('accordion')) {
+              // Submenu opened -> ensure its parent hierarchy stays open
+              let ancestor = this.parentElement ? this.parentElement.closest('details') : null;
+              while (ancestor) {
+                if (!ancestor.open) ancestor.open = true;
+                ancestor = ancestor.parentElement ? ancestor.parentElement.closest('details') : null;
+              }
+
+              // Close all other main menus except this submenu's root main menu
+              const rootMenu = this.closest('.main-menu-card');
+              if (rootMenu) {
+                document.querySelectorAll('.main-menu-card').forEach(other => {
+                  if (other !== rootMenu && other.open) {
+                    other.open = false;
+                    other.querySelectorAll('details.accordion').forEach(sub => sub.open = false);
+                  }
+                });
+              }
+
+              // Close all other submenus/accordions across the entire page (except ancestors of this)
+              document.querySelectorAll('details.accordion').forEach(other => {
+                if (other !== this && other.open && !other.contains(this)) {
+                  other.open = false;
+                }
+              });
+            }
+
+            // Keep the opened item smoothly in view if closing others shifted the page
+            setTimeout(() => {
+              this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 80);
+          } finally {
+            isAutoClosing = false;
+          }
+        }
+      });
+    });
 
     // Auto-open target card on navigation / hash change
     function handleSectionHash() {
