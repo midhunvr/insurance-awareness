@@ -1047,7 +1047,6 @@
         <a href="#ksrtc-advance">വർക്കിംഗ് ഫണ്ട് അഡ്വാൻസ്</a>
         <a href="#csp-claim-guide">SBI CSP ഇൻഷുറൻസ്</a>
         <a href="#csp-health-policy">CSP ഹെൽത്ത് കവർ</a>
-        <a href="#tools">കാൽക്കുലേറ്റർ</a>
       </nav>
       <div style="display:inline-flex;align-items:center;gap:10px;">
         <!-- GoatCounter Eye Visitor Counter -->
@@ -2424,61 +2423,6 @@
       </div>
     </section>
 
-    <section class="section-anchor" id="tools">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">INTERACTIVE LEARNING</div>
-          <h2>കാൽക്കുലേറ്റർ</h2>
-          <p>ചികിത്സാചെലവിന്റെ സാമ്പത്തിക ആഘാതം ഒരു ഉദാഹരണത്തിലൂടെ മനസ്സിലാക്കാം. തുടർന്ന് ചെറിയൊരു ക്വിസ് പരീക്ഷിക്കാം.</p>
-        </div>
-        <div class="tool-grid">
-          <article class="tool-card">
-            <h3>🧮 ചികിത്സാചെലവ് കാൽക്കുലേറ്റർ</h3>
-            <p>ചികിത്സയ്ക്കായി കണക്കാക്കുന്ന തുക, ലഭ്യമായ സമ്പാദ്യം, ഇൻഷുറൻസ് പരിരക്ഷ എന്നിവ നൽകി സാമ്പത്തിക കുറവ് മനസ്സിലാക്കാം. ഇത് ഒരു ലളിതമായ കണക്കുകൂട്ടൽ മാത്രമാണ്; യഥാർത്ഥ ക്ലെയിം തുകയല്ല.</p>
-            <div class="field">
-              <label for="hospitalCost">കണക്കാക്കുന്ന ചികിത്സാചെലവ് <output id="hospitalCostOut">₹3,00,000</output></label>
-              <input id="hospitalCost" type="range" min="25000" max="2000000" step="25000" value="300000">
-            </div>
-            <div class="field">
-              <label for="savings">സ്വന്തം സമ്പാദ്യം <output id="savingsOut">₹1,00,000</output></label>
-              <input id="savings" type="range" min="0" max="1000000" step="10000" value="100000">
-            </div>
-            <div class="field">
-              <label for="cover">ലഭ്യമായ ഇൻഷുറൻസ് പരിരക്ഷ <output id="coverOut">₹2,00,000</output></label>
-              <input id="cover" type="range" min="0" max="2000000" step="25000" value="200000">
-            </div>
-            <div class="result" aria-live="polite">
-              <div>ആകെ കണക്കാക്കിയ വിഭവങ്ങൾ</div>
-              <strong id="resources">₹3,00,000</strong>
-              <p id="gapText">ഈ ഉദാഹരണത്തിൽ ചെലവിനും ലഭ്യമായ വിഭവങ്ങൾക്കും ഇടയിൽ കുറവില്ല.</p>
-            </div>
-            <p class="note">ശ്രദ്ധിക്കുക: പോളിസി പരിധി, deductible, co-pay, waiting period, exclusions, admissible expenses എന്നിവ കാരണം യഥാർത്ഥത്തിൽ ലഭിക്കുന്ന തുക വ്യത്യാസപ്പെടാം.</p>
-          </article>
-
-          <article class="tool-card">
-            <h3>📊 ഇൻഷുറൻസ് സുരക്ഷാ കണക്കുകൂട്ടൽ</h3>
-            <p>നിങ്ങൾ പ്രതീക്ഷിക്കുന്ന ആശുപത്രി ചെലവിൽ എത്ര ഭാഗം സ്വന്തം പണത്തിൽ നിന്ന് കണ്ടെത്തേണ്ടിവരുമെന്ന് കാണുക.</p>
-            <div class="field">
-              <label for="expected">പ്രതീക്ഷിക്കുന്ന ചെലവ് <output id="expectedOut">₹5,00,000</output></label>
-              <input id="expected" type="range" min="50000" max="3000000" step="50000" value="500000">
-            </div>
-            <div class="field">
-              <label for="available">ക്ലെയിമിന് ശേഷം ലഭിക്കുമെന്ന് കരുതുന്ന തുക <output id="availableOut">₹3,00,000</output></label>
-              <input id="available" type="range" min="0" max="3000000" step="50000" value="300000">
-            </div>
-            <div class="result" aria-live="polite">
-              <div>സ്വന്തം പണത്തിൽ നിന്ന് കണ്ടെത്തേണ്ട തുക</div>
-              <strong id="outOfPocket">₹2,00,000</strong>
-              <p id="coveredPercent">ഉദാഹരണത്തിൽ ചെലവിന്റെ 60% പരിരക്ഷിക്കപ്പെടുന്നു.</p>
-            </div>
-            <p class="note">ഇവിടെ “ലഭിക്കുമെന്ന് കരുതുന്ന തുക” നിങ്ങൾ സ്വയം നൽകുന്ന അനുമാനമാണ്; ഇൻഷുറൻസ് കമ്പനിയുടെ ഉറപ്പായ അംഗീകാരമല്ല.</p>
-          </article>
-        </div>
-
-        <div style="height:28px"></div>
-      </div>
-    </section>
-
     <!-- Closing Banner -->
     <section class="closing">
       <h2>അപ്രതീക്ഷിത ചികിത്സാചെലവ്<br>മുൻകൂട്ടി പ്രവചിക്കാനാവില്ല.</h2>
@@ -2557,38 +2501,6 @@
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
     const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
-    function bindCalc(id, outId, fn) {
-      const el = document.getElementById(id), out = document.getElementById(outId);
-      const update = () => { out.textContent = inr(+el.value); fn() };
-      el.addEventListener('input', update);
-      update();
-    }
-    function updateFirst() {
-      const cost = +document.getElementById('hospitalCost').value,
-            sav = +document.getElementById('savings').value,
-            cover = +document.getElementById('cover').value,
-            total = sav + cover,
-            gap = Math.max(0, cost - total),
-            surplus = Math.max(0, total - cost);
-      document.getElementById('resources').textContent = inr(total);
-      document.getElementById('gapText').textContent = gap
-        ? `ചികിത്സാചെലവിനായി ഇനിയും കണ്ടെത്തേണ്ടിവരാവുന്ന തുക: ${inr(gap)}.`
-        : `ഈ ഉദാഹരണത്തിൽ ചെലവിനും ലഭ്യമായ വിഭവങ്ങൾക്കും ഇടയിൽ കുറവില്ല${surplus ? `. ശേഷിക്കുന്ന തുക: ${inr(surplus)}.` : '.'}`;
-    }
-    bindCalc('hospitalCost', 'hospitalCostOut', updateFirst);
-    bindCalc('savings', 'savingsOut', updateFirst);
-    bindCalc('cover', 'coverOut', updateFirst);
-
-    function updateSecond() {
-      const cost = +document.getElementById('expected').value,
-            paid = +document.getElementById('available').value,
-            short = Math.max(0, cost - paid),
-            pct = cost ? Math.min(100, paid / cost * 100) : 0;
-      document.getElementById('outOfPocket').textContent = inr(short);
-      document.getElementById('coveredPercent').textContent = `ഉദാഹരണത്തിൽ ചെലവിന്റെ ${pct.toFixed(1)}% പരിരക്ഷിക്കപ്പെടുന്നു എന്ന് കണക്കാക്കുന്നു.`;
-    }
-    bindCalc('expected', 'expectedOut', updateSecond);
-    bindCalc('available', 'availableOut', updateSecond);
 
     // ==========================================
     // CSP HEALTH PREMIUM CALCULATOR LOGIC
